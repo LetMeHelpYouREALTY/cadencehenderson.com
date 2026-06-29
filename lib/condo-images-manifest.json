@@ -1,0 +1,169 @@
+{
+  "generatedAt": "2026-06-29T15:39:34.791Z",
+  "sourcePage": "https://lasvegashighrisecondoliving.com/condo/",
+  "accountId": "2cc579c1ec9e426ed585e933ebf4753b",
+  "accountHash": "byE6BTe9lNqo21V57n4aPQ",
+  "images": [
+    {
+      "id": "lv-condo-allure",
+      "name": "Allure",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-Allure-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-allure.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-juhl",
+      "name": "Juhl",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-Juhl-Header-Image-1.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-juhl.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-metropolis",
+      "name": "Metropolis",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-Metropolis-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-metropolis.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-mgm-signature",
+      "name": "MGM Signature",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-MGM-Signature-1.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-mgm-signature.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-newport-lofts",
+      "name": "Newport Lofts",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-Newport-Lofts-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-newport-lofts.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-one-queensridge",
+      "name": "One Queensridge Place",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Downtown-Las-Vegas-One-Queensridge-Place-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-one-queensridge.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-palms-place",
+      "name": "Palms Place",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-Palms-Place-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-palms-place.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-panorama-towers",
+      "name": "Panorama Towers",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Downtown-Las-Vegas-Panorama-Towers-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-panorama-towers.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-park-avenue",
+      "name": "Park Avenue",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-Park-Avenue-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-park-avenue.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-park-towers",
+      "name": "Park Towers",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-Park-Towers-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-park-towers.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-sky",
+      "name": "Sky Las Vegas",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-Sky-Las-Vegas-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-sky.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-soho-lofts",
+      "name": "SoHo Lofts",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-SoHo-Lofts-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-soho-lofts.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-cosmopolitan",
+      "name": "The Cosmopolitan",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Reatly-The-Cosmopolitan-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-cosmopolitan.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-manhattan",
+      "name": "The Manhattan",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-The-Manhattans-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-manhattan.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-martin",
+      "name": "The Martin",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-The-Martin-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-martin.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-ogden",
+      "name": "The Ogden",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-The-Ogden-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-ogden.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-platinum",
+      "name": "The Platinum",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-The-Platinum-Hotel-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-platinum.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-waldorf-astoria",
+      "name": "Waldorf Astoria",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-Waldorf-Astoria-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-waldorf-astoria.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-trump",
+      "name": "Trump Tower",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-Trump-Tower-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-trump.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-turnberry-place",
+      "name": "Turnberry Place",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-Turnberry-Place-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-turnberry-place.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-turnberry-towers",
+      "name": "Turnberry Towers",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-Turnberry-Towers-Header-Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-turnberry-towers.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-vdara",
+      "name": "Vdara",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las_Vegas_High_Rise_Condo_Living_Savi_Realty_Vdara_Condos_Header_Image.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-vdara.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "lv-condo-veer-towers",
+      "name": "Veer Towers",
+      "sourceUrl": "https://lasvegashighrisecondoliving.com/wp-content/uploads/2023/05/Las-Vegas-High-Rise-Condo-Living-Savi-Realty-Veer-Towers-2.jpg",
+      "localPath": "/workspace/scripts/.condo-image-cache/lv-condo-veer-towers.jpg",
+      "status": "downloaded"
+    }
+  ]
+}

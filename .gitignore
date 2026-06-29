@@ -13,6 +13,7 @@
 # testing
 /coverage
 scripts/.cloudflare-domains-git-test
+scripts/.condo-image-cache
 
 # next.js
 /.next/

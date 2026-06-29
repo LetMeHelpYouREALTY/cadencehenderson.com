@@ -16,6 +16,8 @@
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx}\"",
     "cloudflare:domains-git": "node scripts/cloudflare-domains-git-setup.mjs",
+    "cloudflare:condo-images": "node scripts/clone-condo-images-to-cloudflare.mjs",
+    "cloudflare:condo-images:download": "node scripts/clone-condo-images-to-cloudflare.mjs --download-only",
     "consistency-lock-check": "node scripts/consistency-lock-check.mjs",
     "consistency-lock-check:hard": "node scripts/consistency-lock-check.mjs --hard-clean",
     "skills:check": "node scripts/consistency-lock-check.mjs",
