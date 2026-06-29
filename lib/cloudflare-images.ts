@@ -176,6 +176,37 @@ export const SITE_IMAGES = {
     lifestyleBox: CADENCE_PHOTOS.community,
     homesBox: CADENCE_PHOTOS.community,
   },
+
+  /**
+   * Las Vegas high-rise condo towers — cloned from lasvegashighrisecondoliving.com/condo/
+   * Upload via: npm run cloudflare:condo-images
+   * Dashboard: https://dash.cloudflare.com/2cc579c1ec9e426ed585e933ebf4753b/images
+   */
+  condos: {
+    allure: 'lv-condo-allure',
+    juhl: 'lv-condo-juhl',
+    metropolis: 'lv-condo-metropolis',
+    mgmSignature: 'lv-condo-mgm-signature',
+    newportLofts: 'lv-condo-newport-lofts',
+    oneQueensridge: 'lv-condo-one-queensridge',
+    palmsPlace: 'lv-condo-palms-place',
+    panoramaTowers: 'lv-condo-panorama-towers',
+    parkAvenue: 'lv-condo-park-avenue',
+    parkTowers: 'lv-condo-park-towers',
+    sky: 'lv-condo-sky',
+    sohoLofts: 'lv-condo-soho-lofts',
+    cosmopolitan: 'lv-condo-cosmopolitan',
+    manhattan: 'lv-condo-manhattan',
+    martin: 'lv-condo-martin',
+    ogden: 'lv-condo-ogden',
+    platinum: 'lv-condo-platinum',
+    waldorfAstoria: 'lv-condo-waldorf-astoria',
+    trump: 'lv-condo-trump',
+    turnberryPlace: 'lv-condo-turnberry-place',
+    turnberryTowers: 'lv-condo-turnberry-towers',
+    vdara: 'lv-condo-vdara',
+    veerTowers: 'lv-condo-veer-towers',
+  },
 } as const
 
 // ============================================================================
@@ -215,4 +246,14 @@ export function getGalleryImage(image: keyof typeof SITE_IMAGES.gallery, variant
  */
 export function getHomeImage(image: keyof typeof SITE_IMAGES.homes, variant: ImageVariant = 'card'): string {
   return cfImage(SITE_IMAGES.homes[image], variant)
+}
+
+/**
+ * Get Las Vegas high-rise condo tower image URL (Cloudflare Images).
+ */
+export function getCondoImage(
+  tower: keyof typeof SITE_IMAGES.condos,
+  variant: ImageVariant = 'card',
+): string {
+  return cfImage(SITE_IMAGES.condos[tower], variant)
 }
