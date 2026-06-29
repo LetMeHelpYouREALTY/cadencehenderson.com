@@ -239,7 +239,10 @@ async function uploadFromFile(item, filePath, accountId, token) {
 }
 
 async function main() {
-  const token = process.env.CLOUDFLARE_API_TOKEN
+  const token =
+    process.env.CLOUDFLARE_API_TOKEN ||
+    process.env.CF_API_TOKEN ||
+    process.env.CLOUDFLARE_IMAGES_API_TOKEN
   const accountId = process.env.CLOUDFLARE_ACCOUNT_ID || DEFAULT_ACCOUNT_ID
   const results = []
 
