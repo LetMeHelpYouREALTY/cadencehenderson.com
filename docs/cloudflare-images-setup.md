@@ -43,6 +43,10 @@ Photos will appear once the IDs in code match the dashboard.
 
 ### Upload to Cloudflare Images
 
+**Option A — automatic on Vercel deploy** (recommended): `vercel.json` runs the upload script before `npm run build` when `CLOUDFLARE_API_TOKEN` is set in Vercel project env. Re-deploy production after adding the token.
+
+**Option B — manual CLI**:
+
 1. Create an API token with **Account → Cloudflare Images → Edit**.
 2. Run:
 
@@ -51,6 +55,15 @@ export CLOUDFLARE_API_TOKEN="your_token"
 export CLOUDFLARE_ACCOUNT_ID="2cc579c1ec9e426ed585e933ebf4753b"  # optional; this is the default
 npm run cloudflare:condo-images
 ```
+
+**Option C — admin API** (uses Vercel env at runtime):
+
+```bash
+curl -X POST https://www.cadencehenderson.com/api/admin/upload-condo-images \
+  -H "Authorization: Bearer $CRON_SECRET"
+```
+
+Set `CRON_SECRET` in Vercel if using Option C.
 
 3. Verify a sample URL loads, e.g.  
    https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/lv-condo-panorama-towers/public

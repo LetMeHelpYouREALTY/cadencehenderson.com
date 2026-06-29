@@ -10,7 +10,8 @@
  * Usage:
  *   node scripts/clone-condo-images-to-cloudflare.mjs
  *   node scripts/clone-condo-images-to-cloudflare.mjs --download-only
- *   node scripts/clone-condo-images-to-cloudflare.mjs --dry-run
+ *   node scripts/clone-condo-images-to-cloudflare.mjs --skip-existing
+ *   node scripts/clone-condo-images-to-cloudflare.mjs --allow-missing-token
  */
 
 import { mkdir, writeFile, readFile } from 'node:fs/promises'
@@ -149,9 +150,20 @@ export const CONDO_IMAGE_SOURCES = [
 const args = new Set(process.argv.slice(2))
 const downloadOnly = args.has('--download-only')
 const dryRun = args.has('--dry-run')
+const skipExisting = args.has('--skip-existing')
+const allowMissingToken = args.has('--allow-missing-token')
 
 function deliveryUrl(imageId, variant = 'public') {
   return `https://imagedelivery.net/${ACCOUNT_HASH}/${imageId}/${variant}`
+}
+
+async function imageExistsOnCloudflare(imageId) {
+  try {
+    const response = await fetch(deliveryUrl(imageId), { method: 'HEAD' })
+    return response.ok
+  } catch {
+    return false
+  }
 }
 
 async function downloadImage(item) {
@@ -249,6 +261,50 @@ async function main() {
       continue
     }
 
+    if (skipExisting && (await imageExistsOnCloudflare(item.id))) {
+      console.log(`Skipped (already on Cloudflare): ${item.name}`)
+      results.push({
+        id: item.id,
+        name: item.name,
+        sourceUrl: item.url,
+        cloudflareId: item.id,
+        deliveryUrl: deliveryUrl(item.id),
+        status: 'skipped-existing',
+      })
+      continue
+    }
+
+    if (!token && downloadOnly) {
+      const filePath = await downloadImage(item)
+      console.log(`Downloaded: ${item.name} → ${filePath}`)
+      results.push({
+        id: item.id,
+        name: item.name,
+        sourceUrl: item.url,
+        localPath: filePath,
+        status: 'downloaded',
+      })
+      continue
+    }
+
+    if (!token) {
+      if (allowMissingToken) {
+        console.log(`Skipping upload (no CLOUDFLARE_API_TOKEN): ${item.name}`)
+        results.push({
+          id: item.id,
+          name: item.name,
+          sourceUrl: item.url,
+          cloudflareId: item.id,
+          deliveryUrl: deliveryUrl(item.id),
+          status: 'skipped-no-token',
+        })
+        continue
+      }
+      console.error('\nCLOUDFLARE_API_TOKEN is not set.')
+      process.exitCode = 1
+      break
+    }
+
     const filePath = await downloadImage(item)
     console.log(`Downloaded: ${item.name} → ${filePath}`)
 
@@ -263,23 +319,25 @@ async function main() {
       continue
     }
 
-    if (!token) {
-      console.error('\nCLOUDFLARE_API_TOKEN is not set. Images downloaded only.')
-      console.error('Re-run without --download-only after setting the token.')
-      results.push({
-        id: item.id,
-        name: item.name,
-        sourceUrl: item.url,
-        localPath: filePath,
-        status: 'download-only-missing-token',
-      })
-      continue
-    }
-
     let uploaded
     try {
       uploaded = await uploadFromUrl(item, accountId, token)
     } catch (urlError) {
+      const duplicate =
+        urlError instanceof Error &&
+        /already exists|Resource already exists|duplicate/i.test(urlError.message)
+      if (duplicate) {
+        console.log(`Already exists on Cloudflare: ${item.name}`)
+        results.push({
+          id: item.id,
+          name: item.name,
+          sourceUrl: item.url,
+          cloudflareId: item.id,
+          deliveryUrl: deliveryUrl(item.id),
+          status: 'skipped-existing',
+        })
+        continue
+      }
       console.warn(`URL upload failed for ${item.id}, trying file upload…`)
       uploaded = await uploadFromFile(item, filePath, accountId, token)
     }
@@ -306,10 +364,15 @@ async function main() {
   console.log(`\nManifest written: ${MANIFEST_PATH}`)
 
   const uploadedCount = results.filter((r) => r.status === 'uploaded').length
-  if (!token && !downloadOnly && !dryRun) {
+  const skippedCount = results.filter((r) =>
+    ['skipped-existing', 'skipped-no-token'].includes(r.status),
+  ).length
+  if (!token && !downloadOnly && !dryRun && !allowMissingToken) {
     process.exitCode = 1
   } else {
-    console.log(`Done. Uploaded: ${uploadedCount}/${CONDO_IMAGE_SOURCES.length}`)
+    console.log(
+      `Done. Uploaded: ${uploadedCount}/${CONDO_IMAGE_SOURCES.length}, skipped: ${skippedCount}`,
+    )
   }
 }
 

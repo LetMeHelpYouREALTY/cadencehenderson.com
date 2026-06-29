@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm build",
-  "installCommand": "pnpm install"
+  "buildCommand": "node scripts/clone-condo-images-to-cloudflare.mjs --skip-existing --allow-missing-token && npm run build",
+  "installCommand": "npm install"
 }
 
