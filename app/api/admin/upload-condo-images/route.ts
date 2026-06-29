@@ -86,7 +86,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const token = process.env.CLOUDFLARE_API_TOKEN
+  const token =
+    process.env.CLOUDFLARE_API_TOKEN ||
+    process.env.CF_API_TOKEN ||
+    process.env.CLOUDFLARE_IMAGES_API_TOKEN
   if (!token) {
     return NextResponse.json(
       { error: 'CLOUDFLARE_API_TOKEN is not configured in Vercel' },
