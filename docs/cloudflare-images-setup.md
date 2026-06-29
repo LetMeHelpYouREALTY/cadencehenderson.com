@@ -43,7 +43,20 @@ Photos will appear once the IDs in code match the dashboard.
 
 ### Upload to Cloudflare Images
 
-**Option A — automatic on Vercel deploy** (recommended): `vercel.json` runs the upload script before `npm run build` when `CLOUDFLARE_API_TOKEN` is set in Vercel project env. Re-deploy production after adding the token.
+**Option A — automatic on Vercel deploy** (recommended): `vercel.json` runs the upload script before `npm run build` when `CLOUDFLARE_API_TOKEN` is set in Vercel project env.
+
+#### After adding the token in Vercel
+
+1. **Vercel → Project `cadencehenderson.com` → Settings → Environment Variables**
+   - Variable name: `CLOUDFLARE_API_TOKEN` (also accepts `CF_API_TOKEN` or `CLOUDFLARE_IMAGES_API_TOKEN`)
+   - Permission: Cloudflare **Account → Cloudflare Images → Edit**
+   - Scope: **Production** (and Preview if you want preview uploads)
+2. **Redeploy production** — pushes to `main` may not auto-deploy; use **Deployments → … → Redeploy** on the latest `main` commit, or run `vercel --prod` locally.
+3. **Check build logs** for `CLOUDFLARE_API_TOKEN: set — condo image upload enabled` and lines like `Uploaded: Panorama Towers → https://imagedelivery.net/...`
+4. **Verify** a sample URL returns 200, e.g.  
+   https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/lv-condo-panorama-towers/public
+
+If build logs show `not set`, the env var name or Production scope is wrong.
 
 **Option B — manual CLI**:
 

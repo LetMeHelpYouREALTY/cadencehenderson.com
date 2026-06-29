@@ -249,6 +249,11 @@ async function main() {
   console.log(`Source: ${SOURCE_PAGE}`)
   console.log(`Images: ${CONDO_IMAGE_SOURCES.length}`)
   console.log(`Cloudflare account: ${accountId}`)
+  console.log(
+    token
+      ? 'CLOUDFLARE_API_TOKEN: set — condo image upload enabled'
+      : 'CLOUDFLARE_API_TOKEN: not set — uploads skipped (download/manifest only)',
+  )
 
   for (const item of CONDO_IMAGE_SOURCES) {
     if (dryRun) {
