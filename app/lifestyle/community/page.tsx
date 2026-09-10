@@ -9,6 +9,7 @@ import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Users, Heart, Calendar, MessageSquare, Award, Smile } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -117,6 +118,12 @@ export default function CommunityPage() {
       </PageHero>
 
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.community, 'hero')}
+        alt="Community clubs in Cadence Henderson NV 89011"
+      />
+
 
       {/* Why Cadence Community */}
       <section className="py-16">

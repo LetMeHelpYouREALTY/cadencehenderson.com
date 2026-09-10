@@ -1,28 +1,43 @@
 'use client'
 
-import Image from 'next/image'
-import { useState } from 'react'
-import { gitFallbackFromSrc, PLACEHOLDER_IMAGE } from '@/lib/cloudflare-images'
+import { SiteImage } from '@/components/cadence/site-image'
 
 type CloudflareImageProps = {
   src: string
   alt: string
-} & Omit<React.ComponentProps<typeof Image>, 'src' | 'alt'>
+  className?: string
+  fill?: boolean
+  width?: number
+  height?: number
+  priority?: boolean
+  sizes?: string
+  loading?: 'lazy' | 'eager'
+}
 
 /**
- * Next/Image wrapper: Cloudflare Images first, git public/images fallback, then SVG placeholder.
+ * Cloudflare Images primary, git public/images fallback.
+ * Native img (not next/image optimizer) so a Cloudflare 404 actually swaps to git.
  */
-export function CloudflareImage({ src, alt, ...props }: CloudflareImageProps) {
-  const [failed, setFailed] = useState(false)
-  const fallback = gitFallbackFromSrc(src)
-  const resolved = failed ? fallback : src
+export function CloudflareImage({
+  src,
+  alt,
+  fill,
+  className,
+  width,
+  height,
+  priority,
+  loading,
+}: CloudflareImageProps) {
   return (
-    <Image
-      src={resolved || PLACEHOLDER_IMAGE}
+    <SiteImage
+      src={src}
       alt={alt}
-      unoptimized={failed || resolved.startsWith('/')}
-      onError={() => setFailed(true)}
-      {...props}
+      fill={fill}
+      className={className}
+      width={width}
+      height={height}
+      priority={priority}
+      loading={loading}
     />
   )
 }

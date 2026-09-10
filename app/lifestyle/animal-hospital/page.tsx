@@ -9,6 +9,7 @@ import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Heart, Phone, Clock, MapPin, Stethoscope, Syringe } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const services = [
   {
@@ -76,6 +77,12 @@ export default function AnimalHospitalPage() {
       </PageHero>
 
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.animalHospital, 'hero')}
+        alt="Veterinary clinic near Cadence Henderson NV 89011"
+      />
+
 
       {/* About Section */}
       <section className="py-16">

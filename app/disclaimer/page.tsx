@@ -7,6 +7,7 @@ import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -34,6 +35,11 @@ export default function DisclaimerPage() {
         imageSrc={cfImage(SITE_IMAGES.hero.disclaimer, 'hero')}
         imageAlt="Legal disclaimer for Cadence Henderson Homes by Dr. Jan Duffy"
         icon={Scale}
+      />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.hero.disclaimer, 'card')}
+        alt="Cadence Henderson Homes website disclaimer"
       />
 
       <section className="py-16">

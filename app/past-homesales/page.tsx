@@ -11,6 +11,7 @@ import { RealScoutYourListings } from '@/components/idx/realscout-your-listings'
 import { Button } from '@/components/ui/button'
 import { Calendar, Home, Phone, Mail } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 export const metadata = {
   title: 'Past Home Sales | Cadence Henderson 89011',
@@ -63,6 +64,12 @@ export default function PastHomesalesPage() {
       </PageHero>
 
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.pastHomesales, 'hero')}
+        alt="Closed new homes in Cadence Henderson NV 89011"
+      />
+
 
       {/* Advanced Search + Your Listings Widget */}
       <section className="w-full py-12 bg-white">

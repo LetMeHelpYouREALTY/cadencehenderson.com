@@ -7,6 +7,7 @@ import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import {
   CADENCE_BUILDER_HUBS,
   CADENCE_VILLAGES,
@@ -42,6 +43,12 @@ export default function CommunitiesIndexPage() {
         icon={Landmark}
       />
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.homeSearch, 'hero')}
+        alt="Cadence Henderson NV 89011 villages and builders"
+      />
+
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2">

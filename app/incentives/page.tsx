@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
 
@@ -70,6 +71,12 @@ export default function IncentivesPage() {
       </PageHero>
 
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.incentives, 'hero')}
+        alt="New construction incentives in Cadence Henderson NV 89011"
+      />
+
 
       <section className="py-16">
         <div className="container mx-auto px-4">

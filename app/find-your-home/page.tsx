@@ -10,6 +10,7 @@ import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listi
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
 
@@ -74,6 +75,12 @@ export default function FindYourHomePage() {
       </PageHero>
 
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.homeSearch, 'hero')}
+        alt="Search new homes in Cadence Henderson NV 89011"
+      />
+
       <HomeSearchSection />
 
       <section className="py-16">

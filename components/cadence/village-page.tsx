@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Home } from 'lucide-react'
 import { PageHero } from '@/components/cadence/page-hero'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -94,6 +95,11 @@ export function VillagePageView({ village }: VillagePageViewProps) {
       </PageHero>
 
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.homes.livingRoom, 'hero')}
+        alt={`${village.name} new home interiors in Cadence Henderson NV 89011`}
+      />
 
       {displayPlans.length > 0 ? (
         <section className="py-16">

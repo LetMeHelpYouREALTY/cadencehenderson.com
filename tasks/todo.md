@@ -1,25 +1,20 @@
 # Task plan
 
-Optimize every section on every public page for SEO, GEO (local NAP/GBP), and AEO (answer-first copy + FAQ/WebPage schema).
+Audit missing section images; keep Cloudflare Images as primary delivery and git `public/images/` as backup.
 
 ## Current plan
 
-- [x] Shared section/FAQ/@graph schema primitives; layout schema cleanup
-- [x] Apply to shared surfaces (hero, CTA, homepage, village template)
-- [x] Apply to remaining public pages; Fair Housing copy fixes
-- [x] Verify routes, commit, push, open PR
+- [x] Restore Cloudflare-first `SiteImage` / `CloudflareImage` (CF → git → placeholder)
+- [x] Generate unique git files for aliased CF IDs, hash duplicates, and missing sections
+- [x] Register unique IDs, host builder logos in git, wire section photos
+- [x] Typecheck, verify in browser, commit, push, open PR
 
 ## Review
 
-**Done looks like:** every public page has a WebPage + speakable `@graph` (or homepage equivalent), visible NAP from `CONTACT_INFO`, localized H2s where sections were generic, and FAQ JSON-LD only where it matches on-page Q&A. Fair Housing proxies (school ratings, “family-friendly,” “safe neighborhood”) are removed from page copy.
+**Done looks like:** Cloudflare URLs are in the HTML; git files exist as backup; unique catalog IDs match unique files; homepage Key Facts / Market Snapshot / Services / FAQ photos paint; inner pages have a body photo.
 
-**What shipped**
+**Check:** `npx tsc --noEmit` passed. Local Next on :3011 returned 200. Computer-use confirmed photos on `/`, `/contact`, and `/new-homes`. Cloudflare IDs still 404 until production sync with `CLOUDFLARE_API_TOKEN`; native `onError` swaps to git so sections are not blank.
 
-- Shared primitives: `lib/page-aeo.ts`, `PageGraphSchema`, `PageAeo`, `PageFaq`, `SeoSection`.
-- Layout no longer emits a sitewide FAQPage. `LocalBusiness` / RealEstateAgent stays in root layout with `@id` `#realestateagent`.
-- `PageHero` geo kicker + `.aeo-lead`; `AgentContactCta` NAP + Call / Directions / Reviews.
-- Remaining public routes wired with `PageAeo` (FAQ) or graph-only when the page already publishes FAQPage (new-homes, lifestyle, amenities, rentals, contact, maps, `/faqs`).
-- Village pages keep village-specific FAQs. Duplicate `BreadcrumbSchema` removed where `PageAeo` already emits BreadcrumbList.
-- Schools page names CCSD campuses and commute; no star ratings. Fake 555 HOA/vet numbers are not live `tel:` links.
+## Review
 
-**Check:** `npx tsc --noEmit` passed. Browser MCP was not available; follow-up curl/dev verification after push.
+**Done looks like:** every public page section either paints a Cloudflare URL or falls back to a real git JPEG; unique catalog IDs map to unique files so `npm run cloudflare:images:upload` can populate Cloudflare; no cadencenv.com hotlinks for logos.
