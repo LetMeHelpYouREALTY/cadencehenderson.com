@@ -19,6 +19,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 export default function ResidentsPage() {
   return (
@@ -41,6 +42,11 @@ export default function ResidentsPage() {
           </Button>
         </a>
       </PageHero>
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.residents, 'hero')}
+        alt="Cadence Henderson NV 89011 resident resources"
+      />
 
       <RealScoutOfficeListings />
 

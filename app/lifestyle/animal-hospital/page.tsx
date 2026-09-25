@@ -6,6 +6,7 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Heart, Phone, Clock, MapPin, Stethoscope, Syringe } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const services = [
   {
@@ -71,6 +72,11 @@ export default function AnimalHospitalPage() {
           Schedule Appointment
         </Button>
       </PageHero>
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.animalHospital, 'hero')}
+        alt="Veterinary care near Cadence Henderson NV 89011"
+      />
 
       <RealScoutOfficeListings />
 

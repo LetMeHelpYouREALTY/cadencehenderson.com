@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { GraduationCap, Award, Users, BookOpen, Bus } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const schools = [
   {
@@ -112,6 +113,11 @@ export default function SchoolsPage() {
           View School District Map
         </Button>
       </PageHero>
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.schools, 'hero')}
+        alt="Cadence Elementary campus serving Cadence Henderson NV 89011"
+      />
 
       <RealScoutOfficeListings />
 

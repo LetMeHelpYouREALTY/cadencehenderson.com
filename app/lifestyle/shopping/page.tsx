@@ -7,6 +7,7 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { ShoppingBag, Coffee, Utensils, Film, Heart } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const shoppingCenters = [
   {
@@ -118,6 +119,11 @@ export default function ShoppingPage() {
         imageSrc={cfImage(SITE_IMAGES.hero.shopping, 'hero')}
         imageAlt="Shopping and entertainment near Cadence Henderson NV 89011"
         icon={ShoppingBag}
+      />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.hero.entertainment, 'hero')}
+        alt="Dining and entertainment near Cadence Henderson NV 89011"
       />
 
       <RealScoutOfficeListings />

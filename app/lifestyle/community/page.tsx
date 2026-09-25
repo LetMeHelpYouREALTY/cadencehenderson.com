@@ -7,6 +7,7 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Users, Heart, Calendar, MessageSquare, Award, Smile } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -113,6 +114,11 @@ export default function CommunityPage() {
           </Button>
         </a>
       </PageHero>
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.community, 'hero')}
+        alt="Community amenities in Cadence Henderson NV 89011"
+      />
 
       <RealScoutOfficeListings />
 

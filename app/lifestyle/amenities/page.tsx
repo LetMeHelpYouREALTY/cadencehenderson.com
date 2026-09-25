@@ -19,6 +19,7 @@ import {
 } from 'lucide-react'
 import { cfImage, SITE_IMAGES, getAmenityImage } from '@/lib/cloudflare-images'
 import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const amenities = [
   {
@@ -169,6 +170,11 @@ export default function AmenitiesPage() {
           </Button>
         </CalendlyLink>
       </PageHero>
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.amenities, 'hero')}
+        alt="Resort-style pool amenities at Cadence Henderson NV 89011"
+      />
 
       <RealScoutOfficeListings />
 

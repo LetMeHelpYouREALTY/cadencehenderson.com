@@ -58,7 +58,7 @@ export function ServicesSection() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="relative h-[200px] sm:h-[240px] rounded-xl overflow-hidden mb-12 bg-gray-200">
           <CloudflareImage
-            src={cfImage(SITE_IMAGES.gallery.newHome, 'hero')}
+            src={cfImage(SITE_IMAGES.sections.services, 'hero')}
             alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
             fill
             sizes="100vw"

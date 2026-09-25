@@ -16,8 +16,8 @@ export function KeyFactsSection() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="relative h-[140px] sm:h-[160px] rounded-lg overflow-hidden mb-6 max-w-4xl mx-auto bg-gray-200">
           <CloudflareImage
-            src={cfImage(SITE_IMAGES.gallery.parkVista, 'card')}
-            alt="Cadence Henderson NV 89011 community and homes"
+            src={cfImage(SITE_IMAGES.location.welcomeCenter, 'card')}
+            alt="Cadence Henderson NV 89011 welcome center"
             fill
             sizes="(max-width: 896px) 100vw, 896px"
             className="object-cover"

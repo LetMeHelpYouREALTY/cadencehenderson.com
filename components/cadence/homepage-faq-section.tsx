@@ -1,4 +1,6 @@
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { SectionPhoto } from '@/components/cadence/section-photo'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const FAQ_ITEMS = [
   {
@@ -37,6 +39,11 @@ export function HomepageFAQSection() {
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
+          <SectionPhoto
+            src={cfImage(SITE_IMAGES.sections.homepageFaq, 'hero')}
+            alt="Frequently asked questions about new homes in Cadence Henderson NV 89011"
+            className="mb-10 rounded-lg"
+          />
           <h2 id="homepage-faq-heading" className="text-4xl font-bold text-gray-900 mb-10 text-center">
             Frequently Asked Questions — New Homes in Cadence Henderson NV
           </h2>

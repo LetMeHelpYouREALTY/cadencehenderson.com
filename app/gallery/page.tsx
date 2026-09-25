@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button'
 import { Image as ImageIcon, X, Calendar, Phone, Mail } from 'lucide-react'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { getGalleryImage, cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const galleryCategories = [
   'All',
@@ -109,6 +110,11 @@ export default function GalleryPage() {
         imageSrc={cfImage(SITE_IMAGES.hero.gallery, 'hero')}
         imageAlt="Photo gallery of Cadence Henderson NV 89011"
         icon={ImageIcon}
+      />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.gallery, 'hero')}
+        alt="Community photography of Cadence Henderson NV 89011"
       />
 
       <RealScoutOfficeListings />

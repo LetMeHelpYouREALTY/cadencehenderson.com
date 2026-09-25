@@ -13,6 +13,7 @@ import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Newspaper, Calendar, Image as ImageIcon, Phone, Mail } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { fetchNews, type NewsArticle } from '@/lib/fetch-news'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const FALLBACK_ARTICLES: NewsArticle[] = [
   {
@@ -53,7 +54,7 @@ const FALLBACK_ARTICLES: NewsArticle[] = [
     category: 'Education',
     excerpt:
       'Clark County School District announces that schools serving Cadence residents have achieved outstanding academic ratings for the 2024-2025 school year.',
-    image: cfImage(SITE_IMAGES.hero.schools, 'card'),
+    image: cfImage(SITE_IMAGES.schools.elementary, 'card'),
   },
   {
     id: 4,
@@ -94,6 +95,11 @@ export default async function NewsPage() {
         subtitle="Stay up to date with the latest news, events, and announcements from the Cadence community. From new home openings to community celebrations, there's always something happening here."
         imageSrc={cfImage(SITE_IMAGES.hero.news, 'hero')}
         imageAlt="Cadence Henderson community news in Henderson NV 89011"
+      />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.news, 'hero')}
+        alt="Community updates from Cadence Henderson NV 89011"
       />
 
       <RealScoutOfficeListings />
@@ -140,7 +146,7 @@ export default async function NewsPage() {
                       />
                     ) : (
                       <SiteImage
-                        src={cfImage(SITE_IMAGES.hero.news, 'card')}
+                        src={cfImage(SITE_IMAGES.sections.news, 'card')}
                         alt={`${article.title} - Cadence Henderson NV 89011`}
                         fill
                       />

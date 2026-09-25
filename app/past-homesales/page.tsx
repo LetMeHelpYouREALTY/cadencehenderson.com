@@ -9,6 +9,7 @@ import { RealScoutYourListings } from '@/components/idx/realscout-your-listings'
 import { Button } from '@/components/ui/button'
 import { Calendar, Home, Phone, Mail } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 export const metadata = {
   title: 'Past Home Sales | Cadence Henderson 89011',
@@ -23,7 +24,7 @@ export default function PastHomesalesPage() {
 
       <PageHero
         title="Dr. Jan Duffy Past Home Sales"
-        subtitle="Browse my sales history—sold homes, properties in contract, and current listings. See the results that have helped families find their perfect home in Henderson and Cadence."
+        subtitle="Browse sold homes, properties in contract, and current listings in Henderson and Cadence. Square footage, sale dates, and asking prices change — confirm current numbers with Dr. Jan Duffy."
         imageSrc={cfImage(SITE_IMAGES.hero.pastHomesales, 'hero')}
         imageAlt="Past home sales by Dr. Jan Duffy at Cadence Henderson NV 89011"
       >
@@ -59,6 +60,11 @@ export default function PastHomesalesPage() {
           </a>
         </div>
       </PageHero>
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.pastHomesales, 'hero')}
+        alt="Past home sales in Cadence Henderson NV 89011"
+      />
 
       <RealScoutOfficeListings />
 

@@ -49,17 +49,41 @@ export const SITE_IMAGES = {
     pastHomesales: img('cadence-hero-past-homesales', '/images/hero/past-homesales.jpg'),
     animalHospital: img('cadence-hero-animal-hospital', '/images/hero/animal-hospital.jpg'),
     community: img('cadence-hero-community', '/images/hero/community.jpg'),
+    beazerHomes: img('cadence-hero-beazer-homes', '/images/hero/beazer-homes.jpg'),
+    centuryCommunities: img('cadence-hero-century-communities', '/images/hero/century-communities.jpg'),
+    drHorton: img('cadence-hero-dr-horton', '/images/hero/dr-horton.jpg'),
+    lennar: img('cadence-hero-lennar', '/images/hero/lennar.jpg'),
+    richmondAmerican: img('cadence-hero-richmond-american', '/images/hero/richmond-american.jpg'),
+    storybookHomes: img('cadence-hero-storybook-homes', '/images/hero/storybook-homes.jpg'),
+    taylorMorrison: img('cadence-hero-taylor-morrison', '/images/hero/taylor-morrison.jpg'),
+    woodsideHomes: img('cadence-hero-woodside-homes', '/images/hero/woodside-homes.jpg'),
+    rentalAmericanHomes: img('cadence-hero-american-homes', '/images/hero/american-homes.jpg'),
+    rentalElement12: img('cadence-hero-element-12', '/images/hero/element-12.jpg'),
+    rentalAdler: img('cadence-hero-adler', '/images/hero/adler.jpg'),
+    findYourHome: img('cadence-hero-find-your-home', '/images/hero/find-your-home.jpg'),
+    incentives: img('cadence-hero-incentives', '/images/hero/incentives.jpg'),
+    pocketParks: img('cadence-hero-pocket-parks', '/images/hero/pocket-parks.jpg'),
+    restaurants: img('cadence-hero-restaurants', '/images/hero/restaurants.jpg'),
+    entertainment: img('cadence-hero-entertainment', '/images/hero/entertainment.jpg'),
+    activities: img('cadence-hero-activities', '/images/hero/activities.jpg'),
+    lifeAtCadence: img('cadence-hero-life-at-cadence', '/images/hero/life-at-cadence.jpg'),
+    realtorToolkit: img('cadence-hero-realtor-toolkit', '/images/hero/realtor-toolkit.jpg'),
+    disclaimer: img('cadence-hero-disclaimer', '/images/hero/disclaimer.jpg'),
+    apartments: img('cadence-hero-apartments', '/images/hero/apartments.jpg'),
+    ascend: img('cadence-hero-ascend', '/images/hero/ascend.jpg'),
+    avela: img('cadence-hero-avela', '/images/hero/avela.jpg'),
+    elysian: img('cadence-hero-elysian', '/images/hero/elysian.jpg'),
   },
 
   builders: {
-    beazer: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
-    century: img('cadence-homes-exterior-2', '/images/homes/exterior-2.jpg'),
-    drHorton: img('cadence-homes-exterior-3', '/images/homes/exterior-3.jpg'),
-    lennar: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
-    richmond: img('cadence-homes-exterior-2', '/images/homes/exterior-2.jpg'),
-    storybook: img('cadence-homes-exterior-3', '/images/homes/exterior-3.jpg'),
-    taylorMorrison: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
-    woodside: img('cadence-homes-exterior-2', '/images/homes/exterior-2.jpg'),
+    beazer: img('cadence-builders-beazer', '/images/builders/beazer.jpg'),
+    century: img('cadence-builders-century', '/images/builders/century.jpg'),
+    drHorton: img('cadence-builders-dr-horton', '/images/builders/dr-horton.jpg'),
+    lennar: img('cadence-builders-lennar', '/images/builders/lennar.jpg'),
+    richmond: img('cadence-builders-richmond', '/images/builders/richmond.jpg'),
+    storybook: img('cadence-builders-storybook', '/images/builders/storybook.jpg'),
+    taylorMorrison: img('cadence-builders-taylor-morrison', '/images/builders/taylor-morrison.jpg'),
+    woodside: img('cadence-builders-woodside', '/images/builders/woodside.jpg'),
   },
 
   amenities: {
@@ -103,18 +127,18 @@ export const SITE_IMAGES = {
   },
 
   gallery: {
-    parkVista: img('cadence-amenities-central-park', '/images/amenities/central-park.jpg'),
-    newHome: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
-    resortPool: img('cadence-amenities-pool', '/images/amenities/pool.jpg'),
-    concert: img('cadence-lifestyle-concert', '/images/lifestyle/concert.jpg'),
-    communityGathering: img('cadence-lifestyle-community', '/images/lifestyle/community.jpg'),
-    playground: img('cadence-amenities-playground', '/images/amenities/playground.jpg'),
-    fitnessCenter: img('cadence-amenities-fitness', '/images/amenities/fitness.jpg'),
-    modernExterior: img('cadence-homes-exterior-2', '/images/homes/exterior-2.jpg'),
-    walkingTrails: img('cadence-amenities-trails', '/images/amenities/trails.jpg'),
-    communityEvent: img('cadence-lifestyle-events', '/images/lifestyle/events.jpg'),
-    luxuryInterior: img('cadence-homes-living-room', '/images/homes/living-room.jpg'),
-    dogPark: img('cadence-amenities-dog-park', '/images/amenities/dog-park.jpg'),
+    parkVista: img('cadence-gallery-park-vista', '/images/gallery/park-vista.jpg'),
+    newHome: img('cadence-gallery-new-home', '/images/gallery/new-home.jpg'),
+    resortPool: img('cadence-gallery-resort-pool', '/images/gallery/resort-pool.jpg'),
+    concert: img('cadence-gallery-concert', '/images/gallery/concert.jpg'),
+    communityGathering: img('cadence-gallery-community-gathering', '/images/gallery/community-gathering.jpg'),
+    playground: img('cadence-gallery-playground', '/images/gallery/playground.jpg'),
+    fitnessCenter: img('cadence-gallery-fitness-center', '/images/gallery/fitness-center.jpg'),
+    modernExterior: img('cadence-gallery-modern-exterior', '/images/gallery/modern-exterior.jpg'),
+    walkingTrails: img('cadence-gallery-walking-trails', '/images/gallery/walking-trails.jpg'),
+    communityEvent: img('cadence-gallery-community-event', '/images/gallery/community-event.jpg'),
+    luxuryInterior: img('cadence-gallery-luxury-interior', '/images/gallery/luxury-interior.jpg'),
+    dogPark: img('cadence-gallery-dog-park', '/images/gallery/dog-park.jpg'),
   },
 
   location: {
@@ -126,13 +150,53 @@ export const SITE_IMAGES = {
   agent: {
     headshot: img('cadence-agent-headshot', '/images/agent/headshot.png'),
     logo: img('cadence-og-share', '/images/og/share.jpg'),
-    bhhs: img('cadence-hero-realtors', '/images/hero/realtors.jpg'),
+    bhhs: img('cadence-agent-bhhs', '/images/agent/bhhs.jpg'),
   },
 
   icons: {
-    amenitiesBox: img('cadence-amenities-pool', '/images/amenities/pool.jpg'),
-    lifestyleBox: img('cadence-lifestyle-community', '/images/lifestyle/community.jpg'),
-    homesBox: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
+    amenitiesBox: img('cadence-icons-amenities-box', '/images/icons/amenities-box.jpg'),
+    lifestyleBox: img('cadence-icons-lifestyle-box', '/images/icons/lifestyle-box.jpg'),
+    homesBox: img('cadence-icons-homes-box', '/images/icons/homes-box.jpg'),
+    newsBox: img('cadence-icons-news-box', '/images/icons/news-box.png'),
+  },
+
+  /** Unique photos for content sections that previously had no git-backed CF ID. */
+  sections: {
+    marketSnapshot: img('cadence-sections-market-snapshot', '/images/sections/market-snapshot.jpg'),
+    homeSearch: img('cadence-sections-home-search', '/images/sections/home-search.jpg'),
+    contact: img('cadence-sections-contact', '/images/sections/contact.jpg'),
+    faqs: img('cadence-sections-faqs', '/images/sections/faqs.jpg'),
+    animalHospital: img('cadence-sections-animal-hospital', '/images/sections/animal-hospital.jpg'),
+    community: img('cadence-sections-community', '/images/sections/community.jpg'),
+    pastHomesales: img('cadence-sections-past-homesales', '/images/sections/past-homesales.jpg'),
+    maps: img('cadence-sections-maps', '/images/sections/maps.jpg'),
+    residents: img('cadence-sections-residents', '/images/sections/residents.jpg'),
+    incentives: img('cadence-sections-incentives', '/images/sections/incentives.jpg'),
+    realtors: img('cadence-sections-realtors', '/images/sections/realtors.jpg'),
+    schedule: img('cadence-sections-schedule', '/images/sections/schedule.jpg'),
+    disclaimer: img('cadence-sections-disclaimer', '/images/sections/disclaimer.jpg'),
+    communities: img('cadence-sections-communities', '/images/sections/communities.jpg'),
+    elysian: img('cadence-sections-elysian', '/images/sections/elysian.jpg'),
+    ascend: img('cadence-sections-ascend', '/images/sections/ascend.jpg'),
+    avela: img('cadence-sections-avela', '/images/sections/avela.jpg'),
+    services: img('cadence-sections-services', '/images/sections/services.jpg'),
+    homepageFaq: img('cadence-sections-homepage-faq', '/images/sections/homepage-faq.jpg'),
+    news: img('cadence-sections-news', '/images/sections/news.jpg'),
+    schools: img('cadence-sections-schools', '/images/sections/schools.jpg'),
+    gallery: img('cadence-sections-gallery', '/images/sections/gallery.jpg'),
+    amenities: img('cadence-sections-amenities', '/images/sections/amenities.jpg'),
+  },
+
+  logos: {
+    americanHomes: img('cadence-logos-american-homes', '/images/logos/american-homes.jpg'),
+    beazer: img('cadence-logos-beazer', '/images/logos/beazer.jpg'),
+    century: img('cadence-logos-century', '/images/logos/century.jpg'),
+    drHorton: img('cadence-logos-dr-horton', '/images/logos/dr-horton.png'),
+    lennar: img('cadence-logos-lennar', '/images/logos/lennar.png'),
+    richmond: img('cadence-logos-richmond', '/images/logos/richmond.png'),
+    storybook: img('cadence-logos-storybook', '/images/logos/storybook.png'),
+    taylorMorrison: img('cadence-logos-taylor-morrison', '/images/logos/taylor-morrison.jpg'),
+    woodside: img('cadence-logos-woodside', '/images/logos/woodside.png'),
   },
 
   schools: {
@@ -212,6 +276,83 @@ export function isCloudflareImage(url: string): boolean {
 
 export function getHeroImage(page: keyof typeof SITE_IMAGES.hero, variant: ImageVariant = 'hero'): string {
   return cfImage(SITE_IMAGES.hero[page], variant)
+}
+
+const BUILDER_HERO_KEYS: Record<string, keyof typeof SITE_IMAGES.hero> = {
+  beazer: 'beazerHomes',
+  'beazer-homes': 'beazerHomes',
+  'century-communities': 'centuryCommunities',
+  'dr-horton': 'drHorton',
+  lennar: 'lennar',
+  'richmond-american': 'richmondAmerican',
+  'richmond-american-homes': 'richmondAmerican',
+  'storybook-homes': 'storybookHomes',
+  'taylor-morrison': 'taylorMorrison',
+  taylorm: 'taylorMorrison',
+  'woodside-homes': 'woodsideHomes',
+}
+
+const BUILDER_BODY_KEYS: Record<string, keyof typeof SITE_IMAGES.builders> = {
+  beazer: 'beazer',
+  'beazer-homes': 'beazer',
+  'century-communities': 'century',
+  'dr-horton': 'drHorton',
+  lennar: 'lennar',
+  'richmond-american': 'richmond',
+  'richmond-american-homes': 'richmond',
+  'storybook-homes': 'storybook',
+  'taylor-morrison': 'taylorMorrison',
+  taylorm: 'taylorMorrison',
+  'woodside-homes': 'woodside',
+}
+
+const RENTAL_HERO_KEYS: Record<string, keyof typeof SITE_IMAGES.hero> = {
+  'american-homes': 'rentalAmericanHomes',
+  'american-homes-4-rent': 'rentalAmericanHomes',
+  'element-12': 'rentalElement12',
+  element12: 'rentalElement12',
+  adler: 'rentalAdler',
+}
+
+/** Unique luxury hero per builder route; falls back to the new-homes hero. */
+export function getBuilderHeroImage(builderSlug: string, variant: ImageVariant = 'hero'): string {
+  const key = BUILDER_HERO_KEYS[builderSlug] ?? 'newHomes'
+  return cfImage(SITE_IMAGES.hero[key], variant)
+}
+
+/** Unique luxury hero per rental community; falls back to the rentals hero. */
+export function getRentalHeroImage(communitySlug: string, variant: ImageVariant = 'hero'): string {
+  const key = RENTAL_HERO_KEYS[communitySlug] ?? 'rentals'
+  return cfImage(SITE_IMAGES.hero[key], variant)
+}
+
+/** Unique hero for a CadenceNV village or builder hub slug. */
+export function getHubHeroImage(slug: string, variant: ImageVariant = 'hero'): string {
+  if (slug === 'american-homes-4-rent' || slug === 'american-homes') {
+    return cfImage(SITE_IMAGES.hero.rentalAmericanHomes, variant)
+  }
+  if (slug === 'adler') return cfImage(SITE_IMAGES.hero.rentalAdler, variant)
+  if (slug === 'element12' || slug === 'element-12') {
+    return cfImage(SITE_IMAGES.hero.rentalElement12, variant)
+  }
+  return getBuilderHeroImage(slug, variant)
+}
+
+/**
+ * Body photo distinct from the hub hero so village and builder-hub pages
+ * do not reuse the same Cloudflare ID under the H1.
+ */
+export function getHubBodyImage(slug: string, variant: ImageVariant = 'hero'): string {
+  const builderKey = BUILDER_BODY_KEYS[slug]
+  if (builderKey) return cfImage(SITE_IMAGES.builders[builderKey], variant)
+  if (slug === 'american-homes-4-rent' || slug === 'american-homes') {
+    return cfImage(SITE_IMAGES.rentals.americanHomes, variant)
+  }
+  if (slug === 'adler') return cfImage(SITE_IMAGES.rentals.adler, variant)
+  if (slug === 'element12' || slug === 'element-12') {
+    return cfImage(SITE_IMAGES.rentals.element12, variant)
+  }
+  return cfImage(SITE_IMAGES.sections.communities, variant)
 }
 
 export function getBuilderImage(builder: keyof typeof SITE_IMAGES.builders, variant: ImageVariant = 'card'): string {
