@@ -12,8 +12,8 @@ export function LifestyleSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
             <SiteImage
-              src={cfImage(SITE_IMAGES.lifestyle.community, 'card')}
-              alt="Cadence Henderson NV 89011 lifestyle and community"
+              src={cfImage(SITE_IMAGES.lifestyle.families, 'card')}
+              alt="Community gathering spaces in Cadence Henderson NV 89011"
               fill
             />
           </div>

@@ -127,18 +127,18 @@ export const SITE_IMAGES = {
   },
 
   gallery: {
-    parkVista: img('cadence-amenities-central-park', '/images/amenities/central-park.jpg'),
-    newHome: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
-    resortPool: img('cadence-amenities-pool', '/images/amenities/pool.jpg'),
-    concert: img('cadence-lifestyle-concert', '/images/lifestyle/concert.jpg'),
-    communityGathering: img('cadence-lifestyle-community', '/images/lifestyle/community.jpg'),
-    playground: img('cadence-amenities-playground', '/images/amenities/playground.jpg'),
-    fitnessCenter: img('cadence-amenities-fitness', '/images/amenities/fitness.jpg'),
-    modernExterior: img('cadence-homes-exterior-2', '/images/homes/exterior-2.jpg'),
-    walkingTrails: img('cadence-amenities-trails', '/images/amenities/trails.jpg'),
-    communityEvent: img('cadence-lifestyle-events', '/images/lifestyle/events.jpg'),
-    luxuryInterior: img('cadence-homes-living-room', '/images/homes/living-room.jpg'),
-    dogPark: img('cadence-amenities-dog-park', '/images/amenities/dog-park.jpg'),
+    parkVista: img('cadence-gallery-park-vista', '/images/gallery/park-vista.jpg'),
+    newHome: img('cadence-gallery-new-home', '/images/gallery/new-home.jpg'),
+    resortPool: img('cadence-gallery-resort-pool', '/images/gallery/resort-pool.jpg'),
+    concert: img('cadence-gallery-concert', '/images/gallery/concert.jpg'),
+    communityGathering: img('cadence-gallery-community-gathering', '/images/gallery/community-gathering.jpg'),
+    playground: img('cadence-gallery-playground', '/images/gallery/playground.jpg'),
+    fitnessCenter: img('cadence-gallery-fitness-center', '/images/gallery/fitness-center.jpg'),
+    modernExterior: img('cadence-gallery-modern-exterior', '/images/gallery/modern-exterior.jpg'),
+    walkingTrails: img('cadence-gallery-walking-trails', '/images/gallery/walking-trails.jpg'),
+    communityEvent: img('cadence-gallery-community-event', '/images/gallery/community-event.jpg'),
+    luxuryInterior: img('cadence-gallery-luxury-interior', '/images/gallery/luxury-interior.jpg'),
+    dogPark: img('cadence-gallery-dog-park', '/images/gallery/dog-park.jpg'),
   },
 
   location: {
@@ -150,13 +150,13 @@ export const SITE_IMAGES = {
   agent: {
     headshot: img('cadence-agent-headshot', '/images/agent/headshot.png'),
     logo: img('cadence-og-share', '/images/og/share.jpg'),
-    bhhs: img('cadence-hero-realtors', '/images/hero/realtors.jpg'),
+    bhhs: img('cadence-agent-bhhs', '/images/agent/bhhs.jpg'),
   },
 
   icons: {
-    amenitiesBox: img('cadence-amenities-pool', '/images/amenities/pool.jpg'),
-    lifestyleBox: img('cadence-lifestyle-community', '/images/lifestyle/community.jpg'),
-    homesBox: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
+    amenitiesBox: img('cadence-icons-amenities-box', '/images/icons/amenities-box.jpg'),
+    lifestyleBox: img('cadence-icons-lifestyle-box', '/images/icons/lifestyle-box.jpg'),
+    homesBox: img('cadence-icons-homes-box', '/images/icons/homes-box.jpg'),
     newsBox: img('cadence-icons-news-box', '/images/icons/news-box.png'),
   },
 
@@ -179,6 +179,12 @@ export const SITE_IMAGES = {
     elysian: img('cadence-sections-elysian', '/images/sections/elysian.jpg'),
     ascend: img('cadence-sections-ascend', '/images/sections/ascend.jpg'),
     avela: img('cadence-sections-avela', '/images/sections/avela.jpg'),
+    services: img('cadence-sections-services', '/images/sections/services.jpg'),
+    homepageFaq: img('cadence-sections-homepage-faq', '/images/sections/homepage-faq.jpg'),
+    news: img('cadence-sections-news', '/images/sections/news.jpg'),
+    schools: img('cadence-sections-schools', '/images/sections/schools.jpg'),
+    gallery: img('cadence-sections-gallery', '/images/sections/gallery.jpg'),
+    amenities: img('cadence-sections-amenities', '/images/sections/amenities.jpg'),
   },
 
   logos: {

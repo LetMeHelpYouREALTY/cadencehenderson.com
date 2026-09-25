@@ -3,6 +3,7 @@ import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { BUILDER_LOGO_SRCS } from '@/lib/builder-logos'
 import { SiteImage } from '@/components/cadence/site-image'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { HowToBuySchema } from '@/components/schema/how-to-buy'
 import { RealScoutAdvancedSearch } from '@/components/idx/realscout-advanced-search'
@@ -121,6 +122,11 @@ export default function NewHomesPage() {
               </Button>
             </div>
       </PageHero>
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.hero.findYourHome, 'hero')}
+        alt="New construction homes in Cadence Henderson NV 89011"
+      />
 
       <RealScoutOfficeListings />
 

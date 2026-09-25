@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button'
 import { Building2, MapPin, DollarSign, Calendar, Phone, Mail } from 'lucide-react'
 import Link from 'next/link'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const rentalCommunities = [
   {
@@ -89,6 +90,11 @@ export default function RentalsPage() {
           </Button>
         </a>
       </PageHero>
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.hero.apartments, 'hero')}
+        alt="Apartment and rental living in Cadence Henderson NV 89011"
+      />
 
       <RealScoutOfficeListings />
 

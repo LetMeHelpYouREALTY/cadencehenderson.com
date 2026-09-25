@@ -54,7 +54,7 @@ export async function NewsSection() {
                         className="object-cover"
                       />
                     ) : (
-                      <NewsPlaceholderImage src={cfImage(SITE_IMAGES.hero.news, 'card')} />
+                      <NewsPlaceholderImage src={cfImage(SITE_IMAGES.sections.news, 'card')} />
                     )}
                   </div>
                   <div className="p-4">

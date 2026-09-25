@@ -20,7 +20,7 @@ import {
   Phone,
 } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
-import { PageBodyPhoto } from '@/components/cadence/section-photo'
+import { PageBodyPhoto, SectionPhoto } from '@/components/cadence/section-photo'
 
 export default function RealtorsPage() {
   return (
@@ -178,6 +178,11 @@ export default function RealtorsPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
+            <SectionPhoto
+              src={cfImage(SITE_IMAGES.agent.bhhs, 'hero')}
+              alt="Berkshire Hathaway HomeServices Nevada Properties office serving Cadence Henderson NV 89011"
+              className="mx-auto mb-8 max-w-4xl rounded-lg"
+            />
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Why Work with Dr. Jan Duffy?
             </h2>

@@ -40,7 +40,7 @@ export function HomepageFAQSection() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           <SectionPhoto
-            src={cfImage(SITE_IMAGES.sections.faqs, 'hero')}
+            src={cfImage(SITE_IMAGES.sections.homepageFaq, 'hero')}
             alt="Frequently asked questions about new homes in Cadence Henderson NV 89011"
             className="mb-10 rounded-lg"
           />

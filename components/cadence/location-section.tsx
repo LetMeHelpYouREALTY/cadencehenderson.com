@@ -16,8 +16,8 @@ export function LocationSection() {
           <div>
             <div className="inline-flex items-center justify-center mb-6">
               <SiteImage
-                src={cfImage(SITE_IMAGES.icons.homesBox, 'thumbnail')}
-                alt="Cadence Henderson NV 89011 location — master-planned community"
+                src={cfImage(SITE_IMAGES.location.mapOverview, 'thumbnail')}
+                alt="Map of Cadence Henderson NV 89011"
                 width={96}
                 height={100}
                 className="h-24 w-24 object-contain"

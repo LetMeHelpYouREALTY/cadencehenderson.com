@@ -12,6 +12,7 @@ import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Calendar, Clock, MapPin, Music, Users, Phone, Mail } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 export const metadata: Metadata = {
   title: 'Community Events in Cadence Henderson NV | 89011',
@@ -116,6 +117,11 @@ export default function EventsPage() {
           Download Calendar
         </Button>
       </PageHero>
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.hero.activities, 'hero')}
+        alt="Community events in Cadence Henderson NV 89011"
+      />
 
       <RealScoutOfficeListings />
 

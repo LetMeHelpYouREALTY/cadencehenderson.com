@@ -23,6 +23,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { cfImage, SITE_IMAGES, getAmenityImage } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const lifestyleFeatures = [
   {
@@ -46,15 +47,15 @@ const lifestyleFeatures = [
     title: 'Shopping & Entertainment',
     description:
       'Nearby retail, dining, and entertainment options with more coming to the community.',
-    image: cfImage(SITE_IMAGES.hero.shopping, 'card'),
+    image: cfImage(SITE_IMAGES.hero.restaurants, 'card'),
     link: '/lifestyle/shopping',
   },
   {
     icon: GraduationCap,
     title: 'Schools',
     description:
-      'Top-rated Clark County schools including elementary, middle, and high schools.',
-    image: cfImage(SITE_IMAGES.hero.schools, 'card'),
+      'Cadence Elementary, Henderson Middle, and Green Valley High serve Cadence Henderson NV 89011.',
+    image: cfImage(SITE_IMAGES.schools.elementary, 'card'),
     link: '/lifestyle/schools',
   },
   {
@@ -94,6 +95,11 @@ export default function LifestylePage() {
           View Community Calendar
         </Button>
       </PageHero>
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.hero.lifeAtCadence, 'hero')}
+        alt="Community spaces and lifestyle in Cadence Henderson NV 89011"
+      />
 
       <RealScoutOfficeListings />
 

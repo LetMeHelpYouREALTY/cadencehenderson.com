@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Trees, MapPin, Bike, Dog, Users } from 'lucide-react'
 import { cfImage, SITE_IMAGES, getAmenityImage, getGalleryImage } from '@/lib/cloudflare-images'
 import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const parks = [
   {
@@ -128,6 +129,11 @@ export default function ParksTrailsPage() {
           View Parks Map
         </Button>
       </PageHero>
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.hero.pocketParks, 'hero')}
+        alt="Neighborhood parks in Cadence Henderson NV 89011"
+      />
 
       <RealScoutOfficeListings />
 
