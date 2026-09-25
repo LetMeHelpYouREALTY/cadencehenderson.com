@@ -11,6 +11,7 @@ import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { ChevronDown, ChevronUp, HelpCircle, Calendar, Phone, Mail } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const faqCategories = [
   {
@@ -125,6 +126,12 @@ export default function FAQsPage() {
       />
 
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.faqs, 'hero')}
+        alt="Answers about buying new homes in Cadence Henderson NV 89011"
+      />
+
 
       {/* FAQs Content */}
       <section className="py-16">

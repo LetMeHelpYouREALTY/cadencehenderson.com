@@ -6,6 +6,8 @@ import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widg
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { SectionPhoto } from '@/components/cadence/section-photo'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { Calendar, Mail, Phone } from 'lucide-react'
 
 /** If the JS widget does not load within this time, show iframe fallback. */
@@ -39,6 +41,12 @@ export function ScheduleConsultationSection() {
       aria-labelledby="schedule-consultation-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto mb-10">
+          <SectionPhoto
+            src={cfImage(SITE_IMAGES.sections.schedule, 'hero')}
+            alt="Schedule a buyer consultation for new homes in Cadence Henderson NV 89011"
+          />
+        </div>
         <div className="max-w-4xl mx-auto text-center">
           <h2 id="schedule-consultation-heading" className="text-3xl md:text-4xl font-extralight tracking-[0.06em] mb-6 text-white">
             Ready to Buy New Homes at Cadence Henderson?

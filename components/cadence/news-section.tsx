@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { NewsPlaceholderImage } from '@/components/cadence/news-placeholder-image'
+import { SiteImage } from '@/components/cadence/site-image'
 import { fetchNews } from '@/lib/fetch-news'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { Calendar } from 'lucide-react'
@@ -19,13 +20,12 @@ export async function NewsSection() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center justify-center mb-6">
-            <img
-              src="https://cadencenv.com/wp-content/uploads/2021/01/news-home-box-288x300.png"
+            <SiteImage
+              src={cfImage(SITE_IMAGES.icons.newsBox, 'public')}
               width={96}
               height={100}
-              loading="lazy"
               alt="Cadence Henderson NV 89011 news and community updates"
-              className="w-24 h-24 object-contain"
+              className="h-24 w-24 object-contain"
             />
           </div>
           <h2 id="news-heading" className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-6">

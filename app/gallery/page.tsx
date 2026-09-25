@@ -186,10 +186,10 @@ export default function GalleryPage() {
           >
             <X size={32} />
           </button>
-          <img
+          <SiteImage
             src={lightboxImage.url}
             alt={`${lightboxImage.title} - Cadence Henderson NV 89011 community gallery`}
-            className="max-w-full max-h-full object-contain"
+            className="max-h-full max-w-full object-contain"
           />
         </div>
       )}

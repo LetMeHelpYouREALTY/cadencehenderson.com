@@ -22,6 +22,7 @@ import {
   Phone,
 } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import Link from 'next/link'
 
 export default function RealtorsPage() {
@@ -82,6 +83,12 @@ export default function RealtorsPage() {
       </PageHero>
 
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.realtors, 'hero')}
+        alt="Buyer representation for new homes in Cadence Henderson NV 89011"
+      />
+
 
       <HomeSearchSection compact />
 

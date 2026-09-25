@@ -15,10 +15,25 @@ type SiteImageProps = {
   loading?: 'lazy' | 'eager'
 }
 
+type LoadStage = 'cloudflare' | 'git' | 'placeholder'
+
+function initialStage(src: string): LoadStage {
+  if (!src || src.startsWith('data:')) return 'placeholder'
+  if (src.startsWith('/') && !src.startsWith('//')) return 'git'
+  return 'cloudflare'
+}
+
+function resolveSrc(src: string, gitSrc: string, stage: LoadStage): string {
+  if (stage === 'placeholder') return PLACEHOLDER_IMAGE
+  if (stage === 'git') {
+    return gitSrc.startsWith('/') ? gitSrc : PLACEHOLDER_IMAGE
+  }
+  return src || PLACEHOLDER_IMAGE
+}
+
 /**
- * Git-tracked public/images first when a local file exists (reliable H1 paint).
- * Cloudflare URL is used when there is no git mapping (e.g. condo IDs).
- * One error swap only — no retry loops.
+ * Cloudflare Images is primary (`imagedelivery.net`). Git `public/images/` is backup.
+ * One swap per failure: Cloudflare 404 → git path → SVG placeholder. No retry loops.
  */
 export function SiteImage({
   src,
@@ -30,20 +45,27 @@ export function SiteImage({
   priority,
   loading,
 }: SiteImageProps) {
-  const [failed, setFailed] = useState(false)
-  const imgRef = useRef<HTMLImageElement>(null)
   const gitSrc = gitFallbackFromSrc(src)
-  const hasGitFile = gitSrc.startsWith('/')
-  const resolved = failed ? PLACEHOLDER_IMAGE : hasGitFile ? gitSrc : src
+  const canGitFallback = gitSrc.startsWith('/') && gitSrc !== src
+  const [stage, setStage] = useState<LoadStage>(() => initialStage(src))
+  const imgRef = useRef<HTMLImageElement>(null)
+  const resolved = resolveSrc(src, gitSrc, stage)
   const fillClass = fill ? 'absolute inset-0 h-full w-full object-cover' : ''
 
   useEffect(() => {
+    setStage(initialStage(src))
+  }, [src])
+
+  useEffect(() => {
     const el = imgRef.current
-    if (!el || failed) return
+    if (!el || stage === 'placeholder') return
     if (el.complete && el.naturalWidth === 0) {
-      setFailed(true)
+      setStage((current) => {
+        if (current === 'cloudflare' && canGitFallback) return 'git'
+        return 'placeholder'
+      })
     }
-  }, [resolved, failed])
+  }, [resolved, stage, canGitFallback])
 
   return (
     <img
@@ -56,12 +78,11 @@ export function SiteImage({
       fetchPriority={priority ? 'high' : undefined}
       loading={priority ? 'eager' : loading ?? 'lazy'}
       decoding="async"
-      onError={(event) => {
-        if (failed) {
-          event.currentTarget.src = PLACEHOLDER_IMAGE
-          return
-        }
-        setFailed(true)
+      onError={() => {
+        setStage((current) => {
+          if (current === 'cloudflare' && canGitFallback) return 'git'
+          return 'placeholder'
+        })
       }}
     />
   )

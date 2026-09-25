@@ -7,7 +7,8 @@ import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
-import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { getHubBodyImage, getHubHeroImage } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import {
   CADENCE_BUILDER_HUBS,
   getVillagesByBuilder,
@@ -52,11 +53,17 @@ export default async function BuilderCommunitiesPage({ params }: PageProps) {
       <PageHero
         title={hub.name}
         subtitle={`${villages.length} Cadence Henderson villages. Plan names and sizes from the developer listing — prices omitted because they change.`}
-        imageSrc={cfImage(SITE_IMAGES.hero.newHomes, 'hero')}
+        imageSrc={getHubHeroImage(builder)}
         imageAlt={`${hub.name} villages in Cadence Henderson NV 89011`}
         icon={Landmark}
       />
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={getHubBodyImage(builder)}
+        alt={`${hub.name} homes in Cadence Henderson NV 89011`}
+      />
+
       <section className="py-16">
         <div className="container mx-auto px-4">
           <ul className="mx-auto grid max-w-4xl gap-4">

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Newspaper } from 'lucide-react'
 import { PageHero } from '@/components/cadence/page-hero'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -44,6 +45,10 @@ export default function MediaPage() {
         imageSrc={cfImage(SITE_IMAGES.hero.news, 'hero')}
         imageAlt="Cadence Henderson media and press NV 89011"
         icon={Newspaper}
+      />
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.lifestyle.events, 'hero')}
+        alt="Cadence Henderson NV 89011 community news"
       />
       <section className="py-16">
         <div className="container mx-auto px-4">

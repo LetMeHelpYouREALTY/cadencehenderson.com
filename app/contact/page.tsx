@@ -13,6 +13,8 @@ import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -26,6 +28,12 @@ export default function ContactPage() {
       />
 
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.contact, 'hero')}
+        alt="Dr. Jan Duffy office serving Cadence Henderson NV 89011"
+      />
+
 
       <HomeSearchSection compact />
 

@@ -1,4 +1,6 @@
 import { HOME_FAQS } from '@/lib/page-aeo'
+import { SectionPhoto } from '@/components/cadence/section-photo'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 /**
  * On-page FAQ section for AEO. Visible, not hidden — Google and answer engines read this.
@@ -12,6 +14,11 @@ export function HomepageFAQSection() {
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
+          <SectionPhoto
+            src={cfImage(SITE_IMAGES.sections.faqs, 'hero')}
+            alt="Frequently asked questions about new homes in Cadence Henderson NV 89011"
+            className="mb-12"
+          />
           <h2 id="homepage-faq-heading" className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-16 text-center">
             Frequently Asked Questions — New Homes in Cadence Henderson NV
           </h2>

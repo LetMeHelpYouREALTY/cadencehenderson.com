@@ -12,7 +12,7 @@ export function RealtorsSection() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1 relative h-[400px] overflow-hidden bg-neutral-200">
             <CloudflareImage
-              src={cfImage(SITE_IMAGES.homes.exterior1, 'card')}
+              src={cfImage(SITE_IMAGES.sections.realtors, 'card')}
               alt="New homes for sale Cadence Henderson NV 89011"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

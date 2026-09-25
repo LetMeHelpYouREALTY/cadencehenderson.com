@@ -8,6 +8,7 @@ import { Footer } from '@/components/cadence/footer'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
 
@@ -89,6 +90,12 @@ export default function RestaurantsPage() {
       </PageHero>
 
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.shopping.district, 'hero')}
+        alt="Dining near Cadence Henderson NV 89011"
+      />
+
 
       <section className="py-16">
         <div className="container mx-auto px-4">

@@ -38,7 +38,7 @@ export function MarketSnapshotSection() {
           </ul>
             <div className="relative h-[320px] lg:h-[360px] overflow-hidden bg-neutral-200">
               <CloudflareImage
-                src={cfImage(SITE_IMAGES.location.aerialView, 'card')}
+                src={cfImage(SITE_IMAGES.sections.marketSnapshot, 'card')}
                 alt="Cadence Henderson NV 89011 master planned community aerial view"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
