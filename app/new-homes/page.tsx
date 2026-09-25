@@ -1,6 +1,8 @@
 import { PageHero } from '@/components/cadence/page-hero'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { BUILDER_LOGO_SRCS } from '@/lib/builder-logos'
+import { SiteImage } from '@/components/cadence/site-image'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { HowToBuySchema } from '@/components/schema/how-to-buy'
 import { RealScoutAdvancedSearch } from '@/components/idx/realscout-advanced-search'
@@ -12,17 +14,6 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Home, MapPin, Bed, Bath, Ruler, Search } from 'lucide-react'
 import Link from 'next/link'
-/** Builder logos from cadencenv.com - same source as BuildersShowcase */
-const BUILDER_LOGOS: Record<string, string> = {
-  'beazer-homes': 'https://cadencenv.com/wp-content/uploads/2024/05/BeazerHomes_Logo.jpg',
-  'century-communities': 'https://cadencenv.com/wp-content/uploads/2021/03/Century-Communities-Logo_Horz_RGB-300x91.jpg',
-  'dr-horton': 'https://cadencenv.com/wp-content/uploads/2021/03/DR_Horton_Logo_Red-Blue-300x100.png',
-  'lennar': 'https://cadencenv.com/wp-content/uploads/2020/11/lennar-logo.png',
-  'richmond-american': 'https://cadencenv.com/wp-content/uploads/2020/12/Richmond-Amer-Home-logo-365x100-1-300x82.png',
-  'storybook-homes': 'https://cadencenv.com/wp-content/uploads/2022/10/SBHomes_Logo2022-300x146.png',
-  'taylor-morrison': 'https://cadencenv.com/wp-content/uploads/2024/05/TM_Logo_Hor-300x75.jpg',
-  'woodside-homes': 'https://cadencenv.com/wp-content/uploads/2022/08/Woodside-logo_color-200x67-1.png',
-}
 
 const builders = [
   {
@@ -208,11 +199,12 @@ export default function NewHomesPage() {
               >
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                   <div className="relative h-40 overflow-hidden bg-gray-50 flex items-center justify-center p-6 transition-transform duration-300 group-hover:scale-[1.02]">
-                    <img
-                      src={BUILDER_LOGOS[builder.slug]}
-                      alt={`${builder.name} - New homes at Cadence Henderson NV 89011`}
+                    <SiteImage
+                      src={BUILDER_LOGO_SRCS[builder.slug]}
+                      alt={`${builder.name} new homes at Cadence Henderson NV 89011`}
+                      width={300}
+                      height={120}
                       className="max-h-full max-w-full object-contain"
-                      loading="lazy"
                     />
                   </div>
                   <div className="p-6">

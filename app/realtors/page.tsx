@@ -20,6 +20,7 @@ import {
   Phone,
 } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 export default function RealtorsPage() {
   return (
@@ -77,6 +78,11 @@ export default function RealtorsPage() {
           </a>
         </div>
       </PageHero>
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.realtors, 'hero')}
+        alt="Dr. Jan Duffy, REALTOR® at Cadence Henderson NV 89011"
+      />
 
       <RealScoutOfficeListings />
 

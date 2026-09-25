@@ -9,7 +9,8 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Building2, DollarSign, Bed, Bath, Phone, Mail } from 'lucide-react'
 import { notFound } from 'next/navigation'
-import { cfImage, SITE_IMAGES, getHomeImage } from '@/lib/cloudflare-images'
+import { cfImage, SITE_IMAGES, getHomeImage, getRentalHeroImage, getHubBodyImage } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -249,7 +250,7 @@ export default async function RentalCommunityPage({
       <PageHero
         title={community.name}
         subtitle={community.description}
-        imageSrc={cfImage(SITE_IMAGES.hero.rentals, 'hero')}
+        imageSrc={getRentalHeroImage(communitySlug)}
         imageAlt={`${community.name} rentals at Cadence Henderson NV 89011`}
       >
         <div className="flex flex-wrap gap-4 justify-center">
@@ -270,6 +271,11 @@ export default async function RentalCommunityPage({
           </Button>
         </div>
       </PageHero>
+
+      <PageBodyPhoto
+        src={getHubBodyImage(communitySlug)}
+        alt={`${community.name} in Cadence Henderson NV 89011`}
+      />
 
       <RealScoutOfficeListings />
 

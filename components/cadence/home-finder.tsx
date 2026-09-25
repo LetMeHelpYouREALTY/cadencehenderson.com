@@ -2,6 +2,8 @@ import { RealScoutWidget } from '@/components/idx/realscout-widget'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { SectionPhoto } from '@/components/cadence/section-photo'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { Search } from 'lucide-react'
 
 export function HomeFinder() {
@@ -26,6 +28,11 @@ export function HomeFinder() {
               Open Home Search
             </a>
           </div>
+          <SectionPhoto
+            src={cfImage(SITE_IMAGES.sections.homeSearch, 'hero')}
+            alt="Search new homes for sale in Cadence Henderson NV 89011"
+            className="mb-8 rounded-lg"
+          />
           <RealScoutWidget className="min-h-[400px] rounded-lg overflow-hidden bg-white shadow-sm" />
           <div className="text-center mt-8">
             <p className="text-lg text-gray-700 mb-4">

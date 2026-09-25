@@ -10,7 +10,8 @@ import { Button } from '@/components/ui/button'
 import { Home, Bed, Bath, Ruler, DollarSign, MapPin, Phone, Search } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getHomeImage, getBuilderImage, cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { getBuilderHeroImage, getHubBodyImage, getHomeImage } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 
 const builderRealScoutUrls: Record<string, string | undefined> = {
@@ -540,7 +541,7 @@ export default async function BuilderPage({
       <PageHero
         title={builder.name}
         subtitle={builder.description}
-        imageSrc={cfImage(SITE_IMAGES.hero.newHomes, 'hero')}
+        imageSrc={getBuilderHeroImage(builderSlug)}
         imageAlt={`${builder.name} new homes at Cadence Henderson NV 89011`}
       >
         <div className="text-6xl mb-4">{builder.logo}</div>
@@ -588,6 +589,11 @@ export default async function BuilderPage({
           </a>
         </div>
       </PageHero>
+
+      <PageBodyPhoto
+        src={getHubBodyImage(builderSlug)}
+        alt={`${builder.name} homes in Cadence Henderson NV 89011`}
+      />
 
       <RealScoutOfficeListings />
 

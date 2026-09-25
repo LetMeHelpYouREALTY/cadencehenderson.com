@@ -11,6 +11,7 @@ import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { ChevronDown, ChevronUp, HelpCircle, Calendar, Phone, Mail } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const faqCategories = [
   {
@@ -122,6 +123,11 @@ export default function FAQsPage() {
         imageSrc={cfImage(SITE_IMAGES.hero.faqs, 'hero')}
         imageAlt="Frequently asked questions about Cadence Henderson NV 89011"
         icon={HelpCircle}
+      />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.faqs, 'hero')}
+        alt="Cadence Henderson NV 89011 buyer questions"
       />
 
       <RealScoutOfficeListings />

@@ -12,6 +12,8 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -22,6 +24,11 @@ export default function ContactPage() {
         subtitle="Have questions about Cadence? We're here to help you find your perfect home in our community."
         imageSrc={cfImage(SITE_IMAGES.hero.contact, 'hero')}
         imageAlt="Contact Cadence Henderson real estate office in Henderson NV 89011"
+      />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.contact, 'hero')}
+        alt="Cadence Henderson welcome center in Henderson NV 89011"
       />
 
       <RealScoutOfficeListings />

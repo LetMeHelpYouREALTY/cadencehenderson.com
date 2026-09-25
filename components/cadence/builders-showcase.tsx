@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { SiteImage } from '@/components/cadence/site-image'
+import { BUILDER_LOGO_SRCS } from '@/lib/builder-logos'
 
 export function BuildersShowcase() {
   const builders: Array<{
@@ -12,7 +14,7 @@ export function BuildersShowcase() {
   }> = [
     {
       name: 'American Homes 4 Rent',
-      logo: 'https://cadencenv.com/wp-content/uploads/2023/08/AMH_Standard-Logo.jpg',
+      logo: BUILDER_LOGO_SRCS['american-homes'],
       href: CONTACT_INFO.realScoutRentalsUrl,
       external: true,
       width: 200,
@@ -20,7 +22,7 @@ export function BuildersShowcase() {
     },
     {
       name: 'Beazer Homes',
-      logo: 'https://cadencenv.com/wp-content/uploads/2024/05/BeazerHomes_Logo.jpg',
+      logo: BUILDER_LOGO_SRCS['beazer-homes'],
       href: CONTACT_INFO.realScoutBeazerHomesUrl,
       width: 300,
       height: 80,
@@ -28,49 +30,49 @@ export function BuildersShowcase() {
     },
     {
       name: 'Century Communities',
-      logo: 'https://cadencenv.com/wp-content/uploads/2021/03/Century-Communities-Logo_Horz_RGB-300x91.jpg',
+      logo: BUILDER_LOGO_SRCS['century-communities'],
       href: '/new-homes/century-communities',
       width: 300,
       height: 91,
     },
     {
       name: 'D.R. Horton',
-      logo: 'https://cadencenv.com/wp-content/uploads/2021/03/DR_Horton_Logo_Red-Blue-300x100.png',
+      logo: BUILDER_LOGO_SRCS['dr-horton'],
       href: '/new-homes/dr-horton',
       width: 300,
       height: 100,
     },
     {
       name: 'Lennar',
-      logo: 'https://cadencenv.com/wp-content/uploads/2020/11/lennar-logo.png',
+      logo: BUILDER_LOGO_SRCS.lennar,
       href: '/new-homes/lennar',
       width: 200,
       height: 80,
     },
     {
       name: 'Richmond American',
-      logo: 'https://cadencenv.com/wp-content/uploads/2020/12/Richmond-Amer-Home-logo-365x100-1-300x82.png',
+      logo: BUILDER_LOGO_SRCS['richmond-american'],
       href: '/new-homes/richmond-american',
       width: 300,
       height: 82,
     },
     {
       name: 'StoryBook Homes',
-      logo: 'https://cadencenv.com/wp-content/uploads/2022/10/SBHomes_Logo2022-300x146.png',
+      logo: BUILDER_LOGO_SRCS['storybook-homes'],
       href: '/new-homes/storybook-homes',
       width: 300,
       height: 146,
     },
     {
       name: 'Taylor Morrison',
-      logo: 'https://cadencenv.com/wp-content/uploads/2024/05/TM_Logo_Hor-300x75.jpg',
+      logo: BUILDER_LOGO_SRCS['taylor-morrison'],
       href: '/new-homes/taylor-morrison',
       width: 300,
       height: 75,
     },
     {
       name: 'Woodside Homes',
-      logo: 'https://cadencenv.com/wp-content/uploads/2022/08/Woodside-logo_color-200x67-1.png',
+      logo: BUILDER_LOGO_SRCS['woodside-homes'],
       href: '/new-homes/woodside-homes',
       width: 200,
       height: 67,
@@ -90,13 +92,12 @@ export function BuildersShowcase() {
             const content = (
               <>
                 <div className="relative w-full h-20 mb-3 flex items-center justify-center">
-                  <img
+                  <SiteImage
                     src={builder.logo}
                     alt={`Cadence Henderson NV 89011 new homes by ${builder.name}`}
                     width={builder.width}
                     height={builder.height}
-                    loading="lazy"
-                    className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform"
+                    className="max-h-full max-w-full object-contain transition-transform group-hover:scale-105"
                   />
                 </div>
                 <h3 className="font-semibold text-gray-800 text-sm">

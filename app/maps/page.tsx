@@ -15,6 +15,7 @@ import {
   Plane,
 } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 export const metadata: Metadata = {
   title: 'Cadence Henderson Location & Directions | Henderson NV 89011',
@@ -48,6 +49,11 @@ export default function MapsPage() {
         imageSrc={cfImage(SITE_IMAGES.hero.maps, 'hero')}
         imageAlt="Cadence Henderson location and directions in Henderson NV 89011"
         icon={MapPin}
+      />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.maps, 'hero')}
+        alt="Cadence Henderson NV 89011 location and welcome center"
       />
 
       <RealScoutOfficeListings />
