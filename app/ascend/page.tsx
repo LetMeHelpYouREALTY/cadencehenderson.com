@@ -57,7 +57,7 @@ export default function AscendPage() {
       <RealScoutOfficeListings />
 
       <PageBodyPhoto
-        src={cfImage(SITE_IMAGES.hero.ascend, 'card')}
+        src={cfImage(SITE_IMAGES.sections.ascend, 'hero')}
         alt="Ascend residences in Cadence Henderson NV 89011"
       />
 

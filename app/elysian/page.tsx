@@ -50,7 +50,7 @@ export default function ElysianPage() {
       <RealScoutOfficeListings />
 
       <PageBodyPhoto
-        src={cfImage(SITE_IMAGES.hero.elysian, 'card')}
+        src={cfImage(SITE_IMAGES.sections.elysian, 'hero')}
         alt="Elysian homes in Cadence Henderson NV 89011"
       />
 

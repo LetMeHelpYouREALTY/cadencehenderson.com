@@ -63,7 +63,7 @@ export default function AvelaPage() {
       <RealScoutOfficeListings />
 
       <PageBodyPhoto
-        src={cfImage(SITE_IMAGES.hero.avela, 'card')}
+        src={cfImage(SITE_IMAGES.sections.avela, 'hero')}
         alt="Avela apartments in Cadence Henderson NV 89011"
       />
 

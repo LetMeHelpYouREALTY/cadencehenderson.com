@@ -38,7 +38,7 @@ export default function DisclaimerPage() {
       />
 
       <PageBodyPhoto
-        src={cfImage(SITE_IMAGES.hero.disclaimer, 'card')}
+        src={cfImage(SITE_IMAGES.sections.disclaimer, 'hero')}
         alt="Cadence Henderson Homes website disclaimer"
       />
 

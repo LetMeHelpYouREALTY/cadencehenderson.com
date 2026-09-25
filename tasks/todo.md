@@ -13,7 +13,12 @@ Audit missing section images; keep Cloudflare Images as primary delivery and git
 
 **Done looks like:** Cloudflare URLs are in the HTML; git files exist as backup; unique catalog IDs match unique files; homepage Key Facts / Market Snapshot / Services / FAQ photos paint; inner pages have a body photo.
 
-**Check:** `npx tsc --noEmit` passed. Local Next on :3011 returned 200. Computer-use confirmed photos on `/`, `/contact`, and `/new-homes`. Cloudflare IDs still 404 until production sync with `CLOUDFLARE_API_TOKEN`; native `onError` swaps to git so sections are not blank.
+**Check:** `npx tsc --noEmit` passed. Unique catalog IDs map to unique files. Remaining leftover sections (schedule CTA, disclaimer, village/builder hubs, Elysian/Ascend/Avela) now have dedicated git-backed IDs. Cloudflare IDs still 404 until production sync with `CLOUDFLARE_API_TOKEN`; native `onError` swaps to git so sections are not blank.
+
+## Remaining
+
+- [ ] Replay unique catalog + files onto a branch from `main` so they can ship without the stacked draft chain
+- [ ] Production `CLOUDFLARE_API_TOKEN` upload (`npm run cloudflare:images:sync` on Vercel)
 
 ## Review
 

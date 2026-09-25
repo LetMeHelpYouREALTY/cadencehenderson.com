@@ -45,7 +45,7 @@ export default function CommunitiesIndexPage() {
       <RealScoutOfficeListings />
 
       <PageBodyPhoto
-        src={cfImage(SITE_IMAGES.sections.homeSearch, 'hero')}
+        src={cfImage(SITE_IMAGES.sections.communities, 'hero')}
         alt="Cadence Henderson NV 89011 villages and builders"
       />
 

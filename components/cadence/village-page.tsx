@@ -8,28 +8,12 @@ import { Footer } from '@/components/cadence/footer'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
-import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { getHubBodyImage, getHubHeroImage } from '@/lib/cloudflare-images'
 import { getVillagesByBuilder, type Village } from '@/lib/cadence-nv-catalog'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { villageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
-
-const HERO_BY_BUILDER: Record<string, keyof typeof SITE_IMAGES.hero> = {
-  beazer: 'beazerHomes',
-  'century-communities': 'centuryCommunities',
-  'dr-horton': 'drHorton',
-  lennar: 'lennar',
-  'richmond-american-homes': 'richmondAmerican',
-  'storybook-homes': 'storybookHomes',
-  taylorm: 'taylorMorrison',
-  'woodside-homes': 'woodsideHomes',
-  'harmony-homes': 'newHomes',
-  'toll-brothers': 'newHomes',
-  'american-homes-4-rent': 'rentalAmericanHomes',
-  adler: 'rentalAdler',
-  element12: 'rentalElement12',
-}
 
 type VillagePageViewProps = {
   village: Village
@@ -48,7 +32,6 @@ export function villageMetadata(village: Village) {
 }
 
 export function VillagePageView({ village }: VillagePageViewProps) {
-  const heroKey = HERO_BY_BUILDER[village.builderSlug] ?? 'newHomes'
   const builderVillages = getVillagesByBuilder(village.builderSlug)
   const siblings = builderVillages.filter(
     (item) => item.communitySlug !== village.communitySlug,
@@ -83,7 +66,7 @@ export function VillagePageView({ village }: VillagePageViewProps) {
             <p>{village.summary}</p>
           </>
         }
-        imageSrc={cfImage(SITE_IMAGES.hero[heroKey], 'hero')}
+        imageSrc={getHubHeroImage(village.builderSlug)}
         imageAlt={`${village.name} by ${village.builderName} in Cadence Henderson NV 89011`}
         icon={Home}
       >
@@ -97,8 +80,8 @@ export function VillagePageView({ village }: VillagePageViewProps) {
       <RealScoutOfficeListings />
 
       <PageBodyPhoto
-        src={cfImage(SITE_IMAGES.homes.livingRoom, 'hero')}
-        alt={`${village.name} new home interiors in Cadence Henderson NV 89011`}
+        src={getHubBodyImage(village.builderSlug)}
+        alt={`${village.name} homes in Cadence Henderson NV 89011`}
       />
 
       {displayPlans.length > 0 ? (

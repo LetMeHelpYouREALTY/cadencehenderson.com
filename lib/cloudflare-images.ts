@@ -173,6 +173,12 @@ export const SITE_IMAGES = {
     residents: img('cadence-sections-residents', '/images/sections/residents.jpg'),
     incentives: img('cadence-sections-incentives', '/images/sections/incentives.jpg'),
     realtors: img('cadence-sections-realtors', '/images/sections/realtors.jpg'),
+    schedule: img('cadence-sections-schedule', '/images/sections/schedule.jpg'),
+    disclaimer: img('cadence-sections-disclaimer', '/images/sections/disclaimer.jpg'),
+    communities: img('cadence-sections-communities', '/images/sections/communities.jpg'),
+    elysian: img('cadence-sections-elysian', '/images/sections/elysian.jpg'),
+    ascend: img('cadence-sections-ascend', '/images/sections/ascend.jpg'),
+    avela: img('cadence-sections-avela', '/images/sections/avela.jpg'),
   },
 
   logos: {
@@ -267,19 +273,38 @@ export function getHeroImage(page: keyof typeof SITE_IMAGES.hero, variant: Image
 }
 
 const BUILDER_HERO_KEYS: Record<string, keyof typeof SITE_IMAGES.hero> = {
+  beazer: 'beazerHomes',
   'beazer-homes': 'beazerHomes',
   'century-communities': 'centuryCommunities',
   'dr-horton': 'drHorton',
   lennar: 'lennar',
   'richmond-american': 'richmondAmerican',
+  'richmond-american-homes': 'richmondAmerican',
   'storybook-homes': 'storybookHomes',
   'taylor-morrison': 'taylorMorrison',
+  taylorm: 'taylorMorrison',
   'woodside-homes': 'woodsideHomes',
+}
+
+const BUILDER_BODY_KEYS: Record<string, keyof typeof SITE_IMAGES.builders> = {
+  beazer: 'beazer',
+  'beazer-homes': 'beazer',
+  'century-communities': 'century',
+  'dr-horton': 'drHorton',
+  lennar: 'lennar',
+  'richmond-american': 'richmond',
+  'richmond-american-homes': 'richmond',
+  'storybook-homes': 'storybook',
+  'taylor-morrison': 'taylorMorrison',
+  taylorm: 'taylorMorrison',
+  'woodside-homes': 'woodside',
 }
 
 const RENTAL_HERO_KEYS: Record<string, keyof typeof SITE_IMAGES.hero> = {
   'american-homes': 'rentalAmericanHomes',
+  'american-homes-4-rent': 'rentalAmericanHomes',
   'element-12': 'rentalElement12',
+  element12: 'rentalElement12',
   adler: 'rentalAdler',
 }
 
@@ -293,6 +318,35 @@ export function getBuilderHeroImage(builderSlug: string, variant: ImageVariant =
 export function getRentalHeroImage(communitySlug: string, variant: ImageVariant = 'hero'): string {
   const key = RENTAL_HERO_KEYS[communitySlug] ?? 'rentals'
   return cfImage(SITE_IMAGES.hero[key], variant)
+}
+
+/** Unique hero for a CadenceNV village or builder hub slug. */
+export function getHubHeroImage(slug: string, variant: ImageVariant = 'hero'): string {
+  if (slug === 'american-homes-4-rent' || slug === 'american-homes') {
+    return cfImage(SITE_IMAGES.hero.rentalAmericanHomes, variant)
+  }
+  if (slug === 'adler') return cfImage(SITE_IMAGES.hero.rentalAdler, variant)
+  if (slug === 'element12' || slug === 'element-12') {
+    return cfImage(SITE_IMAGES.hero.rentalElement12, variant)
+  }
+  return getBuilderHeroImage(slug, variant)
+}
+
+/**
+ * Body photo distinct from the hub hero so village and builder-hub pages
+ * do not reuse the same Cloudflare ID under the H1.
+ */
+export function getHubBodyImage(slug: string, variant: ImageVariant = 'hero'): string {
+  const builderKey = BUILDER_BODY_KEYS[slug]
+  if (builderKey) return cfImage(SITE_IMAGES.builders[builderKey], variant)
+  if (slug === 'american-homes-4-rent' || slug === 'american-homes') {
+    return cfImage(SITE_IMAGES.rentals.americanHomes, variant)
+  }
+  if (slug === 'adler') return cfImage(SITE_IMAGES.rentals.adler, variant)
+  if (slug === 'element12' || slug === 'element-12') {
+    return cfImage(SITE_IMAGES.rentals.element12, variant)
+  }
+  return cfImage(SITE_IMAGES.sections.communities, variant)
 }
 
 export function getBuilderImage(builder: keyof typeof SITE_IMAGES.builders, variant: ImageVariant = 'card'): string {
