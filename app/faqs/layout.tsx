@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { PageGraphSchema } from '@/components/schema/page-graph'
 
 export const metadata: Metadata = {
   title: 'Cadence Henderson FAQ – Homes, Prices & Community | 89011',
@@ -105,7 +106,7 @@ function FaqsPageSchema() {
         name: 'What schools serve Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence Henderson 89011 is served by highly-rated Clark County schools including Cadence Elementary School (on-site), Henderson Middle Schools, and Green Valley High School. Private school options are also available nearby.',
+          text: 'Cadence Henderson NV 89011 is served by Clark County School District campuses including Cadence Elementary School (on-site), Henderson-area middle schools, and Green Valley High School. Confirm the attendance zone for a specific address. Nearby private campuses include The Henderson International School, Faith Lutheran, and The Meadows School.',
         },
       },
       {
@@ -113,7 +114,7 @@ function FaqsPageSchema() {
         name: 'Is there a school within Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, Cadence Elementary School is located within the Cadence Henderson community in Henderson NV 89011, making it convenient for families with young children.',
+          text: 'Yes. Cadence Elementary School (K–5) is located inside Cadence Henderson NV 89011. Confirm the attendance zone for the lot you are touring.',
         },
       },
       {
@@ -154,6 +155,12 @@ function FaqsPageSchema() {
 export default function FAQsLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <PageGraphSchema
+        path="/faqs"
+        name="Cadence Henderson FAQ – Homes, Prices & Community | 89011"
+        description="Common questions about buying, renting and living in Cadence Henderson NV 89011. Prices, builders, amenities, schools, HOA fees and more answered."
+        breadcrumbs={[{ name: 'Cadence Henderson FAQs NV 89011' }]}
+      />
       <FaqsPageSchema />
       {children}
     </>

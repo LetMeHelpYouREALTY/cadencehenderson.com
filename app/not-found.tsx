@@ -51,7 +51,7 @@ export default function NotFound() {
 
             <RealScoutOfficeListings />
 
-            <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-lg p-8 text-white">
+            <div className="bg-cadence-ink rounded-lg p-8 text-white">
               <Calendar size={40} className="mx-auto mb-4" />
               <h2 className="text-2xl font-bold mb-4">
                 Need Help Finding Something?

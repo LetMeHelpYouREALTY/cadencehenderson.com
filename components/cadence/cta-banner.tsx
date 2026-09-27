@@ -5,79 +5,78 @@ import { CONTACT_INFO } from './contact-info'
 
 export function CTABanner() {
   return (
-    <section className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+    <section className="py-28 bg-cadence-ink text-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-extralight tracking-[0.08em] mb-6">
             Ready to Buy or Sell at Cadence?
           </h2>
-          <p className="text-xl mb-8">
-            Whether you&apos;re looking for your dream home or ready to sell, our
-            expert team is here for you.
+          <p className="text-lg font-light text-white/85 mb-12">
+            Whether you&apos;re looking for your next home or ready to sell, Dr. Jan Duffy is here for you.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-10">
             <Button
               size="lg"
-              className="bg-white text-slate-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
+              className="bg-white text-primary hover:bg-blue-50 w-full sm:w-auto"
               asChild
             >
               <CalendlyLink>I Want To Buy</CalendlyLink>
             </Button>
             <Button
               size="lg"
-              className="bg-white text-slate-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
+              variant="outline"
+              className="border-white/70 bg-transparent text-white hover:bg-white hover:text-primary w-full sm:w-auto"
               asChild
             >
               <CalendlyLink>I Want To Sell</CalendlyLink>
             </Button>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-slate-900"
+              className="border-white/70 bg-transparent text-white hover:bg-white hover:text-primary"
               asChild
             >
               <CalendlyLink>
-                <Calendar className="mr-2" size={20} aria-hidden />
-                Schedule Free Call
+                <Calendar className="mr-2" size={16} aria-hidden />
+                Schedule a Call
               </CalendlyLink>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-slate-900"
+              className="border-white/70 bg-transparent text-white hover:bg-white hover:text-primary"
               asChild
             >
               <a
                 href={`mailto:${CONTACT_INFO.email}`}
                 aria-label="Email Dr. Jan Duffy"
               >
-                <Mail className="mr-2" size={20} aria-hidden />
+                <Mail className="mr-2" size={16} aria-hidden />
                 Email Dr. Jan
               </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-slate-900"
+              className="border-white/70 bg-transparent text-white hover:bg-white hover:text-primary"
               asChild
             >
               <a
                 href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
                 aria-label={`Call Dr. Jan Duffy: ${CONTACT_INFO.phone}`}
               >
-                <Phone className="mr-2" size={20} aria-hidden />
+                <Phone className="mr-2" size={16} aria-hidden />
                 {CONTACT_INFO.phone}
               </a>
             </Button>
           </div>
-          <p className="mt-6 text-sm text-white">
-            Licensed Real Estate Professional specializing in Cadence Henderson
+          <p className="mt-12 text-xs font-light tracking-[0.16em] uppercase text-white/70">
+            Licensed real estate professional — Cadence Henderson
           </p>
         </div>
       </div>
     </section>
   )
 }
-

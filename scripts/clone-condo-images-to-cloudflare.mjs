@@ -19,6 +19,7 @@ import { createWriteStream } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { pipeline } from 'node:stream/promises'
+import { isCloudflareAuthError, warnGitFallback } from './lib/cloudflare-images-auth.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
@@ -346,8 +347,20 @@ async function main() {
         })
         continue
       }
+      if (allowMissingToken && isCloudflareAuthError(urlError.message)) {
+        warnGitFallback('clone-condo-images-to-cloudflare')
+        break
+      }
       console.warn(`URL upload failed for ${item.id}, trying file upload…`)
-      uploaded = await uploadFromFile(item, filePath, accountId, token)
+      try {
+        uploaded = await uploadFromFile(item, filePath, accountId, token)
+      } catch (fileError) {
+        if (allowMissingToken && isCloudflareAuthError(fileError.message)) {
+          warnGitFallback('clone-condo-images-to-cloudflare')
+          break
+        }
+        throw fileError
+      }
     }
     console.log(`Uploaded: ${item.name} → ${uploaded.deliveryUrl}`)
     results.push({

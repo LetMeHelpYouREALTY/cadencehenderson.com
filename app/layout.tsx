@@ -4,13 +4,11 @@ import { CalendlyProvider } from '../components/calendly/calendly-loader'
 import { CalendlyScriptLoader } from '../components/calendly/calendly-script-loader'
 import { CalendlyStyles } from '../components/calendly/calendly-styles'
 import { SkipToContent } from '../components/cadence/skip-to-content'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist_Mono, Sora } from 'next/font/google'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { ThemeProvider } from 'next-themes'
-import DeployBanner from '../components/deploy-banner'
 import { ScrollToTop } from '../components/cadence/scroll-to-top'
 import { LocalBusinessSchema } from '../components/schema/local-business'
-import { FAQPageSchema } from '../components/schema/faq-page'
 import { GeoMeta } from '../components/schema/geo-meta'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import './globals.css'
@@ -19,9 +17,11 @@ const HERO_IMAGE = cfImage(SITE_IMAGES.hero.homepage, 'hero')
 /** Crawlers do not run the JS git fallback — keep a stable git URL for OG/schema. */
 const OG_IMAGE = '/og-image.jpg'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const sora = Sora({
+  variable: '--font-sora',
   subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600'],
+  display: 'swap',
 })
 
 const geistMono = Geist_Mono({
@@ -71,7 +71,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <LocalBusinessSchema />
-        <FAQPageSchema />
         <GeoMeta />
         {/* Preconnect to critical LCP and third-party origins (max 4) */}
         <link rel="preconnect" href="https://imagedelivery.net" />
@@ -88,7 +87,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${sora.variable} ${geistMono.variable} antialiased font-sans`}
       >
         <CalendlyScriptLoader />
         <Script
@@ -107,12 +106,11 @@ export default function RootLayout({
         <SkipToContent />
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
           storageKey="theme"
         >
-          <DeployBanner />
           {children}
           <ScrollToTop />
         </ThemeProvider>

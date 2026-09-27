@@ -11,6 +11,7 @@ import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { ChevronDown, ChevronUp, HelpCircle, Calendar, Phone, Mail } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const faqCategories = [
   {
@@ -26,7 +27,7 @@ const faqCategories = [
       },
       {
         q: 'What is the price range for homes in Cadence?',
-        a: 'Home prices in Cadence range from approximately $300,000 to $650,000, depending on the builder, floor plan, and lot selection. We have options for first-time buyers, growing families, and luxury homebuyers.',
+        a: 'Home prices in Cadence range from approximately $300,000 to $650,000, depending on the builder, floor plan, and lot selection. Townhomes, single-family plans, and larger estates are all listed in that spread.',
       },
     ],
   },
@@ -73,11 +74,11 @@ const faqCategories = [
     questions: [
       {
         q: 'What schools serve Cadence?',
-        a: 'Cadence is served by highly-rated Clark County schools including Cadence Elementary School (on-site), Henderson Middle Schools, and Green Valley High School. Private school options are also available nearby.',
+        a: 'Cadence Henderson NV 89011 is served by Clark County School District campuses including Cadence Elementary School (on-site), Henderson-area middle schools, and Green Valley High School. Confirm the attendance zone for a specific address before you buy. Nearby private campuses include The Henderson International School, Faith Lutheran, and The Meadows School.',
       },
       {
         q: 'Is there a school within the community?',
-        a: 'Yes, Cadence Elementary School is located within the community, making it convenient for families with young children.',
+        a: 'Yes. Cadence Elementary School (K–5) sits inside Cadence Henderson NV 89011, so many streets are a short walk or drive to campus. Confirm the zone for your lot.',
       },
     ],
   },
@@ -126,6 +127,12 @@ export default function FAQsPage() {
 
       <RealScoutOfficeListings />
 
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.faqs, 'hero')}
+        alt="Answers about buying new homes in Cadence Henderson NV 89011"
+      />
+
+
       {/* FAQs Content */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -133,7 +140,15 @@ export default function FAQsPage() {
             {faqCategories.map((category, catIndex) => (
               <div key={category.category} className="mb-12">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-purple-900 pb-3">
-                  {category.category}
+                  {category.category === 'General'
+                    ? 'Cadence Henderson NV 89011 basics'
+                    : category.category === 'Homes & Builders'
+                      ? 'Cadence Henderson homes and builders'
+                      : category.category === 'Amenities'
+                        ? 'Cadence Henderson amenities'
+                        : category.category === 'Schools'
+                          ? 'Campuses serving Cadence Henderson'
+                          : 'Living in Cadence Henderson NV 89011'}
                 </h2>
                 <div className="space-y-4">
                   {category.questions.map((faq, qIndex) => {
@@ -165,7 +180,7 @@ export default function FAQsPage() {
                         </button>
                         {isOpen && (
                           <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                            <p className="text-gray-700 leading-relaxed">
+                            <p className="faq-answer text-gray-700 leading-relaxed">
                               {faq.a}
                             </p>
                           </div>
@@ -181,7 +196,7 @@ export default function FAQsPage() {
       </section>
 
       {/* Schedule Consultation Section */}
-      <section className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+      <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">

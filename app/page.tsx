@@ -15,7 +15,8 @@ import { BuildersShowcase } from '@/components/cadence/builders-showcase'
 import { HomepageFAQSection } from '@/components/cadence/homepage-faq-section'
 import { ScheduleConsultationSection } from '@/components/cadence/schedule-consultation-section'
 import { Footer } from '@/components/cadence/footer'
-import { WebPageSchema } from '@/components/schema/web-page'
+import { PageGraphSchema } from '@/components/schema/page-graph'
+import { HOME_FAQS } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 /** Crawlers need a stable git URL; metadataBase resolves to absolute og:image. */
@@ -58,7 +59,12 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div id="main-content" className="min-h-screen bg-white" tabIndex={-1}>
-      <WebPageSchema />
+      <PageGraphSchema
+        path="/"
+        name={"New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy"}
+        description={`Free buyer representation for new homes in Cadence Henderson NV 89011. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`}
+        faqs={HOME_FAQS}
+      />
       <Navigation />
       <Hero />
       <KeyFactsSection />

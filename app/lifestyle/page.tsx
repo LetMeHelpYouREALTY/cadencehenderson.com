@@ -7,6 +7,7 @@ import { HomeSearchSection } from '@/components/cadence/home-search-section'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import {
@@ -53,7 +54,7 @@ const lifestyleFeatures = [
     icon: GraduationCap,
     title: 'Schools',
     description:
-      'Top-rated Clark County schools including elementary, middle, and high schools.',
+      'Clark County campuses serving Cadence, including Cadence Elementary on-site. Confirm attendance zones by address.',
     image: cfImage(SITE_IMAGES.hero.schools, 'card'),
     link: '/lifestyle/schools',
   },
@@ -104,11 +105,11 @@ export default function LifestylePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Everything You Need, Right Here
+              Cadence Henderson lifestyle in Henderson NV 89011
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From world-class amenities to community events, discover all the
-              ways Cadence enhances your daily life.
+            <p className="aeo-lead text-xl text-gray-600 max-w-3xl mx-auto" data-speakable>
+              From Central Park amenities to community events, discover how
+              Cadence Henderson NV 89011 is laid out for daily living.
             </p>
           </div>
 
@@ -259,7 +260,7 @@ export default function LifestylePage() {
       </section>
 
       {/* Schedule Tour Section */}
-      <section className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+      <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
@@ -305,7 +306,7 @@ export default function LifestylePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 id="lifestyle-faq-heading" className="text-3xl font-bold text-gray-900 mb-2 text-center">
-              Frequently Asked Questions
+              Cadence Henderson lifestyle FAQs
             </h2>
             <p className="text-center text-gray-600 mb-8">
               Cadence Henderson community and lifestyle – Henderson NV 89011
@@ -365,7 +366,7 @@ export default function LifestylePage() {
                     {q}
                     <span className="text-green-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
                   </summary>
-                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
                 </details>
               ))}
             </div>
@@ -373,6 +374,12 @@ export default function LifestylePage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle"
+        name="Cadence Henderson Community & Amenities | Henderson NV 89011"
+        description="50-acre Central Park, resort pools, fitness centers, Cadence Elementary on-site & 30+ miles of trails. Discover the Cadence Henderson lifestyle in Henderson NV 89011."
+        breadcrumbs={[{ name: 'Cadence Henderson lifestyle NV 89011' }]}
+      />
       <Footer />
     </div>
   )

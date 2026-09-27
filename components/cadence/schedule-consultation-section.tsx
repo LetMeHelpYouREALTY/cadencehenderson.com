@@ -6,6 +6,8 @@ import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widg
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { SectionPhoto } from '@/components/cadence/section-photo'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { Calendar, Mail, Phone } from 'lucide-react'
 
 /** If the JS widget does not load within this time, show iframe fallback. */
@@ -35,12 +37,18 @@ export function ScheduleConsultationSection() {
 
   return (
     <section
-      className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white"
+      className="py-24 bg-cadence-ink text-white"
       aria-labelledby="schedule-consultation-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto mb-10">
+          <SectionPhoto
+            src={cfImage(SITE_IMAGES.sections.schedule, 'hero')}
+            alt="Schedule a buyer consultation for new homes in Cadence Henderson NV 89011"
+          />
+        </div>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 id="schedule-consultation-heading" className="text-3xl md:text-4xl font-bold mb-3 text-white">
+          <h2 id="schedule-consultation-heading" className="text-3xl md:text-4xl font-extralight tracking-[0.06em] mb-6 text-white">
             Ready to Buy New Homes at Cadence Henderson?
           </h2>
           <p className="text-lg md:text-xl text-white mb-6 max-w-2xl mx-auto">
@@ -49,7 +57,7 @@ export function ScheduleConsultationSection() {
           <div className="flex flex-wrap gap-3 justify-center mb-8">
             <Button
               size="lg"
-              className="bg-white text-slate-900 hover:bg-gray-100 font-semibold shadow-lg"
+              className="bg-white text-primary hover:bg-blue-50"
               asChild
             >
               <CalendlyLink>
@@ -59,7 +67,7 @@ export function ScheduleConsultationSection() {
             </Button>
             <a
               href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
-              className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-white px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-slate-900 transition-colors"
+              className="inline-flex items-center justify-center gap-2 border border-white/70 px-6 py-3 text-sm font-semibold tracking-[0.08em] uppercase text-white hover:bg-white hover:text-primary transition-colors"
               aria-label={`Call Dr. Jan Duffy: ${CONTACT_INFO.phone}`}
             >
               <Phone size={20} aria-hidden />
@@ -67,7 +75,7 @@ export function ScheduleConsultationSection() {
             </a>
             <a
               href={`mailto:${CONTACT_INFO.email}`}
-              className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-white px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-slate-900 transition-colors"
+              className="inline-flex items-center justify-center gap-2 border border-white/70 px-6 py-3 text-sm font-semibold tracking-[0.08em] uppercase text-white hover:bg-white hover:text-primary transition-colors"
               aria-label="Email Dr. Jan Duffy"
             >
               <Mail size={20} aria-hidden />
@@ -76,7 +84,7 @@ export function ScheduleConsultationSection() {
           </div>
         </div>
         {/* Calendly on white card so text is readable (no white-on-blue) */}
-        <div className="max-w-4xl mx-auto rounded-xl overflow-hidden bg-white shadow-xl p-4 md:p-6">
+        <div className="max-w-4xl mx-auto overflow-hidden bg-white border border-white/20 p-4 md:p-8">
           {showLoadingFallback && !calendarReady && !showIframeFallback && (
             <p className="text-center text-gray-500 py-4 text-sm" aria-live="polite">
               Loading calendar…
@@ -89,12 +97,12 @@ export function ScheduleConsultationSection() {
               width="100%"
               height={630}
               style={{ minWidth: 280, border: 0 }}
-              className="rounded-lg overflow-hidden w-full"
+              className="overflow-hidden w-full"
             />
           ) : (
             <CalendlyWhenVisible loadOnMount>
               <CalendlyInlineWidget
-                className="rounded-lg overflow-hidden w-full"
+                className="overflow-hidden w-full"
                 style={{ minWidth: 280, height: 630 }}
                 onReady={() => setCalendarReady(true)}
               />
@@ -105,7 +113,7 @@ export function ScheduleConsultationSection() {
               href={CONTACT_INFO.calendlyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:no-underline text-blue-900"
+              className="underline hover:no-underline text-neutral-900"
             >
               Open scheduler in a new tab
             </a>

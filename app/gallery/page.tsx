@@ -10,6 +10,8 @@ import { HomeSearchSection } from '@/components/cadence/home-search-section'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Image as ImageIcon, X, Calendar, Phone, Mail } from 'lucide-react'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
@@ -184,16 +186,16 @@ export default function GalleryPage() {
           >
             <X size={32} />
           </button>
-          <img
+          <SiteImage
             src={lightboxImage.url}
             alt={`${lightboxImage.title} - Cadence Henderson NV 89011 community gallery`}
-            className="max-w-full max-h-full object-contain"
+            className="max-h-full max-w-full object-contain"
           />
         </div>
       )}
 
       {/* Schedule Tour Section */}
-      <section className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+      <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
@@ -234,6 +236,14 @@ export default function GalleryPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/gallery"
+        name="Photo Gallery | Cadence Henderson 89011"
+        description="Cadence Henderson gallery: Central Park, amenities, homes, community. Cadence master-planned community Henderson NV 89011."
+        faqs={defaultPageFaqs('Cadence Henderson photo gallery')}
+        breadcrumbs={[{ name: 'Cadence Henderson gallery NV 89011' }]}
+        faqHeading="Cadence Henderson gallery — questions"
+      />
       <Footer />
     </div>
   )

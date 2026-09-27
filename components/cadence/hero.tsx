@@ -12,60 +12,61 @@ const HERO_IMAGE = cfImage(SITE_IMAGES.hero.homepage, 'hero')
 
 export function Hero() {
   return (
-    <section className="relative min-h-[480px] sm:min-h-[520px] md:min-h-[560px] lg:min-h-[600px] flex flex-col bg-gradient-to-r from-slate-900 to-slate-800 overflow-hidden" aria-label="Hero">
-      {/* LCP: native img; on error hide so gradient shows and alt text is not displayed */}
+    <section
+      className="relative min-h-[560px] sm:min-h-[620px] md:min-h-[680px] lg:min-h-[740px] flex flex-col bg-black overflow-hidden"
+      aria-label="Hero"
+    >
       <SiteImage
         src={HERO_IMAGE}
         alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
         fill
         priority
-        className="object-center opacity-90"
+        className="object-center opacity-80"
       />
-      {/* Light overlay so photo shows; keeps white text readable */}
       <div
-        className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20"
+        className="absolute inset-0 bg-black/35"
         aria-hidden
       />
 
-      {/* Content: concise hero, smaller type */}
-      <div className="relative container mx-auto px-4 sm:px-6 flex-1 flex items-center pb-24 sm:pb-28">
+      <div className="relative container mx-auto px-4 sm:px-6 flex-1 flex items-center py-24 sm:py-32">
         <div className="max-w-2xl text-white">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-extralight tracking-[0.06em] mb-6 leading-[1.2]">
             New Home Buyer&apos;s Agent in Cadence Henderson NV 89011
           </h1>
-          <p className="text-base md:text-lg text-white mb-6">
+          <p className="text-base md:text-lg font-light text-white/90 mb-10 max-w-xl">
             New homes Cadence Henderson NV 89011 — your buyer&apos;s agent. Free representation; builder pays the fee.
           </p>
-          {/* Wrapper forces dark text on the white search box so placeholder/labels are visible */}
-          <div className="mb-6 w-full max-w-full text-gray-900 [&_input]:text-gray-900 [&_input::placeholder]:text-gray-500 [&_realscout-simple-search]:max-w-full">
+          <div className="mb-10 w-full max-w-full text-neutral-900 [&_input]:text-neutral-900 [&_input::placeholder]:text-neutral-500 [&_realscout-simple-search]:max-w-full">
             <RealScoutSimpleSearch />
           </div>
           <div className="flex flex-wrap gap-3">
             <Button
               size="default"
-              className="bg-white text-blue-900 hover:bg-gray-100 font-medium"
+              className="bg-white text-primary hover:bg-blue-50"
               asChild
             >
               <CalendlyLink>
-                <Calendar className="mr-2" size={18} aria-hidden />
-                Schedule your free 15-min call
+                <Calendar className="mr-2" size={16} aria-hidden />
+                Schedule a 15-min call
               </CalendlyLink>
             </Button>
             <Button
               size="default"
-              className="bg-white text-slate-900 hover:bg-gray-100 font-medium border-0"
+              variant="outline"
+              className="border-white bg-transparent text-white hover:bg-white hover:text-primary"
               asChild
             >
               <a
                 href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
                 aria-label={`Call Dr. Jan Duffy: ${CONTACT_INFO.phone}`}
               >
-                Call: {CONTACT_INFO.phone}
+                Call {CONTACT_INFO.phone}
               </a>
             </Button>
             <Button
               size="default"
-              className="bg-white text-slate-900 hover:bg-gray-100 font-medium border-0"
+              variant="outline"
+              className="border-white bg-transparent text-white hover:bg-white hover:text-primary"
               asChild
             >
               <a
@@ -73,28 +74,12 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Cadence Henderson homes for sale
+                Homes for sale
               </a>
             </Button>
           </div>
         </div>
       </div>
-
-      {/* Decorative Wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg
-          viewBox="0 0 1440 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full"
-        >
-          <path
-            d="M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L1440 80V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z"
-            fill="white"
-          />
-        </svg>
-      </div>
     </section>
   )
 }
-

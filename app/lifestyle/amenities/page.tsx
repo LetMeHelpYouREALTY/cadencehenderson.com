@@ -18,7 +18,7 @@ import {
   Heart,
 } from 'lucide-react'
 import { cfImage, SITE_IMAGES, getAmenityImage } from '@/lib/cloudflare-images'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
+import { PageAeo } from '@/components/cadence/page-aeo'
 
 const amenities = [
   {
@@ -28,8 +28,8 @@ const amenities = [
       'Multiple community pools with lap lanes, splash pads, and heated spa areas. Perfect for year-round enjoyment.',
     features: [
       'Olympic-size lap pool',
-      'Family recreation pool',
-      'Children\'s splash pad',
+      'Recreation pool',
+      'About 2,000 sq ft splash pad',
       'Adults-only hot tubs',
       'Poolside cabanas',
       'Shaded seating areas',
@@ -105,12 +105,16 @@ const additionalAmenities = [
       'Fire pits and lounge seating',
       'Walking and biking trails',
       'Community garden plots',
+      'Sunset Road Linear Park with bounce pads, play structures, table tennis, and corn hole',
+      'Resident pool with Las Vegas Strip views',
+      'Pickleball courts in Central Park',
     ],
   },
   {
     category: 'Technology',
     items: [
       'High-speed fiber internet',
+      'Free wifi at amenity areas',
       'Smart community features',
       'Mobile app for amenity booking',
       'Online portal access',
@@ -146,12 +150,6 @@ export default function AmenitiesPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Cadence Henderson Lifestyle & Community', href: 'https://www.cadencehenderson.com/lifestyle' },
-          { name: 'Cadence Henderson Amenities – Central Park, Pools & Trails' },
-        ]}
-      />
 
       <PageHero
         title="World-Class Amenities"
@@ -176,7 +174,7 @@ export default function AmenitiesPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            Premier Facilities
+            Cadence Henderson amenities in NV 89011
           </h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {amenities.map((amenity) => {
@@ -294,7 +292,7 @@ export default function AmenitiesPage() {
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
                     <span className="text-gray-700">
-                      Splash pad with water features for kids
+                      About 2,000 sq ft splash pad with water features
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -306,7 +304,21 @@ export default function AmenitiesPage() {
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
                     <span className="text-gray-700">
-                      Scenic walking and biking trails throughout
+                      Pickleball courts plus scenic walking and biking trails
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
+                    <span className="text-gray-700">
+                      Sunset Road Linear Park: bounce pads, play structures,
+                      table tennis, and corn hole
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
+                    <span className="text-gray-700">
+                      Resident pool with Las Vegas Strip views and free wifi at
+                      amenity areas
                     </span>
                   </li>
                 </ul>
@@ -365,7 +377,7 @@ export default function AmenitiesPage() {
       </section>
 
       {/* Reservation CTA */}
-      <section className="py-16 bg-slate-900 text-white">
+      <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">
@@ -403,7 +415,7 @@ export default function AmenitiesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
-              Frequently Asked Questions
+              Cadence Henderson amenities FAQs
             </h2>
             <p className="text-center text-gray-600 mb-8">
               Amenities at Cadence Henderson, Henderson NV 89011
@@ -478,7 +490,7 @@ export default function AmenitiesPage() {
                     {q}
                     <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
                   </summary>
-                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
                 </details>
               ))}
             </div>
@@ -486,6 +498,15 @@ export default function AmenitiesPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle/amenities"
+        name="Cadence Henderson Amenities – Central Park, Pools & Trails"
+        description="50-acre Central Park, resort pools, splash pads, fitness centers, pickleball courts, dog parks & 30+ miles of trails in Cadence Henderson NV 89011."
+        breadcrumbs={[
+          { name: 'Lifestyle', path: '/lifestyle' },
+          { name: 'Amenities in Cadence Henderson NV 89011' },
+        ]}
+      />
       <Footer />
     </div>
   )

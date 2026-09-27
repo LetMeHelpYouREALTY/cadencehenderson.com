@@ -8,6 +8,8 @@ import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Newspaper, Calendar, Image as ImageIcon, Phone, Mail } from 'lucide-react'
@@ -218,7 +220,7 @@ export default async function NewsPage() {
       </section>
 
       {/* Schedule Consultation Section */}
-      <section className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+      <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
@@ -259,6 +261,14 @@ export default async function NewsPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/news"
+        name="News | Cadence Henderson NV 89011"
+        description="Cadence Henderson news, community updates, and market trends. Henderson NV 89011. Dr. Jan Duffy, REALTOR®."
+        faqs={defaultPageFaqs('Cadence Henderson news and market updates')}
+        breadcrumbs={[{ name: 'Cadence Henderson news NV 89011' }]}
+        faqHeading="Cadence Henderson news — questions"
+      />
       <Footer />
     </div>
   )

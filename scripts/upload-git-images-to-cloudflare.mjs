@@ -15,6 +15,7 @@
 
 import { readdir, readFile } from 'node:fs/promises'
 import { join, relative, extname } from 'node:path'
+import { isCloudflareAuthError, warnGitFallback } from './lib/cloudflare-images-auth.mjs'
 
 const args = new Set(process.argv.slice(2))
 const skipExisting = args.has('--skip-existing')
@@ -149,6 +150,10 @@ async function main() {
     } catch (error) {
       failed += 1
       console.error(`Failed: ${id}: ${error.message}`)
+      if (allowMissingToken && isCloudflareAuthError(error.message)) {
+        warnGitFallback('upload-git-images-to-cloudflare')
+        process.exit(0)
+      }
     }
   }
 

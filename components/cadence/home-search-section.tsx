@@ -21,33 +21,33 @@ export function HomeSearchSection({ variant = 'default', compact = false }: Home
     : 'Browse new homes and resale listings in Cadence Henderson NV 89011. Dr. Jan Duffy represents buyers at no cost — builder pays the fee.'
 
   return (
-    <section className="py-16 bg-gray-50" aria-labelledby="home-search-heading">
+    <section className="py-24 bg-neutral-50" aria-labelledby="home-search-heading">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 id="home-search-heading" className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-14">
+            <h2 id="home-search-heading" className="text-3xl md:text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-6">
               {heading}
             </h2>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto mb-4">
+            <p className="text-lg font-light text-neutral-600 leading-relaxed max-w-2xl mx-auto mb-6">
               {description}
             </p>
             <a
               href={CONTACT_INFO.realScoutSearchUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-blue-900 font-semibold hover:underline"
+              className="inline-flex items-center gap-2 text-sm font-light tracking-[0.12em] uppercase text-neutral-900 hover:underline"
             >
-              <Search size={18} />
+              <Search size={16} />
               Open Home Search
             </a>
           </div>
-          <RealScoutWidget className="min-h-[400px] rounded-lg overflow-hidden bg-white shadow-sm" />
+          <RealScoutWidget className="min-h-[400px] overflow-hidden bg-white border border-neutral-200" />
           {!compact && (
-            <div className="text-center mt-8">
-              <p className="text-gray-700 mb-4">
+            <div className="text-center mt-12">
+              <p className="text-neutral-600 font-light mb-6">
                 Want a personalized tour or buyer consultation?
               </p>
-              <Button size="lg" className="bg-blue-900 hover:bg-blue-800" asChild>
+              <Button size="lg" asChild>
                 <CalendlyLink>Schedule a call with Dr. Jan</CalendlyLink>
               </Button>
             </div>

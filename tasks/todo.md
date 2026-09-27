@@ -1,20 +1,25 @@
 # Task plan
 
-Replace placeholder images with unique, heading-appropriate photos for H1, H2, and H3 on each public page. Standardize Cloudflare Images as primary storage with git as backup for all domains and projects.
+Audit missing section images; keep Cloudflare Images as primary delivery and git `public/images/` as backup.
 
 ## Current plan
 
-- [x] Inventory pages, heading levels, and current placeholder slots
-- [x] Generate unique photorealistic images (Cadence Henderson / desert Southwest)
-- [x] Store images under `public/images/` and map them in `SITE_IMAGES`
-- [x] Add `PageHero` so every inner-page H1 has a unique photo
-- [x] Wire unique H2 section photos and H3 card photos (no shared placeholder)
-- [x] SOP: Cloudflare Images primary, git fallback, global settings, Vercel sync
-- [x] Verify pages render images (dev server / curl)
-- [ ] Commit, push, open PR
+- [x] Restore Cloudflare-first `SiteImage` / `CloudflareImage` (CF → git → placeholder)
+- [x] Generate unique git files for aliased CF IDs, hash duplicates, and missing sections
+- [x] Register unique IDs, host builder logos in git, wire section photos
+- [x] Typecheck, verify in browser, commit, push, open PR
 
 ## Review
 
-- **Summary:** Cloudflare Images is primary (`imagedelivery.net` / hash `byE6BTe9lNqo21V57n4aPQ`). Git `public/images/` is the backup. Custom IDs `{prefix}-{folder}-{slug}`. Vercel build runs `npm run cloudflare:images:sync`. SOP: `docs/sop/cloudflare-images-git-fallback.md`. Global settings JSON for reuse on other domains.
-- **Verification:** Dev server HTML emits `cadence-*` delivery URLs. Git files return 200 (`/images/hero/homepage.jpg`, `/og-image.jpg`). Cloudflare HEAD for `cadence-hero-homepage` is 404 until `CLOUDFLARE_API_TOKEN` is set on the Vercel project and production deploys. `SiteImage` / `CloudflareImage` swap to git on 404.
-- **Notes:** Set token on every Vercel project (Production), then `vercel --prod`. Prefix other domains with a unique `CLOUDFLARE_IMAGES_PREFIX`.
+**Done looks like:** Cloudflare URLs are in the HTML; git files exist as backup; unique catalog IDs match unique files; homepage Key Facts / Market Snapshot / Services / FAQ photos paint; inner pages have a body photo.
+
+**Check:** `npx tsc --noEmit` passed. Unique catalog IDs map to unique files. Remaining leftover sections (schedule CTA, disclaimer, village/builder hubs, Elysian/Ascend/Avela) now have dedicated git-backed IDs. Cloudflare IDs still 404 until production sync with `CLOUDFLARE_API_TOKEN`; native `onError` swaps to git so sections are not blank.
+
+## Remaining
+
+- [ ] Replay unique catalog + files onto a branch from `main` so they can ship without the stacked draft chain
+- [ ] Production `CLOUDFLARE_API_TOKEN` upload (`npm run cloudflare:images:sync` on Vercel)
+
+## Review
+
+**Done looks like:** every public page section either paints a Cloudflare URL or falls back to a real git JPEG; unique catalog IDs map to unique files so `npm run cloudflare:images:upload` can populate Cloudflare; no cadencenv.com hotlinks for logos.

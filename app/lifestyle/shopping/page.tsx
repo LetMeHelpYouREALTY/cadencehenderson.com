@@ -4,9 +4,12 @@ import type { Metadata } from 'next'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { ShoppingBag, Coffee, Utensils, Film, Heart } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import Link from 'next/link'
 
 const shoppingCenters = [
   {
@@ -122,11 +125,30 @@ export default function ShoppingPage() {
 
       <RealScoutOfficeListings />
 
+      <section className="border-b border-neutral-200 py-10">
+        <div className="container mx-auto px-4">
+          <nav
+            aria-label="Shopping and nearby destinations"
+            className="mx-auto flex max-w-4xl flex-wrap justify-center gap-4 text-sm"
+          >
+            <Link href="/lifestyle/shopping/restaurants" className="font-medium text-primary hover:underline">
+              Restaurants
+            </Link>
+            <Link href="/lifestyle/shopping/entertainment" className="font-medium text-primary hover:underline">
+              Entertainment
+            </Link>
+            <Link href="/lifestyle/shopping/activities" className="font-medium text-primary hover:underline">
+              Outdoor activities
+            </Link>
+          </nav>
+        </div>
+      </section>
+
       {/* Shopping Centers */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            Nearby Shopping Centers
+            Shopping near Cadence Henderson NV 89011
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {shoppingCenters.map((center) => (
@@ -286,7 +308,7 @@ export default function ShoppingPage() {
       </section>
 
       {/* Las Vegas Strip Section */}
-      <section className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+      <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">
@@ -307,6 +329,17 @@ export default function ShoppingPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle/shopping"
+        name="Shopping & Dining Near Cadence Henderson NV | 89011"
+        description="Galleria at Sunset, Cadence Marketplace, and Henderson dining near Cadence Henderson NV 89011. Grocery, retail, and entertainment 5–10 minutes away."
+        faqs={defaultPageFaqs('shopping and dining near Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Lifestyle', path: '/lifestyle' },
+          { name: 'Shopping near Cadence Henderson NV 89011' },
+        ]}
+        faqHeading="Cadence Henderson shopping — questions"
+      />
       <Footer />
     </div>
   )

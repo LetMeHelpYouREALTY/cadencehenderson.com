@@ -1,6 +1,8 @@
 import { PageHero } from '@/components/cadence/page-hero'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { BUILDER_LOGO_SRCS, BUILDER_PHOTO_KEYS } from '@/lib/builder-logos'
+import { SiteImage } from '@/components/cadence/site-image'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { HowToBuySchema } from '@/components/schema/how-to-buy'
 import { RealScoutAdvancedSearch } from '@/components/idx/realscout-advanced-search'
@@ -9,20 +11,10 @@ import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { RealScoutWidget } from '@/components/idx/realscout-widget'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
-import { Home, MapPin, Bed, Bath, Ruler, Search } from 'lucide-react'
+import { Home, Bed, Bath, Ruler, Search } from 'lucide-react'
 import Link from 'next/link'
-/** Builder logos from cadencenv.com - same source as BuildersShowcase */
-const BUILDER_LOGOS: Record<string, string> = {
-  'beazer-homes': 'https://cadencenv.com/wp-content/uploads/2024/05/BeazerHomes_Logo.jpg',
-  'century-communities': 'https://cadencenv.com/wp-content/uploads/2021/03/Century-Communities-Logo_Horz_RGB-300x91.jpg',
-  'dr-horton': 'https://cadencenv.com/wp-content/uploads/2021/03/DR_Horton_Logo_Red-Blue-300x100.png',
-  'lennar': 'https://cadencenv.com/wp-content/uploads/2020/11/lennar-logo.png',
-  'richmond-american': 'https://cadencenv.com/wp-content/uploads/2020/12/Richmond-Amer-Home-logo-365x100-1-300x82.png',
-  'storybook-homes': 'https://cadencenv.com/wp-content/uploads/2022/10/SBHomes_Logo2022-300x146.png',
-  'taylor-morrison': 'https://cadencenv.com/wp-content/uploads/2024/05/TM_Logo_Hor-300x75.jpg',
-  'woodside-homes': 'https://cadencenv.com/wp-content/uploads/2022/08/Woodside-logo_color-200x67-1.png',
-}
 
 const builders = [
   {
@@ -120,14 +112,24 @@ export default function NewHomesPage() {
                   Start Your Search
                 </Button>
               </a>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-900"
-              >
-                <MapPin className="mr-2" size={20} />
-                View Community Map
-              </Button>
+              <Link href="/find-your-home">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-blue-900"
+                >
+                  Find your home
+                </Button>
+              </Link>
+              <Link href="/incentives">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-blue-900"
+                >
+                  Incentives
+                </Button>
+              </Link>
             </div>
       </PageHero>
 
@@ -191,11 +193,15 @@ export default function NewHomesPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Our Trusted Builders
+              New home builders in Cadence Henderson NV 89011
             </h2>
             <p className="text-xl text-gray-700">
               Choose from {builders.length} premier home builders offering over
-              150 homes
+              150 homes.{' '}
+              <Link href="/communities" className="font-semibold text-blue-900 hover:underline">
+                Browse every Cadence village
+              </Link>
+              .
             </p>
           </div>
 
@@ -203,16 +209,31 @@ export default function NewHomesPage() {
             {builders.map((builder) => (
               <Link
                 key={builder.slug}
-                href={`/new-homes/${builder.slug}`}
+                href={
+                  builder.slug === 'beazer-homes'
+                    ? '/communities/beazer'
+                    : `/new-homes/${builder.slug}`
+                }
                 className="group"
               >
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                  <div className="relative h-40 overflow-hidden bg-gray-50 flex items-center justify-center p-6 transition-transform duration-300 group-hover:scale-[1.02]">
-                    <img
-                      src={BUILDER_LOGOS[builder.slug]}
+                  <div className="relative h-44 overflow-hidden bg-neutral-200">
+                    <SiteImage
+                      src={cfImage(
+                        SITE_IMAGES.builders[BUILDER_PHOTO_KEYS[builder.slug] ?? 'beazer'],
+                        'card',
+                      )}
+                      alt={`${builder.name} new homes in Cadence Henderson NV 89011`}
+                      fill
+                    />
+                  </div>
+                  <div className="relative h-20 overflow-hidden bg-white flex items-center justify-center p-4 border-b border-neutral-100">
+                    <SiteImage
+                      src={BUILDER_LOGO_SRCS[builder.slug]}
                       alt={`${builder.name} - New homes at Cadence Henderson NV 89011`}
+                      width={300}
+                      height={100}
                       className="max-h-full max-w-full object-contain"
-                      loading="lazy"
                     />
                   </div>
                   <div className="p-6">
@@ -249,8 +270,8 @@ export default function NewHomesPage() {
             </h2>
             <p className="text-xl text-gray-700 mb-8">
               Contact Dr. Jan Duffy to schedule a personalized tour of Cadence.
-              I'll guide you through all builders and help you find the perfect
-              home for your family.
+              I'll guide you through Cadence builders and help you compare
+              floor plans, lot orientation, and net monthly cost.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <CalendlyLink>
@@ -286,7 +307,7 @@ export default function NewHomesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
-              Frequently Asked Questions
+              Cadence Henderson new home FAQs
             </h2>
             <p className="text-center text-gray-700 mb-8">
               New homes in Cadence Henderson, Henderson NV 89011
@@ -361,7 +382,7 @@ export default function NewHomesPage() {
                     {q}
                     <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
                   </summary>
-                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
                 </details>
               ))}
             </div>
@@ -369,6 +390,12 @@ export default function NewHomesPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/new-homes"
+        name="New Homes for Sale – Cadence Henderson NV 89011"
+        description="8 builders, 150+ homes from $300K–$650K in Cadence Henderson 89011. Beazer, Lennar, Richmond American, Woodside & more. Browse floor plans, prices & availability. Tours 7 days."
+        breadcrumbs={[{ name: 'New homes in Cadence Henderson NV 89011' }]}
+      />
       <Footer />
     </div>
   )

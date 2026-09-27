@@ -1,11 +1,15 @@
 import { PageHero } from '@/components/cadence/page-hero'
 import type { Metadata } from 'next'
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Heart, Phone, Clock, MapPin, Stethoscope, Syringe } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const services = [
   {
@@ -74,6 +78,12 @@ export default function AnimalHospitalPage() {
 
       <RealScoutOfficeListings />
 
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.animalHospital, 'hero')}
+        alt="Veterinary clinic near Cadence Henderson NV 89011"
+      />
+
+
       {/* About Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -91,7 +101,7 @@ export default function AnimalHospitalPage() {
               Conveniently located within the Cadence community, we offer a full
               range of veterinary services from routine wellness exams to
               advanced surgical procedures. We're here to be your partner in
-              keeping your furry family members healthy and happy.
+              keeping pets healthy.
             </p>
           </div>
         </div>
@@ -133,7 +143,7 @@ export default function AnimalHospitalPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Visit Us
+              Veterinary care near Cadence Henderson NV 89011
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-teal-50 rounded-lg p-8">
@@ -155,13 +165,17 @@ export default function AnimalHospitalPage() {
                   <div className="flex items-start">
                     <Phone className="text-teal-900 mr-3 mt-1 flex-shrink-0" size={24} />
                     <div>
-                      <p className="font-bold text-gray-900">Phone</p>
+                      <p className="font-bold text-gray-900">Realtor line</p>
                       <a
-                        href="tel:+17025554000"
+                        href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
                         className="text-teal-900 hover:underline"
                       >
-                        (702) 555-4000
+                        {CONTACT_INFO.phone} — Dr. Jan Duffy for Cadence homes
                       </a>
+                      <p className="mt-1 text-sm text-gray-600">
+                        Confirm current veterinary hours at the hospital. Do not
+                        use placeholder numbers.
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -254,7 +268,7 @@ export default function AnimalHospitalPage() {
                   💚 Compassionate Care
                 </h3>
                 <p className="text-gray-700">
-                  We treat your pets like family with gentle, loving attention.
+                  We treat pets with gentle, consistent attention.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-md">
@@ -272,7 +286,7 @@ export default function AnimalHospitalPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-slate-900 text-white">
+      <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">
@@ -283,13 +297,15 @@ export default function AnimalHospitalPage() {
               personalized, compassionate veterinary care.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-teal-900 hover:bg-gray-100"
-              >
-                <Phone className="mr-2" size={20} />
-                Call Us: (702) 555-4000
-              </Button>
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+                <Button
+                  size="lg"
+                  className="bg-white text-teal-900 hover:bg-gray-100"
+                >
+                  <Phone className="mr-2" size={20} />
+                  Call Dr. Jan: {CONTACT_INFO.phone}
+                </Button>
+              </a>
               <Button
                 size="lg"
                 variant="outline"
@@ -302,6 +318,17 @@ export default function AnimalHospitalPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle/animal-hospital"
+        name="Cadence Animal Hospital – Henderson NV 89011 | Pet Care"
+        description="Veterinary care near Cadence Henderson NV 89011. Wellness exams, vaccines, dental, and surgery. Confirm current hospital hours on-site. Dr. Jan Duffy for Cadence homes."
+        faqs={defaultPageFaqs('veterinary care near Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Lifestyle', path: '/lifestyle' },
+          { name: 'Animal hospital near Cadence Henderson NV 89011' },
+        ]}
+        faqHeading="Cadence Henderson pet care — questions"
+      />
       <Footer />
     </div>
   )

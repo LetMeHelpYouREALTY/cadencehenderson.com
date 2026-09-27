@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { NewsPlaceholderImage } from '@/components/cadence/news-placeholder-image'
+import { SiteImage } from '@/components/cadence/site-image'
 import { fetchNews } from '@/lib/fetch-news'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { Calendar } from 'lucide-react'
@@ -15,20 +16,19 @@ export async function NewsSection() {
   }
 
   return (
-    <section className="py-20 bg-white" aria-labelledby="news-heading">
+    <section className="py-24 bg-white" aria-labelledby="news-heading">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center justify-center mb-6">
-            <img
-              src="https://cadencenv.com/wp-content/uploads/2021/01/news-home-box-288x300.png"
+            <SiteImage
+              src={cfImage(SITE_IMAGES.icons.newsBox, 'public')}
               width={96}
               height={100}
-              loading="lazy"
               alt="Cadence Henderson NV 89011 news and community updates"
-              className="w-24 h-24 object-contain"
+              className="h-24 w-24 object-contain"
             />
           </div>
-          <h2 id="news-heading" className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 id="news-heading" className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-6">
             Cadence Henderson News
           </h2>
           <p className="text-xl text-gray-700 mb-8 leading-relaxed">
@@ -42,7 +42,7 @@ export async function NewsSection() {
                   href={article.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow bg-white"
+                  className="block border border-neutral-200 overflow-hidden bg-white"
                 >
                   <div className="relative h-40 bg-gray-200">
                     {article.image ? (
@@ -76,7 +76,7 @@ export async function NewsSection() {
           <div className="flex flex-wrap gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
+              className="text-lg px-8"
               asChild
             >
               <Link href="/news">Read Latest News</Link>
@@ -84,7 +84,7 @@ export async function NewsSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-blue-900 text-blue-900 hover:bg-blue-50 text-lg px-8"
+              className="border-neutral-900 text-neutral-900 hover:bg-neutral-50 text-lg px-8"
               asChild
             >
               <Link href="/gallery">Photos of Cadence Henderson</Link>

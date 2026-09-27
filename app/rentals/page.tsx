@@ -8,6 +8,7 @@ import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listi
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Building2, MapPin, DollarSign, Calendar, Phone, Mail } from 'lucide-react'
 import Link from 'next/link'
@@ -99,11 +100,11 @@ export default function RentalsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Why Rent in Cadence?
+              Why rent in Cadence Henderson NV 89011
             </h2>
-            <p className="text-xl text-gray-700">
-              Enjoy all the benefits of living in a top-rated master-planned
-              community without the commitment of home ownership.
+            <p className="aeo-lead text-xl text-gray-700" data-speakable>
+              Rent single-family homes and apartments in Cadence Henderson NV 89011
+              with access to Central Park, pools, and trails — without buying.
             </p>
           </div>
 
@@ -217,7 +218,7 @@ export default function RentalsPage() {
       </section>
 
       {/* Schedule Consultation Section */}
-      <section className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+      <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
@@ -263,7 +264,7 @@ export default function RentalsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
-              Frequently Asked Questions
+              Cadence Henderson rental FAQs
             </h2>
             <p className="text-center text-gray-600 mb-8">
               Rentals in Cadence Henderson, Henderson NV 89011
@@ -338,7 +339,7 @@ export default function RentalsPage() {
                     {q}
                     <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
                   </summary>
-                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
                 </details>
               ))}
             </div>
@@ -346,6 +347,12 @@ export default function RentalsPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/rentals"
+        name="Cadence Henderson Rentals | 89011"
+        description="Cadence Henderson rental homes and communities. Find rentals in Henderson NV 89011. Dr. Jan Duffy, REALTOR®. American Homes, Element 12, Adler."
+        breadcrumbs={[{ name: 'Rentals in Cadence Henderson NV 89011' }]}
+      />
       <Footer />
     </div>
   )

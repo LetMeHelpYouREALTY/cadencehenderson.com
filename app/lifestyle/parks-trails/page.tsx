@@ -4,10 +4,12 @@ import type { Metadata } from 'next'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Trees, MapPin, Bike, Dog, Users } from 'lucide-react'
 import { cfImage, SITE_IMAGES, getAmenityImage, getGalleryImage } from '@/lib/cloudflare-images'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
+import Link from 'next/link'
 
 const parks = [
   {
@@ -33,7 +35,7 @@ const parks = [
     description:
       'Smaller neighborhood parks are strategically located throughout Cadence, providing convenient access to outdoor recreation for all residents.',
     features: [
-      'Tot lots for young children',
+      'Tot lots and playground equipment',
       'Playground equipment',
       'Benches and seating areas',
       'Shade structures',
@@ -84,7 +86,7 @@ const trails = [
     distance: '1.2 miles',
     difficulty: 'Easy',
     description:
-      'Educational trail showcasing native desert plants and wildlife. Great for families and nature enthusiasts.',
+      'Educational trail showcasing native desert plants and wildlife.',
   },
   {
     name: 'Fitness Trail',
@@ -106,27 +108,23 @@ export default function ParksTrailsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Cadence Henderson Lifestyle & Community', href: 'https://www.cadencehenderson.com/lifestyle' },
-          { name: 'Parks & Trails in Cadence Henderson 89011' },
-        ]}
-      />
 
       <PageHero
-        title="Parks & Trails"
+        title="Parks & Trails in Cadence Henderson NV 89011"
         subtitle="Discover over 50 acres of parks and miles of scenic trails throughout Cadence. From Central Park to neighborhood green spaces, enjoy outdoor recreation right in your backyard."
         imageSrc={cfImage(SITE_IMAGES.hero.parksTrails, 'hero')}
         imageAlt="Parks and trails at Cadence Henderson NV 89011"
         icon={Trees}
       >
-        <Button
-          size="lg"
-          className="bg-white text-green-900 hover:bg-gray-100"
-        >
-          <MapPin className="mr-2" size={20} />
-          View Parks Map
-        </Button>
+        <Link href="/lifestyle/parks-trails/pocket-parks">
+          <Button
+            size="lg"
+            className="bg-white text-green-900 hover:bg-gray-100"
+          >
+            <MapPin className="mr-2" size={20} />
+            Pocket parks
+          </Button>
+        </Link>
       </PageHero>
 
       <RealScoutOfficeListings />
@@ -137,11 +135,11 @@ export default function ParksTrailsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Central Park: The Heart of Cadence
+                Central Park in Cadence Henderson NV 89011
               </h2>
-              <p className="text-xl text-gray-600">
-                Nearly 50 acres of outdoor paradise in the center of our
-                community
+              <p className="aeo-lead text-xl text-gray-600" data-speakable>
+                About 50 acres of parkland in Cadence Henderson NV 89011 — playgrounds,
+                splash pads, trails, and event lawns.
               </p>
             </div>
 
@@ -157,11 +155,10 @@ export default function ParksTrailsPage() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   A Space for Everyone
                 </h3>
-                <p className="text-lg text-gray-700 mb-6">
-                  Central Park is designed to bring the community together with
-                  spaces for play, relaxation, and celebration. Whether you are
-                  looking for an early morning jog, a family picnic, or a place
-                  for your children to play, Central Park has it all.
+                <p className="aeo-lead text-lg text-gray-700 mb-6" data-speakable>
+                  Central Park is designed for daily use: jogging loops, picnic
+                  lawns, playgrounds, splash pads, and event space in Cadence
+                  Henderson NV 89011.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
@@ -338,6 +335,17 @@ export default function ParksTrailsPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle/parks-trails"
+        name="Parks & Trails in Cadence Henderson 89011 | Henderson NV"
+        description="50-acre Central Park, 30+ miles of trails, dog parks & sports park in Cadence Henderson NV 89011. Walking, biking, jogging & outdoor recreation for residents."
+        faqs={defaultPageFaqs('parks and trails in Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Lifestyle', path: '/lifestyle' },
+          { name: 'Parks and trails in Cadence Henderson NV 89011' },
+        ]}
+        faqHeading="Cadence Henderson parks — questions"
+      />
       <Footer />
     </div>
   )

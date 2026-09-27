@@ -5,6 +5,8 @@
  * public, hero, card, thumbnail, avatar, og, gallery
  */
 
+import { isCloudflareAuthError, warnGitFallback } from './lib/cloudflare-images-auth.mjs'
+
 const allowMissingToken = process.argv.includes('--allow-missing-token')
 const ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID || '2cc579c1ec9e426ed585e933ebf4753b'
 
@@ -59,6 +61,13 @@ async function main() {
       continue
     }
     console.error(`Variant ${id} failed: ${message}`)
+    if (isCloudflareAuthError(message)) {
+      if (allowMissingToken) {
+        warnGitFallback('ensure-cloudflare-image-variants')
+        process.exit(0)
+      }
+      process.exit(1)
+    }
   }
 }
 
