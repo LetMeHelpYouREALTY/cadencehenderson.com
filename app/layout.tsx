@@ -9,6 +9,7 @@ import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { ThemeProvider } from 'next-themes'
 import { ScrollToTop } from '../components/cadence/scroll-to-top'
 import { LocalBusinessSchema } from '../components/schema/local-business'
+import { FAQPageSchema } from '../components/schema/faq-page'
 import { GeoMeta } from '../components/schema/geo-meta'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import './globals.css'
@@ -71,6 +72,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <LocalBusinessSchema />
+        <FAQPageSchema />
         <GeoMeta />
         {/* Preconnect to critical LCP and third-party origins (max 4) */}
         <link rel="preconnect" href="https://imagedelivery.net" />

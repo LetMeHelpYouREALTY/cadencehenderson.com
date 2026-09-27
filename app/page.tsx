@@ -61,8 +61,8 @@ export default function HomePage() {
     <div id="main-content" className="min-h-screen bg-white" tabIndex={-1}>
       <PageGraphSchema
         path="/"
-        name={"New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy"}
-        description={`Free buyer representation for new homes in Cadence Henderson NV 89011. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`}
+        name={HOME_TITLE}
+        description={HOME_DESCRIPTION}
         faqs={HOME_FAQS}
       />
       <Navigation />
