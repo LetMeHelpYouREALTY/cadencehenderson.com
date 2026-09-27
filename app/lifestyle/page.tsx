@@ -4,6 +4,7 @@ import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { HomeSearchSection } from '@/components/cadence/home-search-section'
+import { NearbyAmenitiesMapSection } from '@/components/cadence/nearby-amenities-map-section'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -300,6 +301,8 @@ export default function LifestylePage() {
           </div>
         </div>
       </section>
+
+      <NearbyAmenitiesMapSection compact />
 
       {/* FAQ Section */}
       <section className="py-16 bg-white" aria-labelledby="lifestyle-faq-heading">

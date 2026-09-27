@@ -77,6 +77,7 @@ export function getSitemapEntries(): SitemapEntry[] {
     { url: `${base}/realtors`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/maps`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/nearby-amenities`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/residents`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${base}/gallery`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${base}/faqs`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },

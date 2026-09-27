@@ -15,6 +15,7 @@ export function Footer() {
     { title: 'American Homes 4 Rent in Cadence', href: '/american-homes-4-rent' },
     { title: 'Adler Apartments in Cadence Henderson', href: '/adler' },
     { title: 'Element 12 in Cadence Henderson', href: '/element12' },
+    { title: 'Nearby Amenities Map – Cadence Henderson', href: '/nearby-amenities' },
     { title: 'Cadence Henderson Amenities & Central Park', href: '/lifestyle/amenities' },
     { title: 'Community Events in Cadence Henderson', href: '/lifestyle/events' },
     { title: 'Parks & Trails in Cadence Henderson', href: '/lifestyle/parks-trails' },

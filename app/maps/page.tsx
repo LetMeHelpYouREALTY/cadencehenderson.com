@@ -2,6 +2,7 @@ import { PageHero } from '@/components/cadence/page-hero'
 import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
+import { NearbyAmenitiesMapSection } from '@/components/cadence/nearby-amenities-map-section'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { PageAeo } from '@/components/cadence/page-aeo'
@@ -231,6 +232,12 @@ export default function MapsPage() {
           </div>
         </div>
       </section>
+
+      <NearbyAmenitiesMapSection
+        heading="What's nearby Cadence Henderson"
+        description="Restaurants, grocery, parks, schools, and healthcare within minutes of Cadence — filter the map or open the full amenities guide."
+        compact
+      />
 
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50" aria-labelledby="maps-faq-heading">

@@ -7,6 +7,7 @@ import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { HowToBuySchema } from '@/components/schema/how-to-buy'
 import { RealScoutAdvancedSearch } from '@/components/idx/realscout-advanced-search'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
+import { NearbyAmenitiesMapSection } from '@/components/cadence/nearby-amenities-map-section'
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { RealScoutWidget } from '@/components/idx/realscout-widget'
 import { Navigation } from '@/components/cadence/navigation'
@@ -301,6 +302,12 @@ export default function NewHomesPage() {
           </div>
         </div>
       </section>
+
+      <NearbyAmenitiesMapSection
+        heading="What's near your new Cadence home"
+        description="See grocery, dining, parks, schools, and healthcare around Cadence Henderson before you choose a builder and floor plan."
+        compact
+      />
 
       {/* FAQ Section */}
       <section className="py-16 bg-white">
