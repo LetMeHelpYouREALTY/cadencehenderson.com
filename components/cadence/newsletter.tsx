@@ -11,23 +11,23 @@ const NEWSLETTER_WIDGET_STYLE: React.CSSProperties = {
 
 export function Newsletter() {
   return (
-    <section className="py-20 bg-slate-900 text-white">
+    <section className="py-24 bg-cadence-ink text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 rounded-full mb-6">
-              <Calendar size={40} className="text-white" />
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 border border-white/30 mb-8">
+              <Calendar size={28} className="text-white" />
             </div>
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-extralight tracking-[0.06em] mb-6">
               Schedule Your Cadence Consultation
             </h2>
-            <p className="text-xl mb-8">
+            <p className="text-lg font-light text-white/85 mb-8">
               Book a 15-minute call with Dr. Jan Duffy. Get personalized
               guidance, schedule a tour, or learn about available homes in
               Cadence Henderson.
             </p>
           </div>
-          <div className="bg-white rounded-lg p-4 min-h-[600px]">
+          <div className="bg-white border border-white/20 p-4 min-h-[600px]">
             <CalendlyWhenVisible>
               <CalendlyInlineWidget
                 style={NEWSLETTER_WIDGET_STYLE}

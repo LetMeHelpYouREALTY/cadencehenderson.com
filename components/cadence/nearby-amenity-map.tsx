@@ -10,12 +10,12 @@ import {
   getMapsEmbedUrl,
   getStaticPlacesForCategory,
 } from '@/lib/nearby-amenities-config'
+import { loadGoogleMaps, mapsAuthFailed } from '@/lib/google-maps-loader'
+import { searchCategory } from '@/lib/nearby-amenities-places-search'
 import { cn } from '@/lib/utils'
 
 type NearbyAmenityMapProps = {
-  /** Tailwind height class — map container reserves this height to limit CLS */
   heightClassName?: string
-  /** Show curated list beside/below map when API unavailable */
   showStaticList?: boolean
   initialCategory?: AmenityCategoryId
   className?: string
@@ -23,51 +23,9 @@ type NearbyAmenityMapProps = {
 
 type MapLoadState = 'idle' | 'loading' | 'ready' | 'fallback'
 
-let mapsScriptPromise: Promise<void> | null = null
-
-function loadGoogleMapsScript(apiKey: string): Promise<void> {
-  if (typeof window === 'undefined') return Promise.reject(new Error('no window'))
-  if (typeof window.google?.maps?.importLibrary === 'function') {
-    return Promise.resolve()
-  }
-  if (mapsScriptPromise) return mapsScriptPromise
-
-  mapsScriptPromise = new Promise((resolve, reject) => {
-    const existing = document.querySelector(
-      'script[data-nearby-amenity-maps]',
-    ) as HTMLScriptElement | null
-    if (existing) {
-      existing.addEventListener('load', () => resolve())
-      existing.addEventListener('error', () => reject(new Error('maps script error')))
-      return
-    }
-
-    const params = new URLSearchParams({
-      key: apiKey,
-      v: 'weekly',
-      libraries: 'places,marker',
-      loading: 'async',
-    })
-
-    const script = document.createElement('script')
-    script.dataset.nearbyAmenityMaps = 'true'
-    script.async = true
-    script.src = `https://maps.googleapis.com/maps/api/js?${params.toString()}`
-    script.onload = () => resolve()
-    script.onerror = () => {
-      mapsScriptPromise = null
-      reject(new Error('Failed to load Google Maps'))
-    }
-    document.head.appendChild(script)
-  })
-
-  return mapsScriptPromise
-}
-
 type PlaceResult = {
   name: string
   address: string
-  rating?: number
   lat: number
   lng: number
   directionsQuery: string
@@ -88,18 +46,31 @@ function StaticAmenityList({ categoryId }: { categoryId: AmenityCategoryId }) {
       {places.map((place) => (
         <li key={place.name} className="rounded-md border border-gray-200 bg-gray-50 p-3">
           <p className="font-medium text-gray-900">{place.name}</p>
-          <p className="text-sm text-gray-600">{place.address}</p>
+          {place.address ? (
+            <p className="text-sm text-gray-600">{place.address}</p>
+          ) : null}
           {place.note ? (
             <p className="text-sm text-gray-700 mt-1">{place.note}</p>
           ) : null}
-          <a
-            href={getDirectionsUrl(place.address)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-blue-800 hover:underline mt-2 inline-block"
-          >
-            Directions
-          </a>
+          {place.address ? (
+            <a
+              href={getDirectionsUrl(place.address)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-blue-800 hover:underline mt-2 inline-block"
+            >
+              Directions
+            </a>
+          ) : (
+            <a
+              href={place.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-blue-800 hover:underline mt-2 inline-block"
+            >
+              Official site
+            </a>
+          )}
         </li>
       ))}
     </ul>
@@ -115,6 +86,7 @@ export function NearbyAmenityMap({
   const sectionRef = useRef<HTMLDivElement>(null)
   const mapContainerRef = useRef<HTMLDivElement>(null)
   const [loadState, setLoadState] = useState<MapLoadState>('idle')
+  const [showCuratedForCategory, setShowCuratedForCategory] = useState(false)
   const [activeCategory, setActiveCategory] =
     useState<AmenityCategoryId>(initialCategory)
   const [statusMessage, setStatusMessage] = useState<string | null>(null)
@@ -123,9 +95,22 @@ export function NearbyAmenityMap({
   const mapId = process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID?.trim()
 
   const mapInstanceRef = useRef<google.maps.Map | null>(null)
-  const markersRef = useRef<Array<google.maps.Marker | google.maps.AdvancedMarkerElement>>([])
+  const markersRef = useRef<Array<{ map?: google.maps.Map | null; setMap?: (map: google.maps.Map | null) => void }>>([])
   const infoWindowRef = useRef<google.maps.InfoWindow | null>(null)
   const communityMarkerAddedRef = useRef(false)
+
+  const enterFallback = useCallback(() => {
+    mapInstanceRef.current = null
+    communityMarkerAddedRef.current = false
+    markersRef.current.forEach((m) => {
+      if ('map' in m && m.map) m.map = null
+      else if ('setMap' in m && typeof m.setMap === 'function') m.setMap(null)
+    })
+    markersRef.current = []
+    setStatusMessage(null)
+    setShowCuratedForCategory(true)
+    setLoadState('fallback')
+  }, [])
 
   const clearMarkers = useCallback(() => {
     markersRef.current.forEach((m) => {
@@ -142,31 +127,16 @@ export function NearbyAmenityMap({
 
       const category = getCategoryById(categoryId)
       clearMarkers()
+      setShowCuratedForCategory(false)
       setStatusMessage(`Loading ${category.label.toLowerCase()}…`)
 
       try {
-        const placesLib = (await google.maps.importLibrary(
-          'places',
-        )) as google.maps.PlacesLibrary
-        const { Place } = placesLib
+        const places = await searchCategory(
+          COMMUNITY_PLACE.center,
+          categoryId,
+          category.primaryTypes,
+        )
 
-        const request: google.maps.places.SearchNearbyRequest = {
-          fields: [
-            'displayName',
-            'location',
-            'formattedAddress',
-            'rating',
-            'googleMapsURI',
-          ],
-          locationRestriction: {
-            center: COMMUNITY_PLACE.center,
-            radius: 8000,
-          },
-          includedPrimaryTypes: category.primaryTypes,
-          maxResultCount: 18,
-        }
-
-        const { places } = await Place.searchNearby(request)
         const results: PlaceResult[] = []
         for (const place of places) {
           const loc = place.location
@@ -177,12 +147,12 @@ export function NearbyAmenityMap({
               ? rawName
               : rawName?.text ?? 'Place'
           const address = place.formattedAddress ?? name
+          const { lat, lng } = loc.toJSON()
           results.push({
             name,
             address,
-            rating: place.rating ?? undefined,
-            lat: loc.lat(),
-            lng: loc.lng(),
+            lat,
+            lng,
             directionsQuery: address,
           })
         }
@@ -212,7 +182,7 @@ export function NearbyAmenityMap({
                 title: item.name,
               })
               marker.addListener('click', () => {
-                infoWindow.setContent(buildInfoContent(item))
+                infoWindow.setContent(buildInfoContentNode(item))
                 infoWindow.open({ map, anchor: marker })
               })
               markersRef.current.push(marker)
@@ -233,7 +203,7 @@ export function NearbyAmenityMap({
               title: item.name,
             })
             marker.addListener('click', () => {
-              infoWindow.setContent(buildInfoContent(item))
+              infoWindow.setContent(buildInfoContentNode(item))
               infoWindow.open({ map, anchor: marker })
             })
             markersRef.current.push(marker)
@@ -247,19 +217,30 @@ export function NearbyAmenityMap({
 
         if (results.length > 0) {
           map.fitBounds(bounds, 48)
+          setStatusMessage(
+            `${results.length} ${category.label.toLowerCase()} near Cadence`,
+          )
+        } else {
+          setShowCuratedForCategory(true)
+          setStatusMessage(
+            `Showing featured ${category.label.toLowerCase()} near Cadence`,
+          )
         }
-        setStatusMessage(
-          results.length > 0
-            ? `${results.length} ${category.label.toLowerCase()} near Cadence`
-            : `No ${category.label.toLowerCase()} found in this radius — try another filter.`,
-        )
       } catch {
-        setStatusMessage(null)
-        setLoadState('fallback')
+        setShowCuratedForCategory(true)
+        setStatusMessage(
+          `Showing featured ${getCategoryById(categoryId).label.toLowerCase()} near Cadence`,
+        )
       }
     },
     [clearMarkers, mapId],
   )
+
+  useEffect(() => {
+    const onAuthFailure = () => enterFallback()
+    window.addEventListener('gmaps:auth-failure', onAuthFailure)
+    return () => window.removeEventListener('gmaps:auth-failure', onAuthFailure)
+  }, [enterFallback])
 
   useEffect(() => {
     if (loadState !== 'idle') return
@@ -270,7 +251,8 @@ export function NearbyAmenityMap({
       ([entry]) => {
         if (!entry?.isIntersecting) return
         observer.disconnect()
-        if (!apiKey) {
+        if (!apiKey || mapsAuthFailed) {
+          setShowCuratedForCategory(true)
           setLoadState('fallback')
           return
         }
@@ -288,7 +270,11 @@ export function NearbyAmenityMap({
 
     async function initMap() {
       try {
-        await loadGoogleMapsScript(apiKey!)
+        if (mapsAuthFailed) {
+          if (!cancelled) enterFallback()
+          return
+        }
+        await loadGoogleMaps(apiKey!)
         if (cancelled || !mapContainerRef.current) return
 
         const { Map } = (await google.maps.importLibrary(
@@ -306,7 +292,7 @@ export function NearbyAmenityMap({
         mapInstanceRef.current = map
         if (!cancelled) setLoadState('ready')
       } catch {
-        if (!cancelled) setLoadState('fallback')
+        if (!cancelled) enterFallback()
       }
     }
 
@@ -314,7 +300,7 @@ export function NearbyAmenityMap({
     return () => {
       cancelled = true
     }
-  }, [loadState, apiKey, mapId])
+  }, [loadState, apiKey, mapId, enterFallback])
 
   useEffect(() => {
     if (loadState !== 'ready') return
@@ -322,6 +308,9 @@ export function NearbyAmenityMap({
   }, [activeCategory, loadState, searchNearby])
 
   const embedUrl = getMapsEmbedUrl()
+  const showList =
+    showStaticList &&
+    (loadState === 'fallback' || (loadState === 'ready' && showCuratedForCategory))
 
   return (
     <div ref={sectionRef} className={cn('space-y-4', className)}>
@@ -353,7 +342,7 @@ export function NearbyAmenityMap({
         })}
       </div>
 
-      {statusMessage && loadState === 'ready' ? (
+      {statusMessage && (loadState === 'ready' || loadState === 'fallback') ? (
         <p className="text-sm text-gray-600" aria-live="polite">
           {statusMessage}
         </p>
@@ -389,43 +378,44 @@ export function NearbyAmenityMap({
         ) : null}
       </div>
 
-      {loadState === 'fallback' && showStaticList ? (
+      {showList ? (
         <div className="rounded-lg border border-gray-200 p-4 bg-white">
           <h3 className="text-lg font-semibold text-gray-900 mb-3">
             Featured {getCategoryById(activeCategory).label} near Cadence
           </h3>
           <StaticAmenityList categoryId={activeCategory} />
-          <p className="text-xs text-gray-500 mt-4">
-            Set{' '}
-            <code className="text-gray-700">NEXT_PUBLIC_GOOGLE_MAPS_API_KEY</code>{' '}
-            in Vercel for the full interactive amenity map with live Places results.
-          </p>
         </div>
       ) : null}
     </div>
   )
 }
 
-function buildInfoContent(item: PlaceResult): string {
-  const ratingLine =
-    item.rating !== undefined
-      ? `<p style="margin:4px 0;font-size:13px;">Rating: ${item.rating.toFixed(1)}</p>`
-      : ''
-  const directions = getDirectionsUrl(item.directionsQuery)
-  return `<div style="max-width:240px;font-family:system-ui,sans-serif;">
-    <strong>${escapeHtml(item.name)}</strong>
-    ${ratingLine}
-    <p style="margin:4px 0;font-size:13px;color:#444;">${escapeHtml(item.address)}</p>
-    <a href="${directions}" target="_blank" rel="noopener" style="font-size:13px;color:#1e3a8a;">Directions</a>
-  </div>`
-}
+function buildInfoContentNode(item: PlaceResult): HTMLElement {
+  const wrap = document.createElement('div')
+  wrap.style.maxWidth = '240px'
+  wrap.style.fontFamily = 'system-ui, sans-serif'
 
-function escapeHtml(text: string): string {
-  return text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
+  const title = document.createElement('strong')
+  title.textContent = item.name
+  wrap.appendChild(title)
+
+  const addr = document.createElement('p')
+  addr.style.margin = '4px 0'
+  addr.style.fontSize = '13px'
+  addr.style.color = '#444'
+  addr.textContent = item.address
+  wrap.appendChild(addr)
+
+  const link = document.createElement('a')
+  link.href = getDirectionsUrl(item.directionsQuery)
+  link.target = '_blank'
+  link.rel = 'noopener'
+  link.style.fontSize = '13px'
+  link.style.color = '#1e3a8a'
+  link.textContent = 'Directions'
+  wrap.appendChild(link)
+
+  return wrap
 }
 
 async function addCommunityMarker(
@@ -434,11 +424,7 @@ async function addCommunityMarker(
   useAdvanced: boolean,
   mapId?: string,
 ): Promise<void> {
-  const content = `<div style="max-width:220px;font-family:system-ui,sans-serif;">
-    <strong>${escapeHtml(COMMUNITY_PLACE.name)}</strong>
-    <p style="margin:4px 0;font-size:13px;">${escapeHtml(COMMUNITY_PLACE.welcomeCenterAddress)}</p>
-    <a href="${getDirectionsUrl(COMMUNITY_PLACE.welcomeCenterAddress)}" target="_blank" rel="noopener" style="font-size:13px;color:#1e3a8a;">Directions</a>
-  </div>`
+  const content = buildCommunityInfoNode()
 
   if (useAdvanced && mapId) {
     try {
@@ -470,4 +456,31 @@ async function addCommunityMarker(
     infoWindow.setContent(content)
     infoWindow.open({ map, anchor: marker })
   })
+}
+
+function buildCommunityInfoNode(): HTMLElement {
+  const wrap = document.createElement('div')
+  wrap.style.maxWidth = '220px'
+  wrap.style.fontFamily = 'system-ui, sans-serif'
+
+  const title = document.createElement('strong')
+  title.textContent = COMMUNITY_PLACE.name
+  wrap.appendChild(title)
+
+  const addr = document.createElement('p')
+  addr.style.margin = '4px 0'
+  addr.style.fontSize = '13px'
+  addr.textContent = COMMUNITY_PLACE.welcomeCenterAddress
+  wrap.appendChild(addr)
+
+  const link = document.createElement('a')
+  link.href = getDirectionsUrl(COMMUNITY_PLACE.welcomeCenterAddress)
+  link.target = '_blank'
+  link.rel = 'noopener'
+  link.style.fontSize = '13px'
+  link.style.color = '#1e3a8a'
+  link.textContent = 'Directions'
+  wrap.appendChild(link)
+
+  return wrap
 }

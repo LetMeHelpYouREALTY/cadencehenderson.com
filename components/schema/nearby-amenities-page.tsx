@@ -34,21 +34,28 @@ export function NearbyAmenitiesPageSchema({ faq }: NearbyAmenitiesPageSchemaProp
   const itemList = {
     '@type': 'ItemList',
     name: `Nearby amenities in ${COMMUNITY_PLACE.name}`,
-    itemListElement: CURATED_NEARBY_PLACES.map((place, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      item: {
+    itemListElement: CURATED_NEARBY_PLACES.map((place, index) => {
+      const streetAddress = place.address?.split(',')[0]?.trim()
+      const item: Record<string, unknown> = {
         '@type': place.schemaType,
         name: place.name,
-        address: {
+        url: place.sourceUrl,
+      }
+      if (streetAddress) {
+        item.address = {
           '@type': 'PostalAddress',
-          streetAddress: place.address.split(',')[0]?.trim(),
+          streetAddress,
           addressLocality: COMMUNITY_PLACE.city,
           addressRegion: COMMUNITY_PLACE.state,
           addressCountry: 'US',
-        },
-      },
-    })),
+        }
+      }
+      return {
+        '@type': 'ListItem',
+        position: index + 1,
+        item,
+      }
+    }),
   }
 
   const faqPage = {

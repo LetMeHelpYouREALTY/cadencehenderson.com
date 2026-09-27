@@ -5,6 +5,7 @@ import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listi
 import { NearbyAmenitiesMapSection } from '@/components/cadence/nearby-amenities-map-section'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import {
   MapPin,
@@ -16,6 +17,7 @@ import {
   Plane,
 } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 export const metadata: Metadata = {
   title: 'Cadence Henderson Location & Directions | Henderson NV 89011',
@@ -53,14 +55,20 @@ export default function MapsPage() {
 
       <RealScoutOfficeListings />
 
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.maps, 'hero')}
+        alt="Maps and trail access in Cadence Henderson NV 89011"
+      />
+
+
       {/* Embedded Google Map */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
-            {CONTACT_INFO.siteName}
+            {CONTACT_INFO.siteName} office map
           </h2>
-          <p className="text-xl text-gray-600 mb-8 text-center">
-            Office Location
+          <p className="aeo-lead text-xl text-gray-600 mb-8 text-center" data-speakable>
+            {CONTACT_INFO.welcomeCenter} · {CONTACT_INFO.phone} · {CONTACT_INFO.hours}
           </p>
           <div className="bg-white rounded-lg shadow-xl overflow-hidden">
             <iframe
@@ -236,7 +244,7 @@ export default function MapsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 id="maps-faq-heading" className="text-3xl font-bold text-gray-900 mb-2 text-center">
-              Frequently Asked Questions
+              Cadence Henderson maps FAQs
             </h2>
             <p className="text-center text-gray-600 mb-8">
               Cadence Henderson location and directions – Henderson NV 89011
@@ -296,7 +304,7 @@ export default function MapsPage() {
                     {q}
                     <span className="text-teal-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
                   </summary>
-                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
                 </details>
               ))}
             </div>
@@ -304,6 +312,12 @@ export default function MapsPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/maps"
+        name="Cadence Henderson Location & Directions | Henderson NV 89011"
+        description={`Find Cadence Henderson real estate at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. ${CONTACT_INFO.address.street}. Maps, directions & nearby landmarks.`}
+        breadcrumbs={[{ name: 'Maps and directions to Cadence Henderson NV 89011' }]}
+      />
       <Footer />
     </div>
   )

@@ -15,6 +15,7 @@
 
 import { readdir, readFile } from 'node:fs/promises'
 import { join, relative, extname } from 'node:path'
+import { isCloudflareAuthError, warnGitFallback } from './lib/cloudflare-images-auth.mjs'
 
 const args = new Set(process.argv.slice(2))
 const skipExisting = args.has('--skip-existing')
@@ -128,6 +129,7 @@ async function main() {
   let uploaded = 0
   let skipped = 0
   let failed = 0
+  let authFailures = 0
 
   for (const filePath of files) {
     const rel = relative(IMAGES_ROOT, filePath).replace(/\\/g, '/')
@@ -149,11 +151,18 @@ async function main() {
     } catch (error) {
       failed += 1
       console.error(`Failed: ${id}: ${error.message}`)
+      if (isCloudflareAuthError(error.message)) authFailures += 1
     }
   }
 
   console.log(`Done. uploaded=${uploaded} skipped=${skipped} failed=${failed}`)
-  if (failed > 0) process.exit(1)
+  if (failed > 0) {
+    if (allowMissingToken && authFailures === failed) {
+      warnGitFallback('upload-git-images-to-cloudflare')
+      process.exit(0)
+    }
+    process.exit(1)
+  }
 }
 
 main().catch((error) => {

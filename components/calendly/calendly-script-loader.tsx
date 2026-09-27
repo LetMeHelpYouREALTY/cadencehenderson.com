@@ -1,11 +1,11 @@
 'use client'
 
 import Script from 'next/script'
-import { CONTACT_INFO } from '@/components/cadence/contact-info'
 
 /**
  * Loads Calendly widget.js, polls for window.Calendly, then dispatches
- * calendly-loaded and inits the floating badge so widgets and popups work.
+ * calendly-loaded so inline widgets and click-to-open popups work.
+ * No floating badge — quiet luxury UI does not use aggressive pop-ups.
  */
 export function CalendlyScriptLoader() {
   return (
@@ -15,21 +15,8 @@ export function CalendlyScriptLoader() {
       onLoad={() => {
         if (typeof window === 'undefined') return
         const fire = () => window.dispatchEvent(new CustomEvent('calendly-loaded'))
-        const initBadge = () => {
-          const cal = (window as unknown as { Calendly?: { initBadgeWidget?: (o: object) => void } }).Calendly
-          if (cal?.initBadgeWidget) {
-            cal.initBadgeWidget({
-              url: CONTACT_INFO.calendlyUrl,
-              text: 'Tour Cadence Homes Today',
-              color: '#0069ff',
-              textColor: '#ffffff',
-              branding: false,
-            })
-          }
-        }
         if (window.Calendly) {
           fire()
-          initBadge()
           return
         }
         let attempts = 0
@@ -39,7 +26,6 @@ export function CalendlyScriptLoader() {
           if (window.Calendly) {
             clearInterval(interval)
             fire()
-            initBadge()
             return
           }
           if (attempts >= maxAttempts) {

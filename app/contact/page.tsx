@@ -9,9 +9,12 @@ import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listi
 import { RealScoutHomeValue } from '@/components/idx/realscout-home-value'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -26,6 +29,12 @@ export default function ContactPage() {
 
       <RealScoutOfficeListings />
 
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.contact, 'hero')}
+        alt="Dr. Jan Duffy office serving Cadence Henderson NV 89011"
+      />
+
+
       <HomeSearchSection compact />
 
       {/* Home Value Widget for Sellers */}
@@ -33,7 +42,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Thinking of Selling?
+              Selling a Cadence Henderson NV 89011 home?
             </h2>
             <p className="text-gray-700 mb-8">
               Get a free, instant estimate of your home's value in today's market.
@@ -176,7 +185,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 id="contact-faq-heading" className="text-3xl font-bold text-gray-900 mb-2 text-center">
-              Frequently Asked Questions
+              Contact Cadence Henderson FAQs
             </h2>
             <p className="text-center text-gray-700 mb-8">
               {CONTACT_INFO.siteName} – Henderson NV 89011
@@ -236,7 +245,7 @@ export default function ContactPage() {
                     {q}
                     <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
                   </summary>
-                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
                 </details>
               ))}
             </div>
@@ -244,6 +253,12 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/contact"
+        name={`Contact ${CONTACT_INFO.siteName} | ${CONTACT_INFO.phone}`}
+        description={`Schedule a Cadence Henderson home tour. Call ${CONTACT_INFO.phone} or visit ${CONTACT_INFO.welcomeCenter}. Open 7 days 10AM–6PM. Licensed REALTOR® on-site.`}
+        breadcrumbs={[{ name: 'Contact Dr. Jan Duffy in Cadence Henderson NV 89011' }]}
+      />
       <Footer />
     </div>
   )

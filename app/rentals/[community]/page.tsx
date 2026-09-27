@@ -6,10 +6,12 @@ import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Building2, DollarSign, Bed, Bath, Phone, Mail } from 'lucide-react'
 import { notFound } from 'next/navigation'
-import { cfImage, SITE_IMAGES, getHomeImage } from '@/lib/cloudflare-images'
+import { cfImage, SITE_IMAGES, getHomeImage, getRentalHeroImage } from '@/lib/cloudflare-images'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -249,7 +251,7 @@ export default async function RentalCommunityPage({
       <PageHero
         title={community.name}
         subtitle={community.description}
-        imageSrc={cfImage(SITE_IMAGES.hero.rentals, 'hero')}
+        imageSrc={getRentalHeroImage(communitySlug)}
         imageAlt={`${community.name} rentals at Cadence Henderson NV 89011`}
       >
         <div className="flex flex-wrap gap-4 justify-center">
@@ -435,6 +437,17 @@ export default async function RentalCommunityPage({
         </div>
       </section>
 
+      <PageAeo
+        path={`/rentals/${communitySlug}`}
+        name={`${community.name} Rentals | Cadence Henderson 89011`}
+        description={`${community.description} Cadence Henderson rental homes in Henderson NV 89011. Dr. Jan Duffy, REALTOR®.`}
+        faqs={defaultPageFaqs(`${community.name} rentals in Cadence Henderson`)}
+        breadcrumbs={[
+          { name: 'Rentals', path: '/rentals' },
+          { name: `${community.name} in Cadence Henderson NV 89011` },
+        ]}
+        faqHeading={`${community.name} at Cadence Henderson — questions`}
+      />
       <Footer />
     </div>
   )

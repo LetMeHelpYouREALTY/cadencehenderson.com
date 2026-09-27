@@ -34,10 +34,10 @@ const SERVICES: ServiceItem[] = [
   {
     title: 'Rentals in Cadence',
     description: 'Rental homes and communities in Cadence, Henderson NV 89011.',
-    href: CONTACT_INFO.realScoutRentalsUrl,
+    href: '/apartments',
     icon: Building2,
-    ariaLabel: 'Find rentals in Cadence Henderson',
-    external: true,
+    ariaLabel: 'Apartments and rentals in Cadence Henderson NV 89011',
+    external: false,
   },
   {
     title: 'Free Consultation',
@@ -52,11 +52,11 @@ const SERVICES: ServiceItem[] = [
 export function ServicesSection() {
   return (
     <section
-      className="py-16 bg-gray-50"
+      className="py-24 bg-neutral-50"
       aria-labelledby="services-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="relative h-[200px] sm:h-[240px] rounded-xl overflow-hidden mb-12 bg-gray-200">
+        <div className="relative h-[200px] sm:h-[240px] overflow-hidden mb-16 bg-neutral-200">
           <CloudflareImage
             src={cfImage(SITE_IMAGES.gallery.newHome, 'hero')}
             alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
@@ -68,7 +68,7 @@ export function ServicesSection() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" aria-hidden />
         </div>
         <div className="text-center mb-12">
-          <h2 id="services-heading" className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 id="services-heading" className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-6">
             What Buyers Get at Cadence Henderson — Free Expert Representation
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
@@ -80,7 +80,7 @@ export function ServicesSection() {
             const isExternal = service.href.startsWith('http')
             const content = (
               <>
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-900 text-white mb-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary text-white mb-6">
                   <Icon className="w-6 h-6" aria-hidden />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -94,7 +94,7 @@ export function ServicesSection() {
             return (
               <div
                 key={service.title}
-                className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                className="bg-white p-8 border border-neutral-200"
               >
                 {isExternal ? (
                   <a

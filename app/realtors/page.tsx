@@ -7,6 +7,8 @@ import { RealScoutHomeValue } from '@/components/idx/realscout-home-value'
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import {
   Building2,
@@ -20,6 +22,8 @@ import {
   Phone,
 } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
+import Link from 'next/link'
 
 export default function RealtorsPage() {
   return (
@@ -80,7 +84,26 @@ export default function RealtorsPage() {
 
       <RealScoutOfficeListings />
 
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.realtors, 'hero')}
+        alt="Buyer representation for new homes in Cadence Henderson NV 89011"
+      />
+
+
       <HomeSearchSection compact />
+
+      <section className="bg-neutral-50 py-10">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto flex max-w-3xl flex-wrap justify-center gap-6 text-sm">
+            <Link href="/realtors/life-at-cadence" className="font-medium text-primary hover:underline">
+              Life at Cadence briefing
+            </Link>
+            <Link href="/realtors/realtor-toolkit" className="font-medium text-primary hover:underline">
+              Realtor toolkit
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* About Dr. Jan */}
       <section className="py-16 bg-white">
@@ -470,8 +493,9 @@ export default function RealtorsPage() {
                   Relocation Assistance
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  Moving to Las Vegas? I'll help you navigate neighborhoods,
-                  schools, and find the perfect home for your family.
+                  Moving to Las Vegas? I will map Cadence villages to your beds,
+                  budget, and commute — then register you with the builder before
+                  the first model visit.
                 </p>
                 <a href={`mailto:${CONTACT_INFO.email}?subject=Relocation Assistance`}>
                   <Button
@@ -488,7 +512,7 @@ export default function RealtorsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-slate-900 text-white">
+      <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">
@@ -532,6 +556,14 @@ export default function RealtorsPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/realtors"
+        name="Realtors | Cadence Henderson NV Real Estate"
+        description="Cadence Henderson NV real estate team. Dr. Jan Duffy, REALTOR®. Expert agents for homes for sale and new construction in Henderson 89011."
+        faqs={defaultPageFaqs('working with Dr. Jan Duffy at Cadence Henderson')}
+        breadcrumbs={[{ name: 'Realtors at Cadence Henderson NV 89011' }]}
+        faqHeading="Cadence Henderson realtor — questions"
+      />
       <Footer />
     </div>
   )

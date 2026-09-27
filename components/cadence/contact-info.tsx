@@ -52,6 +52,13 @@ export const SOCIAL_MEDIA = {
   twitter: 'https://x.com/DrJanDuffy',
 }
 
+/** Maps / directions / reviews links derived from GBP-matching NAP. */
+export const GEO_LINKS = {
+  maps: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONTACT_INFO.welcomeCenter)}`,
+  directions: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(CONTACT_INFO.welcomeCenter)}`,
+  reviews: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${CONTACT_INFO.siteName} ${CONTACT_INFO.welcomeCenter}`)}`,
+} as const
+
 export const HOA_CONTACT = {
   name: 'Cadence Master Association',
   phone: '(702) 555-3000',

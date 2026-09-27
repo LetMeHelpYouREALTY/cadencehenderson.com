@@ -82,7 +82,7 @@ Set on **Production** (Preview optional). Same names on every project:
 | `CLOUDFLARE_IMAGES_ACCOUNT_HASH` | Optional | Defaults to `byE6BTe9lNqo21V57n4aPQ` |
 | `CLOUDFLARE_IMAGES_PREFIX` | Optional | Defaults to `cadence` in this repo; **set this on other domains** |
 
-Token is **build-time only**. The site still renders from git if the token is missing (`--allow-missing-token` on Vercel).
+Token is **build-time only**. The site still renders from git if the token is missing or invalid (`--allow-missing-token` on Vercel). An expired token must not fail `next build`.
 
 After adding the token: **Redeploy production** (`vercel --prod` or Deployments → Redeploy). Pushes to `main` may not upload until a production deploy runs with the env var.
 

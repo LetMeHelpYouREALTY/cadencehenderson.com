@@ -4,10 +4,9 @@ import { CalendlyProvider } from '../components/calendly/calendly-loader'
 import { CalendlyScriptLoader } from '../components/calendly/calendly-script-loader'
 import { CalendlyStyles } from '../components/calendly/calendly-styles'
 import { SkipToContent } from '../components/cadence/skip-to-content'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist_Mono, Sora } from 'next/font/google'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { ThemeProvider } from 'next-themes'
-import DeployBanner from '../components/deploy-banner'
 import { ScrollToTop } from '../components/cadence/scroll-to-top'
 import { LocalBusinessSchema } from '../components/schema/local-business'
 import { FAQPageSchema } from '../components/schema/faq-page'
@@ -19,9 +18,11 @@ const HERO_IMAGE = cfImage(SITE_IMAGES.hero.homepage, 'hero')
 /** Crawlers do not run the JS git fallback — keep a stable git URL for OG/schema. */
 const OG_IMAGE = '/og-image.jpg'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const sora = Sora({
+  variable: '--font-sora',
   subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600'],
+  display: 'swap',
 })
 
 const geistMono = Geist_Mono({
@@ -29,16 +30,18 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
+const DEFAULT_TITLE = 'Cadence Henderson New Homes | Dr. Jan Duffy'
+const DEFAULT_DESCRIPTION =
+  `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`
+
 export const metadata: Metadata = {
-  title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
-  description:
-    `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`,
+  title: DEFAULT_TITLE,
+  description: DEFAULT_DESCRIPTION,
   metadataBase: new URL('https://www.cadencehenderson.com'),
   openGraph: {
     siteName: CONTACT_INFO.siteName,
-    title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
-    description:
-      `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
     url: 'https://www.cadencehenderson.com',
     images: [
       {
@@ -53,9 +56,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
-    description:
-      `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
     images: [OG_IMAGE],
     creator: '@DrJanDuffy',
   },
@@ -87,7 +89,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${sora.variable} ${geistMono.variable} antialiased font-sans`}
       >
         <CalendlyScriptLoader />
         <Script
@@ -106,12 +108,11 @@ export default function RootLayout({
         <SkipToContent />
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
           storageKey="theme"
         >
-          <DeployBanner />
           {children}
           <ScrollToTop />
         </ThemeProvider>

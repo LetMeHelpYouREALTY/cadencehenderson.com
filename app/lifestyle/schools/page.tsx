@@ -7,49 +7,48 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { GraduationCap, Award, Users, BookOpen, Bus } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const schools = [
   {
     name: 'Cadence Elementary School',
     level: 'Elementary (K-5)',
-    rating: '9/10',
+    commute: 'On-site in Cadence Henderson NV 89011',
     description:
-      'A state-of-the-art elementary school located within the community, offering innovative programs and experienced teachers dedicated to student success.',
+      'Clark County School District K–5 campus inside Cadence Henderson. Confirm the attendance zone for a specific street before you write an offer.',
     features: [
       'STEM-focused curriculum',
-      'Small class sizes',
       'After-school programs',
       'Music and arts programs',
-      'Walking distance from most homes',
+      'Short walk or drive from many Cadence streets',
     ],
     image: cfImage(SITE_IMAGES.schools.elementary, 'card'),
   },
   {
     name: 'Henderson Middle School',
     level: 'Middle School (6-8)',
-    rating: '8/10',
+    commute: 'Henderson campus — confirm zone by address',
     description:
-      'Comprehensive middle school program preparing students for high school with advanced courses and extracurricular activities.',
+      'Clark County middle-school campus serving parts of Henderson. Programs include athletics, clubs, and counseling. Zone maps change — verify before you buy.',
     features: [
-      'Advanced placement courses',
+      'Advanced courses where offered',
       'Athletics programs',
       'Technology integration',
       'Student clubs and organizations',
-      'Dedicated counseling staff',
     ],
     image: cfImage(SITE_IMAGES.schools.middle, 'card'),
   },
   {
     name: 'Green Valley High School',
     level: 'High School (9-12)',
-    rating: '9/10',
+    commute: 'Green Valley — typically a short Henderson drive',
     description:
-      'Top-rated high school offering college preparatory programs, AP courses, and diverse extracurricular activities.',
+      'Clark County high school campus with AP and honors courses, athletics, fine arts, and career/technical education. Confirm assignment for the lot you are touring.',
     features: [
       'AP and honors courses',
       'College counseling',
-      'Championship athletics',
+      'Athletics programs',
       'Fine arts programs',
       'Career and technical education',
     ],
@@ -78,11 +77,11 @@ const privateSchools = [
 export const metadata: Metadata = {
   title: 'Schools Near Cadence Henderson | Henderson NV 89011',
   description:
-    'Top-rated schools serving Cadence Henderson 89011: Cadence Elementary, Legacy Traditional, Henderson middle & high schools. On-site school within the community.',
+    'Campuses serving Cadence Henderson 89011: Cadence Elementary on-site, Henderson-area middle schools, Green Valley High School, plus nearby private campuses. Confirm CCSD zones by address.',
   alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/schools' },
   openGraph: {
     title: 'Schools Near Cadence Henderson | Henderson NV 89011',
-    description: 'Top-rated schools serving Cadence Henderson 89011: Cadence Elementary, Legacy Traditional & Henderson schools.',
+    description: 'Cadence Elementary, Henderson-area middle schools, and Green Valley High School near Cadence Henderson NV 89011. Confirm attendance zones by address.',
     url: 'https://www.cadencehenderson.com/lifestyle/schools',
   },
 }
@@ -91,16 +90,10 @@ export default function SchoolsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Cadence Henderson Lifestyle & Community', href: 'https://www.cadencehenderson.com/lifestyle' },
-          { name: 'Schools Near Cadence Henderson NV 89011' },
-        ]}
-      />
 
       <PageHero
-        title="Schools in Cadence"
-        subtitle="Access to top-rated Clark County schools and excellent educational opportunities for students of all ages. From elementary through high school, Cadence students thrive."
+        title="Schools in Cadence Henderson NV 89011"
+        subtitle="Name the campus, then confirm the Clark County School District attendance zone for the lot you are touring. Cadence Elementary sits on-site; middle and high school assignments vary by street."
         imageSrc={cfImage(SITE_IMAGES.hero.schools, 'hero')}
         imageAlt="Schools serving Cadence Henderson NV 89011"
         icon={GraduationCap}
@@ -115,34 +108,33 @@ export default function SchoolsPage() {
 
       <RealScoutOfficeListings />
 
-      {/* School Rating Highlights */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-6 mb-12">
+            <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+              Campuses serving Cadence Henderson NV 89011
+            </h2>
+            <p className="aeo-lead mx-auto mb-12 max-w-3xl text-center text-gray-700" data-speakable>
+              Cadence Elementary School is on-site. Henderson-area middle schools and Green Valley High School serve many Cadence streets. Always verify the CCSD zone for a specific address.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
               <div className="text-center p-6 bg-indigo-50 rounded-lg">
-                <div className="text-4xl font-bold text-indigo-900 mb-2">
-                  A+
+                <div className="text-2xl font-bold text-indigo-900 mb-2">
+                  On-site
                 </div>
-                <div className="text-gray-700">School Ratings</div>
+                <div className="text-gray-700">Cadence Elementary (K–5)</div>
               </div>
               <div className="text-center p-6 bg-indigo-50 rounded-lg">
-                <div className="text-4xl font-bold text-indigo-900 mb-2">
-                  95%
+                <div className="text-2xl font-bold text-indigo-900 mb-2">
+                  By address
                 </div>
-                <div className="text-gray-700">Graduation Rate</div>
+                <div className="text-gray-700">Middle and high school zones</div>
               </div>
               <div className="text-center p-6 bg-indigo-50 rounded-lg">
-                <div className="text-4xl font-bold text-indigo-900 mb-2">
-                  3
+                <div className="text-2xl font-bold text-indigo-900 mb-2">
+                  Nearby
                 </div>
-                <div className="text-gray-700">Schools Nearby</div>
-              </div>
-              <div className="text-center p-6 bg-indigo-50 rounded-lg">
-                <div className="text-4xl font-bold text-indigo-900 mb-2">
-                  20+
-                </div>
-                <div className="text-gray-700">AP Courses</div>
+                <div className="text-gray-700">Private K–12 campuses in Henderson</div>
               </div>
             </div>
           </div>
@@ -153,7 +145,7 @@ export default function SchoolsPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            Clark County Public Schools
+            Clark County campuses near Cadence Henderson
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {schools.map((school) => (
@@ -167,8 +159,8 @@ export default function SchoolsPage() {
                     alt={`${school.name} near Cadence Henderson NV 89011`}
                     fill
                   />
-                  <div className="absolute top-4 right-4 bg-indigo-900 text-white px-3 py-1 rounded-full text-sm font-bold">
-                    {school.rating}
+                  <div className="absolute top-4 right-4 bg-indigo-900 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    {school.commute}
                   </div>
                 </div>
                 <div className="p-6">
@@ -202,24 +194,23 @@ export default function SchoolsPage() {
         </div>
       </section>
 
-      {/* Why Schools Excel */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Why Cadence Schools Excel
+              How to confirm a Cadence Henderson attendance zone
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="flex items-start">
                 <Award size={32} className="text-indigo-900 mr-4 flex-shrink-0" />
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Award-Winning Programs
+                    Name the campus
                   </h3>
                   <p className="text-gray-700">
-                    Cadence-area schools have received state and national
-                    recognition for academic excellence, innovative teaching, and
-                    student achievement.
+                    Cadence Elementary is inside the master plan. Middle and high
+                    school campuses serving Henderson include Green Valley High
+                    School. Ask Dr. Jan for the current CCSD map for a lot.
                   </p>
                 </div>
               </div>
@@ -227,11 +218,12 @@ export default function SchoolsPage() {
                 <Users size={32} className="text-indigo-900 mr-4 flex-shrink-0" />
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Small Class Sizes
+                    Programs on campus
                   </h3>
                   <p className="text-gray-700">
-                    Lower student-to-teacher ratios ensure personalized
-                    attention and better learning outcomes for every student.
+                    Area campuses list STEM, arts, athletics, and after-school
+                    programs. Confirm offerings with the school, not a listing
+                    flyer.
                   </p>
                 </div>
               </div>
@@ -242,11 +234,12 @@ export default function SchoolsPage() {
                 />
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Advanced Curriculum
+                    AP and honors courses
                   </h3>
                   <p className="text-gray-700">
-                    AP courses, STEM programs, and college preparatory tracks
-                    prepare students for higher education success.
+                    Green Valley High School publishes AP, honors, and career
+                    and technical education options. Check the current course
+                    catalog.
                   </p>
                 </div>
               </div>
@@ -254,11 +247,12 @@ export default function SchoolsPage() {
                 <Bus size={32} className="text-indigo-900 mr-4 flex-shrink-0" />
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Convenient Access
+                    Commute from Cadence
                   </h3>
                   <p className="text-gray-700">
-                    Schools are located within the community or a short bus ride
-                    away, making drop-off and pick-up easy for families.
+                    Cadence Elementary is on-site. Other campuses are a short
+                    Henderson drive or CCSD bus ride depending on the assigned
+                    zone.
                   </p>
                 </div>
               </div>
@@ -272,10 +266,10 @@ export default function SchoolsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Private School Options
+              Private campuses near Cadence Henderson NV 89011
             </h2>
             <p className="text-center text-gray-700 mb-8">
-              In addition to excellent public schools, several highly-regarded
+              In addition to CCSD campuses, several Henderson-area
               private schools serve the Henderson area.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
@@ -301,11 +295,11 @@ export default function SchoolsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Higher Education Nearby
+              Colleges near Cadence Henderson NV 89011
             </h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Las Vegas and Henderson are home to several colleges and
-              universities, providing excellent options for higher education.
+            <p className="aeo-lead text-lg text-gray-700 mb-8" data-speakable>
+              Nevada State University, CSN Henderson, UNLV, and Roseman University
+              are a short drive from Cadence Henderson NV 89011.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg shadow-lg p-6 text-left">
@@ -345,6 +339,17 @@ export default function SchoolsPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle/schools"
+        name="Schools Near Cadence Henderson | Henderson NV 89011"
+        description="Campuses serving Cadence Henderson 89011: Cadence Elementary on-site, Henderson-area middle schools, Green Valley High School. Confirm CCSD zones by address."
+        faqs={defaultPageFaqs('Clark County campuses serving Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Lifestyle', path: '/lifestyle' },
+          { name: 'Schools near Cadence Henderson NV 89011' },
+        ]}
+        faqHeading="Cadence Henderson schools — questions"
+      />
       <Footer />
     </div>
   )

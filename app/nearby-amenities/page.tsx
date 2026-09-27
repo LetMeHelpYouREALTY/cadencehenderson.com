@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 const NEARBY_FAQ = [
   {
     question: 'What grocery stores are near Cadence Henderson?',
-    answer: `Smith's at Cadence Marketplace (835 E Lake Mead Pkwy, Henderson) serves daily shopping minutes from ${COMMUNITY_PLACE.name}. Additional grocers and big-box options are along Sunset Road and at Galleria at Sunset.`,
+    answer: `Smith's Marketplace at Cadence Village Center (845 E Lake Mead Pkwy, Henderson NV 89011) serves daily shopping minutes from ${COMMUNITY_PLACE.name}. Additional grocers and big-box options are along Sunset Road and at Galleria at Sunset.`,
   },
   {
     question: 'How far is Cadence Henderson from the Las Vegas Strip?',
@@ -59,9 +59,9 @@ const NEARBY_FAQ = [
       'Galleria at Sunset (1300 W Sunset Rd, Henderson NV 89014) is about a 5-minute drive from Cadence for department stores and dining. The District at Green Valley Ranch offers open-air retail and restaurants farther west in Henderson.',
   },
   {
-    question: 'What schools serve Cadence Henderson?',
+    question: 'Which CCSD schools are assigned to Cadence Henderson addresses?',
     answer:
-      'Cadence is in the Clark County School District. Green Valley High School (460 Arroyo Grande Blvd, Henderson NV 89014) is a well-known high school serving the broader Green Valley area. Confirm current attendance zones with CCSD before you buy.',
+      'Cadence is in the Clark County School District. Which CCSD schools are assigned to Cadence addresses? Verify with the CCSD Zoning Search before you buy. Green Valley High School (460 Arroyo Grande Blvd, Henderson NV 89014) is one high school in the broader Green Valley area — assignment varies by address.',
   },
   {
     question: 'How far is Harry Reid International Airport from Cadence?',
@@ -143,7 +143,7 @@ export default function NearbyAmenitiesPage() {
           </h2>
           <p>
             Reunion Golf Club (14401 Reunion Blvd, Henderson NV 89052) is a
-            well-known public course a short drive from Cadence. Select Golf on
+            public course a short drive from Cadence. Select Golf on
             the map for other courses in the area.
           </p>
 
@@ -161,19 +161,17 @@ export default function NearbyAmenitiesPage() {
             Grocery &amp; shopping
           </h2>
           <p>
-            Smith&apos;s at Cadence Marketplace covers weekly groceries. Galleria at
-            Sunset and The District at Green Valley Ranch expand retail, dining,
-            and services within Henderson.
+            Smith&apos;s Marketplace at Cadence Village Center covers weekly groceries.
+            Galleria at Sunset expands retail, dining, and services within Henderson.
           </p>
 
           <h2 id="schools-nearby" className="text-2xl font-bold text-gray-900 mt-10">
             Schools
           </h2>
           <p>
-            Families in Cadence use Clark County School District schools. Green
-            Valley High School is a major high school in the area. Always verify
-            current zoning with CCSD and your builder before relying on school
-            assignments.
+            Buyers in Cadence use Clark County School District schools. Which CCSD
+            schools are assigned to Cadence addresses? Verify with the CCSD Zoning
+            Search and your builder before relying on school assignments.
           </p>
 
           <h2 id="commute-times" className="text-2xl font-bold text-gray-900 mt-10">

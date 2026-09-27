@@ -3,6 +3,8 @@ import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import {
   Users,
@@ -19,6 +21,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 export default function ResidentsPage() {
   return (
@@ -43,6 +46,12 @@ export default function ResidentsPage() {
       </PageHero>
 
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.residents, 'hero')}
+        alt="Resident clubhouse in Cadence Henderson NV 89011"
+      />
+
 
       {/* Services for Current Residents */}
       <section className="py-16">
@@ -179,7 +188,7 @@ export default function ResidentsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Important Community Contacts
+              Cadence Henderson resident contacts NV 89011
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg shadow-lg p-8">
@@ -192,13 +201,18 @@ export default function ResidentsPage() {
                 </p>
                 <div className="space-y-2 text-sm">
                   <p className="text-gray-700">
-                    <strong>Phone:</strong> (702) 555-3000
+                    Current HOA phone numbers are posted in the resident portal
+                    and in closing documents — they change with the management
+                    company.
                   </p>
                   <p className="text-gray-700">
-                    <strong>Hours:</strong> Mon-Fri, 9AM-5PM
-                  </p>
-                  <p className="text-gray-700">
-                    <strong>After Hours:</strong> (702) 555-3001
+                    <strong>Realtor line:</strong>{' '}
+                    <a
+                      href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
+                      className="text-emerald-900 hover:underline"
+                    >
+                      {CONTACT_INFO.phone}
+                    </a>
                   </p>
                 </div>
                 <div className="mt-4 p-4 bg-blue-50 rounded-lg">
@@ -286,14 +300,12 @@ export default function ResidentsPage() {
                 <div>
                   <Phone size={40} className="mx-auto mb-3 text-orange-600" />
                   <h3 className="font-bold text-gray-900 mb-2">
-                    After Hours HOA
+                    After-hours HOA
                   </h3>
-                  <a
-                    href="tel:702-555-3001"
-                    className="text-xl font-bold text-orange-600 hover:underline"
-                  >
-                    (702) 555-3001
-                  </a>
+                  <p className="text-sm text-gray-700">
+                    Use the number in your resident portal. For Cadence home
+                    questions, call {CONTACT_INFO.phone}.
+                  </p>
                 </div>
               </div>
             </div>
@@ -325,12 +337,12 @@ export default function ResidentsPage() {
                       </p>
                     </div>
                   </div>
-                  <a href="tel:702-555-3000">
+                  <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
                     <Button
                       variant="outline"
                       className="border-emerald-900 text-emerald-900 hover:bg-emerald-900 hover:text-white"
                     >
-                      Contact HOA
+                      Call Dr. Jan
                     </Button>
                   </a>
                 </div>
@@ -412,6 +424,14 @@ export default function ResidentsPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/residents"
+        name="Residents | Cadence Henderson Community 89011"
+        description="Cadence Henderson resident resources. Community info, HOA, amenities for Cadence master-planned community Henderson NV 89011."
+        faqs={defaultPageFaqs('Cadence Henderson resident resources')}
+        breadcrumbs={[{ name: 'Cadence Henderson residents NV 89011' }]}
+        faqHeading="Cadence Henderson residents — questions"
+      />
       <Footer />
     </div>
   )

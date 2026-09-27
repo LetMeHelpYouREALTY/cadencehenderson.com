@@ -37,7 +37,6 @@ export type AmenityCategory = {
   ariaLabel: string
 }
 
-/** Family master-planned community — schools included; parks & grocery lead. */
 export const AMENITY_CATEGORIES: AmenityCategory[] = [
   {
     id: 'parks',
@@ -110,7 +109,9 @@ export const AMENITY_CATEGORIES: AmenityCategory[] = [
 export type CuratedPlace = {
   name: string
   category: AmenityCategoryId
-  address: string
+  /** Verified street address for display and schema; omit if not verified */
+  address?: string
+  sourceUrl: string
   schemaType:
     | 'Park'
     | 'GroceryStore'
@@ -126,56 +127,60 @@ export type CuratedPlace = {
   note?: string
 }
 
-/** Verified places for fallback list + ItemList schema (addresses from OSM / public listings). */
+/** Curated fallback list + ItemList schema (primary-source verified 2026-09-27). */
 export const CURATED_NEARBY_PLACES: CuratedPlace[] = [
   {
     name: 'Cadence Central Park',
     category: 'parks',
     address: 'Cadence Central Park, Henderson, NV 89011',
+    sourceUrl: 'https://cadencenv.com/amenities/',
     schemaType: 'Park',
-    note: 'Nearly 50-acre community park with trails, splash pad, and events.',
+    note: 'Community park with trails, splash pad, and event lawns.',
   },
   {
-    name: "Smith's",
+    name: "Smith's Marketplace",
     category: 'grocery',
-    address: '835 E Lake Mead Pkwy, Henderson, NV 89015',
+    address: '845 E Lake Mead Pkwy, Henderson, NV 89011',
+    sourceUrl:
+      'https://www.smithsfoodanddrug.com/stores/grocery/nv/henderson/cadence-marketplace/706/00331',
     schemaType: 'GroceryStore',
-    note: 'Full-service grocery at Cadence Marketplace.',
+    note: 'Grocery anchor at Cadence Village Center.',
   },
   {
     name: 'Galleria at Sunset',
     category: 'shopping',
     address: '1300 W Sunset Rd, Henderson, NV 89014',
-    schemaType: 'ShoppingCenter',
-  },
-  {
-    name: 'The District at Green Valley Ranch',
-    category: 'shopping',
-    address: '2240 Village Walk Dr, Henderson, NV 89052',
+    sourceUrl: 'https://www.galleriaatsunset.com/',
     schemaType: 'ShoppingCenter',
   },
   {
     name: 'Henderson Hospital',
     category: 'healthcare',
     address: '1050 W Galleria Dr, Henderson, NV 89011',
+    sourceUrl: 'https://www.hendersonhospital.com/',
     schemaType: 'Hospital',
   },
   {
     name: 'Dignity Health-St. Rose Dominican, Siena Campus',
     category: 'healthcare',
     address: '3001 St Rose Pkwy, Henderson, NV 89052',
+    sourceUrl:
+      'https://www.dignityhealth.org/las-vegas/locations/st-rose-dominican-hospitals/siena-campus',
     schemaType: 'Hospital',
   },
   {
     name: 'Green Valley High School',
     category: 'schools',
     address: '460 Arroyo Grande Blvd, Henderson, NV 89014',
+    sourceUrl: 'https://greenvalleyhs.com/',
     schemaType: 'School',
+    note: 'Confirm current CCSD attendance zones with the CCSD Zoning Search before you buy.',
   },
   {
     name: 'Reunion Golf Club',
     category: 'golf',
     address: '14401 Reunion Blvd, Henderson, NV 89052',
+    sourceUrl: 'https://www.reuniongolfclub.com/',
     schemaType: 'GolfCourse',
   },
 ]

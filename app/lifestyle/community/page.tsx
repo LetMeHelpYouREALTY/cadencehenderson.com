@@ -4,9 +4,12 @@ import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Users, Heart, Calendar, MessageSquare, Award, Smile } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -87,8 +90,8 @@ const volunteerOpportunities = [
     description: 'Help maintain and beautify community parks and gardens',
   },
   {
-    title: 'Neighborhood Watch',
-    description: 'Support community safety and security initiatives',
+    title: 'Resident groups',
+    description: 'Join posted clubs and volunteer days on the resident calendar',
   },
 ]
 
@@ -115,6 +118,12 @@ export default function CommunityPage() {
       </PageHero>
 
       <RealScoutOfficeListings />
+
+      <PageBodyPhoto
+        src={cfImage(SITE_IMAGES.sections.community, 'hero')}
+        alt="Community clubs in Cadence Henderson NV 89011"
+      />
+
 
       {/* Why Cadence Community */}
       <section className="py-16">
@@ -155,11 +164,11 @@ export default function CommunityPage() {
                   <Smile size={40} className="text-amber-900" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Family Friendly
+                  Clubs and events
                 </h3>
                 <p className="text-gray-700">
-                  Safe, welcoming environment with activities for all ages, from
-                  young children to active retirees.
+                  Book club, running club, garden club, and Central Park events
+                  run on a posted resident calendar.
                 </p>
               </div>
             </div>
@@ -319,7 +328,7 @@ export default function CommunityPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-slate-900 text-white">
+      <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">
@@ -352,6 +361,17 @@ export default function CommunityPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle/community"
+        name="Cadence Henderson Community Life – Henderson NV 89011"
+        description="Resident clubs, volunteering & neighborhood events in Cadence Henderson NV 89011. Book Club, Running Club, Garden Club, Wine & Dine and more. Active community life."
+        faqs={defaultPageFaqs('community life in Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Lifestyle', path: '/lifestyle' },
+          { name: 'Community life in Cadence Henderson NV 89011' },
+        ]}
+        faqHeading="Cadence Henderson community — questions"
+      />
       <Footer />
     </div>
   )

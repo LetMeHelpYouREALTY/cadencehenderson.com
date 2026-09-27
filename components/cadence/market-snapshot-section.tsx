@@ -19,12 +19,12 @@ const MARKET_SNAPSHOT = {
 export function MarketSnapshotSection() {
   return (
     <section
-      className="py-16 bg-gray-50"
+      className="py-24 bg-white"
       aria-labelledby="market-snapshot-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 id="market-snapshot-heading" className="text-4xl font-bold text-gray-900 mb-8 text-center">
+          <h2 id="market-snapshot-heading" className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-12 text-center">
             Cadence Henderson Market Snapshot
           </h2>
           <div className="grid lg:grid-cols-2 gap-10 items-center mb-8">
@@ -36,9 +36,9 @@ export function MarketSnapshotSection() {
             <li><strong>Recognition:</strong> Top 10 Best-Selling Master Planned Community nationally</li>
             <li><strong>Location:</strong> Henderson NV {MARKET_SNAPSHOT.zipCode}</li>
           </ul>
-            <div className="relative h-[320px] lg:h-[360px] rounded-xl overflow-hidden shadow-lg bg-gray-200">
+            <div className="relative h-[320px] lg:h-[360px] overflow-hidden bg-neutral-200">
               <CloudflareImage
-                src={cfImage(SITE_IMAGES.location.aerialView, 'card')}
+                src={cfImage(SITE_IMAGES.sections.marketSnapshot, 'card')}
                 alt="Cadence Henderson NV 89011 master planned community aerial view"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

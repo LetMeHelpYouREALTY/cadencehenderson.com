@@ -7,11 +7,12 @@ import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
-import { Calendar, Clock, MapPin, Music, Users, Phone, Mail } from 'lucide-react'
+import { Calendar, Clock, MapPin, Music, Users, Phone, Mail, Film } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 
 export const metadata: Metadata = {
   title: 'Community Events in Cadence Henderson NV | 89011',
@@ -32,7 +33,7 @@ const upcomingEvents = [
     location: 'Central Park Event Lawn',
     category: 'Music',
     description:
-      'Join us for live music under the stars every Friday evening throughout the summer. Bring your blankets and lawn chairs for a family-friendly evening of entertainment.',
+      'Join us for live music under the stars every Friday evening throughout the summer. Bring blankets and lawn chairs to the Central Park event lawn.',
     image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
   },
   {
@@ -50,7 +51,7 @@ const upcomingEvents = [
     location: 'Central Park',
     category: 'Holiday',
     description:
-      'Trick-or-treating, costume contests, haunted houses, and family fun activities. Safe, supervised Halloween celebration for the whole community.',
+      'Trick-or-treating, costume contests, and haunted houses at Central Park. Event hours and route maps are posted on the resident calendar.',
     image: cfImage(SITE_IMAGES.lifestyle.events, 'card'),
   },
   {
@@ -66,9 +67,9 @@ const upcomingEvents = [
     title: 'Movie Night in the Park',
     date: 'Second Saturday, 7:30 PM',
     location: 'Central Park',
-    category: 'Family',
+    category: 'Movies',
     description:
-      'Family-friendly movies on a giant outdoor screen. Bring blankets and enjoy popcorn and refreshments under the stars.',
+      'Outdoor movies on a giant screen at Central Park. Bring blankets and enjoy popcorn and refreshments under the stars.',
     image: cfImage(SITE_IMAGES.lifestyle.movieNight, 'card'),
   },
   {
@@ -87,7 +88,7 @@ const categoryIcons: Record<string, any> = {
   Community: Users,
   Holiday: Calendar,
   Food: Clock,
-  Family: Users,
+  Movies: Film,
   Wellness: Users,
 }
 
@@ -95,15 +96,9 @@ export default function EventsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Cadence Henderson Lifestyle & Community', href: 'https://www.cadencehenderson.com/lifestyle' },
-          { name: 'Community Events in Cadence Henderson NV' },
-        ]}
-      />
 
       <PageHero
-        title="Community Events"
+        title="Community events in Cadence Henderson NV 89011"
         subtitle="Experience the vibrant community spirit at Cadence with year-round events, activities, and celebrations that bring neighbors together."
         imageSrc={cfImage(SITE_IMAGES.hero.events, 'hero')}
         imageAlt="Community events at Cadence Henderson NV 89011"
@@ -189,10 +184,10 @@ export default function EventsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-12">
-              Event Categories
+              Event categories in Cadence Henderson NV 89011
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {['Music', 'Food', 'Family', 'Wellness', 'Holiday', 'Community', 'Sports', 'Education'].map(
+              {['Music', 'Food', 'Movies', 'Wellness', 'Holiday', 'Community', 'Sports', 'Education'].map(
                 (category) => (
                   <div
                     key={category}
@@ -201,7 +196,7 @@ export default function EventsPage() {
                     <div className="text-4xl mb-2">
                       {category === 'Music' && '🎵'}
                       {category === 'Food' && '🍔'}
-                      {category === 'Family' && '👨‍👩‍👧‍👦'}
+                      {category === 'Movies' && '🎬'}
                       {category === 'Wellness' && '🧘'}
                       {category === 'Holiday' && '🎉'}
                       {category === 'Community' && '🤝'}
@@ -218,7 +213,7 @@ export default function EventsPage() {
       </section>
 
       {/* Schedule Consultation Section */}
-      <section className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+      <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
@@ -259,6 +254,17 @@ export default function EventsPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle/events"
+        name="Community Events in Cadence Henderson NV | 89011"
+        description="Summer concerts, farmers market, movie nights & food trucks at Cadence Henderson Central Park, Henderson NV 89011."
+        faqs={defaultPageFaqs('community events in Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Lifestyle', path: '/lifestyle' },
+          { name: 'Events in Cadence Henderson NV 89011' },
+        ]}
+        faqHeading="Cadence Henderson events — questions"
+      />
       <Footer />
     </div>
   )
