@@ -17,13 +17,23 @@ export function AmenitiesSection() {
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
               From Central Park&apos;s nearly 50 acres to pools, splash pads, trails, and standout schools — Cadence Henderson NV 89011 offers wonderful amenities for residents.
             </p>
-            <Button
-              size="lg"
-              className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
-              asChild
-            >
-              <Link href="/lifestyle/amenities">Cadence community amenities</Link>
-            </Button>
+            <div className="flex flex-wrap gap-3">
+              <Button
+                size="lg"
+                className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
+                asChild
+              >
+                <Link href="/lifestyle/amenities">Cadence community amenities</Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-lg px-8"
+                asChild
+              >
+                <Link href="/nearby-amenities">Nearby restaurants &amp; shopping map</Link>
+              </Button>
+            </div>
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
             <SiteImage

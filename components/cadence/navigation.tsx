@@ -73,6 +73,7 @@ const navigationItems: NavItem[] = [
     ariaLabel: 'Cadence Henderson lifestyle and community',
     titleAttr: 'Events, amenities, schools and community life in Cadence Henderson',
     items: [
+      { label: 'Nearby Amenities Map', href: '/nearby-amenities' },
       { label: 'Cadence Henderson Amenities', href: '/lifestyle/amenities' },
       { label: 'Community Events', href: '/lifestyle/events' },
       { label: 'Parks & Trails', href: '/lifestyle/parks-trails' },

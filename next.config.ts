@@ -32,6 +32,7 @@ const nextConfig: NextConfig = {
       { source: '/rentals', destination: REALSCOUT_RENTALS_URL, permanent: false },
       { source: '/rentals/:path*', destination: REALSCOUT_RENTALS_URL, permanent: false },
       { source: '/new-homes/beazer-homes', destination: REALSCOUT_BEAZER_HOMES_URL, permanent: false },
+      { source: '/amenities', destination: '/nearby-amenities', permanent: true },
     ]
   },
   async headers() {
@@ -51,8 +52,8 @@ const nextConfig: NextConfig = {
           {
             key: 'Content-Security-Policy',
             value: [
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.realscout.com https://calendly.com https://assets.calendly.com",
-              "connect-src 'self' https: https://em.realscout.com https://www.realscout.com https://calendly.com https://assets.calendly.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.realscout.com https://calendly.com https://assets.calendly.com https://maps.googleapis.com",
+              "connect-src 'self' https: https://em.realscout.com https://www.realscout.com https://calendly.com https://assets.calendly.com https://maps.googleapis.com https://places.googleapis.com",
               "frame-src 'self' https: https://calendly.com",
               "style-src 'self' 'unsafe-inline' https://assets.calendly.com",
               "img-src 'self' data: blob: https:",

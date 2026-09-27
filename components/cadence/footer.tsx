@@ -8,6 +8,7 @@ export function Footer() {
     { title: 'Search Henderson Homes for Sale', href: CONTACT_INFO.realScoutSearchUrl, external: true },
     { title: 'New Homes in Cadence Henderson 89011', href: '/new-homes' },
     { title: 'Rentals in Cadence Henderson', href: '/rentals' },
+    { title: 'Nearby Amenities Map – Cadence Henderson', href: '/nearby-amenities' },
     { title: 'Cadence Henderson Amenities & Central Park', href: '/lifestyle/amenities' },
     { title: 'Community Events in Cadence Henderson', href: '/lifestyle/events' },
     { title: 'Parks & Trails in Cadence Henderson', href: '/lifestyle/parks-trails' },

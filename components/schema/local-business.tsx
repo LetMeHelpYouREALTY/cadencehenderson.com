@@ -23,8 +23,8 @@ export function LocalBusinessSchema() {
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '36.0175',
-      longitude: '-114.9607',
+      latitude: '36.0588542',
+      longitude: '-114.9757734',
     },
     openingHoursSpecification: [
       {
@@ -50,6 +50,11 @@ export function LocalBusinessSchema() {
     areaServed: {
       '@type': 'Place',
       name: 'Cadence Henderson, Henderson NV 89011',
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 36.0588542,
+        longitude: -114.9757734,
+      },
     },
     hasCredential: {
       '@type': 'EducationalOccupationalCredential',
