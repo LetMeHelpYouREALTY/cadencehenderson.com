@@ -29,16 +29,18 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
+const DEFAULT_TITLE = 'Cadence Henderson New Homes | Dr. Jan Duffy'
+const DEFAULT_DESCRIPTION =
+  `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`
+
 export const metadata: Metadata = {
-  title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
-  description:
-    `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`,
+  title: DEFAULT_TITLE,
+  description: DEFAULT_DESCRIPTION,
   metadataBase: new URL('https://www.cadencehenderson.com'),
   openGraph: {
     siteName: CONTACT_INFO.siteName,
-    title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
-    description:
-      `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
     url: 'https://www.cadencehenderson.com',
     images: [
       {
@@ -53,9 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
-    description:
-      `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
     images: [OG_IMAGE],
     creator: '@DrJanDuffy',
   },

@@ -18,21 +18,39 @@ import { Footer } from '@/components/cadence/footer'
 import { WebPageSchema } from '@/components/schema/web-page'
 
 const BASE = 'https://www.cadencehenderson.com'
+/** Crawlers need a stable git URL; metadataBase resolves to absolute og:image. */
+const OG_IMAGE = '/og-image.jpg'
+
+const HOME_TITLE = 'Cadence Henderson New Homes | Dr. Jan Duffy'
+const HOME_DESCRIPTION =
+  `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`
 
 // ISR: fresh builder/data hourly for GEO and indexing
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
-  description:
-    `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`,
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   alternates: { canonical: BASE },
   openGraph: {
-    title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
-    description:
-      `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`,
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     url: BASE,
     type: 'website',
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: 'New homes for sale in Cadence Henderson 89011 Henderson NV',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },
 }
