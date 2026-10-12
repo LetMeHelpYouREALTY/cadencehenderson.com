@@ -46,6 +46,10 @@ export function KeyFactsSection() {
             Book a free 15-min call — {CONTACT_INFO.phone}
           </a>
           {' · '}
+          <Link href="/sell-in-cadence" className="text-sm font-light tracking-[0.08em] text-neutral-900 hover:underline">
+            Sell to buy in Cadence
+          </Link>
+          {' · '}
           <Link href="/contact" className="text-sm font-light tracking-[0.08em] text-neutral-900 hover:underline">
             Contact Dr. Jan
           </Link>

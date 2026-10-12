@@ -35,6 +35,25 @@ export const HOME_FAQS: FaqItem[] = [
   },
 ]
 
+/** Visible + JSON-LD FAQs for /sell-in-cadence (sell to buy in Cadence, not generic Henderson valuation). */
+export const SELL_IN_CADENCE_FAQS: FaqItem[] = [
+  {
+    question: 'Can I sell my current home and buy new construction in Cadence Henderson?',
+    answer:
+      'Yes. Many buyers sell an existing home and use the equity toward a new build in Cadence, a master-planned community in Henderson NV 89011 with multiple builders. Dr. Jan Duffy helps you line up listing timing, builder deposits, and closings so you are not stuck between two mortgages longer than necessary.',
+  },
+  {
+    question: 'Does Dr. Jan Duffy list homes outside Cadence?',
+    answer:
+      'Dr. Jan Duffy can discuss listing your current home wherever it is located in the Las Vegas Valley while you shop new construction in Cadence Henderson. Start with a listing consultation to review your equity, prep timeline, and how it pairs with builder inventory.',
+  },
+  {
+    question: 'How do I plan equity from my sale toward a Cadence new home?',
+    answer:
+      'Book a listing consultation with Dr. Jan Duffy. She reviews your sale proceeds, estimated net, and how that lines up with builder deposits and closing dates in Cadence. Use the home value tool on this page for a starting estimate, then confirm numbers on the call.',
+  },
+]
+
 export function defaultPageFaqs(topic: string): FaqItem[] {
   return [
     {

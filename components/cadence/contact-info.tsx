@@ -46,6 +46,27 @@ export const CONTACT_INFO = {
   calendlyUrl: 'https://calendly.com/drjanduffy/15min',
 }
 
+const CALENDLY_UTM_SOURCE = 'cadencehenderson.com'
+const CALENDLY_UTM_MEDIUM = 'website'
+
+/** Calendly events allowed on this site (seller / buyer consults + legacy 15min). */
+export type CalendlyEventSlug =
+  | 'listing-consultation'
+  | 'buyer-consultation-30-min'
+  | '15min'
+
+/**
+ * Build a Calendly URL with standard UTM tags for cadencehenderson.com placements.
+ */
+export function calendlyEventUrl(event: CalendlyEventSlug, utmContent: string): string {
+  const params = new URLSearchParams({
+    utm_source: CALENDLY_UTM_SOURCE,
+    utm_medium: CALENDLY_UTM_MEDIUM,
+    utm_content: utmContent,
+  })
+  return `https://calendly.com/drjanduffy/${event}?${params.toString()}`
+}
+
 export const SOCIAL_MEDIA = {
   facebook: 'https://www.facebook.com/CadenceHendersonHomes',
   instagram: 'https://www.instagram.com/cadencehendersonhomes/',

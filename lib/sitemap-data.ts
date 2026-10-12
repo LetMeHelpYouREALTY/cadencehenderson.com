@@ -81,6 +81,7 @@ export function getSitemapEntries(): SitemapEntry[] {
     { url: `${base}/gallery`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${base}/faqs`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/past-homesales`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/sell-in-cadence`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
   ]
 
   const rentalPages: SitemapEntry[] = RENTAL_COMMUNITIES.map((slug) => ({

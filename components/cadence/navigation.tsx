@@ -115,6 +115,7 @@ const navigationItems: NavItem[] = [
       { label: 'Realtor Toolkit', href: '/realtors/realtor-toolkit' },
       { label: 'Media & Press', href: '/media' },
       { label: 'Past Home Sales in Cadence Henderson', href: '/past-homesales' },
+      { label: 'Sell to Buy in Cadence Henderson', href: '/sell-in-cadence' },
       { label: 'Residents', href: '/residents' },
     ],
   },

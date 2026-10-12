@@ -26,6 +26,7 @@ export function Footer() {
     { title: 'Cadence Henderson Location & Directions', href: '/maps' },
     { title: 'Cadence Henderson FAQ', href: '/faqs' },
     { title: 'Past Home Sales in Cadence Henderson', href: '/past-homesales' },
+    { title: 'Sell to Buy in Cadence Henderson', href: '/sell-in-cadence' },
     { title: 'Cadence Henderson News', href: '/news' },
     { title: 'Contact Cadence Henderson Real Estate', href: '/contact' },
     { title: 'Gallery', href: '/gallery' },
