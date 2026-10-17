@@ -98,7 +98,10 @@ export default function FindYourHomePage() {
             <h2 className="mb-4 text-center text-3xl font-extralight tracking-[0.06em] text-neutral-900">
               Search Cadence Henderson NV 89011 by builder
             </h2>
-            <p className="mx-auto mb-10 max-w-2xl text-center font-light text-neutral-600">
+            <p
+              className="aeo-lead mx-auto mb-10 max-w-2xl text-center font-light text-neutral-600"
+              data-speakable
+            >
               Cadence Henderson includes single-family and townhome collections
               from national and local builders. Dr. Jan Duffy represents buyers
               at no extra cost — the builder pays the fee.

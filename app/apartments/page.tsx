@@ -12,6 +12,7 @@ import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
+import { NapStrip } from '@/components/cadence/nap-strip'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -93,7 +94,19 @@ export default function ApartmentsPage() {
         </a>
       </PageHero>
 
+      <NapStrip />
+
       <RealScoutOfficeListings />
+
+      <section className="py-8">
+        <p
+          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-light text-neutral-600"
+          data-speakable
+        >
+          Lease apartments or built-to-rent homes inside Cadence Henderson NV 89011. Dr. Jan Duffy can
+          help you compare communities and plan a move from renting to owning when you are ready.
+        </p>
+      </section>
 
       <PageBodyPhoto
         src={cfImage(SITE_IMAGES.rentals.element12, 'hero')}

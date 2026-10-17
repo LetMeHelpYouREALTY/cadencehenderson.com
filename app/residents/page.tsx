@@ -22,6 +22,7 @@ import {
 import Link from 'next/link'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
+import { NapStrip } from '@/components/cadence/nap-strip'
 
 export default function ResidentsPage() {
   return (
@@ -44,6 +45,8 @@ export default function ResidentsPage() {
           </Button>
         </a>
       </PageHero>
+
+      <NapStrip />
 
       <RealScoutOfficeListings />
 

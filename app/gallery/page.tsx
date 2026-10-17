@@ -15,6 +15,7 @@ import { Button } from '@/components/ui/button'
 import { Image as ImageIcon, X, Calendar, Phone, Mail } from 'lucide-react'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { getGalleryImage, cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { NapStrip } from '@/components/cadence/nap-strip'
 
 const galleryCategories = [
   'All',
@@ -111,6 +112,18 @@ export default function GalleryPage() {
         imageAlt="Photo gallery of Cadence Henderson NV 89011"
         icon={ImageIcon}
       />
+
+      <NapStrip />
+
+      <section className="border-b border-neutral-100 py-8">
+        <p
+          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-light text-neutral-600"
+          data-speakable
+        >
+          Photos of Central Park, pools, events, and new homes in Cadence Henderson NV 89011 — the
+          master-planned community at Bicentennial Parkway and Paseo Verde.
+        </p>
+      </section>
 
       <RealScoutOfficeListings />
 

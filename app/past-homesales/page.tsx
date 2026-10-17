@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button'
 import { Calendar, Home, Phone, Mail } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
+import { NapStrip } from '@/components/cadence/nap-strip'
 
 export const metadata = {
   title: 'Past Home Sales | Cadence Henderson 89011',
@@ -62,6 +63,8 @@ export default function PastHomesalesPage() {
           </a>
         </div>
       </PageHero>
+
+      <NapStrip />
 
       <RealScoutOfficeListings />
 

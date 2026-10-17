@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
+import { NapStrip } from '@/components/cadence/nap-strip'
 
 export const metadata: Metadata = {
   title: 'Cadence Henderson Location & Directions | Henderson NV 89011',
@@ -51,6 +52,8 @@ export default function MapsPage() {
         imageAlt="Cadence Henderson location and directions in Henderson NV 89011"
         icon={MapPin}
       />
+
+      <NapStrip />
 
       <RealScoutOfficeListings />
 

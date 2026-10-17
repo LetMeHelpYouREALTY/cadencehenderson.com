@@ -20,6 +20,12 @@
 - [x] Trim schools page meta description to ≤160 chars
 - [x] `NapStrip` on `/find-your-home`, `/communities`, `/sell-in-cadence`
 
+## Completed (2026-10-17 pass 4)
+
+- [x] `npm run seo:metadata-audit` + GitHub Actions CI (audit, format, lint, build)
+- [x] `NapStrip` on contact, maps, realtors, incentives, apartments, past-homesales, gallery, faqs, residents; new-homes strip moved below hero
+- [x] Extra `data-speakable` / `.aeo-lead` blocks on communities, find-your-home, new-homes, gallery, faqs, apartments, incentives, contact
+
 ## Remaining
 
 - [ ] Production Cloudflare image sync token (ops / env — not code)

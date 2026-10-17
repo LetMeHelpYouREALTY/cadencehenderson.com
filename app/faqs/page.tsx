@@ -12,6 +12,7 @@ import { Footer } from '@/components/cadence/footer'
 import { ChevronDown, ChevronUp, HelpCircle, Calendar, Phone, Mail } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
+import { NapStrip } from '@/components/cadence/nap-strip'
 
 const faqCategories = [
   {
@@ -124,6 +125,18 @@ export default function FAQsPage() {
         imageAlt="Frequently asked questions about Cadence Henderson NV 89011"
         icon={HelpCircle}
       />
+
+      <NapStrip />
+
+      <section className="border-b border-neutral-100 py-8">
+        <p
+          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-light text-neutral-600"
+          data-speakable
+        >
+          Answers about Cadence Henderson builders, schools, amenities, and buying new construction in
+          Henderson NV 89011. For a personal answer, call Dr. Jan Duffy at {CONTACT_INFO.phone}.
+        </p>
+      </section>
 
       <RealScoutOfficeListings />
 

@@ -134,6 +134,8 @@ export default function NewHomesPage() {
             </div>
       </PageHero>
 
+      <NapStrip />
+
       <RealScoutOfficeListings />
 
       {/* MLS Search Widget */}
@@ -143,6 +145,13 @@ export default function NewHomesPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">
               Search Henderson Homes for Sale
             </h2>
+            <p
+              className="aeo-lead mx-auto mb-6 max-w-2xl text-center font-light text-gray-600"
+              data-speakable
+            >
+              Nine builders sell new construction in Cadence Henderson NV 89011. Dr. Jan Duffy
+              represents buyers at no extra cost — the builder pays the buyer-agent fee.
+            </p>
             <div className="flex justify-center mb-6">
               <a
                 href={CONTACT_INFO.realScoutSearchUrl}
@@ -397,7 +406,6 @@ export default function NewHomesPage() {
         description="8 builders and new construction in Cadence Henderson NV 89011. Compare floor plans and builder incentives with Dr. Jan Duffy. Tours 7 days a week."
         breadcrumbs={[{ name: 'New homes in Cadence Henderson NV 89011' }]}
       />
-      <NapStrip />
       <Footer />
     </div>
   )

@@ -44,6 +44,18 @@ export default function CommunitiesIndexPage() {
         icon={Landmark}
       />
       <NapStrip />
+
+      <section className="border-b border-neutral-100 py-10">
+        <p
+          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-light text-neutral-600"
+          data-speakable
+        >
+          Cadence Henderson NV 89011 includes dozens of villages from national and local builders.
+          Use this directory to compare neighborhoods, then tour with Dr. Jan Duffy as your buyer&apos;s
+          agent.
+        </p>
+      </section>
+
       <RealScoutOfficeListings />
 
       <PageBodyPhoto

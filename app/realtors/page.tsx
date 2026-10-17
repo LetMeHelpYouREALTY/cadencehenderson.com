@@ -23,6 +23,7 @@ import {
 } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
+import { NapStrip } from '@/components/cadence/nap-strip'
 import Link from 'next/link'
 
 export default function RealtorsPage() {
@@ -81,6 +82,8 @@ export default function RealtorsPage() {
           </a>
         </div>
       </PageHero>
+
+      <NapStrip />
 
       <RealScoutOfficeListings />
 

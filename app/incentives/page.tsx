@@ -12,6 +12,7 @@ import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
+import { NapStrip } from '@/components/cadence/nap-strip'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -70,6 +71,8 @@ export default function IncentivesPage() {
         </CalendlyLink>
       </PageHero>
 
+      <NapStrip />
+
       <RealScoutOfficeListings />
 
       <PageBodyPhoto
@@ -80,6 +83,14 @@ export default function IncentivesPage() {
 
       <section className="py-16">
         <div className="container mx-auto px-4">
+          <p
+            className="aeo-lead mx-auto mb-10 max-w-3xl text-center font-light text-neutral-600"
+            data-speakable
+          >
+            Builder incentives in Cadence Henderson NV 89011 can lower your rate, cover closing costs,
+            or include upgrades — but every offer is lot- and lender-specific. Verify the written
+            addendum before you sign.
+          </p>
           <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
             {incentiveTypes.map((item) => {
               const Icon = item.icon

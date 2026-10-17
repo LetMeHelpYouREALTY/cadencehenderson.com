@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
+import { NapStrip } from '@/components/cadence/nap-strip'
 
 export default function ContactPage() {
   return (
@@ -26,6 +27,8 @@ export default function ContactPage() {
         imageSrc={cfImage(SITE_IMAGES.hero.contact, 'hero')}
         imageAlt="Contact Cadence Henderson real estate office in Henderson NV 89011"
       />
+
+      <NapStrip />
 
       <RealScoutOfficeListings />
 
@@ -44,8 +47,8 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Selling a Cadence Henderson NV 89011 home?
             </h2>
-            <p className="text-gray-700 mb-8">
-              Get a free, instant estimate of your home's value in today's market.
+            <p className="aeo-lead text-gray-700 mb-8" data-speakable>
+              Get a free, instant estimate of your home&apos;s value in today&apos;s Henderson market.
             </p>
             <div className="flex justify-center">
               <RealScoutHomeValue />
