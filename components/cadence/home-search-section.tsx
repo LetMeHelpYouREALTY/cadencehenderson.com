@@ -21,7 +21,11 @@ export function HomeSearchSection({ variant = 'default', compact = false }: Home
     : 'Browse new homes and resale listings in Cadence Henderson NV 89011. Dr. Jan Duffy represents buyers at no cost — builder pays the fee.'
 
   return (
-    <section className="py-24 bg-neutral-50" aria-labelledby="home-search-heading">
+    <section
+      id="home-search"
+      className="scroll-mt-24 py-24 bg-neutral-50"
+      aria-labelledby="home-search-heading"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">

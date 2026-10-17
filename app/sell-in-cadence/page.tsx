@@ -13,6 +13,7 @@ import { calendlyEventUrl } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { SELL_IN_CADENCE_FAQS } from '@/lib/page-aeo'
+import { NapStrip } from '@/components/cadence/nap-strip'
 
 const BASE = 'https://www.cadencehenderson.com'
 const PAGE_PATH = '/sell-in-cadence'
@@ -55,6 +56,8 @@ export default function SellInCadencePage() {
           </Button>
         </a>
       </PageHero>
+
+      <NapStrip />
 
       <RealScoutOfficeListings />
 

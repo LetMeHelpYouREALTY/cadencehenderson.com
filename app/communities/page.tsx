@@ -15,6 +15,7 @@ import {
 } from '@/lib/cadence-nv-catalog'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
+import { NapStrip } from '@/components/cadence/nap-strip'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -42,6 +43,7 @@ export default function CommunitiesIndexPage() {
         imageAlt="Cadence Henderson neighborhood directory NV 89011"
         icon={Landmark}
       />
+      <NapStrip />
       <RealScoutOfficeListings />
 
       <PageBodyPhoto

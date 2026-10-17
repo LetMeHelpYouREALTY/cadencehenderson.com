@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import Link from 'next/link'
 import { Search, Home, Building2, Landmark } from 'lucide-react'
 import { PageHero } from '@/components/cadence/page-hero'
@@ -13,6 +14,8 @@ import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
+import { FindYourHomeQuerySync } from '@/components/cadence/find-your-home-query-sync'
+import { NapStrip } from '@/components/cadence/nap-strip'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -73,6 +76,12 @@ export default function FindYourHomePage() {
           </Button>
         </a>
       </PageHero>
+
+      <Suspense fallback={null}>
+        <FindYourHomeQuerySync />
+      </Suspense>
+
+      <NapStrip />
 
       <RealScoutOfficeListings />
 

@@ -13,7 +13,13 @@
 - [x] Trim meta descriptions >160 chars on key lifestyle/communities/realtor pages
 - [x] `NapStrip` on `/new-homes`, `/lifestyle`, `/rentals`
 
+## Completed (2026-10-17 pass 3)
+
+- [x] `?query=` on `/find-your-home` — scroll + banner (`FindYourHomeQuerySync`) for WebSite SearchAction
+- [x] `id="home-search"` on `HomeSearchSection` (aligns with nav `/#home-search` via `HomeFinder` on homepage)
+- [x] Trim schools page meta description to ≤160 chars
+- [x] `NapStrip` on `/find-your-home`, `/communities`, `/sell-in-cadence`
+
 ## Remaining
 
-- [ ] Optional: handle `?query=` on find-your-home for SearchAction URL template
-- [ ] Production Cloudflare image sync token
+- [ ] Production Cloudflare image sync token (ops / env — not code)

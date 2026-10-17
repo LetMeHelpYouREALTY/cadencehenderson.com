@@ -77,11 +77,12 @@ const privateSchools = [
 export const metadata: Metadata = {
   title: 'Schools Near Cadence Henderson | Henderson NV 89011',
   description:
-    'Campuses serving Cadence Henderson 89011: Cadence Elementary on-site, Henderson-area middle schools, Green Valley High School, plus nearby private campuses. Confirm CCSD zones by address.',
+    'Schools near Cadence Henderson 89011: Cadence Elementary, Henderson middle schools, Green Valley HS. Confirm CCSD zones by address.',
   alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/schools' },
   openGraph: {
     title: 'Schools Near Cadence Henderson | Henderson NV 89011',
-    description: 'Cadence Elementary, Henderson-area middle schools, and Green Valley High School near Cadence Henderson NV 89011. Confirm attendance zones by address.',
+    description:
+      'Cadence Elementary, Henderson middle schools, and Green Valley HS near Cadence Henderson NV 89011. Confirm zones by address.',
     url: 'https://www.cadencehenderson.com/lifestyle/schools',
   },
 }
