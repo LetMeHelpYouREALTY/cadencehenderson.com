@@ -47,7 +47,7 @@ const services = [
 export const metadata: Metadata = {
   title: 'Cadence Animal Hospital – Henderson NV 89011 | Pet Care',
   description:
-    'Full-service veterinary care in Cadence Henderson NV 89011. Wellness exams, vaccines, dental, surgery & emergency services. On-site animal hospital for Cadence residents.',
+    'Veterinary care in Cadence Henderson NV 89011: wellness, vaccines, dental, and surgery. On-site animal hospital serving Cadence residents.',
   alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/animal-hospital' },
   openGraph: {
     title: 'Cadence Animal Hospital – Henderson NV 89011 | Pet Care',

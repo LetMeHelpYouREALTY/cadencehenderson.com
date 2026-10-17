@@ -11,6 +11,7 @@ import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { RealScoutWidget } from '@/components/idx/realscout-widget'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { NapStrip } from '@/components/cadence/nap-strip'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Home, Bed, Bath, Ruler, Search } from 'lucide-react'
@@ -393,9 +394,10 @@ export default function NewHomesPage() {
       <PageAeo
         path="/new-homes"
         name="New Homes for Sale – Cadence Henderson NV 89011"
-        description="8 builders, 150+ homes from $300K–$650K in Cadence Henderson 89011. Beazer, Lennar, Richmond American, Woodside & more. Browse floor plans, prices & availability. Tours 7 days."
+        description="8 builders and new construction in Cadence Henderson NV 89011. Compare floor plans and builder incentives with Dr. Jan Duffy. Tours 7 days a week."
         breadcrumbs={[{ name: 'New homes in Cadence Henderson NV 89011' }]}
       />
+      <NapStrip />
       <Footer />
     </div>
   )

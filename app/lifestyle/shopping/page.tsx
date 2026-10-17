@@ -41,7 +41,7 @@ const shoppingCenters = [
 export const metadata: Metadata = {
   title: 'Shopping & Dining Near Cadence Henderson NV | 89011',
   description:
-    'Galleria at Sunset, Cadence Marketplace, Sunset Station & more near Cadence Henderson NV 89011. Grocery, dining, retail and entertainment minutes from your home.',
+    'Shopping and dining near Cadence Henderson NV 89011: Galleria at Sunset, Cadence Marketplace, and local restaurants. Dr. Jan Duffy.',
   alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/shopping' },
   openGraph: {
     title: 'Shopping & Dining Near Cadence Henderson NV | 89011',

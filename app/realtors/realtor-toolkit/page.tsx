@@ -19,7 +19,7 @@ const BASE = 'https://www.cadencehenderson.com'
 export const metadata: Metadata = {
   title: 'Cadence Henderson Realtor Toolkit | Agent Resources',
   description:
-    'Co-broke resources for Cadence Henderson NV 89011: maps, amenities, builder list, live search, and how to tour with Dr. Jan Duffy. Fair Housing reminder included.',
+    'Agent toolkit for Cadence Henderson NV 89011: maps, builders, amenities, and live search links. Co-broke with Dr. Jan Duffy.',
   alternates: { canonical: `${BASE}/realtors/realtor-toolkit` },
   openGraph: {
     title: 'Cadence Henderson Realtor Toolkit | Agent Resources',

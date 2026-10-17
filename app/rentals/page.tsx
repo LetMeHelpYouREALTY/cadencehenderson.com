@@ -8,6 +8,7 @@ import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listi
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { NapStrip } from '@/components/cadence/nap-strip'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Building2, MapPin, DollarSign, Calendar, Phone, Mail } from 'lucide-react'
@@ -353,6 +354,7 @@ export default function RentalsPage() {
         description="Cadence Henderson rental homes and communities. Find rentals in Henderson NV 89011. Dr. Jan Duffy, REALTOR®. American Homes, Element 12, Adler."
         breadcrumbs={[{ name: 'Rentals in Cadence Henderson NV 89011' }]}
       />
+      <NapStrip />
       <Footer />
     </div>
   )

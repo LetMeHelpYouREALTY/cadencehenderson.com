@@ -17,7 +17,7 @@ const BASE = 'https://www.cadencehenderson.com'
 export const metadata: Metadata = {
   title: 'Pocket Parks in Cadence Henderson | Neighborhood Parks',
   description:
-    'Neighborhood pocket parks in Cadence Henderson NV 89011: tot lots, benches, turf, and short walks to Central Park and trails. Tour the green spaces with Dr. Jan Duffy.',
+    'Pocket parks in Cadence Henderson NV 89011: tot lots, benches, and trail links to Central Park. Tour green spaces with Dr. Jan Duffy.',
   alternates: { canonical: `${BASE}/lifestyle/parks-trails/pocket-parks` },
   openGraph: {
     title: 'Pocket Parks in Cadence Henderson | Neighborhood Parks',

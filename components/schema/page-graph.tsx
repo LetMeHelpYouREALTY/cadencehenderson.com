@@ -1,10 +1,10 @@
 import { CONTACT_INFO, SOCIAL_MEDIA } from '@/components/cadence/contact-info'
+import { WEBSITE_ID } from '@/components/schema/website-schema'
 import type { FaqItem } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 const AGENT_ID = `${BASE}/#realestateagent`
 const PERSON_ID = `${BASE}/#dr-jan-duffy`
-const WEBSITE_ID = `${BASE}/#website`
 
 type Breadcrumb = {
   name: string
@@ -41,13 +41,6 @@ export function PageGraphSchema({
 
   const graph: Record<string, unknown>[] = [
     {
-      '@type': 'WebSite',
-      '@id': WEBSITE_ID,
-      name: CONTACT_INFO.siteName,
-      url: BASE,
-      publisher: { '@id': AGENT_ID },
-    },
-    {
       '@type': 'WebPage',
       '@id': webpageId,
       url,
@@ -57,6 +50,14 @@ export function PageGraphSchema({
       about: {
         '@type': 'Place',
         name: 'Cadence Henderson',
+        containedInPlace: {
+          '@type': 'City',
+          name: 'Henderson',
+          containedInPlace: {
+            '@type': 'State',
+            name: 'Nevada',
+          },
+        },
         address: {
           '@type': 'PostalAddress',
           streetAddress: CONTACT_INFO.address.street,

@@ -21,7 +21,7 @@ const BASE = 'https://www.cadencehenderson.com'
 export const metadata: Metadata = {
   title: 'Cadence Henderson Neighborhoods | All Villages 89011',
   description:
-    'Every Cadence Henderson village from the CadenceNV directory: Beazer, Century, D.R. Horton, Lennar, Richmond American, StoryBook, Taylor Morrison, Woodside, AMH, and more.',
+    'Cadence Henderson village directory: builders, neighborhoods, and plan names in NV 89011. Tour villages with Dr. Jan Duffy.',
   alternates: { canonical: `${BASE}/communities` },
   openGraph: {
     title: 'Cadence Henderson Neighborhoods | All Villages 89011',

@@ -16,7 +16,7 @@ const BASE = 'https://www.cadencehenderson.com'
 export const metadata: Metadata = {
   title: 'Cadence Henderson Community Life – Henderson NV 89011',
   description:
-    'Resident clubs, volunteering & neighborhood events in Cadence Henderson NV 89011. Book Club, Running Club, Garden Club, Wine & Dine and more. Active community life.',
+    'Clubs, volunteering, and events in Cadence Henderson NV 89011. See how residents connect in Cadence with Dr. Jan Duffy.',
   alternates: { canonical: `${BASE}/lifestyle/community` },
   openGraph: {
     title: 'Cadence Henderson Community Life – Henderson NV 89011',

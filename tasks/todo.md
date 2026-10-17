@@ -1,19 +1,19 @@
-# Task plan — SEO / GEO / AEO (2026-10-17)
+# Task plan — SEO / GEO / AEO
 
-## Completed
+## Completed (2026-10-17 pass 1)
 
-- [x] Remove site-wide FAQPage schema from root layout (FAQ only where visible on page)
-- [x] Contact: single `CONTACT_FAQS` source for visible FAQ + `PageGraphSchema` in layout
-- [x] Gallery: server-rendered `PageGraphSchema` in layout; visible FAQ matches JSON-LD
-- [x] Crawl: `noindex` + robots disallow for `/projects/`
-- [x] Internal link: homepage services card → `/sell-in-cadence`
+- [x] Page-matched FAQ schema; contact/gallery graphs; noindex `/projects/`
+- [x] Homepage services link → `/sell-in-cadence`
 
-## Review
+## Completed (2026-10-17 pass 2)
 
-Build: `npm run build` passed after changes.
+- [x] Remove unused `faq-page.tsx` (homepage uses `HOME_FAQS` + `PageGraphSchema`)
+- [x] Site-wide `WebSite` + `SearchAction` in `WebsiteSchema` (once in root layout)
+- [x] Deduplicate `WebSite` node from per-page `PageGraphSchema`; `containedInPlace` on Cadence Place
+- [x] Trim meta descriptions >160 chars on key lifestyle/communities/realtor pages
+- [x] `NapStrip` on `/new-homes`, `/lifestyle`, `/rentals`
 
-## Remaining (future)
+## Remaining
 
-- [ ] Align `components/schema/faq-page.tsx` copy with `HOME_FAQS` or delete if unused
-- [ ] Audit title/meta length on long-tail lifestyle pages
-- [ ] Production `CLOUDFLARE_API_TOKEN` for image CDN sync
+- [ ] Optional: handle `?query=` on find-your-home for SearchAction URL template
+- [ ] Production Cloudflare image sync token

@@ -7,6 +7,7 @@ import { HomeSearchSection } from '@/components/cadence/home-search-section'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { NapStrip } from '@/components/cadence/nap-strip'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
@@ -377,9 +378,10 @@ export default function LifestylePage() {
       <PageAeo
         path="/lifestyle"
         name="Cadence Henderson Community & Amenities | Henderson NV 89011"
-        description="50-acre Central Park, resort pools, fitness centers, Cadence Elementary on-site & 30+ miles of trails. Discover the Cadence Henderson lifestyle in Henderson NV 89011."
+        description="Central Park, pools, fitness centers, trails, and community events in Cadence Henderson NV 89011. Explore the Cadence lifestyle with Dr. Jan Duffy."
         breadcrumbs={[{ name: 'Cadence Henderson lifestyle NV 89011' }]}
       />
+      <NapStrip />
       <Footer />
     </div>
   )
