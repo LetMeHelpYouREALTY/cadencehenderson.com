@@ -9,7 +9,7 @@ import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listi
 import { RealScoutHomeValue } from '@/components/idx/realscout-home-value'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { PageAeo } from '@/components/cadence/page-aeo'
+import { CONTACT_FAQS } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
@@ -190,62 +190,14 @@ export default function ContactPage() {
             <p className="text-center text-gray-700 mb-8">
               {CONTACT_INFO.siteName} – Henderson NV 89011
             </p>
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  '@context': 'https://schema.org',
-                  '@type': 'FAQPage',
-                  mainEntity: [
-                    {
-                      '@type': 'Question',
-                      name: 'How do I schedule a Cadence Henderson home tour?',
-                      acceptedAnswer: {
-                        '@type': 'Answer',
-                        text: `Schedule a Cadence Henderson home tour by calling ${CONTACT_INFO.phone} or booking online at calendly.com. The Welcome Center at ${CONTACT_INFO.welcomeCenter} is open 10AM–6PM daily.`,
-                      },
-                    },
-                    {
-                      '@type': 'Question',
-                      name: 'What are the Cadence Henderson office hours?',
-                      acceptedAnswer: {
-                        '@type': 'Answer',
-                        text: `The Cadence Henderson real estate office at ${CONTACT_INFO.welcomeCenter} is open Monday through Sunday, 10:00 AM to 6:00 PM.`,
-                      },
-                    },
-                    {
-                      '@type': 'Question',
-                      name: 'Where is the Cadence Henderson real estate office?',
-                      acceptedAnswer: {
-                        '@type': 'Answer',
-                        text: `The Cadence Henderson real estate office is at ${CONTACT_INFO.welcomeCenter}, near Bicentennial Pkwy and Paseo Verde.`,
-                      },
-                    },
-                    {
-                      '@type': 'Question',
-                      name: 'How can I get a free home value estimate for my Cadence Henderson home?',
-                      acceptedAnswer: {
-                        '@type': 'Answer',
-                        text: `Use the free home value widget on the contact page or call ${CONTACT_INFO.phone}. Get an instant estimate for your Cadence Henderson NV 89011 property.`,
-                      },
-                    },
-                  ],
-                }),
-              }}
-            />
             <div className="space-y-4">
-              {[
-                { q: 'How do I schedule a Cadence Henderson home tour?', a: `Schedule by calling ${CONTACT_INFO.phone} or booking online. The Welcome Center at ${CONTACT_INFO.welcomeCenter} is open 10AM–6PM daily.` },
-                { q: 'What are the Cadence Henderson office hours?', a: `Open Monday through Sunday, 10:00 AM to 6:00 PM at ${CONTACT_INFO.welcomeCenter}.` },
-                { q: 'Where is the Cadence Henderson real estate office?', a: `${CONTACT_INFO.welcomeCenter}, near Bicentennial Pkwy and Paseo Verde.` },
-                { q: 'How can I get a free home value estimate for my Cadence Henderson home?', a: `Use the home value widget on this page or call ${CONTACT_INFO.phone} for an instant estimate.` },
-              ].map(({ q, a }) => (
-                <details key={q} className="group border border-gray-200 rounded-lg p-5 cursor-pointer bg-white">
+              {CONTACT_FAQS.map(({ question, answer }) => (
+                <details key={question} className="group border border-gray-200 rounded-lg p-5 cursor-pointer bg-white">
                   <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
-                    {q}
+                    {question}
                     <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{answer}</p>
                 </details>
               ))}
             </div>
@@ -253,12 +205,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <PageAeo
-        path="/contact"
-        name={`Contact ${CONTACT_INFO.siteName} | ${CONTACT_INFO.phone}`}
-        description={`Schedule a Cadence Henderson home tour. Call ${CONTACT_INFO.phone} or visit ${CONTACT_INFO.welcomeCenter}. Open 7 days 10AM–6PM. Licensed REALTOR® on-site.`}
-        breadcrumbs={[{ name: 'Contact Dr. Jan Duffy in Cadence Henderson NV 89011' }]}
-      />
       <Footer />
     </div>
   )

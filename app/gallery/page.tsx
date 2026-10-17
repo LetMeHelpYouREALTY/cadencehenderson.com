@@ -10,7 +10,6 @@ import { HomeSearchSection } from '@/components/cadence/home-search-section'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Image as ImageIcon, X, Calendar, Phone, Mail } from 'lucide-react'
@@ -236,14 +235,26 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <PageAeo
-        path="/gallery"
-        name="Photo Gallery | Cadence Henderson 89011"
-        description="Cadence Henderson gallery: Central Park, amenities, homes, community. Cadence master-planned community Henderson NV 89011."
-        faqs={defaultPageFaqs('Cadence Henderson photo gallery')}
-        breadcrumbs={[{ name: 'Cadence Henderson gallery NV 89011' }]}
-        faqHeading="Cadence Henderson gallery — questions"
-      />
+      <section id="page-faq" className="bg-neutral-50 py-16" aria-labelledby="page-faq-heading">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-3xl">
+            <h2
+              id="page-faq-heading"
+              className="mb-10 text-center text-3xl font-extralight tracking-[0.06em] text-neutral-900"
+            >
+              Cadence Henderson gallery — questions
+            </h2>
+            <dl className="space-y-8">
+              {defaultPageFaqs('Cadence Henderson photo gallery').map((item) => (
+                <div key={item.question} className="border-b border-neutral-200 pb-8 last:border-0 last:pb-0">
+                  <dt className="mb-3 text-lg font-medium text-neutral-900">{item.question}</dt>
+                  <dd className="faq-answer text-gray-800 leading-relaxed">{item.answer}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </section>
       <Footer />
     </div>
   )

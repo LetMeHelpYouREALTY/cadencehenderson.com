@@ -11,6 +11,26 @@ const NAP = CONTACT_INFO.welcomeCenter
 const HOURS = CONTACT_INFO.hours
 const BRAND = CONTACT_INFO.siteName
 
+/** Visible + JSON-LD FAQs on /contact — text must match on-page FAQ section. */
+export const CONTACT_FAQS: FaqItem[] = [
+  {
+    question: 'How do I schedule a Cadence Henderson home tour?',
+    answer: `Schedule by calling ${PHONE} or booking online. The Welcome Center at ${NAP} is open 10AM–6PM daily.`,
+  },
+  {
+    question: 'What are the Cadence Henderson office hours?',
+    answer: `Open Monday through Sunday, 10:00 AM to 6:00 PM at ${NAP}.`,
+  },
+  {
+    question: 'Where is the Cadence Henderson real estate office?',
+    answer: `${NAP}, near Bicentennial Pkwy and Paseo Verde.`,
+  },
+  {
+    question: 'How can I get a free home value estimate for my Cadence Henderson home?',
+    answer: `Use the home value widget on this page or call ${PHONE} for an instant estimate.`,
+  },
+]
+
 export const HOME_FAQS: FaqItem[] = [
   {
     question: 'Do I need a realtor to buy a new home in Cadence Henderson?',

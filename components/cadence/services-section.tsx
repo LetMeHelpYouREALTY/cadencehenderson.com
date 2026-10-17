@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { LucideIcon } from 'lucide-react'
-import { Home, Key, Building2, Calendar, MapPin } from 'lucide-react'
+import { Home, RefreshCw, Building2, Calendar, MapPin } from 'lucide-react'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CloudflareImage } from '@/components/cadence/cloudflare-image'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
@@ -24,11 +24,12 @@ const SERVICES: ServiceItem[] = [
     external: false,
   },
   {
-    title: 'New Homes by Builder',
-    description: 'Browse all 9 Cadence Henderson builders. New construction Henderson NV — free agent; builder pays.',
-    href: '/new-homes',
-    icon: Key,
-    ariaLabel: 'New homes by builder in Cadence Henderson NV 89011',
+    title: 'Sell to Buy in Cadence',
+    description:
+      'Sell your current home and buy new construction in Cadence Henderson NV 89011. Dr. Jan Duffy helps align your sale and builder timeline.',
+    href: '/sell-in-cadence',
+    icon: RefreshCw,
+    ariaLabel: 'Sell your home to buy new construction in Cadence Henderson NV 89011',
     external: false,
   },
   {

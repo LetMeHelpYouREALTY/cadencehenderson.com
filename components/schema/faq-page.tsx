@@ -1,8 +1,8 @@
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 
 /**
- * FAQPage JSON-LD schema targeting "People Also Ask" and AEO.
- * Mirrors on-page HomepageFAQSection. Buyer-focused, Cadence Henderson NV 89011.
+ * Legacy standalone FAQPage JSON-LD (homepage buyer FAQs).
+ * Prefer PageGraphSchema on `/` with HOME_FAQS — do not mount this site-wide in root layout.
  */
 export function FAQPageSchema() {
   const schema = {
