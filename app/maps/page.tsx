@@ -43,8 +43,8 @@ export default function MapsPage() {
             <p className="text-2xl font-bold mb-4">{CONTACT_INFO.siteName}</p>
             <p>
               Visit our office to learn about Cadence Henderson homes, schedule
-              tours, and get expert guidance from Dr. Jan Duffy, REALTOR® with
-              Berkshire Hathaway HomeServices.
+              tours, and get expert guidance from Dr. Jan Duffy, REALTOR®, in real estate
+              since 1983.
             </p>
           </>
         }
@@ -163,7 +163,7 @@ export default function MapsPage() {
                   {CONTACT_INFO.siteName}
                 </h3>
                 <p className="text-sm text-gray-600 mb-6">
-                  Dr. Jan Duffy, REALTOR® | License {CONTACT_INFO.licenseNumber}
+                  Dr. Jan Duffy, REALTOR® | Top 1% Las Vegas REALTOR®
                 </p>
                 <div className="space-y-4">
                   <div>

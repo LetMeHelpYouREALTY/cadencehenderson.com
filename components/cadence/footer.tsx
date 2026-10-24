@@ -59,10 +59,7 @@ export function Footer() {
             {CONTACT_INFO.shortBrandName}
           </div>
           <div className="text-sm text-gray-200 mb-1">
-            Dr. Jan Duffy, REALTOR® | License {CONTACT_INFO.licenseNumber}
-          </div>
-          <div className="text-xs text-gray-200 mb-1">
-            Berkshire Hathaway HomeServices Nevada Properties
+            Dr. Jan Duffy, REALTOR®
           </div>
           <div className="text-xs text-gray-200 mb-6">
             {CONTACT_INFO.welcomeCenter} | {CONTACT_INFO.phone}
@@ -144,7 +141,10 @@ export function Footer() {
         </div>
         <div className="border-t border-white/15 pt-10 text-center text-white/60">
           <p className="text-sm">
-            Copyright 2025 {CONTACT_INFO.siteName} | License {CONTACT_INFO.licenseNumber}
+            Copyright 2025 {CONTACT_INFO.siteName}
+          </p>
+          <p className="text-sm mt-2">
+            {CONTACT_INFO.brokerage} since September 2008 · License {CONTACT_INFO.licenseNumber}
           </p>
           <p className="text-xs mt-2">All Rights Reserved</p>
         </div>

@@ -144,7 +144,7 @@ export default function RealtorToolkitPage() {
       />
       <AgentContactCta
         heading="Need a Cadence co-broke?"
-        body={`${CONTACT_INFO.brokerage} · License ${CONTACT_INFO.licenseNumber} · ${CONTACT_INFO.welcomeCenter}`}
+        body={`Dr. Jan Duffy, REALTOR® · ${CONTACT_INFO.welcomeCenter}`}
       />
       <Footer />
     </div>

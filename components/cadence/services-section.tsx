@@ -73,7 +73,7 @@ export function ServicesSection() {
             What Buyers Get at Cadence Henderson — Free Expert Representation
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Dr. Jan Duffy represents new home buyers only at Cadence Henderson NV 89011. The builder pays her fee — free to buyers. Berkshire Hathaway HomeServices Nevada Properties. </p>
+            Dr. Jan Duffy represents new home buyers only at Cadence Henderson NV 89011. The builder pays her fee — free to buyers. In real estate since 1983. </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {SERVICES.map((service) => {

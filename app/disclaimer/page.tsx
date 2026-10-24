@@ -14,7 +14,7 @@ const BASE = 'https://www.cadencehenderson.com'
 export const metadata: Metadata = {
   title: 'Website Disclaimer | Cadence Henderson Homes',
   description:
-    'Legal, Fair Housing, MLS, and accuracy disclaimer for CadenceHenderson.com. Homes by Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.',
+    'Legal, Fair Housing, MLS, and accuracy disclaimer for CadenceHenderson.com. Homes by Dr. Jan Duffy.',
   alternates: { canonical: `${BASE}/disclaimer` },
   openGraph: {
     title: 'Website Disclaimer | Cadence Henderson Homes',

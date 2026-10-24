@@ -17,7 +17,7 @@ import { NapStrip } from '@/components/cadence/nap-strip'
 export const metadata = {
   title: 'Past Home Sales | Cadence Henderson 89011',
   description:
-    'Cadence Henderson market report. Dr. Jan Duffy past home sales, sold listings, market trends. Henderson NV 89011. Berkshire Hathaway.',
+    'Cadence Henderson market report. Dr. Jan Duffy past home sales, sold listings, market trends. Henderson NV 89011.',
 }
 
 export default function PastHomesalesPage() {
@@ -98,7 +98,7 @@ export default function PastHomesalesPage() {
             <p className="text-xl text-gray-700 mb-8">
               Let Dr. Jan Duffy guide you through your next real estate
               transaction. From listing to closing, experience personalized
-              service backed by Berkshire Hathaway HomeServices.
+              service from a REALTOR® in real estate since 1983.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <CalendlyLink>
@@ -137,7 +137,7 @@ export default function PastHomesalesPage() {
       <PageAeo
         path="/past-homesales"
         name="Past Home Sales | Cadence Henderson 89011"
-        description="Cadence Henderson market report. Dr. Jan Duffy past home sales, sold listings, market trends. Henderson NV 89011. Berkshire Hathaway."
+        description="Cadence Henderson market report. Dr. Jan Duffy past home sales, sold listings, market trends. Henderson NV 89011."
         faqs={defaultPageFaqs('past home sales in Cadence Henderson')}
         breadcrumbs={[{ name: 'Past home sales in Cadence Henderson NV 89011' }]}
         faqHeading="Cadence Henderson sold homes — questions"

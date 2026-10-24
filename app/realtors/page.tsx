@@ -39,7 +39,7 @@ export default function RealtorsPage() {
               REALTOR® | Las Vegas Luxury Home Specialist
             </p>
             <p className="text-lg mb-2">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Top 1% Las Vegas REALTOR® · In real estate since 1983
             </p>
             <p>
               Specializing in Cadence Henderson - one of the nation&apos;s top 10
@@ -117,9 +117,8 @@ export default function RealtorsPage() {
             </h2>
             <div className="bg-purple-50 rounded-lg p-8 mb-8">
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Dr. Jan Duffy is a distinguished REALTOR® with Berkshire Hathaway
-                HomeServices Nevada Properties, specializing in the Cadence
-                Henderson community. With deep knowledge of the Las Vegas Valley
+                Dr. Jan Duffy is a distinguished REALTOR®, in real estate since 1983,
+                specializing in the Cadence Henderson community. With deep knowledge of the Las Vegas Valley
                 real estate market and expertise in luxury homes, investment
                 properties, and master-planned communities, Dr. Duffy provides
                 exceptional service to buyers and sellers alike.
@@ -202,7 +201,7 @@ export default function RealtorsPage() {
               Why Work with Dr. Jan Duffy?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Combining Berkshire Hathaway's prestigious brand with in-depth
+              Combining decades of experience with in-depth
               local expertise to deliver personalized guidance and exceptional
               results.
             </p>
@@ -214,11 +213,11 @@ export default function RealtorsPage() {
                 <Award size={32} className="text-purple-900" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Berkshire Hathaway
+                Since 1983
               </h3>
               <p className="text-gray-700">
-                Backed by the prestigious Berkshire Hathaway HomeServices brand
-                and network
+                In real estate since 1983, with deep experience across the
+                Las Vegas Valley
               </p>
             </div>
 
@@ -523,7 +522,7 @@ export default function RealtorsPage() {
             </h2>
             <p className="text-xl mb-8">
               Let Dr. Jan Duffy guide you through every step of buying or
-              selling your home. With Berkshire Hathaway's resources and local
+              selling your home. With her local
               expertise, you're in the best hands.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">

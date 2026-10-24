@@ -55,13 +55,12 @@ export default function MediaPage() {
           <div className="mx-auto max-w-3xl space-y-8 font-light leading-relaxed text-neutral-700">
             <article>
               <h2 className="mb-3 text-2xl font-medium text-neutral-900">
-                Brokerage media contact
+                Media contact
               </h2>
               <p>
                 For interviews with Dr. Jan Duffy about Cadence Henderson real
                 estate, new-home buying, or 89011 market questions: {CONTACT_INFO.email}{' '}
-                or {CONTACT_INFO.phone}. Office: {CONTACT_INFO.welcomeCenter}.{' '}
-                {CONTACT_INFO.brokerage}. License {CONTACT_INFO.licenseNumber}.
+                or {CONTACT_INFO.phone}. Office: {CONTACT_INFO.welcomeCenter}.
               </p>
             </article>
             <article>

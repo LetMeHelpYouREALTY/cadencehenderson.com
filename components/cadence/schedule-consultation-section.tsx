@@ -121,7 +121,7 @@ export function ScheduleConsultationSection() {
           </p>
         </div>
         <p className="text-center text-sm text-white mt-6">
-          Dr. Jan Duffy, REALTOR® — Cadence Henderson new home buyer’s agent. License {CONTACT_INFO.licenseNumber}.
+          Dr. Jan Duffy, REALTOR® — Cadence Henderson new home buyer’s agent, in real estate since 1983.
         </p>
       </div>
     </section>
