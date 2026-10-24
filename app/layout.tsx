@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { CalendlyProvider } from '../components/calendly/calendly-loader'
 import { CalendlyScriptLoader } from '../components/calendly/calendly-script-loader'
 import { CalendlyStyles } from '../components/calendly/calendly-styles'
@@ -152,6 +153,7 @@ export default function RootLayout({
           <ScrollToTop />
         </ThemeProvider>
         </CalendlyProvider>
+        <SpeedInsights />
       </body>
     </html>
   )
