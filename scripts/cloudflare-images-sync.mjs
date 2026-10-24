@@ -15,6 +15,11 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { isCloudflareAuthError } from './lib/cloudflare-images-auth.mjs'
 
+if (process.env.VERCEL === '1' && process.env.VERCEL_ENV !== 'production') {
+  console.log('Skipping Cloudflare Images sync (Vercel preview/development).')
+  process.exit(0)
+}
+
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const extraArgs = process.argv.slice(2)
 const allowMissing = extraArgs.includes('--allow-missing-token') || extraArgs.length === 0

@@ -7,6 +7,7 @@ import { MarketSnapshotSection } from '@/components/cadence/market-snapshot-sect
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { HomeFinder } from '@/components/cadence/home-finder'
 import { AmenitiesSection } from '@/components/cadence/amenities-section'
+import { NearbyAmenitiesMapSection } from '@/components/cadence/nearby-amenities-map-section'
 import { LifestyleSection } from '@/components/cadence/lifestyle-section'
 import { ServicesSection } from '@/components/cadence/services-section'
 import { RealtorsSection } from '@/components/cadence/realtors-section'
@@ -75,6 +76,7 @@ export default function HomePage() {
         <ServicesSection />
         <HomeFinder />
         <AmenitiesSection />
+        <NearbyAmenitiesMapSection compact />
         <LifestyleSection />
         <RealtorsSection />
         <BuildersShowcase />

@@ -17,13 +17,23 @@ export function AmenitiesSection() {
             <p className="aeo-lead text-xl text-gray-700 mb-8 leading-relaxed" data-speakable>
               Cadence Henderson NV 89011 includes a ~50-acre Central Park, pools, a ~2,000 sq ft splash pad, pickleball, trails, and resident wifi at amenity areas. Confirm hours with the HOA; tour homes with Dr. Jan Duffy.
             </p>
-            <Button
-              size="lg"
-              className="text-lg px-8"
-              asChild
-            >
-              <Link href="/lifestyle/amenities">Cadence Henderson amenities and Central Park</Link>
-            </Button>
+            <div className="flex flex-wrap gap-3">
+              <Button
+                size="lg"
+                className="text-lg px-8"
+                asChild
+              >
+                <Link href="/lifestyle/amenities">Cadence Henderson amenities and Central Park</Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-lg px-8"
+                asChild
+              >
+                <Link href="/nearby-amenities">Nearby restaurants &amp; shopping map</Link>
+              </Button>
+            </div>
           </div>
           <div className="relative h-[400px] overflow-hidden bg-neutral-200">
             <SiteImage
@@ -37,4 +47,3 @@ export function AmenitiesSection() {
     </section>
   )
 }
-
