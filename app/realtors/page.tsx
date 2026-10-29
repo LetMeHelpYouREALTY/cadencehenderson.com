@@ -39,7 +39,7 @@ export default function RealtorsPage() {
               REALTOR® | Las Vegas Luxury Home Specialist
             </p>
             <p className="text-lg mb-2">
-              Top 1% Las Vegas REALTOR® · In real estate since 1983
+              Las Vegas REALTOR® · Licensed since 2008 · 35 years in Las Vegas
             </p>
             <p>
               Specializing in Cadence Henderson - one of the nation&apos;s top 10
@@ -117,7 +117,7 @@ export default function RealtorsPage() {
             </h2>
             <div className="bg-purple-50 rounded-lg p-8 mb-8">
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Dr. Jan Duffy is a distinguished REALTOR®, in real estate since 1983,
+                Dr. Jan Duffy is a distinguished REALTOR®, licensed since 2008 · 35 years in Las Vegas,
                 specializing in the Cadence Henderson community. With deep knowledge of the Las Vegas Valley
                 real estate market and expertise in luxury homes, investment
                 properties, and master-planned communities, Dr. Duffy provides
@@ -213,10 +213,10 @@ export default function RealtorsPage() {
                 <Award size={32} className="text-purple-900" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Since 1983
+                Since 2008
               </h3>
               <p className="text-gray-700">
-                In real estate since 1983, with deep experience across the
+                Licensed since 2008 · 35 years in Las Vegas, with deep experience across the
                 Las Vegas Valley
               </p>
             </div>

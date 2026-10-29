@@ -88,7 +88,7 @@ export default function LifeAtCadencePage() {
               </article>
             ))}
             <p className="font-light leading-relaxed text-neutral-600">
-              Dr. Jan Duffy, REALTOR®, in real estate since 1983, tours Cadence with buyers at{' '}
+              Dr. Jan Duffy, REALTOR®, licensed since 2008 · 35 years in Las Vegas, tours Cadence with buyers at{' '}
               {CONTACT_INFO.welcomeCenter}. Call {CONTACT_INFO.phone}.
             </p>
           </div>
