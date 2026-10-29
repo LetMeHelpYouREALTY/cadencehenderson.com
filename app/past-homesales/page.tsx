@@ -98,7 +98,7 @@ export default function PastHomesalesPage() {
             <p className="text-xl text-gray-700 mb-8">
               Let Dr. Jan Duffy guide you through your next real estate
               transaction. From listing to closing, experience personalized
-              service from a REALTOR® in real estate since 1983.
+              service from a REALTOR® licensed since 2008 · 35 years in Las Vegas.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <CalendlyLink>

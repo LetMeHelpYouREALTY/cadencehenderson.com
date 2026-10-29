@@ -13,7 +13,7 @@ export function NapStrip() {
     >
       <div className="container mx-auto px-4 text-center">
         <p className="text-sm font-medium text-neutral-900">
-          Dr. Jan Duffy, REALTOR® · Top 1% Las Vegas REALTOR®
+          Dr. Jan Duffy, Las Vegas REALTOR®
         </p>
         <p className="mt-2 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm font-light text-neutral-700">
           <MapPin size={16} className="shrink-0 text-primary" aria-hidden />

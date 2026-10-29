@@ -43,8 +43,7 @@ export default function MapsPage() {
             <p className="text-2xl font-bold mb-4">{CONTACT_INFO.siteName}</p>
             <p>
               Visit our office to learn about Cadence Henderson homes, schedule
-              tours, and get expert guidance from Dr. Jan Duffy, REALTOR®, in real estate
-              since 1983.
+              tours, and get expert guidance from Dr. Jan Duffy, REALTOR®, licensed since 2008 · 35 years in Las Vegas.
             </p>
           </>
         }
@@ -163,7 +162,7 @@ export default function MapsPage() {
                   {CONTACT_INFO.siteName}
                 </h3>
                 <p className="text-sm text-gray-600 mb-6">
-                  Dr. Jan Duffy, REALTOR® | Top 1% Las Vegas REALTOR®
+                  Dr. Jan Duffy, Las Vegas REALTOR®
                 </p>
                 <div className="space-y-4">
                   <div>

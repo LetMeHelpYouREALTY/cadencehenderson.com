@@ -78,7 +78,7 @@ export function defaultPageFaqs(topic: string): FaqItem[] {
   return [
     {
       question: `Who can help with ${topic} in Cadence Henderson NV 89011?`,
-      answer: `${BRAND} — Dr. Jan Duffy, REALTOR®, in real estate since 1983. She represents Cadence buyers at no extra cost on new construction; the builder typically pays her fee. Call ${PHONE}. Office: ${NAP}. Hours: ${HOURS}.`,
+      answer: `${BRAND} — Dr. Jan Duffy, REALTOR®, licensed since 2008 · 35 years in Las Vegas. She represents Cadence buyers at no extra cost on new construction; the builder typically pays her fee. Call ${PHONE}. Office: ${NAP}. Hours: ${HOURS}.`,
     },
     {
       question: 'Where is the Cadence Henderson real estate office?',
