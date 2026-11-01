@@ -18,6 +18,7 @@ export const metadata = {
   title: 'Past Home Sales | Cadence Henderson 89011',
   description:
     'Cadence Henderson market report. Dr. Jan Duffy past home sales, sold listings, market trends. Henderson NV 89011.',
+  alternates: { canonical: 'https://www.cadencehenderson.com/past-homesales' },
 }
 
 export default function PastHomesalesPage() {
