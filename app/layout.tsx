@@ -13,6 +13,8 @@ import { WebsiteSchema } from '../components/schema/website-schema'
 import { GeoMeta } from '../components/schema/geo-meta'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import './globals.css'
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights as VercelSpeedInsights } from "@vercel/speed-insights/next";
 
 const HERO_IMAGE = cfImage(SITE_IMAGES.hero.homepage, 'hero')
 /** Crawlers do not run the JS git fallback — keep a stable git URL for OG/schema. */
@@ -152,6 +154,8 @@ export default function RootLayout({
           <ScrollToTop />
         </ThemeProvider>
         </CalendlyProvider>
+        <VercelAnalytics />
+        <VercelSpeedInsights />
       </body>
     </html>
   )
