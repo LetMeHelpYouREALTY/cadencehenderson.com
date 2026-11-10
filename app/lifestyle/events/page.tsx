@@ -10,60 +10,64 @@ import { Footer } from '@/components/cadence/footer'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO, HOA_CONTACT } from '@/components/cadence/contact-info'
-import { Calendar, Mail, MapPin, Phone } from 'lucide-react'
+import { Calendar, Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Community Events in Cadence Henderson NV | 89011',
   description:
-    'Community events and gatherings around Central Park in Cadence Henderson NV 89011. Tour the lifestyle with Dr. Jan Duffy — confirm current dates with the Master Association.',
+    'Past Cadence Henderson community events: Beazer Cantata Point pet adoption (Nov 9, 2024) and Cadence Car Show at Central Park (Oct 13, 2024). Tour with Dr. Jan Duffy.',
   alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/events' },
   openGraph: {
     title: 'Community Events in Cadence Henderson NV | 89011',
     description:
-      'Cadence Henderson community events around Central Park. Tour homes and lifestyle with Dr. Jan Duffy.',
+      'Documented past Cadence Henderson events at Cantata Point and Central Park. Confirm current dates with the Master Association; tour homes with Dr. Jan Duffy.',
     url: 'https://www.cadencehenderson.com/lifestyle/events',
   },
 }
 
 /**
- * Content steered from cadencenv.com/lifestyle/events (no outbound links).
- * That page currently lists no upcoming events; recent past examples include
- * concerts, car shows, and builder-hosted gatherings at Central Park.
+ * Only dated events confirmed for this page — no invented weekly calendars.
+ * Sources: Cadence / Beazer community event announcements (2024).
  */
-const lifestyleHighlights = [
+const PAST_EVENTS = [
   {
-    title: 'Concerts in Central Park',
-    location: 'Central Park, 1015 E. Sunset Road',
+    id: 'pet-adoption-2024-11-09',
+    title: 'Beazer Homes’ Cantata Point Hosts Pet Adoption Event',
+    dateLabel: 'November 9, 2024',
+    timeLabel: '11:00 am – 2:00 pm',
+    monthShort: 'Nov',
+    day: '9',
+    year: '2024',
+    location: 'Cantata Point, 334 Ukelele Place, Henderson',
     description:
-      'Cadence has hosted evening concerts at Central Park. Dates and lineups change — ask the Cadence Master Association for what is on the calendar now.',
-    image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
-  },
-  {
-    title: 'Community car shows',
-    location: 'Sunset Road along Central Park',
-    description:
-      'Past Cadence car shows have lined Sunset Road beside Central Park with classic and custom vehicles. Confirm any upcoming show with the Association.',
+      'Join us at Cantata Point by Beazer Homes this Saturday, Nov. 9, from 11 a.m. to 2 p.m. for a pet adoption event. The Nevada SPCA will be on site for community residents and visitors.',
     image: cfImage(SITE_IMAGES.lifestyle.events, 'card'),
   },
   {
-    title: 'Builder & neighborhood gatherings',
-    location: 'Villages across Cadence Henderson',
+    id: 'car-show-2024-10-13',
+    title: 'Cadence Car Show',
+    dateLabel: 'October 13, 2024',
+    timeLabel: '10:00 am – 3:00 pm',
+    monthShort: 'Oct',
+    day: '13',
+    year: '2024',
+    location: 'Central Park, 1015 E. Sunset Road, Henderson',
     description:
-      'Builders occasionally host open houses and community gatherings in Cadence villages. Dr. Jan Duffy can help you tour those neighborhoods year-round.',
-    image: cfImage(SITE_IMAGES.homes.exterior1, 'card'),
+      'Save the date: Cadence Car Show on Sunday, Oct. 13, from 10 a.m. to 3 p.m. on Sunset Road along Central Park, with classic and custom vehicles on display.',
+    image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
   },
-]
+] as const
 
 const EVENTS_FAQS = [
   {
-    q: 'Are there upcoming events in Cadence Henderson right now?',
-    a: `Schedules change. There may be no publicly listed upcoming developer events at a given time. For current Association lifestyle programs, call the ${HOA_CONTACT.name} at ${HOA_CONTACT.phone} or email ${HOA_CONTACT.lifestyleEmail}. For home tours, call Dr. Jan Duffy at ${CONTACT_INFO.phone}.`,
+    q: 'What events are listed on this page?',
+    a: 'This page lists only two documented past Cadence community events: the Beazer Homes Cantata Point pet adoption event (November 9, 2024, 11 a.m.–2 p.m.) and the Cadence Car Show at Central Park (October 13, 2024, 10 a.m.–3 p.m.). We do not invent weekly calendars.',
   },
   {
-    q: 'What kinds of events happen in Cadence Henderson?',
-    a: 'Cadence Central Park has hosted concerts, car shows, and community gatherings. The Master Association also runs lifestyle programs such as food trucks near Central Park. Exact dates are set by the Association — this page describes the lifestyle, not a live calendar.',
+    q: 'Are there upcoming Cadence events right now?',
+    a: `For current Association lifestyle programs and new dates, call the ${HOA_CONTACT.name} at ${HOA_CONTACT.phone} or email ${HOA_CONTACT.lifestyleEmail}. For Cadence home tours, call Dr. Jan Duffy at ${CONTACT_INFO.phone}.`,
   },
   {
     q: 'Who should I call about Cadence community events?',
@@ -78,7 +82,7 @@ export default function EventsPage() {
 
       <PageHero
         title="Community events in Cadence Henderson NV 89011"
-        subtitle="Central Park gatherings, concerts, and neighborhood events are part of Cadence living — schedules come from the Master Association, not invented listings here."
+        subtitle="Documented past Cadence gatherings only — confirm any new dates with the Master Association."
         imageSrc={cfImage(SITE_IMAGES.hero.events, 'hero')}
         imageAlt="Community events at Cadence Henderson NV 89011"
         icon={Calendar}
@@ -99,55 +103,71 @@ export default function EventsPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Wake up to events at Cadence
+              Past community events
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Cadence Henderson is built around gathering spaces — especially the
-              50-acre Central Park. Concerts, car shows, and village events have
-              taken place here. We do not publish unofficial weekly calendars or
-              “Add to Calendar” buttons that confuse residents. For today’s
-              schedule, contact the Association; for a home tour, stay with Dr. Jan.
+              These are the only events listed on this site. They are past,
+              dated gatherings — not a live Association calendar.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-            {lifestyleHighlights.map((item) => (
-              <div
-                key={item.title}
-                className="bg-white rounded-lg shadow-lg overflow-hidden"
+          <div className="max-w-4xl mx-auto space-y-8 mb-12">
+            {PAST_EVENTS.map((event) => (
+              <article
+                key={event.id}
+                className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <SiteImage
-                    src={item.image}
-                    alt={`${item.title} in Cadence Henderson NV 89011`}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="md:flex">
+                  <div className="relative h-56 md:h-auto md:w-56 shrink-0 bg-orange-900 text-white flex flex-col items-center justify-center p-6">
+                    <span className="text-sm uppercase tracking-widest opacity-90">
+                      {event.monthShort}
+                    </span>
+                    <span className="text-5xl font-bold leading-none my-1">
+                      {event.day}
+                    </span>
+                    <span className="text-sm opacity-90">{event.year}</span>
+                  </div>
+                  <div className="relative hidden md:block md:w-48 shrink-0">
+                    <SiteImage
+                      src={event.image}
+                      alt={`${event.title} in Cadence Henderson NV 89011`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6 flex-1">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-orange-900 mb-2">
+                      Past event
+                    </p>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                      {event.title}
+                    </h3>
+                    <p className="flex items-start text-sm text-gray-700 mb-2">
+                      <Clock size={16} className="mr-2 mt-0.5 shrink-0 text-orange-900" />
+                      <span>
+                        {event.dateLabel} @ {event.timeLabel}
+                      </span>
+                    </p>
+                    <p className="flex items-start text-sm text-gray-700 mb-4">
+                      <MapPin size={16} className="mr-2 mt-0.5 shrink-0 text-orange-900" />
+                      {event.location}
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      {event.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="flex items-start text-sm text-gray-600 mb-3">
-                    <MapPin size={16} className="mr-2 mt-0.5 shrink-0" />
-                    {item.location}
-                  </p>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
+              </article>
             ))}
           </div>
 
           <div className="max-w-3xl mx-auto border border-orange-200 bg-orange-50 rounded-lg p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-3">
-              Current event schedules
+              Current schedules
             </h3>
             <p className="text-gray-700 mb-4 leading-relaxed">
-              Date-specific times and registration are managed by the{' '}
-              {HOA_CONTACT.name}. Call or email them for what is happening this
-              week — then come back here to tour homes with Dr. Jan Duffy.
+              For new or upcoming Association lifestyle programs, contact the{' '}
+              {HOA_CONTACT.name}. Then tour Cadence homes with Dr. Jan Duffy.
             </p>
             <ul className="space-y-2 text-gray-700 mb-6 text-sm">
               <li>
@@ -273,7 +293,7 @@ export default function EventsPage() {
       <PageAeo
         path="/lifestyle/events"
         name="Community Events in Cadence Henderson NV | 89011"
-        description="Community events around Central Park in Cadence Henderson NV 89011. Tour with Dr. Jan Duffy."
+        description="Past Cadence Henderson events: Cantata Point pet adoption (Nov 9, 2024) and Cadence Car Show (Oct 13, 2024). Tour with Dr. Jan Duffy."
         faqs={EVENTS_FAQS.map(({ q, a }) => ({ question: q, answer: a }))}
         breadcrumbs={[
           { name: 'Lifestyle', path: '/lifestyle' },

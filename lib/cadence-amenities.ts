@@ -113,9 +113,9 @@ export const CADENCE_AMENITIES_SUMMARY_SHORT =
 
 export const CADENCE_EVENTS_GUIDANCE = {
   framing:
-    'Central Park has hosted concerts, car shows, and community gatherings. The Master Association also runs lifestyle programs (such as food trucks) when scheduled.',
+    'This site lists only two documented past events: the Cadence Car Show at Central Park (October 13, 2024, 10 a.m.–3 p.m.) and the Beazer Homes Cantata Point pet adoption event (November 9, 2024, 11 a.m.–2 p.m.).',
   noInventedCalendar:
-    'This site does not invent weekly event schedules. Confirm current dates with the Cadence Master Association.',
+    'No other event cards or weekly calendars are published here. Confirm current dates with the Cadence Master Association.',
   howToConfirm: `Call ${HOA_CONTACT.phone} or email ${HOA_CONTACT.lifestyleEmail} for Association programs.`,
   buyerCta: 'Tour Cadence homes with Dr. Jan Duffy — Association ops stay on the Association line.',
 } as const

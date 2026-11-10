@@ -30,11 +30,11 @@ const FALLBACK_ARTICLES: NewsArticle[] = [
   {
     id: 1,
     link: '/lifestyle/events',
-    title: 'Cadence Community Events & Central Park Gatherings',
+    title: 'Past Cadence Events: Car Show & Pet Adoption',
     date: 'Lifestyle',
     category: 'Events',
     excerpt:
-      'Concerts, car shows, and Association lifestyle programs are part of Cadence living. Confirm current dates with the Master Association at 702-605-3111 — then tour homes with Dr. Jan Duffy.',
+      'This site lists two documented past events only: Cadence Car Show (Oct 13, 2024) and Beazer Cantata Point pet adoption (Nov 9, 2024). Confirm new dates with the Master Association at 702-605-3111.',
     image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
   },
   {
