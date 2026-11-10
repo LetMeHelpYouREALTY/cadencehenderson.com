@@ -152,9 +152,9 @@ const navigationItems: NavItem[] = [
 ]
 
 const linkBaseClasses =
-  'text-[11px] font-light tracking-[0.2em] uppercase text-cadence-ink/70 hover:text-primary transition-colors py-2 block focus:outline-none focus:ring-2 focus:ring-primary/30 focus:ring-offset-2'
+  'text-[11px] font-medium tracking-[0.2em] uppercase text-cadence-ink hover:text-primary transition-colors py-2 block focus:outline-none focus:ring-2 focus:ring-primary/30 focus:ring-offset-2'
 const dropdownItemClasses =
-  'block px-4 py-2.5 text-[11px] font-light tracking-[0.12em] uppercase text-cadence-ink/70 hover:bg-blue-50 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30'
+  'block px-4 py-2.5 text-[11px] font-medium tracking-[0.12em] uppercase text-cadence-ink hover:bg-blue-50 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -175,7 +175,7 @@ export function Navigation() {
             aria-label={`${CONTACT_INFO.siteName} - Home`}
             title={CONTACT_INFO.siteName}
           >
-            <span className="text-sm font-light tracking-[0.4em] text-cadence-ink">
+            <span className="text-sm font-semibold tracking-[0.4em] text-cadence-ink">
               CADENCE
             </span>
           </Link>
@@ -248,7 +248,7 @@ export function Navigation() {
 
           <Link
             href="/#home-search"
-            className="hidden lg:flex items-center gap-2 p-2 text-[11px] font-light tracking-[0.18em] uppercase text-cadence-ink/70 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
+            className="hidden lg:flex items-center gap-2 p-2 text-[11px] font-medium tracking-[0.18em] uppercase text-cadence-ink hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
             aria-label="Search Henderson homes for sale"
           >
             <Search size={16} aria-hidden />
@@ -281,7 +281,7 @@ export function Navigation() {
               </Button>
               <Link
                 href="/#home-search"
-                className="flex items-center justify-center gap-2 w-full py-3 text-[11px] font-light tracking-[0.18em] uppercase text-cadence-ink hover:bg-blue-50"
+                className="flex items-center justify-center gap-2 w-full py-3 text-[11px] font-medium tracking-[0.18em] uppercase text-cadence-ink hover:bg-blue-50"
                 onClick={() => setIsOpen(false)}
                 aria-label="Search Henderson homes for sale"
               >
@@ -296,7 +296,7 @@ export function Navigation() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full text-left px-4 py-3 text-[11px] font-light tracking-[0.18em] uppercase text-neutral-700 block hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30"
+                    className="w-full text-left px-4 py-3 text-[11px] font-medium tracking-[0.18em] uppercase text-cadence-ink block hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.title}
@@ -304,7 +304,7 @@ export function Navigation() {
                 ) : (
                   <Link
                     href={item.items ? '#' : item.href}
-                    className="w-full text-left px-4 py-3 text-[11px] font-light tracking-[0.18em] uppercase text-neutral-700 block hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30"
+                    className="w-full text-left px-4 py-3 text-[11px] font-medium tracking-[0.18em] uppercase text-cadence-ink block hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30"
                     onClick={(e) => {
                       if (item.items) {
                         e.preventDefault()
@@ -332,7 +332,7 @@ export function Navigation() {
                           href={subItem.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block px-4 py-2 text-[11px] font-light tracking-[0.12em] uppercase text-cadence-ink/60 hover:text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30"
+                          className="block px-4 py-2 text-[11px] font-medium tracking-[0.12em] uppercase text-cadence-ink hover:text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30"
                           onClick={() => setIsOpen(false)}
                         >
                           {subItem.label}
@@ -341,7 +341,7 @@ export function Navigation() {
                         <Link
                           key={subItem.label}
                           href={subItem.href}
-                          className="block px-4 py-2 text-[11px] font-light tracking-[0.12em] uppercase text-cadence-ink/60 hover:text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30"
+                          className="block px-4 py-2 text-[11px] font-medium tracking-[0.12em] uppercase text-cadence-ink hover:text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30"
                           onClick={() => setIsOpen(false)}
                         >
                           {subItem.label}
