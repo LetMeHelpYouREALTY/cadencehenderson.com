@@ -13,8 +13,15 @@
 - [x] Mobile hero srcSet (640/828/1280) + preload 828w
 - [x] Verify with local Lighthouse / build (Perf 82, LCP 4.9s, no 3P on first load)
 - [x] Commit, push, update PR
-- [x] Deploy production (`dpl_WKK662uGRg16SCtMEXRRpHjWBghR` → www)
-- [ ] Recheck PageSpeed Insights after CDN warm
+- [x] Deploy production (`dpl_WKK662…`, then `dpl_CSfzUg…` server-hero → www)
+- [x] Production mobile Lighthouse: **98** / LCP **2.3s** (PSI API quota exhausted for UI recheck)
+- [x] Server-render hero LCP `<img>` + drop unnecessary `use client` sections
+
+## Review
+
+- Report `6hnwbcclva` killers (Calendly on mount, RealScout layout Script, analytics, oversized hero) are fixed and live.
+- Remaining PSI unused-JS (~250KB) is mostly the Next/React shared chunk — not worth invasive framework surgery at Perf 98.
+- GSC sitemap submit still needs Google auth / service-account secrets.
 
 ## Prior SEO (done)
 
