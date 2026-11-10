@@ -1,31 +1,50 @@
-# Task plan — SEO / GEO / AEO
+# Task plan — PageSpeed mobile + GSC coverage (2026-11-10)
 
-## Completed (2026-10-17 pass 1)
+## Sources
 
-- [x] Page-matched FAQ schema; contact/gallery graphs; noindex `/projects/`
-- [x] Homepage services link → `/sell-in-cadence`
+- PageSpeed mobile: https://pagespeed.web.dev/analysis/https-cadencehenderson-com/c1132q0lv5
+- Local Lighthouse (mobile simulate): Performance **70**, LCP **13.0s**, CLS 0, TBT 60ms
+- GSC exports (2026-11-09): Coverage, Coverage Drilldown, Latest links, More sample links
 
-## Completed (2026-10-17 pass 2)
+## Findings
 
-- [x] Remove unused `faq-page.tsx` (homepage uses `HOME_FAQS` + `PageGraphSchema`)
-- [x] Site-wide `WebSite` + `SearchAction` in `WebsiteSchema` (once in root layout)
-- [x] Deduplicate `WebSite` node from per-page `PageGraphSchema`; `containedInPlace` on Cadence Place
-- [x] Trim meta descriptions >160 chars on key lifestyle/communities/realtor pages
-- [x] `NapStrip` on `/new-homes`, `/lifestyle`, `/rentals`
+### PageSpeed / LCP
 
-## Completed (2026-10-17 pass 3)
+- [x] LCP element = homepage hero; load delay ~66% of LCP
+- [x] `imagedelivery.net/.../cadence-hero-homepage/hero` returns **404** → SiteImage falls back to 436KB JPEG
+- [x] Oversized git JPEGs (hero, central-park, exterior-1, market-snapshot)
+- [x] Render-blocking Calendly CSS in `<head>`
+- [x] Calendly + RealScout third-party weight; Calendly script was `afterInteractive`
+- [x] No `CLOUDFLARE_API_TOKEN` on Vercel project; hosted Images never uploaded
 
-- [x] `?query=` on `/find-your-home` — scroll + banner (`FindYourHomeQuerySync`) for WebSite SearchAction
-- [x] `id="home-search"` on `HomeSearchSection` (aligns with nav `/#home-search` via `HomeFinder` on homepage)
-- [x] Trim schools page meta description to ≤160 chars
-- [x] `NapStrip` on `/find-your-home`, `/communities`, `/sell-in-cadence`
+### Search Console coverage
 
-## Completed (2026-10-17 pass 4)
+- Indexed ~79 / Not indexed ~46 (as of 2026-11-05)
+- Critical: Discovered–not indexed **32**, Crawled–not indexed **9**, redirect **3**, 404 **1**, robots **1**
+- Drilldown URLs are mostly village/rental/lifestyle hubs already in sitemap
+- External links: only **regencyvegas.com** samples (thin referring domains)
 
-- [x] `npm run seo:metadata-audit` + GitHub Actions CI (audit, format, lint, build)
-- [x] `NapStrip` on contact, maps, realtors, incentives, apartments, past-homesales, gallery, faqs, residents; new-homes strip moved below hero
-- [x] Extra `data-speakable` / `.aeo-lead` blocks on communities, find-your-home, new-homes, gallery, faqs, apartments, incentives, contact
+### Deploy note
 
-## Remaining
+- Production Vercel target was last deployed from `cursor/remove-inaccurate-hoa-events-099b`, not `main`
 
-- [ ] Production Cloudflare image sync token (ops / env — not code)
+## Fixes in this branch
+
+- [x] Compress critical images + add WebP siblings
+- [x] Gate CF delivery behind `NEXT_PUBLIC_CLOUDFLARE_IMAGES_LIVE` (git WebP until live)
+- [x] Remove head Calendly CSS; Calendly script → `lazyOnload`
+- [x] Drop off-site RealScout redirects for `/rentals*` and `/new-homes/beazer-homes`
+- [x] Sitemap excludes only permanent on-site redirect aliases
+- [x] Homepage key-facts internal links to discovered hubs
+
+## Ops follow-up (needs secrets / GSC)
+
+- [ ] Add Cloudflare Images token + account ID; run `npm run cloudflare:images:sync`
+- [ ] Set `NEXT_PUBLIC_CLOUDFLARE_IMAGES_LIVE=1` after upload
+- [ ] Point Vercel production deployments at `main`
+- [ ] GSC: Inspect + Request indexing for the 32 discovered URLs after deploy
+- [ ] Earn/add more referring domains beyond regencyvegas.com
+
+## Review
+
+Mobile LCP should drop from ~13s to a few seconds once the hero loads from local WebP without waiting on CF 404. Indexing improves by keeping rental/Beazer hubs on-site and linking them from the homepage; Google still decides crawl/index — request indexing after production ships on `main`.

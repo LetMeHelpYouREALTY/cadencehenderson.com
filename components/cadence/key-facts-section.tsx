@@ -36,6 +36,29 @@ export function KeyFactsSection() {
           <li>Buyer representation 100% free — builder pays</li>
           <li>Located at Henderson NV 89011</li>
         </ul>
+        <nav
+          aria-label="Cadence Henderson key pages"
+          className="mt-6 flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm font-light tracking-[0.06em] text-neutral-900"
+        >
+          <Link href="/communities" className="hover:underline">
+            Cadence neighborhoods
+          </Link>
+          <Link href="/find-your-home" className="hover:underline">
+            Find your home in Cadence
+          </Link>
+          <Link href="/new-homes" className="hover:underline">
+            New homes for sale
+          </Link>
+          <Link href="/rentals" className="hover:underline">
+            Cadence rentals
+          </Link>
+          <Link href="/lifestyle/schools" className="hover:underline">
+            Schools near Cadence
+          </Link>
+          <Link href="/sell-in-cadence" className="hover:underline">
+            Sell to buy in Cadence
+          </Link>
+        </nav>
         <p className="text-center mt-4">
           <a
             href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
@@ -45,10 +68,6 @@ export function KeyFactsSection() {
             <Phone size={18} aria-hidden />
             Book a free 15-min call — {CONTACT_INFO.phone}
           </a>
-          {' · '}
-          <Link href="/sell-in-cadence" className="text-sm font-light tracking-[0.08em] text-neutral-900 hover:underline">
-            Sell to buy in Cadence
-          </Link>
           {' · '}
           <Link href="/contact" className="text-sm font-light tracking-[0.08em] text-neutral-900 hover:underline">
             Contact Dr. Jan

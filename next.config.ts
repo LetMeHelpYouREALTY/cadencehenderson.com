@@ -3,11 +3,6 @@ import type { NextConfig } from 'next'
 const CLOUDFLARE_IMAGES_HASH =
   process.env.CLOUDFLARE_IMAGES_ACCOUNT_HASH || 'byE6BTe9lNqo21V57n4aPQ'
 
-const REALSCOUT_RENTALS_URL =
-  'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM5Nw=='
-const REALSCOUT_BEAZER_HOMES_URL =
-  'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM5OA=='
-
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -28,18 +23,17 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
+    // Keep /rentals and /new-homes/beazer-homes on-site (indexable). Off-site RealScout
+    // redirects caused Search Console "Page with redirect" + blocked indexing of hub pages.
     return [
-      { source: '/rentals', destination: REALSCOUT_RENTALS_URL, permanent: false },
-      { source: '/rentals/:path*', destination: REALSCOUT_RENTALS_URL, permanent: false },
-      { source: '/new-homes/beazer-homes', destination: REALSCOUT_BEAZER_HOMES_URL, permanent: false },
-      { source: '/black-friday', destination: '/incentives', permanent: false },
-      { source: '/lifestyle/shopping-entertainment', destination: '/lifestyle/shopping', permanent: false },
+      { source: '/black-friday', destination: '/incentives', permanent: true },
+      { source: '/lifestyle/shopping-entertainment', destination: '/lifestyle/shopping', permanent: true },
       {
         source: '/lifestyle/shopping-entertainment/:slug',
         destination: '/lifestyle/shopping/:slug',
-        permanent: false,
+        permanent: true,
       },
-      { source: '/cadence-animal-hospital', destination: '/lifestyle/animal-hospital', permanent: false },
+      { source: '/cadence-animal-hospital', destination: '/lifestyle/animal-hospital', permanent: true },
     ]
   },
   async rewrites() {

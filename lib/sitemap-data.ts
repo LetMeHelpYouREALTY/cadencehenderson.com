@@ -63,10 +63,11 @@ export type SitemapEntry = {
 }
 
 /**
- * Paths that next.config.ts redirects off-site (RealScout). Redirecting URLs must not
- * be listed in the sitemap (Search Console "Page with redirect").
+ * Paths that permanently redirect elsewhere. Do not list these in sitemap.xml
+ * (Search Console "Page with redirect").
  */
-const REDIRECTED_PATH = /^\/(rentals(\/.*)?|new-homes\/beazer-homes)$/
+const REDIRECTED_PATH =
+  /^\/(black-friday|lifestyle\/shopping-entertainment(\/.*)?|cadence-animal-hospital)$/
 
 export function getSitemapEntries(): SitemapEntry[] {
   const base = SITEMAP_BASE_URL

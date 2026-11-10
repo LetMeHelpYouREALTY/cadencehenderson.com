@@ -79,14 +79,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://em.realscout.com" crossOrigin="" />
         <link rel="preconnect" href="https://assets.calendly.com" />
         <link rel="preconnect" href="https://cadencenv.com" />
-        {/* LCP image preload so browser discovers it from initial HTML */}
-        <link rel="preload" as="image" href={HERO_IMAGE} />
-        {/* Calendly CSS: load for screen to avoid whited-out widget appearance */}
-        <link
-          href="https://assets.calendly.com/assets/external/widget.css"
-          rel="stylesheet"
-          media="all"
-        />
+        {/* LCP image preload — uses git WebP until NEXT_PUBLIC_CLOUDFLARE_IMAGES_LIVE=1 */}
+        <link rel="preload" as="image" href={HERO_IMAGE} type="image/webp" />
       </head>
       <body
         className={`${sora.variable} ${geistMono.variable} antialiased font-sans`}
