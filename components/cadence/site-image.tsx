@@ -12,10 +12,11 @@ type SiteImageProps = {
   height?: number
   priority?: boolean
   sizes?: string
+  srcSet?: string
   loading?: 'lazy' | 'eager'
 }
 
-type LoadStage = 'cloudflare' | 'git' | 'placeholder'
+type LoadStage = 'cloudflare' | 'git' | 'git-alt' | 'placeholder'
 
 function initialStage(src: string): LoadStage {
   if (!src || src.startsWith('data:')) return 'placeholder'
@@ -23,10 +24,21 @@ function initialStage(src: string): LoadStage {
   return 'cloudflare'
 }
 
+/** Prefer WebP git assets; fall back to JPEG/PNG sibling if WebP 404s. */
+function gitAltSrc(gitSrc: string): string | null {
+  if (!gitSrc.startsWith('/')) return null
+  if (/\.webp$/i.test(gitSrc)) return gitSrc.replace(/\.webp$/i, '.jpg')
+  if (/\.jpe?g$/i.test(gitSrc)) return gitSrc.replace(/\.(jpe?g)$/i, '.webp')
+  return null
+}
+
 function resolveSrc(src: string, gitSrc: string, stage: LoadStage): string {
   if (stage === 'placeholder') return PLACEHOLDER_IMAGE
   if (stage === 'git') {
     return gitSrc.startsWith('/') ? gitSrc : PLACEHOLDER_IMAGE
+  }
+  if (stage === 'git-alt') {
+    return gitAltSrc(gitSrc) ?? PLACEHOLDER_IMAGE
   }
   return src || PLACEHOLDER_IMAGE
 }
@@ -43,6 +55,8 @@ export function SiteImage({
   width,
   height,
   priority,
+  sizes,
+  srcSet,
   loading,
 }: SiteImageProps) {
   const gitSrc = gitFallbackFromSrc(src)
@@ -62,10 +76,13 @@ export function SiteImage({
     if (el.complete && el.naturalWidth === 0) {
       setStage((current) => {
         if (current === 'cloudflare' && canGitFallback) return 'git'
+        if ((current === 'git' || current === 'git-alt') && gitAltSrc(gitSrc)) {
+          return current === 'git' ? 'git-alt' : 'placeholder'
+        }
         return 'placeholder'
       })
     }
-  }, [resolved, stage, canGitFallback])
+  }, [resolved, stage, canGitFallback, gitSrc])
 
   return (
     <img
@@ -74,13 +91,16 @@ export function SiteImage({
       alt={alt}
       width={fill ? undefined : width}
       height={fill ? undefined : height}
+      sizes={sizes ?? (fill ? '100vw' : undefined)}
+      srcSet={srcSet}
       className={[fillClass, className].filter(Boolean).join(' ')}
       fetchPriority={priority ? 'high' : undefined}
       loading={priority ? 'eager' : loading ?? 'lazy'}
-      decoding="async"
+      decoding={priority ? 'async' : 'async'}
       onError={() => {
         setStage((current) => {
           if (current === 'cloudflare' && canGitFallback) return 'git'
+          if (current === 'git' && gitAltSrc(gitSrc)) return 'git-alt'
           return 'placeholder'
         })
       }}

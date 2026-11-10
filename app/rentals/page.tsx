@@ -10,6 +10,7 @@ import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { NapStrip } from '@/components/cadence/nap-strip'
 import { PageAeo } from '@/components/cadence/page-aeo'
+import { ItemListSchema } from '@/components/schema/item-list'
 import { Button } from '@/components/ui/button'
 import { Building2, MapPin, DollarSign, Calendar, Phone, Mail } from 'lucide-react'
 import Link from 'next/link'
@@ -348,6 +349,18 @@ export default function RentalsPage() {
         </div>
       </section>
 
+      <ItemListSchema
+        path="/rentals"
+        name="Rental communities in Cadence Henderson"
+        description="Single-family and apartment rentals inside Cadence Henderson NV 89011."
+        itemType="ApartmentComplex"
+        items={rentalCommunities.map((community) => ({
+          name: community.name,
+          url: `/rentals/${community.slug}`,
+          description: community.description,
+          image: community.image,
+        }))}
+      />
       <PageAeo
         path="/rentals"
         name="Cadence Henderson Rentals | 89011"

@@ -1,4 +1,12 @@
 {
   "buildCommand": "npm run cloudflare:images:sync && npm run build",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "cadencehenderson.com" }],
+      "destination": "https://www.cadencehenderson.com/:path*",
+      "permanent": true
+    }
+  ]
 }

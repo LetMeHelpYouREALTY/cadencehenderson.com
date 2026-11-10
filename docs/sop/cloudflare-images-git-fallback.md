@@ -78,6 +78,7 @@ Set on **Production** (Preview optional). Same names on every project:
 | Name | Required | Notes |
 |------|----------|--------|
 | `CLOUDFLARE_API_TOKEN` | Upload only | Account → **Cloudflare Images → Edit**. Aliases: `CF_API_TOKEN`, `CLOUDFLARE_IMAGES_API_TOKEN` |
+| `NEXT_PUBLIC_CLOUDFLARE_IMAGES_LIVE` | Delivery | Set to `1` only after hosted Images exist for this prefix. Until then the app serves git WebP/JPEG so LCP is not blocked by imagedelivery.net 404s. |
 | `CLOUDFLARE_ACCOUNT_ID` | Optional | Defaults to the global account above |
 | `CLOUDFLARE_IMAGES_ACCOUNT_HASH` | Optional | Defaults to `byE6BTe9lNqo21V57n4aPQ` |
 | `CLOUDFLARE_IMAGES_PREFIX` | Optional | Defaults to `cadence` in this repo; **set this on other domains** |

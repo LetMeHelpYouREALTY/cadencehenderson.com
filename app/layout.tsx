@@ -1,10 +1,9 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import { CalendlyProvider } from '../components/calendly/calendly-loader'
-import { CalendlyScriptLoader } from '../components/calendly/calendly-script-loader'
-import { CalendlyStyles } from '../components/calendly/calendly-styles'
 import { SkipToContent } from '../components/cadence/skip-to-content'
-import { Geist_Mono, Sora } from 'next/font/google'
+import { DeferredAnalytics } from '../components/cadence/deferred-analytics'
+import { RealScoutAutoLoader } from '../components/cadence/realscout-auto-loader'
+import { Sora } from 'next/font/google'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { ThemeProvider } from 'next-themes'
 import { ScrollToTop } from '../components/cadence/scroll-to-top'
@@ -15,6 +14,11 @@ import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import './globals.css'
 
 const HERO_IMAGE = cfImage(SITE_IMAGES.hero.homepage, 'hero')
+/** Prefer mobile-sized LCP preload when serving git WebP (PageSpeed mobile). */
+const HERO_PRELOAD =
+  HERO_IMAGE.startsWith('/images/')
+    ? '/images/hero/homepage-828.webp'
+    : HERO_IMAGE
 /** Crawlers do not run the JS git fallback — keep a stable git URL for OG/schema. */
 const OG_IMAGE = '/og-image.jpg'
 
@@ -23,11 +27,6 @@ const sora = Sora({
   subsets: ['latin'],
   weight: ['200', '300', '400', '500', '600'],
   display: 'swap',
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
 })
 
 const DEFAULT_TITLE = 'Cadence Henderson New Homes | Dr. Jan Duffy'
@@ -68,93 +67,54 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const heroType = HERO_PRELOAD.endsWith('.webp')
+    ? 'image/webp'
+    : HERO_PRELOAD.endsWith('.jpg') || HERO_PRELOAD.endsWith('.jpeg')
+      ? 'image/jpeg'
+      : undefined
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <LocalBusinessSchema />
         <WebsiteSchema />
         <GeoMeta />
-        {/* Preconnect to critical LCP and third-party origins (max 4) */}
-        <link rel="preconnect" href="https://imagedelivery.net" />
-        <link rel="preconnect" href="https://em.realscout.com" crossOrigin="" />
-        <link rel="preconnect" href="https://assets.calendly.com" />
-        <link rel="preconnect" href="https://cadencenv.com" />
-        {/* LCP image preload so browser discovers it from initial HTML */}
-        <link rel="preload" as="image" href={HERO_IMAGE} />
-        {/* Calendly CSS: load for screen to avoid whited-out widget appearance */}
+        {/* Preconnect only when Cloudflare Images are live; otherwise LCP is git/static */}
+        {process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_LIVE === '1' ? (
+          <link rel="preconnect" href="https://imagedelivery.net" />
+        ) : null}
+        {/* LCP image preload — mobile-sized git WebP until CF Images LIVE */}
         <link
-          href="https://assets.calendly.com/assets/external/widget.css"
-          rel="stylesheet"
-          media="all"
+          rel="preload"
+          as="image"
+          href={HERO_PRELOAD}
+          {...(heroType ? { type: heroType } : {})}
+          {...(HERO_IMAGE.startsWith('/images/')
+            ? {
+                imageSrcSet:
+                  '/images/hero/homepage-640.webp 640w, /images/hero/homepage-828.webp 828w, /images/hero/homepage.webp 1280w',
+                imageSizes: '100vw',
+              }
+            : {})}
         />
       </head>
-      <body
-        className={`${sora.variable} ${geistMono.variable} antialiased font-sans`}
-      >
-        <CalendlyScriptLoader />
-        <Script
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          type="module"
-          strategy="lazyOnload"
-        />
-        {process.env.NEXT_PUBLIC_REALSCOUT_EMBED_ID && (
-          <Script
-            src={`https://em.realscout.com/embed/${process.env.NEXT_PUBLIC_REALSCOUT_EMBED_ID}.js`}
-            strategy="lazyOnload"
-          />
-        )}
-                {/* Google Tag */}
-        {process.env.NEXT_PUBLIC_GOOGLE_TAG_ID && (
-          <>
-            <Script
-              id="google-tag"
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_TAG_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-tag-config" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_TAG_ID}');
-              `}
-            </Script>
-          </>
-        )}
-{/* Facebook Pixel */}
-        {process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID && (
-          <Script id="facebook-pixel" strategy="afterInteractive">
-            {`
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}');
-              fbq('track', 'PageView');
-            `}
-          </Script>
-        )}
-        <CalendlyStyles />
+      <body className={`${sora.variable} antialiased font-sans`}>
+        <DeferredAnalytics />
+        <RealScoutAutoLoader />
         <CalendlyProvider>
-        <SkipToContent />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-          storageKey="theme"
-        >
-          {children}
-          <ScrollToTop />
-        </ThemeProvider>
+          <SkipToContent />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            disableTransitionOnChange
+            storageKey="theme"
+          >
+            {children}
+            <ScrollToTop />
+          </ThemeProvider>
         </CalendlyProvider>
       </body>
     </html>
   )
 }
-
-

@@ -21,6 +21,17 @@ export const CLOUDFLARE_IMAGES_CONFIG = {
 export const CLOUDFLARE_IMAGES_DELIVERY_BASE = `https://imagedelivery.net/${CLOUDFLARE_IMAGES_CONFIG.accountHash}`
 
 /**
+ * Hosted Images delivery is off until assets are uploaded and this flag is set.
+ * Missing CF objects 404 and force SiteImage through a slow client fallback, which
+ * destroys mobile LCP (PageSpeed: ~13s when imagedelivery.net returns 404).
+ *
+ * Set NEXT_PUBLIC_CLOUDFLARE_IMAGES_LIVE=1 on Vercel after
+ * `npm run cloudflare:images:sync` succeeds.
+ */
+export const CLOUDFLARE_IMAGES_LIVE =
+  process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_LIVE === '1'
+
+/**
  * Standard variants for every project. Create via
  * `npm run cloudflare:image-variants` (Images API) or the dashboard.
  */

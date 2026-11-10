@@ -7,6 +7,7 @@ import { Footer } from '@/components/cadence/footer'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { RealScoutHomeValue } from '@/components/idx/realscout-home-value'
 import { PageAeo } from '@/components/cadence/page-aeo'
+import { HowToSellSchema } from '@/components/schema/how-to-sell'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Button } from '@/components/ui/button'
 import { calendlyEventUrl } from '@/components/cadence/contact-info'
@@ -153,6 +154,7 @@ export default function SellInCadencePage() {
         </div>
       </section>
 
+      <HowToSellSchema />
       <PageAeo
         path={PAGE_PATH}
         name={PAGE_TITLE}

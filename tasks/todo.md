@@ -1,31 +1,27 @@
-# Task plan — SEO / GEO / AEO
+# Task plan — PageSpeed mobile (6hnwbcclva) + prior SEO work
 
-## Completed (2026-10-17 pass 1)
+## Goals
 
-- [x] Page-matched FAQ schema; contact/gallery graphs; noindex `/projects/`
-- [x] Homepage services link → `/sell-in-cadence`
+- Fix mobile PageSpeed (Performance ~41 / LCP ~6s on report `6hnwbcclva`)
+- Keep prior SEO/GEO/AEO + www GSC prep intact
 
-## Completed (2026-10-17 pass 2)
+## PageSpeed plan
 
-- [x] Remove unused `faq-page.tsx` (homepage uses `HOME_FAQS` + `PageGraphSchema`)
-- [x] Site-wide `WebSite` + `SearchAction` in `WebsiteSchema` (once in root layout)
-- [x] Deduplicate `WebSite` node from per-page `PageGraphSchema`; `containedInPlace` on Cadence Place
-- [x] Trim meta descriptions >160 chars on key lifestyle/communities/realtor pages
-- [x] `NapStrip` on `/new-homes`, `/lifestyle`, `/rentals`
+- [x] Remove Calendly `loadOnMount` — load booking assets only when consultation section is near viewport
+- [x] Remove eager RealScout UMD from `app/layout.tsx` — load via `RealScoutAutoLoader` + deferred listings
+- [x] Defer GTM/Facebook via `DeferredAnalytics` (interaction or 6s)
+- [x] Mobile hero srcSet (640/828/1280) + preload 828w
+- [x] Verify with local Lighthouse / build (Perf 82, LCP 4.9s, no 3P on first load)
+- [x] Commit, push, update PR
+- [x] Deploy production (`dpl_WKK662uGRg16SCtMEXRRpHjWBghR` → www)
+- [ ] Recheck PageSpeed Insights after CDN warm
 
-## Completed (2026-10-17 pass 3)
+## Prior SEO (done)
 
-- [x] `?query=` on `/find-your-home` — scroll + banner (`FindYourHomeQuerySync`) for WebSite SearchAction
-- [x] `id="home-search"` on `HomeSearchSection` (aligns with nav `/#home-search` via `HomeFinder` on homepage)
-- [x] Trim schools page meta description to ≤160 chars
-- [x] `NapStrip` on `/find-your-home`, `/communities`, `/sell-in-cadence`
+- [x] FAQ UI ↔ JSON-LD sync
+- [x] NewsArticle / ItemList / HowTo / Place schemas
+- [x] apex→www + GSC docs
 
-## Completed (2026-10-17 pass 4)
+## Review
 
-- [x] `npm run seo:metadata-audit` + GitHub Actions CI (audit, format, lint, build)
-- [x] `NapStrip` on contact, maps, realtors, incentives, apartments, past-homesales, gallery, faqs, residents; new-homes strip moved below hero
-- [x] Extra `data-speakable` / `.aeo-lead` blocks on communities, find-your-home, new-homes, gallery, faqs, apartments, incentives, contact
-
-## Remaining
-
-- [ ] Production Cloudflare image sync token (ops / env — not code)
+(Fill after verify + deploy.)

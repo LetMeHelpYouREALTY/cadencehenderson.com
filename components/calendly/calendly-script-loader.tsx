@@ -11,7 +11,7 @@ export function CalendlyScriptLoader() {
   return (
     <Script
       src="https://assets.calendly.com/assets/external/widget.js"
-      strategy="afterInteractive"
+      strategy="lazyOnload"
       onLoad={() => {
         if (typeof window === 'undefined') return
         const fire = () => window.dispatchEvent(new CustomEvent('calendly-loaded'))

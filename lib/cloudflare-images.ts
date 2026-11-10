@@ -10,6 +10,7 @@
 
 import {
   CLOUDFLARE_IMAGES_DELIVERY_BASE,
+  CLOUDFLARE_IMAGES_LIVE,
   type CloudflareImageVariant,
 } from '@/lib/cloudflare-images-config'
 
@@ -30,7 +31,7 @@ function img(id: string, local: string): string {
 
 export const SITE_IMAGES = {
   hero: {
-    homepage: img('cadence-hero-homepage', '/images/hero/homepage.jpg'),
+    homepage: img('cadence-hero-homepage', '/images/hero/homepage.webp'),
     newHomes: img('cadence-hero-new-homes', '/images/hero/new-homes.jpg'),
     lifestyle: img('cadence-hero-lifestyle', '/images/hero/lifestyle.jpg'),
     contact: img('cadence-hero-contact', '/images/hero/contact.jpg'),
@@ -87,7 +88,7 @@ export const SITE_IMAGES = {
   },
 
   amenities: {
-    centralPark: img('cadence-amenities-central-park', '/images/amenities/central-park.jpg'),
+    centralPark: img('cadence-amenities-central-park', '/images/amenities/central-park.webp'),
     pool: img('cadence-amenities-pool', '/images/amenities/pool.jpg'),
     splashPad: img('cadence-amenities-splash-pad', '/images/amenities/splash-pad.jpg'),
     fitness: img('cadence-amenities-fitness', '/images/amenities/fitness.jpg'),
@@ -110,7 +111,7 @@ export const SITE_IMAGES = {
   },
 
   homes: {
-    exterior1: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
+    exterior1: img('cadence-homes-exterior-1', '/images/homes/exterior-1.webp'),
     exterior2: img('cadence-homes-exterior-2', '/images/homes/exterior-2.jpg'),
     exterior3: img('cadence-homes-exterior-3', '/images/homes/exterior-3.jpg'),
     interior1: img('cadence-homes-interior-1', '/images/homes/interior-1.jpg'),
@@ -127,8 +128,8 @@ export const SITE_IMAGES = {
   },
 
   gallery: {
-    parkVista: img('cadence-amenities-central-park', '/images/amenities/central-park.jpg'),
-    newHome: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
+    parkVista: img('cadence-amenities-central-park', '/images/amenities/central-park.webp'),
+    newHome: img('cadence-homes-exterior-1', '/images/homes/exterior-1.webp'),
     resortPool: img('cadence-amenities-pool', '/images/amenities/pool.jpg'),
     concert: img('cadence-lifestyle-concert', '/images/lifestyle/concert.jpg'),
     communityGathering: img('cadence-lifestyle-community', '/images/lifestyle/community.jpg'),
@@ -156,13 +157,13 @@ export const SITE_IMAGES = {
   icons: {
     amenitiesBox: img('cadence-amenities-pool', '/images/amenities/pool.jpg'),
     lifestyleBox: img('cadence-lifestyle-community', '/images/lifestyle/community.jpg'),
-    homesBox: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
+    homesBox: img('cadence-homes-exterior-1', '/images/homes/exterior-1.webp'),
     newsBox: img('cadence-icons-news-box', '/images/icons/news-box.png'),
   },
 
   /** Unique photos for content sections that previously had no git-backed CF ID. */
   sections: {
-    marketSnapshot: img('cadence-sections-market-snapshot', '/images/sections/market-snapshot.jpg'),
+    marketSnapshot: img('cadence-sections-market-snapshot', '/images/sections/market-snapshot.webp'),
     homeSearch: img('cadence-sections-home-search', '/images/sections/home-search.jpg'),
     contact: img('cadence-sections-contact', '/images/sections/contact.jpg'),
     faqs: img('cadence-sections-faqs', '/images/sections/faqs.jpg'),
@@ -240,6 +241,10 @@ export function cfImage(imageId: string, variant: ImageVariant = 'public'): stri
   if (!imageId) return PLACEHOLDER_IMAGE
   if (imageId.startsWith('/') || imageId.startsWith('http://') || imageId.startsWith('https://')) {
     return imageId
+  }
+  // Until hosted Images are uploaded + LIVE=1, serve git-optimized assets to protect LCP.
+  if (!CLOUDFLARE_IMAGES_LIVE) {
+    return gitFallback(imageId)
   }
   return `${BASE_URL}/${imageId}/${variant}`
 }

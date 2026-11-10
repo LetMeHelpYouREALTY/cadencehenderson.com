@@ -7,7 +7,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
   /* CadenceNV.com brand (live 2026-09-09): sky #4da9d8, ink #212934, green #65bc7b, orange #ed752d */
   --color-cadence-blue: #4da9d8;
   --color-cadence-blue-dark: #489fd0;
