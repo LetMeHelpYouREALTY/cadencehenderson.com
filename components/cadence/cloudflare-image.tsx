@@ -26,6 +26,7 @@ export function CloudflareImage({
   width,
   height,
   priority,
+  sizes,
   loading,
 }: CloudflareImageProps) {
   return (
@@ -37,6 +38,7 @@ export function CloudflareImage({
       width={width}
       height={height}
       priority={priority}
+      sizes={sizes}
       loading={loading}
     />
   )

@@ -21,6 +21,7 @@ export function Hero() {
         alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
         fill
         priority
+        sizes="100vw"
         className="object-center opacity-80"
       />
       <div

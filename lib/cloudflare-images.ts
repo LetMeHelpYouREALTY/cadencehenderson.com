@@ -30,7 +30,7 @@ function img(id: string, local: string): string {
 
 export const SITE_IMAGES = {
   hero: {
-    homepage: img('cadence-hero-homepage', '/images/hero/homepage.jpg'),
+    homepage: img('cadence-hero-homepage', '/images/hero/homepage.webp'),
     newHomes: img('cadence-hero-new-homes', '/images/hero/new-homes.jpg'),
     lifestyle: img('cadence-hero-lifestyle', '/images/hero/lifestyle.jpg'),
     contact: img('cadence-hero-contact', '/images/hero/contact.jpg'),
@@ -87,7 +87,7 @@ export const SITE_IMAGES = {
   },
 
   amenities: {
-    centralPark: img('cadence-amenities-central-park', '/images/amenities/central-park.jpg'),
+    centralPark: img('cadence-amenities-central-park', '/images/amenities/central-park.webp'),
     pool: img('cadence-amenities-pool', '/images/amenities/pool.jpg'),
     splashPad: img('cadence-amenities-splash-pad', '/images/amenities/splash-pad.jpg'),
     fitness: img('cadence-amenities-fitness', '/images/amenities/fitness.jpg'),
@@ -99,7 +99,7 @@ export const SITE_IMAGES = {
   },
 
   lifestyle: {
-    community: img('cadence-lifestyle-community', '/images/lifestyle/community.jpg'),
+    community: img('cadence-lifestyle-community', '/images/lifestyle/community.webp'),
     families: img('cadence-lifestyle-families', '/images/lifestyle/families.jpg'),
     events: img('cadence-lifestyle-events', '/images/lifestyle/events.jpg'),
     concert: img('cadence-lifestyle-concert', '/images/lifestyle/concert.jpg'),
@@ -110,7 +110,7 @@ export const SITE_IMAGES = {
   },
 
   homes: {
-    exterior1: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
+    exterior1: img('cadence-homes-exterior-1', '/images/homes/exterior-1.webp'),
     exterior2: img('cadence-homes-exterior-2', '/images/homes/exterior-2.jpg'),
     exterior3: img('cadence-homes-exterior-3', '/images/homes/exterior-3.jpg'),
     interior1: img('cadence-homes-interior-1', '/images/homes/interior-1.jpg'),
@@ -127,8 +127,8 @@ export const SITE_IMAGES = {
   },
 
   gallery: {
-    parkVista: img('cadence-amenities-central-park', '/images/amenities/central-park.jpg'),
-    newHome: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
+    parkVista: img('cadence-amenities-central-park', '/images/amenities/central-park.webp'),
+    newHome: img('cadence-homes-exterior-1', '/images/homes/exterior-1.webp'),
     resortPool: img('cadence-amenities-pool', '/images/amenities/pool.jpg'),
     concert: img('cadence-lifestyle-concert', '/images/lifestyle/concert.jpg'),
     communityGathering: img('cadence-lifestyle-community', '/images/lifestyle/community.jpg'),
@@ -162,18 +162,18 @@ export const SITE_IMAGES = {
 
   /** Unique photos for content sections that previously had no git-backed CF ID. */
   sections: {
-    marketSnapshot: img('cadence-sections-market-snapshot', '/images/sections/market-snapshot.jpg'),
-    homeSearch: img('cadence-sections-home-search', '/images/sections/home-search.jpg'),
+    marketSnapshot: img('cadence-sections-market-snapshot', '/images/sections/market-snapshot.webp'),
+    homeSearch: img('cadence-sections-home-search', '/images/sections/home-search.webp'),
     contact: img('cadence-sections-contact', '/images/sections/contact.jpg'),
-    faqs: img('cadence-sections-faqs', '/images/sections/faqs.jpg'),
+    faqs: img('cadence-sections-faqs', '/images/sections/faqs.webp'),
     animalHospital: img('cadence-sections-animal-hospital', '/images/sections/animal-hospital.jpg'),
     community: img('cadence-sections-community', '/images/sections/community.jpg'),
     pastHomesales: img('cadence-sections-past-homesales', '/images/sections/past-homesales.jpg'),
     maps: img('cadence-sections-maps', '/images/sections/maps.jpg'),
     residents: img('cadence-sections-residents', '/images/sections/residents.jpg'),
     incentives: img('cadence-sections-incentives', '/images/sections/incentives.jpg'),
-    realtors: img('cadence-sections-realtors', '/images/sections/realtors.jpg'),
-    schedule: img('cadence-sections-schedule', '/images/sections/schedule.jpg'),
+    realtors: img('cadence-sections-realtors', '/images/sections/realtors.webp'),
+    schedule: img('cadence-sections-schedule', '/images/sections/schedule.webp'),
     disclaimer: img('cadence-sections-disclaimer', '/images/sections/disclaimer.jpg'),
     communities: img('cadence-sections-communities', '/images/sections/communities.jpg'),
     elysian: img('cadence-sections-elysian', '/images/sections/elysian.jpg'),

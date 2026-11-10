@@ -15,6 +15,7 @@ export function LifestyleSection() {
               src={cfImage(SITE_IMAGES.lifestyle.community, 'card')}
               alt="Cadence Henderson NV 89011 lifestyle and community"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
           <div className="order-1 md:order-2">

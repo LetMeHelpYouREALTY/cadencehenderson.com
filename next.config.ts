@@ -88,14 +88,23 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      {
         source: '/:path*',
         headers: [
           {
             key: 'Content-Security-Policy',
             value: [
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.realscout.com https://calendly.com https://assets.calendly.com",
-              "connect-src 'self' https: https://em.realscout.com https://www.realscout.com https://calendly.com https://assets.calendly.com",
-              "frame-src 'self' https: https://calendly.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.realscout.com https://calendly.com https://assets.calendly.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://connect.facebook.net https://js.stripe.com",
+              "connect-src 'self' https: https://em.realscout.com https://www.realscout.com https://calendly.com https://assets.calendly.com https://www.google-analytics.com https://www.google.com https://googleads.g.doubleclick.net https://www.facebook.com https://connect.facebook.net",
+              "frame-src 'self' https: https://calendly.com https://js.stripe.com",
               "style-src 'self' 'unsafe-inline' https://assets.calendly.com",
               "img-src 'self' data: blob: https:",
             ].join('; '),

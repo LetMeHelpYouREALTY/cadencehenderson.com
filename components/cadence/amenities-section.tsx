@@ -30,6 +30,7 @@ export function AmenitiesSection() {
               src={getAmenityImage('centralPark', 'card')}
               alt="Cadence Henderson NV 89011 amenities and Central Park"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </div>

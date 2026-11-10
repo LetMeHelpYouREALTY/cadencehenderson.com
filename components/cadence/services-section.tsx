@@ -62,7 +62,7 @@ export function ServicesSection() {
             src={cfImage(SITE_IMAGES.gallery.newHome, 'hero')}
             alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
             fill
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, 1200px"
             className="object-cover"
             loading="lazy"
           />

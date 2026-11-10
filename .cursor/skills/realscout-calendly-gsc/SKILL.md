@@ -13,7 +13,7 @@ Apply when the task involves: RealScout widgets or IDX, Calendly links/widgets/s
 
 ## RealScout
 
-- **Script loading:** Load once, globally, in root layout (`app/layout.tsx`). Use Next.js `<Script>` with `strategy="afterInteractive"`.
+- **Script loading:** Load once, globally, in root layout (`app/layout.tsx`). Use Next.js `<Script>` with `strategy="lazyOnload"` so widgets do not compete with LCP/TBT.
   - `https://em.realscout.com/widgets/realscout-web-components.umd.js` (type="module")
   - Optional embed: `https://em.realscout.com/embed/${NEXT_PUBLIC_REALSCOUT_EMBED_ID}.js`
 - **Widgets:** Use `createElement()` for custom elements (e.g. `realscout-office-listings`) to avoid JSX intrinsic type errors. Do not use raw `<realscout-*>` in TSX unless typed.
@@ -27,7 +27,7 @@ Apply when the task involves: RealScout widgets or IDX, Calendly links/widgets/s
 
 ## Calendly
 
-- **Script and badge:** Load in a Client Component. Use `CalendlyStyles` and `CalendlyProvider` (from `calendly-loader`) in root layout; script and badge init live in a Client Component.
+- **Script and badge:** Do not eagerly load Calendly in root layout. Use `CalendlyStyles` + `CalendlyProvider` in layout; load `widget.js` on demand via `loadCalendly()` / `CalendlyWhenVisible` / `CalendlyLink` click.
 - **Components:** Use only from `@/components/calendly`:
   - **CalendlyLink** — opens popup; use with `Button asChild` for valid markup.
   - **CalendlyInlineWidget** — embedded scheduler; use inside a Client Component or with `CalendlyWhenVisible` for lazy load.

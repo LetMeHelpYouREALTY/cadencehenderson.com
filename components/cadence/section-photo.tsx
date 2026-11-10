@@ -7,12 +7,19 @@ type SectionPhotoProps = {
   alt: string
   className?: string
   priority?: boolean
+  sizes?: string
 }
 
 /**
  * Content-section photo band. Cloudflare primary via SiteImage; git backup.
  */
-export function SectionPhoto({ src, alt, className, priority }: SectionPhotoProps) {
+export function SectionPhoto({
+  src,
+  alt,
+  className,
+  priority,
+  sizes = '(max-width: 768px) 100vw, 960px',
+}: SectionPhotoProps) {
   return (
     <div
       className={[
@@ -22,7 +29,7 @@ export function SectionPhoto({ src, alt, className, priority }: SectionPhotoProp
         .filter(Boolean)
         .join(' ')}
     >
-      <SiteImage src={src} alt={alt} fill priority={priority} />
+      <SiteImage src={src} alt={alt} fill priority={priority} sizes={sizes} />
     </div>
   )
 }

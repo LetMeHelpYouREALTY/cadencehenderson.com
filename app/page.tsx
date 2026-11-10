@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Navigation } from '@/components/cadence/navigation'
 import { Hero } from '@/components/cadence/hero'
@@ -6,17 +7,27 @@ import { KeyFactsSection } from '@/components/cadence/key-facts-section'
 import { MarketSnapshotSection } from '@/components/cadence/market-snapshot-section'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { HomeFinder } from '@/components/cadence/home-finder'
-import { AmenitiesSection } from '@/components/cadence/amenities-section'
-import { LifestyleSection } from '@/components/cadence/lifestyle-section'
 import { ServicesSection } from '@/components/cadence/services-section'
 import { RealtorsSection } from '@/components/cadence/realtors-section'
 import { NewsSection } from '@/components/cadence/news-section'
 import { BuildersShowcase } from '@/components/cadence/builders-showcase'
 import { HomepageFAQSection } from '@/components/cadence/homepage-faq-section'
-import { ScheduleConsultationSection } from '@/components/cadence/schedule-consultation-section'
 import { Footer } from '@/components/cadence/footer'
 import { PageGraphSchema } from '@/components/schema/page-graph'
 import { HOME_FAQS } from '@/lib/page-aeo'
+
+/** Client-only below-fold islands — keep off the critical JS path. */
+const AmenitiesSection = dynamic(() =>
+  import('@/components/cadence/amenities-section').then((m) => m.AmenitiesSection),
+)
+const LifestyleSection = dynamic(() =>
+  import('@/components/cadence/lifestyle-section').then((m) => m.LifestyleSection),
+)
+const ScheduleConsultationSection = dynamic(() =>
+  import('@/components/cadence/schedule-consultation-section').then(
+    (m) => m.ScheduleConsultationSection,
+  ),
+)
 
 const BASE = 'https://www.cadencehenderson.com'
 /** Crawlers need a stable git URL; metadataBase resolves to absolute og:image. */

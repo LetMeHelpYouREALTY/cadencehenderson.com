@@ -1,31 +1,23 @@
-# Task plan — SEO / GEO / AEO
+# Task plan — PageSpeed mobile performance
 
-## Completed (2026-10-17 pass 1)
+Source: https://pagespeed.web.dev/analysis/https-cadencehenderson-com/6hnwbcclva?hl=en&form_factor=mobile  
+Local Lighthouse mobile (lab): Performance **82**, LCP **3.9s**, TBT **310ms**, TTI **13.4s**, CLS **0**.
 
-- [x] Page-matched FAQ schema; contact/gallery graphs; noindex `/projects/`
-- [x] Homepage services link → `/sell-in-cadence`
+## Findings → fixes
 
-## Completed (2026-10-17 pass 2)
+- [x] Diagnose: unused JS (~540KiB) from RealScout + GTM + Facebook; oversized git images (~372KiB); CF Images 404 so LCP uses heavy git webp; Calendly CSS render-blocking in `<head>`; analytics `afterInteractive`
+- [x] Defer GTM + Facebook Pixel to `lazyOnload`; remove eager Calendly script (on-demand via provider)
+- [x] Remove blocking Calendly CSS from root layout (keep non-blocking `CalendlyStyles`)
+- [x] Fix SiteImage: honor `sizes`, sync decode for priority, git-first for priority LCP, jpg sibling fallback
+- [x] Generate optimized WebP for hero + top section photos; correct `sizes` on homepage sections
+- [x] Preload actual LCP git WebP (matches what paints while CF IDs are missing)
+- [x] Cache-Control for `/images/*`; CSP allow Google Ads / Facebook / Stripe script hosts
+- [x] Dynamic-import below-fold client homepage sections
+- [x] Reduce Sora font weights loaded (200/400/600)
+- [x] Verify with `next build`; commit; push; open PR
 
-- [x] Remove unused `faq-page.tsx` (homepage uses `HOME_FAQS` + `PageGraphSchema`)
-- [x] Site-wide `WebSite` + `SearchAction` in `WebsiteSchema` (once in root layout)
-- [x] Deduplicate `WebSite` node from per-page `PageGraphSchema`; `containedInPlace` on Cadence Place
-- [x] Trim meta descriptions >160 chars on key lifestyle/communities/realtor pages
-- [x] `NapStrip` on `/new-homes`, `/lifestyle`, `/rentals`
+## Review
 
-## Completed (2026-10-17 pass 3)
-
-- [x] `?query=` on `/find-your-home` — scroll + banner (`FindYourHomeQuerySync`) for WebSite SearchAction
-- [x] `id="home-search"` on `HomeSearchSection` (aligns with nav `/#home-search` via `HomeFinder` on homepage)
-- [x] Trim schools page meta description to ≤160 chars
-- [x] `NapStrip` on `/find-your-home`, `/communities`, `/sell-in-cadence`
-
-## Completed (2026-10-17 pass 4)
-
-- [x] `npm run seo:metadata-audit` + GitHub Actions CI (audit, format, lint, build)
-- [x] `NapStrip` on contact, maps, realtors, incentives, apartments, past-homesales, gallery, faqs, residents; new-homes strip moved below hero
-- [x] Extra `data-speakable` / `.aeo-lead` blocks on communities, find-your-home, new-homes, gallery, faqs, apartments, incentives, contact
-
-## Remaining
-
-- [ ] Production Cloudflare image sync token (ops / env — not code)
+- Hero LCP now SSR/preloads `/images/hero/homepage.webp` (~88KB vs ~133–436KB before).
+- Third-party Calendly no longer loads on initial paint; GTM/FB deferred to `lazyOnload`.
+- Follow-up (ops): add `CLOUDFLARE_API_TOKEN` to the Vercel project and run `npm run cloudflare:images:sync` so CF Images stop 404ing for lazy sections.
