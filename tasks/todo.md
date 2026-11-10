@@ -13,7 +13,8 @@
 - [x] Mobile hero srcSet (640/828/1280) + preload 828w
 - [x] Verify with local Lighthouse / build (Perf 82, LCP 4.9s, no 3P on first load)
 - [x] Commit, push, update PR
-- [ ] Deploy production + recheck PageSpeed Insights
+- [x] Deploy production (`dpl_WKK662uGRg16SCtMEXRRpHjWBghR` → www)
+- [ ] Recheck PageSpeed Insights after CDN warm
 
 ## Prior SEO (done)
 
