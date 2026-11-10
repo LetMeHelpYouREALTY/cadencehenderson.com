@@ -88,7 +88,7 @@ const faqCategories = [
     questions: [
       {
         q: 'Are pets allowed?',
-        a: 'Yes, pets are welcome in Cadence! We have dedicated dog parks and pet-friendly trails throughout the community. Individual HOAs may have breed or size restrictions.',
+        a: 'Yes, pets are welcome in Cadence. Official amenities include a dog park and park trails — confirm leash rules with the Master Association. Individual village HOAs may have breed or size restrictions.',
       },
       {
         q: 'What internet providers serve Cadence?',

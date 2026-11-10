@@ -18,7 +18,7 @@ const BASE = 'https://www.cadencehenderson.com'
 export const metadata: Metadata = {
   title: 'Life at Cadence Henderson | Community Guide 89011',
   description:
-    'Daily life in Cadence Henderson NV 89011: 50-acre Central Park, pools, trails, builders, and commute times to Lake Mead, the airport, and the Strip.',
+    'Daily life in Cadence Henderson NV 89011: 50-acre Central Park, resident pool, trails, builders, and commute times to Lake Mead, the airport, and the Strip.',
   alternates: { canonical: `${BASE}/realtors/life-at-cadence` },
   openGraph: {
     title: 'Life at Cadence Henderson | Community Guide 89011',
@@ -54,7 +54,7 @@ export default function LifeAtCadencePage() {
 
       <PageHero
         title="Life at Cadence"
-        subtitle="A working brief for buyers and cooperating agents: parks, pools, commute, and how Cadence Henderson actually lives day to day."
+        subtitle="A working brief for buyers and cooperating agents: parks, resident pool, commute, and how Cadence Henderson actually lives day to day."
         imageSrc={cfImage(SITE_IMAGES.hero.lifeAtCadence, 'hero')}
         imageAlt="Daily life in Cadence Henderson NV 89011"
         icon={Sparkles}

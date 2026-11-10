@@ -7,7 +7,7 @@ import { Footer } from '@/components/cadence/footer'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
-import { Trees, MapPin, Bike, Dog, Users } from 'lucide-react'
+import { Trees, MapPin, Bike, Dog } from 'lucide-react'
 import { cfImage, SITE_IMAGES, getAmenityImage, getGalleryImage } from '@/lib/cloudflare-images'
 import Link from 'next/link'
 
@@ -33,11 +33,11 @@ const parks = [
     name: 'Sunset Road Linear Park',
     size: 'Along Sunset Road',
     description:
-      'Linear park space published with Cadence living amenities — open recreation along the community corridor.',
+      'Along Sunset Road just north of Cadence Vista Drive — bounce pads, play structures, table tennis, corn hole, and gathering spaces.',
     features: [
-      'Linear park corridor',
-      'Walking access',
-      'Community green space',
+      'Bounce pads and play structures',
+      'Table tennis and corn hole',
+      'Gazebo / gathering spaces',
     ],
     image: getAmenityImage('playground', 'card'),
   },
@@ -58,43 +58,36 @@ const parks = [
 export const metadata: Metadata = {
   title: 'Parks & Trails in Cadence Henderson 89011 | Henderson NV',
   description:
-    '50-acre Central Park, 30+ miles of trails, dog parks & sports park in Cadence Henderson NV 89011. Walking, biking, jogging & outdoor recreation for residents.',
+    'Central Park (~50 acres), walking and biking trails, Fitness Court, pickleball, dog park, and Sunset Road Linear Park in Cadence Henderson NV 89011.',
   alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/parks-trails' },
   openGraph: {
     title: 'Parks & Trails in Cadence Henderson 89011 | Henderson NV',
-    description: '50-acre Central Park, 30+ miles of trails & dog parks in Cadence Henderson NV 89011.',
+    description:
+      'Central Park, trails, Fitness Court, pickleball, dog park, and Sunset Road Linear Park in Cadence Henderson NV 89011.',
     url: 'https://www.cadencehenderson.com/lifestyle/parks-trails',
   },
 }
 
-const trails = [
+const trailHighlights = [
   {
-    name: 'Main Loop Trail',
-    distance: '3.5 miles',
-    difficulty: 'Easy',
+    name: 'Central Park paths',
     description:
-      'A scenic paved trail that loops through the community, perfect for walking, jogging, or biking. Features mountain views and connects to Central Park.',
+      'Walking and biking routes through Central Park with free wifi, charging outlets, and mountain views.',
   },
   {
-    name: 'Desert Discovery Trail',
-    distance: '1.2 miles',
-    difficulty: 'Easy',
+    name: 'Fitness Court access',
     description:
-      'Educational trail showcasing native desert plants and wildlife.',
+      'Outdoor Fitness Court® stations in Central Park for bodyweight training during park hours.',
   },
   {
-    name: 'Fitness Trail',
-    distance: '2 miles',
-    difficulty: 'Moderate',
+    name: 'Pickleball & play',
     description:
-      'Trail with outdoor fitness stations along the route. Perfect for those looking to combine cardio with strength training.',
+      'Pickleball courts and play areas sit along the Central Park recreation loop.',
   },
   {
-    name: 'Mountain View Path',
-    distance: '1.8 miles',
-    difficulty: 'Easy',
+    name: 'Linear Park corridor',
     description:
-      'Peaceful walking path with stunning views of the surrounding mountains. Popular for sunrise and sunset walks.',
+      'Sunset Road Linear Park adds bounce pads, play structures, table tennis, and corn hole north of Cadence Vista Drive.',
   },
 ]
 
@@ -105,7 +98,7 @@ export default function ParksTrailsPage() {
 
       <PageHero
         title="Parks & Trails in Cadence Henderson NV 89011"
-        subtitle="Discover over 50 acres of parks and miles of scenic trails throughout Cadence. From Central Park to neighborhood green spaces, enjoy outdoor recreation right in your backyard."
+        subtitle="Central Park, trails, Fitness Court, pickleball, the dog park, and Sunset Road Linear Park — outdoor recreation published with Cadence living amenities."
         imageSrc={cfImage(SITE_IMAGES.hero.parksTrails, 'hero')}
         imageAlt="Parks and trails at Cadence Henderson NV 89011"
         icon={Trees}
@@ -132,8 +125,8 @@ export default function ParksTrailsPage() {
                 Central Park in Cadence Henderson NV 89011
               </h2>
               <p className="aeo-lead text-xl text-gray-600" data-speakable>
-                About 50 acres of parkland in Cadence Henderson NV 89011 — playgrounds,
-                splash pads, trails, and event lawns.
+                About 50 acres in Cadence Henderson NV 89011 — turf areas, amphitheater
+                seating, play areas, splash pads, trails, Fitness Court, and pickleball.
               </p>
             </div>
 
@@ -147,36 +140,36 @@ export default function ParksTrailsPage() {
               </div>
               <div className="flex flex-col justify-center">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  A Space for Everyone
+                  Official Cadence park amenities
                 </h3>
                 <p className="aeo-lead text-lg text-gray-700 mb-6" data-speakable>
-                  Central Park is designed for daily use: jogging loops, picnic
-                  lawns, playgrounds, splash pads, and event space in Cadence
-                  Henderson NV 89011.
+                  Central Park is open to the public (typically dawn–10 p.m.). The
+                  resident pool requires a Master Association Card. Confirm hours with
+                  the Association at 702-605-3111.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
                     <span className="text-gray-700">
-                      Three distinct playground areas for all ages
+                      Adventure playground and children’s play areas
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
                     <span className="text-gray-700">
-                      Splash pad with interactive water features
+                      Two splash pads (including ~2,000 sq ft at the Pool Complex)
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
                     <span className="text-gray-700">
-                      Multi-purpose event lawn for concerts and gatherings
+                      Fitness Court, pickleball courts, free wifi and charging outlets
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
                     <span className="text-gray-700">
-                      Panoramic mountain and valley views
+                      Amphitheater seating, turf areas, and mountain views
                     </span>
                   </li>
                 </ul>
@@ -246,30 +239,23 @@ export default function ParksTrailsPage() {
             <div className="text-center mb-12">
               <Bike size={48} className="mx-auto mb-4 text-green-900" />
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Walking & Biking Trails
+                Walking & biking
               </h2>
-              <p className="text-xl text-gray-600">
-                Over 8 miles of scenic trails connecting the entire community
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Trails and park paths connect Central Park recreation — without
+                invented mileage or named trail cards on this site.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 mb-12">
-              {trails.map((trail) => (
+              {trailHighlights.map((trail) => (
                 <div
                   key={trail.name}
                   className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-900 hover:shadow-xl transition-shadow"
                 >
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-bold text-gray-900">
-                      {trail.name}
-                    </h3>
-                    <span className="text-sm font-medium text-green-900 bg-green-100 px-3 py-1 rounded-full">
-                      {trail.difficulty}
-                    </span>
-                  </div>
-                  <p className="text-gray-600 mb-2 font-medium">
-                    Distance: {trail.distance}
-                  </p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {trail.name}
+                  </h3>
                   <p className="text-gray-700">{trail.description}</p>
                 </div>
               ))}
@@ -278,15 +264,14 @@ export default function ParksTrailsPage() {
             <div className="bg-green-50 rounded-lg p-8 text-center">
               <Dog size={48} className="mx-auto mb-4 text-green-900" />
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Pet-Friendly Trails
+                Dog park & pet-friendly paths
               </h3>
               <p className="text-lg text-gray-700 mb-6">
-                All trails in Cadence are pet-friendly! Bring your furry friends
-                along for the adventure. Please keep dogs on leashes and use
-                provided waste stations.
+                Cadence living amenities include a dog park. Confirm leash rules,
+                hours, and access with the Cadence Master Association before you visit.
               </p>
-              <Button className="bg-green-900 hover:bg-green-800">
-                View Dog Park Locations
+              <Button className="bg-green-900 hover:bg-green-800" asChild>
+                <Link href="/lifestyle/amenities">Cadence amenities overview</Link>
               </Button>
             </div>
           </div>
@@ -320,7 +305,7 @@ export default function ParksTrailsPage() {
       <PageAeo
         path="/lifestyle/parks-trails"
         name="Parks & Trails in Cadence Henderson 89011 | Henderson NV"
-        description="50-acre Central Park, 30+ miles of trails, dog parks & sports park in Cadence Henderson NV 89011. Walking, biking, jogging & outdoor recreation for residents."
+        description="Central Park (~50 acres), walking and biking trails, Fitness Court, pickleball, dog park, and Sunset Road Linear Park in Cadence Henderson NV 89011."
         faqs={defaultPageFaqs('parks and trails in Cadence Henderson')}
         breadcrumbs={[
           { name: 'Lifestyle', path: '/lifestyle' },

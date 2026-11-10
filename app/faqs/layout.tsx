@@ -122,7 +122,7 @@ function FaqsPageSchema() {
         name: 'Are pets allowed in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, pets are welcome in Cadence Henderson! The community has dedicated dog parks and pet-friendly trails throughout Cadence Henderson 89011. Individual HOAs may have breed or size restrictions.',
+          text: 'Yes, pets are welcome in Cadence Henderson. Official amenities include a dog park and park trails — confirm leash rules with the Master Association at 702-605-3111. Individual village HOAs may have breed or size restrictions.',
         },
       },
       {

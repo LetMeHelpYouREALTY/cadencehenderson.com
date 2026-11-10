@@ -56,7 +56,7 @@ export default function CommunityPage() {
 
       <PageHero
         title="Community Life"
-        subtitle="At Cadence, community is more than just a place to live—it's a lifestyle. Connect with neighbors, join clubs, participate in events, and create lasting friendships in our vibrant community."
+        subtitle="Central Park amenities and Association lifestyle programs shape how neighbors connect in Cadence Henderson — tour villages with Dr. Jan Duffy."
         imageSrc={cfImage(SITE_IMAGES.hero.community, 'hero')}
         imageAlt="Community life at Cadence Henderson NV 89011"
         icon={Users}
@@ -75,7 +75,7 @@ export default function CommunityPage() {
 
       <PageBodyPhoto
         src={cfImage(SITE_IMAGES.sections.community, 'hero')}
-        alt="Community clubs in Cadence Henderson NV 89011"
+        alt="Community living in Cadence Henderson NV 89011"
       />
 
 
@@ -105,11 +105,11 @@ export default function CommunityPage() {
                   <Calendar size={40} className="text-amber-900" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Year-Round Events
+                  Community gatherings
                 </h3>
                 <p className="text-gray-700">
-                  Association and developer calendars list community gatherings
-                  when scheduled — check official Cadence sources for current dates.
+                  Concerts, car shows, and Association lifestyle programs happen when
+                  scheduled — confirm current dates with the Master Association at 702-605-3111.
                 </p>
               </div>
 
@@ -118,11 +118,11 @@ export default function CommunityPage() {
                   <Smile size={40} className="text-amber-900" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Clubs and events
+                  Association programs
                 </h3>
                 <p className="text-gray-700">
-                  Resident programs and Central Park gatherings are posted on the
-                  Cadence Master Association community calendar.
+                  Resident programs and Central Park gatherings are scheduled by the
+                  Cadence Master Association — call 702-605-3111 or email Lifestyle@CadenceHOA.com.
                 </p>
               </div>
             </div>

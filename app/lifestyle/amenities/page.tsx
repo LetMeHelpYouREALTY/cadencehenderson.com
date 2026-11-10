@@ -130,12 +130,12 @@ const AMENITIES_FAQS = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Cadence Henderson Amenities – Central Park, Pools & Trails',
+  title: 'Cadence Henderson Amenities – Central Park, Pool & Trails',
   description:
     '50-acre Central Park, resident pool, splash pads, Fitness Court, pickleball & Sunset Road Linear Park in Cadence Henderson NV 89011. Tour with Dr. Jan Duffy.',
   alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/amenities' },
   openGraph: {
-    title: 'Cadence Henderson Amenities – Central Park, Pools & Trails',
+    title: 'Cadence Henderson Amenities – Central Park, Pool & Trails',
     description:
       'Central Park, resident pool, splash pads, Fitness Court, pickleball and trails in Cadence Henderson NV 89011.',
     url: 'https://www.cadencehenderson.com/lifestyle/amenities',
@@ -367,7 +367,7 @@ export default function AmenitiesPage() {
 
       <PageAeo
         path="/lifestyle/amenities"
-        name="Cadence Henderson Amenities – Central Park, Pools & Trails"
+        name="Cadence Henderson Amenities – Central Park, Pool & Trails"
         description="50-acre Central Park, resident pool, splash pads, Fitness Court, pickleball & Sunset Road Linear Park in Cadence Henderson NV 89011."
         faqs={AMENITIES_FAQS.map(({ q, a }) => ({ question: q, answer: a }))}
         breadcrumbs={[

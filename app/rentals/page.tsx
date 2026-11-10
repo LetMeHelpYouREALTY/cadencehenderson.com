@@ -105,7 +105,7 @@ export default function RentalsPage() {
             </h2>
             <p className="aeo-lead text-xl text-gray-700" data-speakable>
               Rent single-family homes and apartments in Cadence Henderson NV 89011
-              with access to Central Park, pools, and trails — without buying.
+              with access to Central Park, the resident pool, and trails — without buying.
             </p>
           </div>
 
@@ -130,8 +130,8 @@ export default function RentalsPage() {
                 Premium Amenities
               </h3>
               <p className="text-gray-700">
-                Access to parks, pools, trails, and community events included
-                with your rental.
+                Access to parks, the resident pool, trails, and Association
+                programs may be included — confirm with your lease and the Master Association.
               </p>
             </div>
             <div className="text-center p-6">
@@ -298,7 +298,7 @@ export default function RentalsPage() {
                       name: 'Are there pet-friendly rentals in Cadence Henderson?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: `Yes, several Cadence Henderson NV 89011 rental communities are pet-friendly. American Homes 4 Rent (AMH) offers pet-friendly options, and the community features dedicated dog parks throughout Cadence Henderson. Contact ${CONTACT_INFO.phone} for specific pet policy details.`,
+                        text: `Yes, several Cadence Henderson NV 89011 rental communities are pet-friendly. American Homes 4 Rent (AMH) offers pet-friendly options, and Cadence living amenities include a dog park. Contact ${CONTACT_INFO.phone} for specific pet policy details.`,
                       },
                     },
                     {
@@ -306,7 +306,7 @@ export default function RentalsPage() {
                       name: 'Do rental homes in Cadence Henderson include community amenities?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Cadence Henderson 89011 residents — including many renters — may use community amenities such as Central Park, the resident pool (Master Association Card), splash pads, Fitness Court, pickleball, trails, and dog parks, subject to the rental agreement and Association access terms. Confirm access with the property manager and Cadence Master Association at 702-605-3111.',
+                        text: 'Cadence Henderson 89011 residents — including many renters — may use community amenities such as Central Park, the resident pool (Master Association Card), splash pads, Fitness Court, pickleball, trails, and the dog park, subject to the rental agreement and Association access terms. Confirm access with the property manager and Cadence Master Association at 702-605-3111.',
                       },
                     },
                   ],
@@ -325,11 +325,11 @@ export default function RentalsPage() {
                 },
                 {
                   q: 'Are there pet-friendly rentals in Cadence Henderson?',
-                  a: `Yes, several Cadence Henderson NV 89011 rental communities are pet-friendly, including AMH options. The community has dedicated dog parks throughout. Contact ${CONTACT_INFO.phone} for specific pet policy details.`,
+                  a: `Yes, several Cadence Henderson NV 89011 rental communities are pet-friendly, including AMH options. Cadence living amenities include a dog park. Contact ${CONTACT_INFO.phone} for specific pet policy details.`,
                 },
                 {
                   q: 'Do rental homes in Cadence Henderson include community amenities?',
-                  a: 'Cadence Henderson 89011 residents — including many renters — may use amenities such as Central Park, the resident pool (Master Association Card), splash pads, Fitness Court, pickleball, trails, and dog parks, subject to the rental agreement and Association access terms. Confirm with the property manager and Cadence Master Association at 702-605-3111.',
+                  a: 'Cadence Henderson 89011 residents — including many renters — may use amenities such as Central Park, the resident pool (Master Association Card), splash pads, Fitness Court, pickleball, trails, and the dog park, subject to the rental agreement and Association access terms. Confirm with the property manager and Cadence Master Association at 702-605-3111.',
                 },
               ].map(({ q, a }) => (
                 <details

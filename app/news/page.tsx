@@ -93,7 +93,7 @@ export default async function NewsPage() {
 
       <PageHero
         title="Cadence News"
-        subtitle="Stay up to date with the latest news, events, and announcements from the Cadence community. From new home openings to community celebrations, there's always something happening here."
+        subtitle="Cadence Henderson updates for buyers and residents — new homes, lifestyle amenities, and Association programs when scheduled. Confirm event dates with the Master Association."
         imageSrc={cfImage(SITE_IMAGES.hero.news, 'hero')}
         imageAlt="Cadence Henderson community news in Henderson NV 89011"
       />

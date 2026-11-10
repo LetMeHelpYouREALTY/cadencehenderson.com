@@ -65,7 +65,7 @@ export default function ElysianPage() {
               Elysian Homes at Cadence is a built-to-rent collection: houses
               designed for leasing rather than for-sale inventory. Expect more
               interior square footage than a typical apartment, with Cadence
-              amenities — Central Park, trails, and pools — still part of daily
+              amenities — Central Park, trails, and the resident pool — still part of daily
               life.
             </p>
             <p>

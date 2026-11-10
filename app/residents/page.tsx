@@ -52,7 +52,7 @@ export default function ResidentsPage() {
 
       <PageBodyPhoto
         src={cfImage(SITE_IMAGES.sections.residents, 'hero')}
-        alt="Resident clubhouse in Cadence Henderson NV 89011"
+        alt="Cadence Henderson NV 89011 resident community living"
       />
 
 
@@ -152,14 +152,14 @@ export default function ResidentsPage() {
                 Community Events
               </h3>
               <p className="text-sm text-gray-600 mb-4">
-                See what's happening in your neighborhood
+                Lifestyle highlights — confirm dates with the Association
               </p>
               <Button
                 size="sm"
                 variant="outline"
                 className="border-emerald-900 text-emerald-900 hover:bg-emerald-900 hover:text-white"
               >
-                View Calendar
+                See Events
               </Button>
             </Link>
 
@@ -397,10 +397,10 @@ export default function ResidentsPage() {
                       <Calendar className="mr-4 text-emerald-900" size={32} />
                       <div>
                         <h3 className="font-bold text-gray-900">
-                          Events Calendar
+                          Community Events
                         </h3>
                         <p className="text-sm text-gray-600">
-                          View upcoming community events and activities
+                          Cadence lifestyle gatherings — confirm dates with the Association
                         </p>
                       </div>
                     </div>
@@ -424,7 +424,7 @@ export default function ResidentsPage() {
                           Amenities Guide
                         </h3>
                         <p className="text-sm text-gray-600">
-                          Hours, rules, and details for all community amenities
+                          Official Cadence amenities overview — Association for hours and access
                         </p>
                       </div>
                     </div>
