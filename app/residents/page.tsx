@@ -55,7 +55,6 @@ export default function ResidentsPage() {
         alt="Resident clubhouse in Cadence Henderson NV 89011"
       />
 
-
       {/* Services for Current Residents */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -63,8 +62,8 @@ export default function ResidentsPage() {
             How Dr. Jan Can Help Current Residents
           </h2>
           <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
-            Already living in Cadence? I'm here to help with your real estate needs
-            and questions.
+            Already living in Cadence? I'm here to help with your real estate
+            needs and questions.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all hover:-translate-y-1">
@@ -75,7 +74,9 @@ export default function ResidentsPage() {
               <p className="text-sm text-gray-600 mb-4">
                 Curious what your home is worth? Get a free market analysis
               </p>
-              <a href={`mailto:${CONTACT_INFO.email}?subject=Home Value Request`}>
+              <a
+                href={`mailto:${CONTACT_INFO.email}?subject=Home Value Request`}
+              >
                 <Button
                   size="sm"
                   variant="outline"
@@ -132,7 +133,9 @@ export default function ResidentsPage() {
               <p className="text-sm text-gray-600 mb-4">
                 Looking to invest in more Cadence properties? I can help
               </p>
-              <a href={`mailto:${CONTACT_INFO.email}?subject=Investment Inquiry`}>
+              <a
+                href={`mailto:${CONTACT_INFO.email}?subject=Investment Inquiry`}
+              >
                 <Button
                   size="sm"
                   variant="outline"
@@ -168,9 +171,7 @@ export default function ResidentsPage() {
               className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all hover:-translate-y-1"
             >
               <HelpCircle size={48} className="mx-auto mb-4 text-emerald-900" />
-              <h3 className="font-bold text-lg text-gray-900 mb-2">
-                FAQs
-              </h3>
+              <h3 className="font-bold text-lg text-gray-900 mb-2">FAQs</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Common questions about living in Cadence
               </p>
@@ -332,9 +333,7 @@ export default function ResidentsPage() {
                   <div className="flex items-center flex-1">
                     <FileText className="mr-4 text-emerald-900" size={32} />
                     <div>
-                      <h3 className="font-bold text-gray-900">
-                        HOA Documents
-                      </h3>
+                      <h3 className="font-bold text-gray-900">HOA Documents</h3>
                       <p className="text-sm text-gray-600">
                         CC&Rs, bylaws, and guidelines - Contact HOA management
                       </p>
@@ -439,4 +438,3 @@ export default function ResidentsPage() {
     </div>
   )
 }
-

@@ -8,7 +8,12 @@ import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Trees, MapPin, Bike, Dog, Users } from 'lucide-react'
-import { cfImage, SITE_IMAGES, getAmenityImage, getGalleryImage } from '@/lib/cloudflare-images'
+import {
+  cfImage,
+  SITE_IMAGES,
+  getAmenityImage,
+  getGalleryImage,
+} from '@/lib/cloudflare-images'
 import Link from 'next/link'
 
 const parks = [
@@ -65,10 +70,13 @@ export const metadata: Metadata = {
   title: 'Parks & Trails in Cadence Henderson 89011 | Henderson NV',
   description:
     '50-acre Central Park, 30+ miles of trails, dog parks & sports park in Cadence Henderson NV 89011. Walking, biking, jogging & outdoor recreation for residents.',
-  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/parks-trails' },
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/parks-trails',
+  },
   openGraph: {
     title: 'Parks & Trails in Cadence Henderson 89011 | Henderson NV',
-    description: '50-acre Central Park, 30+ miles of trails & dog parks in Cadence Henderson NV 89011.',
+    description:
+      '50-acre Central Park, 30+ miles of trails & dog parks in Cadence Henderson NV 89011.',
     url: 'https://www.cadencehenderson.com/lifestyle/parks-trails',
   },
 }
@@ -138,8 +146,8 @@ export default function ParksTrailsPage() {
                 Central Park in Cadence Henderson NV 89011
               </h2>
               <p className="aeo-lead text-xl text-gray-600" data-speakable>
-                About 50 acres of parkland in Cadence Henderson NV 89011 — playgrounds,
-                splash pads, trails, and event lawns.
+                About 50 acres of parkland in Cadence Henderson NV 89011 —
+                playgrounds, splash pads, trails, and event lawns.
               </p>
             </div>
 
@@ -155,7 +163,10 @@ export default function ParksTrailsPage() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   A Space for Everyone
                 </h3>
-                <p className="aeo-lead text-lg text-gray-700 mb-6" data-speakable>
+                <p
+                  className="aeo-lead text-lg text-gray-700 mb-6"
+                  data-speakable
+                >
                   Central Park is designed for daily use: jogging loops, picnic
                   lawns, playgrounds, splash pads, and event space in Cadence
                   Henderson NV 89011.
@@ -309,9 +320,7 @@ export default function ParksTrailsPage() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <div className="text-4xl mb-3">🏃</div>
-                <h3 className="font-bold text-gray-900 mb-2">
-                  Running Club
-                </h3>
+                <h3 className="font-bold text-gray-900 mb-2">Running Club</h3>
                 <p className="text-sm text-gray-600">
                   Saturday mornings at 7 AM
                 </p>
@@ -319,9 +328,7 @@ export default function ParksTrailsPage() {
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <div className="text-4xl mb-3">🚴</div>
                 <h3 className="font-bold text-gray-900 mb-2">Bike Group</h3>
-                <p className="text-sm text-gray-600">
-                  Sunday mornings at 8 AM
-                </p>
+                <p className="text-sm text-gray-600">Sunday mornings at 8 AM</p>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <div className="text-4xl mb-3">🌅</div>
@@ -350,4 +357,3 @@ export default function ParksTrailsPage() {
     </div>
   )
 }
-

@@ -17,7 +17,11 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ContactLayout({ children }: { children: React.ReactNode }) {
+export default function ContactLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <>
       <PageGraphSchema
@@ -25,7 +29,9 @@ export default function ContactLayout({ children }: { children: React.ReactNode 
         name={CONTACT_TITLE}
         description={CONTACT_DESCRIPTION}
         faqs={CONTACT_FAQS}
-        breadcrumbs={[{ name: 'Contact Dr. Jan Duffy in Cadence Henderson NV 89011' }]}
+        breadcrumbs={[
+          { name: 'Contact Dr. Jan Duffy in Cadence Henderson NV 89011' },
+        ]}
       />
       {children}
     </>

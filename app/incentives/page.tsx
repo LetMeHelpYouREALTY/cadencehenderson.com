@@ -80,16 +80,16 @@ export default function IncentivesPage() {
         alt="New construction incentives in Cadence Henderson NV 89011"
       />
 
-
       <section className="py-16">
         <div className="container mx-auto px-4">
           <p
             className="aeo-lead mx-auto mb-10 max-w-3xl text-center font-light text-neutral-600"
             data-speakable
           >
-            Builder incentives in Cadence Henderson NV 89011 can lower your rate, cover closing costs,
-            or include upgrades — but every offer is lot- and lender-specific. Verify the written
-            addendum before you sign.
+            Builder incentives in Cadence Henderson NV 89011 can lower your
+            rate, cover closing costs, or include upgrades — but every offer is
+            lot- and lender-specific. Verify the written addendum before you
+            sign.
           </p>
           <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
             {incentiveTypes.map((item) => {
@@ -120,8 +120,8 @@ export default function IncentivesPage() {
               Why a buyer’s agent still matters
             </h2>
             <p className="mb-4 font-light leading-relaxed text-neutral-600">
-              Incentives look generous on a sign. Net cost is what you keep after
-              rate, points, HOA, taxes, and option pricing. Dr. Jan Duffy
+              Incentives look generous on a sign. Net cost is what you keep
+              after rate, points, HOA, taxes, and option pricing. Dr. Jan Duffy
               compares Cadence builders side by side so you are not shopping
               credits in isolation.
             </p>

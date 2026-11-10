@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 
-const ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID ?? '2cc579c1ec9e426ed585e933ebf4753b'
+const ACCOUNT_ID =
+  process.env.CLOUDFLARE_ACCOUNT_ID ?? '2cc579c1ec9e426ed585e933ebf4753b'
 const ACCOUNT_HASH = 'byE6BTe9lNqo21V57n4aPQ'
 const SOURCE_PAGE = 'https://lasvegashighrisecondoliving.com/condo/'
 
@@ -37,7 +38,10 @@ async function uploadFromUrl(item: CondoSource, token: string) {
   const form = new FormData()
   form.append('url', item.url)
   form.append('id', item.id)
-  form.append('metadata', JSON.stringify({ name: item.name, source: SOURCE_PAGE }))
+  form.append(
+    'metadata',
+    JSON.stringify({ name: item.name, source: SOURCE_PAGE }),
+  )
 
   const response = await fetch(
     `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/images/v1`,
@@ -50,7 +54,9 @@ async function uploadFromUrl(item: CondoSource, token: string) {
 
   const data = await response.json()
   if (!response.ok || !data.success) {
-    const message = data.errors?.map((e: { message: string }) => e.message).join('; ')
+    const message = data.errors
+      ?.map((e: { message: string }) => e.message)
+      .join('; ')
     if (message && /already exists|duplicate/i.test(message)) {
       return { id: item.id, skipped: true as const }
     }

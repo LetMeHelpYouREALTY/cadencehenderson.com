@@ -8,10 +8,7 @@ import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
  */
 export function HomepageFAQSection() {
   return (
-    <section
-      className="py-24 bg-white"
-      aria-labelledby="homepage-faq-heading"
-    >
+    <section className="py-24 bg-white" aria-labelledby="homepage-faq-heading">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           <SectionPhoto
@@ -19,16 +16,24 @@ export function HomepageFAQSection() {
             alt="Frequently asked questions about new homes in Cadence Henderson NV 89011"
             className="mb-12"
           />
-          <h2 id="homepage-faq-heading" className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-16 text-center">
+          <h2
+            id="homepage-faq-heading"
+            className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-16 text-center"
+          >
             Frequently Asked Questions — New Homes in Cadence Henderson NV
           </h2>
           <dl className="space-y-10">
             {HOME_FAQS.map((item) => (
-              <div key={item.question} className="border-b border-neutral-200 pb-8 last:border-0 last:pb-0">
+              <div
+                key={item.question}
+                className="border-b border-neutral-200 pb-8 last:border-0 last:pb-0"
+              >
                 <dt className="text-lg font-light tracking-[0.04em] text-neutral-900 mb-4">
                   {item.question}
                 </dt>
-                <dd className="faq-answer text-gray-800 leading-relaxed">{item.answer}</dd>
+                <dd className="faq-answer text-gray-800 leading-relaxed">
+                  {item.answer}
+                </dd>
               </div>
             ))}
           </dl>

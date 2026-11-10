@@ -113,7 +113,11 @@ export default function FindYourHomePage() {
                     href={builder.href}
                     className="flex h-full items-center gap-3 rounded-sm border border-neutral-200 bg-white p-4 text-sm font-medium text-neutral-900 transition-colors hover:border-primary hover:text-primary"
                   >
-                    <Home size={18} className="shrink-0 text-primary" aria-hidden />
+                    <Home
+                      size={18}
+                      className="shrink-0 text-primary"
+                      aria-hidden
+                    />
                     {builder.name}
                   </Link>
                 </li>
@@ -122,7 +126,10 @@ export default function FindYourHomePage() {
             <p className="mt-6 text-center text-sm font-light text-neutral-500">
               Toll Brothers Concord and Everleigh at Cadence are sold out. Ask
               Dr. Jan about resale homes on those streets.{' '}
-              <Link href="/communities" className="font-medium text-primary hover:underline">
+              <Link
+                href="/communities"
+                className="font-medium text-primary hover:underline"
+              >
                 Browse every Cadence village
               </Link>
               .
@@ -149,7 +156,11 @@ export default function FindYourHomePage() {
                     href={community.href}
                     className="flex h-full items-center gap-3 rounded-sm border border-neutral-200 bg-white p-4 text-sm font-medium text-neutral-900 transition-colors hover:border-primary hover:text-primary"
                   >
-                    <Building2 size={18} className="shrink-0 text-primary" aria-hidden />
+                    <Building2
+                      size={18}
+                      className="shrink-0 text-primary"
+                      aria-hidden
+                    />
                     {community.name}
                   </Link>
                 </li>
@@ -172,7 +183,8 @@ export default function FindYourHomePage() {
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
             <Landmark size={36} className="mb-4 text-primary" aria-hidden />
             <h2 className="mb-4 text-3xl font-extralight tracking-[0.06em] text-neutral-900">
-              Compare Cadence Henderson builder incentives before you write an offer
+              Compare Cadence Henderson builder incentives before you write an
+              offer
             </h2>
             <p className="mb-8 font-light text-neutral-600">
               Rate buydowns, closing-cost credits, and included upgrades vary by
@@ -190,7 +202,9 @@ export default function FindYourHomePage() {
         path="/find-your-home"
         name="Find Your Home in Cadence Henderson NV | Floor Plans"
         description="Search new homes, rentals, and floor plans in Cadence Henderson NV 89011. Compare builders with Dr. Jan Duffy. Live inventory via RealScout."
-        faqs={defaultPageFaqs('finding a new home or rental in Cadence Henderson')}
+        faqs={defaultPageFaqs(
+          'finding a new home or rental in Cadence Henderson',
+        )}
         breadcrumbs={[
           { name: 'New homes in Cadence Henderson', path: '/new-homes' },
           { name: 'Find your home in Cadence Henderson' },

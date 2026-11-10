@@ -71,7 +71,6 @@ export default function EntertainmentPage() {
         alt="Entertainment near Cadence Henderson NV 89011"
       />
 
-
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto grid max-w-4xl gap-6">

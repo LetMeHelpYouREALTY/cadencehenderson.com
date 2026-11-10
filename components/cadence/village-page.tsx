@@ -91,10 +91,14 @@ export function VillagePageView({ village }: VillagePageViewProps) {
               <h2 className="mb-2 text-3xl font-extralight tracking-[0.06em] text-neutral-900">
                 {village.name} floor plans in Cadence Henderson NV 89011
               </h2>
-              <p className="aeo-lead mb-8 font-light text-neutral-600" data-speakable>
+              <p
+                className="aeo-lead mb-8 font-light text-neutral-600"
+                data-speakable
+              >
                 Names and sizes from the Cadence developer listing (checked
                 2026-09-09). Asking prices and lot numbers change — they are not
-                shown here. Call {CONTACT_INFO.phone}. Office: {CONTACT_INFO.welcomeCenter}.
+                shown here. Call {CONTACT_INFO.phone}. Office:{' '}
+                {CONTACT_INFO.welcomeCenter}.
               </p>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse text-left text-sm">
@@ -108,7 +112,10 @@ export function VillagePageView({ village }: VillagePageViewProps) {
                   </thead>
                   <tbody>
                     {displayPlans.map((plan) => (
-                      <tr key={plan.name} className="border-b border-neutral-100">
+                      <tr
+                        key={plan.name}
+                        className="border-b border-neutral-100"
+                      >
                         <td className="py-3">{plan.name}</td>
                         <td className="py-3">{plan.beds}</td>
                         <td className="py-3">{plan.baths}</td>
@@ -128,8 +135,8 @@ export function VillagePageView({ village }: VillagePageViewProps) {
           <div className="container mx-auto px-4">
             <p className="mx-auto max-w-4xl font-light text-neutral-600">
               Named plans on the developer site:{' '}
-              {namedOnly.map((plan) => plan.name).join(', ')}. Square footage was
-              not published — confirm at the sales office.
+              {namedOnly.map((plan) => plan.name).join(', ')}. Square footage
+              was not published — confirm at the sales office.
             </p>
           </div>
         </section>
@@ -140,7 +147,8 @@ export function VillagePageView({ village }: VillagePageViewProps) {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl">
               <h2 className="mb-6 text-2xl font-medium text-neutral-900">
-                Other {village.builderName} villages in Cadence Henderson NV 89011
+                Other {village.builderName} villages in Cadence Henderson NV
+                89011
               </h2>
               <ul className="grid gap-3 sm:grid-cols-2">
                 {siblings.map((item) => (
@@ -155,11 +163,17 @@ export function VillagePageView({ village }: VillagePageViewProps) {
                 ))}
               </ul>
               <p className="mt-6 text-sm">
-                <Link href="/lifestyle/amenities" className="text-primary hover:underline">
+                <Link
+                  href="/lifestyle/amenities"
+                  className="text-primary hover:underline"
+                >
                   Cadence Henderson amenities and Central Park
                 </Link>
                 {' · '}
-                <Link href="/find-your-home" className="text-primary hover:underline">
+                <Link
+                  href="/find-your-home"
+                  className="text-primary hover:underline"
+                >
                   Find your home in Cadence Henderson
                 </Link>
               </p>

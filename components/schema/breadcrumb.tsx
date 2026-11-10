@@ -14,10 +14,7 @@ type BreadcrumbSchemaProps = {
  * Always starts with Home > Cadence Henderson.
  */
 export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
-  const listItems = [
-    { name: 'Cadence Henderson', href: BASE_URL },
-    ...items,
-  ]
+  const listItems = [{ name: 'Cadence Henderson', href: BASE_URL }, ...items]
 
   const schema = {
     '@context': 'https://schema.org',

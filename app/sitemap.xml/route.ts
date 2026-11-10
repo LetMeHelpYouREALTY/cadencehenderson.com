@@ -25,7 +25,7 @@ export async function GET() {
         `    <lastmod>${escapeXml(toIso8601(e.lastModified))}</lastmod>\n` +
         `    <changefreq>${e.changeFrequency}</changefreq>\n` +
         `    <priority>${e.priority}</priority>\n` +
-        `  </url>`
+        `  </url>`,
     )
     .join('\n')
 

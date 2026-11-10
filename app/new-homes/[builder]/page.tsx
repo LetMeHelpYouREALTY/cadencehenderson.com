@@ -7,11 +7,29 @@ import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listi
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
-import { Home, Bed, Bath, Ruler, DollarSign, MapPin, Phone, Search } from 'lucide-react'
+import {
+  Home,
+  Bed,
+  Bath,
+  Ruler,
+  DollarSign,
+  MapPin,
+  Phone,
+  Search,
+} from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getHomeImage, getBuilderImage, getBuilderHeroImage, cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
-import { getVillagesByBuilder, NEW_HOMES_SLUG_TO_CATALOG } from '@/lib/cadence-nv-catalog'
+import {
+  getHomeImage,
+  getBuilderImage,
+  getBuilderHeroImage,
+  cfImage,
+  SITE_IMAGES,
+} from '@/lib/cloudflare-images'
+import {
+  getVillagesByBuilder,
+  NEW_HOMES_SLUG_TO_CATALOG,
+} from '@/lib/cadence-nv-catalog'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
 
@@ -150,7 +168,8 @@ const builderData: Record<
   },
   'dr-horton': {
     name: 'D.R. Horton',
-    description: "America's Builder - offering exceptional value and quality homes.",
+    description:
+      "America's Builder - offering exceptional value and quality homes.",
     longDescription:
       "As America's largest homebuilder, D.R. Horton delivers exceptional value with quality construction. Our Express Homes and Freedom Series offer move-in ready options with great finishes at competitive prices.",
     logo: '🏗️',
@@ -207,11 +226,12 @@ const builderData: Record<
       },
     ],
   },
-  'lennar': {
+  lennar: {
     name: 'Lennar',
-    description: 'Everything\'s Included® homes with the latest technology and features.',
+    description:
+      "Everything's Included® homes with the latest technology and features.",
     longDescription:
-      'Lennar is one of the nation\'s leading homebuilders. At Cadence, our Everything\'s Included® homes come with premium features, smart home technology, and designer finishes as standard - no upgrades needed.',
+      "Lennar is one of the nation's leading homebuilders. At Cadence, our Everything's Included® homes come with premium features, smart home technology, and designer finishes as standard - no upgrades needed.",
     logo: '🏡',
     contact: {
       phone: '(702) 555-0104',
@@ -227,7 +247,7 @@ const builderData: Record<
         sqft: '1,976',
         image: getHomeImage('exterior1', 'card'),
         features: [
-          'Everything\'s Included®',
+          "Everything's Included®",
           'Smart home automation',
           'Stainless steel appliances',
           'Upgraded flooring',
@@ -244,7 +264,7 @@ const builderData: Record<
         features: [
           'Open-concept living',
           'Gourmet kitchen',
-          'Owner\'s suite with spa bath',
+          "Owner's suite with spa bath",
           'Loft space',
           'Smart home package',
         ],
@@ -268,9 +288,10 @@ const builderData: Record<
   },
   'richmond-american': {
     name: 'Richmond American Homes',
-    description: 'Personalized homes with flexible floor plans and premium upgrades.',
+    description:
+      'Personalized homes with flexible floor plans and premium upgrades.',
     longDescription:
-      'Richmond American Homes offers exceptional personalization options at Cadence. Choose from our flexible floor plans and customize your home with our Personal Builder™ process to create a home that\'s uniquely yours.',
+      "Richmond American Homes offers exceptional personalization options at Cadence. Choose from our flexible floor plans and customize your home with our Personal Builder™ process to create a home that's uniquely yours.",
     logo: '🏠',
     contact: {
       phone: '(702) 555-0105',
@@ -327,7 +348,8 @@ const builderData: Record<
   },
   'storybook-homes': {
     name: 'StoryBook Homes',
-    description: 'Locally built homes with attention to detail and community focus.',
+    description:
+      'Locally built homes with attention to detail and community focus.',
     longDescription:
       'StoryBook Homes is a locally owned Nevada builder dedicated to quality craftsmanship and customer service. Our homes at Cadence feature thoughtful designs, energy-efficient construction, and the personal touch of a local builder.',
     logo: '📖',
@@ -371,7 +393,8 @@ const builderData: Record<
   },
   'taylor-morrison': {
     name: 'Taylor Morrison',
-    description: 'Luxury living with resort-style amenities and premium finishes.',
+    description:
+      'Luxury living with resort-style amenities and premium finishes.',
     longDescription:
       'Taylor Morrison brings over a century of homebuilding excellence to Cadence. Our luxury homes feature sophisticated designs, premium materials, and the attention to detail that has made us a leader in the industry.',
     logo: '🏛️',
@@ -390,7 +413,7 @@ const builderData: Record<
         image: getHomeImage('exterior3', 'card'),
         features: [
           'Luxury finishes throughout',
-          'Chef\'s kitchen',
+          "Chef's kitchen",
           'Spa-like master bath',
           'Outdoor living space',
           'Smart home ready',
@@ -430,7 +453,8 @@ const builderData: Record<
   },
   'woodside-homes': {
     name: 'Woodside Homes',
-    description: 'Award-winning designs with energy efficiency and modern style.',
+    description:
+      'Award-winning designs with energy efficiency and modern style.',
     longDescription:
       'Woodside Homes has been building quality homes in Nevada for decades. Our award-winning designs at Cadence combine contemporary style with energy-efficient features and flexible floor plans to fit your lifestyle.',
     logo: '🌲',
@@ -575,7 +599,9 @@ export default async function BuilderPage({
               Call: {CONTACT_INFO.phone}
             </Button>
           </a>
-          <a href={`mailto:${CONTACT_INFO.email}?subject=${builder.name} Information`}>
+          <a
+            href={`mailto:${CONTACT_INFO.email}?subject=${builder.name} Information`}
+          >
             <Button
               size="lg"
               variant="outline"
@@ -599,9 +625,9 @@ export default async function BuilderPage({
                 {builder.name} villages in Cadence
               </h2>
               <p className="mb-8 text-center text-gray-700">
-                Neighborhood names and published plans from the Cadence developer
-                directory. Asking prices change — confirm current inventory with
-                Dr. Jan.
+                Neighborhood names and published plans from the Cadence
+                developer directory. Asking prices change — confirm current
+                inventory with Dr. Jan.
               </p>
               <ul className="grid gap-3 sm:grid-cols-2">
                 {villages.map((village) => (
@@ -651,7 +677,8 @@ export default async function BuilderPage({
                   Interested in {builder.name}?
                 </h3>
                 <p className="text-gray-700">
-                  Contact Dr. Jan Duffy to schedule a tour and get expert guidance
+                  Contact Dr. Jan Duffy to schedule a tour and get expert
+                  guidance
                 </p>
               </div>
               <div className="grid md:grid-cols-3 gap-6">
@@ -678,7 +705,9 @@ export default async function BuilderPage({
                 <div className="text-center">
                   <Home className="mx-auto mb-3 text-blue-900" size={32} />
                   <h3 className="font-bold text-gray-900 mb-2">Available</h3>
-                  <p className="text-gray-700">{builder.models.length} Floor Plans</p>
+                  <p className="text-gray-700">
+                    {builder.models.length} Floor Plans
+                  </p>
                 </div>
               </div>
             </div>
@@ -732,10 +761,7 @@ export default async function BuilderPage({
                       <div className="text-xs text-gray-600">Baths</div>
                     </div>
                     <div className="text-center">
-                      <Ruler
-                        size={20}
-                        className="mx-auto mb-1 text-gray-600"
-                      />
+                      <Ruler size={20} className="mx-auto mb-1 text-gray-600" />
                       <div className="font-bold text-gray-900">
                         {model.sqft}
                       </div>
@@ -771,9 +797,9 @@ export default async function BuilderPage({
               Ready to Make {builder.name} Your Home?
             </h2>
             <p className="text-xl text-gray-700 mb-8">
-              Contact Dr. Jan Duffy to tour {builder.name} model homes and explore
-              available floor plans. I'll arrange builder meetings and guide you
-              through the entire process.
+              Contact Dr. Jan Duffy to tour {builder.name} model homes and
+              explore available floor plans. I'll arrange builder meetings and
+              guide you through the entire process.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <CalendlyLink>
@@ -798,7 +824,9 @@ export default async function BuilderPage({
                   Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
-              <a href={`mailto:${CONTACT_INFO.email}?subject=${builder.name} Tour Request`}>
+              <a
+                href={`mailto:${CONTACT_INFO.email}?subject=${builder.name} Tour Request`}
+              >
                 <Button
                   size="lg"
                   variant="outline"
@@ -834,4 +862,3 @@ export async function generateStaticParams() {
     builder,
   }))
 }
-

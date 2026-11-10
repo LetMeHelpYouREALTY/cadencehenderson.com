@@ -77,7 +77,8 @@ export function PageGraphSchema({
       },
       inLanguage: 'en-US',
       author: { '@id': PERSON_ID },
-      mainEntity: faqs && faqs.length > 0 ? { '@id': faqId } : { '@id': AGENT_ID },
+      mainEntity:
+        faqs && faqs.length > 0 ? { '@id': faqId } : { '@id': AGENT_ID },
     },
     {
       '@type': 'Person',
@@ -87,7 +88,11 @@ export function PageGraphSchema({
       telephone: `+1-${CONTACT_INFO.phone}`,
       email: CONTACT_INFO.email,
       worksFor: { '@id': AGENT_ID },
-      sameAs: [SOCIAL_MEDIA.facebook, SOCIAL_MEDIA.instagram, SOCIAL_MEDIA.twitter],
+      sameAs: [
+        SOCIAL_MEDIA.facebook,
+        SOCIAL_MEDIA.instagram,
+        SOCIAL_MEDIA.twitter,
+      ],
     },
   ]
 
@@ -108,7 +113,10 @@ export function PageGraphSchema({
     })
   }
 
-  const crumbItems = [{ name: 'Cadence Henderson NV 89011', path: '/' }, ...breadcrumbs]
+  const crumbItems = [
+    { name: 'Cadence Henderson NV 89011', path: '/' },
+    ...breadcrumbs,
+  ]
   graph.push({
     '@type': 'BreadcrumbList',
     '@id': `${url}#breadcrumb`,

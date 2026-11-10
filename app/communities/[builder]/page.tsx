@@ -27,7 +27,9 @@ export async function generateStaticParams() {
   return [...slugs].map((builder) => ({ builder }))
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { builder } = await params
   const hub = CADENCE_BUILDER_HUBS.find((item) => item.slug === builder)
   const name = hub?.name ?? builder
@@ -68,7 +70,10 @@ export default async function BuilderCommunitiesPage({ params }: PageProps) {
         <div className="container mx-auto px-4">
           <ul className="mx-auto grid max-w-4xl gap-4">
             {villages.map((village) => (
-              <li key={village.cadencePath} className="border-b border-neutral-200 pb-4">
+              <li
+                key={village.cadencePath}
+                className="border-b border-neutral-200 pb-4"
+              >
                 <Link
                   href={village.cadencePath}
                   className="text-xl font-medium text-primary hover:underline"
@@ -89,7 +94,10 @@ export default async function BuilderCommunitiesPage({ params }: PageProps) {
             ))}
           </ul>
           <p className="mx-auto mt-8 max-w-4xl">
-            <Link href={hub.href} className="text-sm font-medium text-primary hover:underline">
+            <Link
+              href={hub.href}
+              className="text-sm font-medium text-primary hover:underline"
+            >
               {hub.name} overview
             </Link>
           </p>

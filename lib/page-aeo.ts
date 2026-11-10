@@ -26,7 +26,8 @@ export const CONTACT_FAQS: FaqItem[] = [
     answer: `${NAP}, near Bicentennial Pkwy and Paseo Verde.`,
   },
   {
-    question: 'How can I get a free home value estimate for my Cadence Henderson home?',
+    question:
+      'How can I get a free home value estimate for my Cadence Henderson home?',
     answer: `Use the home value widget on this page or call ${PHONE} for an instant estimate.`,
   },
 ]
@@ -45,7 +46,8 @@ export const HOME_FAQS: FaqItem[] = [
     answer: `New homes in Cadence Henderson range from the $300Ks to $700K+, depending on the builder, floor plan, and lot. Rate buydown incentives and closing cost contributions are often available. Call Dr. Jan Duffy at ${PHONE} for this week's pricing. Office: ${NAP}.`,
   },
   {
-    question: "Can a buyer's agent negotiate with new home builders in Henderson NV?",
+    question:
+      "Can a buyer's agent negotiate with new home builders in Henderson NV?",
     answer: `Yes. Dr. Jan Duffy negotiates upgrades, lot premiums, closing costs, and rate buydowns with Cadence builders on behalf of buyers — at zero cost to the buyer. The builder pays her commission. Call ${PHONE} before touring models.`,
   },
   {
@@ -58,7 +60,8 @@ export const HOME_FAQS: FaqItem[] = [
 /** Visible + JSON-LD FAQs for /sell-in-cadence (sell to buy in Cadence, not generic Henderson valuation). */
 export const SELL_IN_CADENCE_FAQS: FaqItem[] = [
   {
-    question: 'Can I sell my current home and buy new construction in Cadence Henderson?',
+    question:
+      'Can I sell my current home and buy new construction in Cadence Henderson?',
     answer:
       'Yes. Many buyers sell an existing home and use the equity toward a new build in Cadence, a master-planned community in Henderson NV 89011 with multiple builders. Dr. Jan Duffy helps you line up listing timing, builder deposits, and closings so you are not stuck between two mortgages longer than necessary.',
   },
@@ -85,7 +88,8 @@ export function defaultPageFaqs(topic: string): FaqItem[] {
       answer: `The office is at ${NAP}, matching the Google Business Profile. Hours are ${HOURS}. Call ${PHONE} or use the maps page for directions to Cadence Henderson NV ${CONTACT_INFO.address.zip}.`,
     },
     {
-      question: 'Does a buyer’s agent cost extra on new homes in Cadence Henderson?',
+      question:
+        'Does a buyer’s agent cost extra on new homes in Cadence Henderson?',
       answer: `No. On Cadence new construction the builder typically pays Dr. Jan Duffy’s fee, so buyer representation does not add a line item to your contract. Call ${PHONE} before the first model-home visit so the sales office registers her as your agent.`,
     },
   ]

@@ -25,9 +25,7 @@ export function CalendlyInlineWidget({
   const containerRef = useRef<HTMLDivElement>(null)
   const onReadyRef = useRef(onReady)
   onReadyRef.current = onReady
-  const combinedStyle = style
-    ? { ...DEFAULT_STYLE, ...style }
-    : DEFAULT_STYLE
+  const combinedStyle = style ? { ...DEFAULT_STYLE, ...style } : DEFAULT_STYLE
 
   useEffect(() => {
     const el = containerRef.current

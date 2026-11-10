@@ -13,19 +13,31 @@ type AgentContactCtaProps = {
  */
 export function AgentContactCta({ heading, body }: AgentContactCtaProps) {
   return (
-    <section className="bg-cadence-ink py-16 text-white" aria-labelledby="agent-cta-heading">
+    <section
+      className="bg-cadence-ink py-16 text-white"
+      aria-labelledby="agent-cta-heading"
+    >
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 id="agent-cta-heading" className="mb-4 text-3xl font-extralight tracking-[0.06em]">
+          <h2
+            id="agent-cta-heading"
+            className="mb-4 text-3xl font-extralight tracking-[0.06em]"
+          >
             {heading}
           </h2>
-          <p className="aeo-lead mb-4 text-lg font-light text-white/80" data-speakable>
+          <p
+            className="aeo-lead mb-4 text-lg font-light text-white/80"
+            data-speakable
+          >
             {body}
           </p>
           <p className="mb-4 text-sm font-light text-white/70">
-            {CONTACT_INFO.siteName} · {CONTACT_INFO.welcomeCenter} · {CONTACT_INFO.phone}
+            {CONTACT_INFO.siteName} · {CONTACT_INFO.welcomeCenter} ·{' '}
+            {CONTACT_INFO.phone}
           </p>
-          <p className="mb-8 text-sm font-light text-white/60">{CONTACT_INFO.hours}</p>
+          <p className="mb-8 text-sm font-light text-white/60">
+            {CONTACT_INFO.hours}
+          </p>
           <div className="mb-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-light">
             <a
               href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}

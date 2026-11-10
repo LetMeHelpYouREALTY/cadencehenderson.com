@@ -120,8 +120,9 @@ export default function GalleryPage() {
           className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-light text-neutral-600"
           data-speakable
         >
-          Photos of Central Park, pools, events, and new homes in Cadence Henderson NV 89011 — the
-          master-planned community at Bicentennial Parkway and Paseo Verde.
+          Photos of Central Park, pools, events, and new homes in Cadence
+          Henderson NV 89011 — the master-planned community at Bicentennial
+          Parkway and Paseo Verde.
         </p>
       </section>
 
@@ -158,7 +159,9 @@ export default function GalleryPage() {
               <div
                 key={index}
                 className="relative aspect-square bg-gray-200 rounded-lg overflow-hidden group cursor-pointer"
-                onClick={() => setLightboxImage({ url: image.url, title: image.title })}
+                onClick={() =>
+                  setLightboxImage({ url: image.url, title: image.title })
+                }
               >
                 <SiteImage
                   src={image.url}
@@ -248,7 +251,11 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <section id="page-faq" className="bg-neutral-50 py-16" aria-labelledby="page-faq-heading">
+      <section
+        id="page-faq"
+        className="bg-neutral-50 py-16"
+        aria-labelledby="page-faq-heading"
+      >
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl">
             <h2
@@ -258,12 +265,21 @@ export default function GalleryPage() {
               Cadence Henderson gallery — questions
             </h2>
             <dl className="space-y-8">
-              {defaultPageFaqs('Cadence Henderson photo gallery').map((item) => (
-                <div key={item.question} className="border-b border-neutral-200 pb-8 last:border-0 last:pb-0">
-                  <dt className="mb-3 text-lg font-medium text-neutral-900">{item.question}</dt>
-                  <dd className="faq-answer text-gray-800 leading-relaxed">{item.answer}</dd>
-                </div>
-              ))}
+              {defaultPageFaqs('Cadence Henderson photo gallery').map(
+                (item) => (
+                  <div
+                    key={item.question}
+                    className="border-b border-neutral-200 pb-8 last:border-0 last:pb-0"
+                  >
+                    <dt className="mb-3 text-lg font-medium text-neutral-900">
+                      {item.question}
+                    </dt>
+                    <dd className="faq-answer text-gray-800 leading-relaxed">
+                      {item.answer}
+                    </dd>
+                  </div>
+                ),
+              )}
             </dl>
           </div>
         </div>
@@ -272,4 +288,3 @@ export default function GalleryPage() {
     </div>
   )
 }
-

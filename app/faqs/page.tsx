@@ -9,7 +9,14 @@ import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { ChevronDown, ChevronUp, HelpCircle, Calendar, Phone, Mail } from 'lucide-react'
+import {
+  ChevronDown,
+  ChevronUp,
+  HelpCircle,
+  Calendar,
+  Phone,
+  Mail,
+} from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { NapStrip } from '@/components/cadence/nap-strip'
@@ -96,7 +103,7 @@ const faqCategories = [
       },
       {
         q: 'Is there shopping and dining nearby?',
-        a: 'Yes! Cadence Marketplace is within the community, and the Galleria at Sunset mall is just 5 minutes away. You\'ll find grocery stores, restaurants, retail shops, and entertainment options all nearby.',
+        a: "Yes! Cadence Marketplace is within the community, and the Galleria at Sunset mall is just 5 minutes away. You'll find grocery stores, restaurants, retail shops, and entertainment options all nearby.",
       },
       {
         q: 'How far is Cadence from the Las Vegas Strip?',
@@ -133,8 +140,9 @@ export default function FAQsPage() {
           className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-light text-neutral-600"
           data-speakable
         >
-          Answers about Cadence Henderson builders, schools, amenities, and buying new construction in
-          Henderson NV 89011. For a personal answer, call Dr. Jan Duffy at {CONTACT_INFO.phone}.
+          Answers about Cadence Henderson builders, schools, amenities, and
+          buying new construction in Henderson NV 89011. For a personal answer,
+          call Dr. Jan Duffy at {CONTACT_INFO.phone}.
         </p>
       </section>
 
@@ -144,7 +152,6 @@ export default function FAQsPage() {
         src={cfImage(SITE_IMAGES.sections.faqs, 'hero')}
         alt="Answers about buying new homes in Cadence Henderson NV 89011"
       />
-
 
       {/* FAQs Content */}
       <section className="py-16">
@@ -214,12 +221,10 @@ export default function FAQsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
               <Calendar size={48} className="mx-auto mb-4" />
-              <h2 className="text-3xl font-bold mb-4">
-                Still Have Questions?
-              </h2>
+              <h2 className="text-3xl font-bold mb-4">Still Have Questions?</h2>
               <p className="text-xl text-white mb-6">
-                Schedule a free consultation with Dr. Jan Duffy for personalized answers
-                and to schedule a tour of Cadence.
+                Schedule a free consultation with Dr. Jan Duffy for personalized
+                answers and to schedule a tour of Cadence.
               </p>
               <div className="flex flex-wrap gap-4 justify-center mb-8">
                 <a
@@ -254,4 +259,3 @@ export default function FAQsPage() {
     </div>
   )
 }
-

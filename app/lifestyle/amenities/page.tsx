@@ -87,10 +87,13 @@ export const metadata: Metadata = {
   title: 'Cadence Henderson Amenities – Central Park, Pools & Trails',
   description:
     '50-acre Central Park, resort pools, splash pads, fitness centers, pickleball courts, dog parks & 30+ miles of trails in Cadence Henderson NV 89011.',
-  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/amenities' },
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/amenities',
+  },
   openGraph: {
     title: 'Cadence Henderson Amenities – Central Park, Pools & Trails',
-    description: '50-acre Central Park, resort pools, fitness centers, pickleball courts & trails in Cadence Henderson NV 89011.',
+    description:
+      '50-acre Central Park, resort pools, fitness centers, pickleball courts & trails in Cadence Henderson NV 89011.',
     url: 'https://www.cadencehenderson.com/lifestyle/amenities',
   },
 }
@@ -195,9 +198,7 @@ export default function AmenitiesPage() {
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="flex items-center text-white mb-2">
                         <IconComponent size={32} className="mr-3" />
-                        <h3 className="text-2xl font-bold">
-                          {amenity.name}
-                        </h3>
+                        <h3 className="text-2xl font-bold">{amenity.name}</h3>
                       </div>
                     </div>
                   </div>
@@ -322,10 +323,7 @@ export default function AmenitiesPage() {
                     </span>
                   </li>
                 </ul>
-                <Button
-                  size="lg"
-                  className="bg-cyan-900 hover:bg-cyan-800"
-                >
+                <Button size="lg" className="bg-cyan-900 hover:bg-cyan-800">
                   Explore Central Park
                 </Button>
               </div>
@@ -488,9 +486,13 @@ export default function AmenitiesPage() {
                 >
                   <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
                     {q}
-                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
+                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">
+                      ▾
+                    </span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">
+                    {a}
+                  </p>
                 </details>
               ))}
             </div>
@@ -511,4 +513,3 @@ export default function AmenitiesPage() {
     </div>
   )
 }
-

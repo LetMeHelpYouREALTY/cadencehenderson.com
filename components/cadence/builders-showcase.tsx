@@ -79,10 +79,13 @@ export function BuildersShowcase() {
   return (
     <section className="py-24 bg-neutral-50" aria-labelledby="builders-heading">
       <div className="container mx-auto px-4 sm:px-6">
-        <h2 id="builders-heading" className="text-4xl font-extralight tracking-[0.06em] text-center text-neutral-900 mb-16">
+        <h2
+          id="builders-heading"
+          className="text-4xl font-extralight tracking-[0.06em] text-center text-neutral-900 mb-16"
+        >
           New Home Builders in Cadence Henderson
         </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-px bg-neutral-200">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-px bg-neutral-200">
           {builders.map((builder) => {
             const className =
               'bg-white p-8 flex flex-col items-center justify-center text-center'
@@ -113,7 +116,11 @@ export function BuildersShowcase() {
                 {content}
               </a>
             ) : (
-              <Link key={builder.name} href={builder.href} className={className}>
+              <Link
+                key={builder.name}
+                href={builder.href}
+                className={className}
+              >
                 {content}
               </Link>
             )
@@ -123,4 +130,3 @@ export function BuildersShowcase() {
     </section>
   )
 }
-

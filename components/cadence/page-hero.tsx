@@ -35,21 +35,27 @@ export function PageHero({
         priority
         className="opacity-80"
       />
-      <div
-        className="absolute inset-0 bg-black/35"
-        aria-hidden
-      />
+      <div className="absolute inset-0 bg-black/35" aria-hidden />
       <div className="relative container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center text-white">
-          {Icon ? <Icon size={40} className="mx-auto mb-8 opacity-80" aria-hidden /> : null}
+          {Icon ? (
+            <Icon size={40} className="mx-auto mb-8 opacity-80" aria-hidden />
+          ) : null}
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-white/75">
-            Cadence Henderson NV {CONTACT_INFO.address.zip} · {CONTACT_INFO.phone}
+            Cadence Henderson NV {CONTACT_INFO.address.zip} ·{' '}
+            {CONTACT_INFO.phone}
           </p>
-          <h1 id="page-hero-heading" className="mb-6 text-4xl md:text-5xl font-extralight tracking-[0.08em]">
+          <h1
+            id="page-hero-heading"
+            className="mb-6 text-4xl md:text-5xl font-extralight tracking-[0.08em]"
+          >
             {title}
           </h1>
           {subtitle ? (
-            <div className="aeo-lead mb-10 text-lg font-light text-white/90" data-speakable>
+            <div
+              className="aeo-lead mb-10 text-lg font-light text-white/90"
+              data-speakable
+            >
               {subtitle}
             </div>
           ) : null}

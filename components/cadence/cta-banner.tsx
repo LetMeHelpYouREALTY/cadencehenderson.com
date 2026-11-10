@@ -12,7 +12,8 @@ export function CTABanner() {
             Ready to Buy or Sell at Cadence?
           </h2>
           <p className="text-lg font-light text-white/85 mb-12">
-            Whether you&apos;re looking for your next home or ready to sell, Dr. Jan Duffy is here for you.
+            Whether you&apos;re looking for your next home or ready to sell, Dr.
+            Jan Duffy is here for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-10">
             <Button

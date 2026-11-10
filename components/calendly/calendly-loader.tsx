@@ -10,10 +10,8 @@ import {
   type ReactNode,
 } from 'react'
 
-const CALENDLY_SCRIPT =
-  'https://assets.calendly.com/assets/external/widget.js'
-const CALENDLY_CSS =
-  'https://assets.calendly.com/assets/external/widget.css'
+const CALENDLY_SCRIPT = 'https://assets.calendly.com/assets/external/widget.js'
+const CALENDLY_CSS = 'https://assets.calendly.com/assets/external/widget.css'
 
 type CalendlyContextValue = {
   loadCalendly: () => Promise<void>
@@ -36,7 +34,7 @@ export function useCalendly() {
 function ensureCalendlyCss() {
   if (typeof document === 'undefined') return
   const link = document.querySelector<HTMLLinkElement>(
-    `link[href="${CALENDLY_CSS}"]`
+    `link[href="${CALENDLY_CSS}"]`,
   )
   if (link) link.media = 'all'
   else {

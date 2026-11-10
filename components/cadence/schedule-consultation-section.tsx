@@ -48,11 +48,16 @@ export function ScheduleConsultationSection() {
           />
         </div>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 id="schedule-consultation-heading" className="text-3xl md:text-4xl font-extralight tracking-[0.06em] mb-6 text-white">
+          <h2
+            id="schedule-consultation-heading"
+            className="text-3xl md:text-4xl font-extralight tracking-[0.06em] mb-6 text-white"
+          >
             Ready to Buy New Homes at Cadence Henderson?
           </h2>
           <p className="text-lg md:text-xl text-white mb-6 max-w-2xl mx-auto">
-            Schedule your free 15-minute buyer consultation with Dr. Jan Duffy. New homes Cadence Henderson NV 89011 — builder pays her fee; free to you.
+            Schedule your free 15-minute buyer consultation with Dr. Jan Duffy.
+            New homes Cadence Henderson NV 89011 — builder pays her fee; free to
+            you.
           </p>
           <div className="flex flex-wrap gap-3 justify-center mb-8">
             <Button
@@ -86,7 +91,10 @@ export function ScheduleConsultationSection() {
         {/* Calendly on white card so text is readable (no white-on-blue) */}
         <div className="max-w-4xl mx-auto overflow-hidden bg-white border border-white/20 p-4 md:p-8">
           {showLoadingFallback && !calendarReady && !showIframeFallback && (
-            <p className="text-center text-gray-500 py-4 text-sm" aria-live="polite">
+            <p
+              className="text-center text-gray-500 py-4 text-sm"
+              aria-live="polite"
+            >
               Loading calendar…
             </p>
           )}
@@ -116,12 +124,13 @@ export function ScheduleConsultationSection() {
               className="underline hover:no-underline text-neutral-900"
             >
               Open scheduler in a new tab
-            </a>
-            {' '}if the calendar doesn’t load.
+            </a>{' '}
+            if the calendar doesn’t load.
           </p>
         </div>
         <p className="text-center text-sm text-white mt-6">
-          Dr. Jan Duffy, REALTOR® — Cadence Henderson new home buyer’s agent, licensed since 2008 · 35 years in Las Vegas.
+          Dr. Jan Duffy, REALTOR® — Cadence Henderson new home buyer’s agent,
+          licensed since 2008 · 35 years in Las Vegas.
         </p>
       </div>
     </section>

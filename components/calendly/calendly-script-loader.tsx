@@ -14,7 +14,8 @@ export function CalendlyScriptLoader() {
       strategy="afterInteractive"
       onLoad={() => {
         if (typeof window === 'undefined') return
-        const fire = () => window.dispatchEvent(new CustomEvent('calendly-loaded'))
+        const fire = () =>
+          window.dispatchEvent(new CustomEvent('calendly-loaded'))
         if (window.Calendly) {
           fire()
           return

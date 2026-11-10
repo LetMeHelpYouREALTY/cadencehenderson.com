@@ -10,10 +10,7 @@ export async function POST(request: NextRequest) {
     const email = formData.get('email')?.toString()?.trim()
 
     if (!email) {
-      return NextResponse.json(
-        { error: 'Email is required' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'Email is required' }, { status: 400 })
     }
 
     // Placeholder: log or send to CRM when integrated
@@ -21,11 +18,11 @@ export async function POST(request: NextRequest) {
       console.info('[Newsletter] Signup:', email)
     }
 
-    return NextResponse.redirect(new URL('/?newsletter=subscribed', request.url), 302)
-  } catch {
-    return NextResponse.json(
-      { error: 'Something went wrong' },
-      { status: 500 }
+    return NextResponse.redirect(
+      new URL('/?newsletter=subscribed', request.url),
+      302,
     )
+  } catch {
+    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 })
   }
 }

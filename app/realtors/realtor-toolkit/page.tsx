@@ -74,7 +74,6 @@ export default function RealtorToolkitPage() {
         alt="Cadence Henderson NV 89011 new home interior"
       />
 
-
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2">
@@ -136,7 +135,9 @@ export default function RealtorToolkitPage() {
         path="/realtors/realtor-toolkit"
         name="Cadence Henderson Realtor Toolkit | Agent Resources"
         description="Cadence Henderson talking points, village links, and Fair Housing reminders for cooperating agents. Dr. Jan Duffy, Henderson NV 89011."
-        faqs={defaultPageFaqs('showing Cadence Henderson as a cooperating realtor')}
+        faqs={defaultPageFaqs(
+          'showing Cadence Henderson as a cooperating realtor',
+        )}
         breadcrumbs={[
           { name: 'Realtors', path: '/realtors' },
           { name: 'Realtor toolkit' },

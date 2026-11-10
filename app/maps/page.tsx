@@ -21,8 +21,7 @@ import { NapStrip } from '@/components/cadence/nap-strip'
 
 export const metadata: Metadata = {
   title: 'Cadence Henderson Location & Directions | Henderson NV 89011',
-  description:
-    `Find Cadence Henderson real estate at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. ${CONTACT_INFO.address.street}. Maps, directions & nearby landmarks.`,
+  description: `Find Cadence Henderson real estate at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. ${CONTACT_INFO.address.street}. Maps, directions & nearby landmarks.`,
   alternates: { canonical: 'https://www.cadencehenderson.com/maps' },
   openGraph: {
     title: 'Cadence Henderson Location & Directions | Henderson NV 89011',
@@ -43,7 +42,8 @@ export default function MapsPage() {
             <p className="text-2xl font-bold mb-4">{CONTACT_INFO.siteName}</p>
             <p>
               Visit our office to learn about Cadence Henderson homes, schedule
-              tours, and get expert guidance from Dr. Jan Duffy, REALTOR®, licensed since 2008 · 35 years in Las Vegas.
+              tours, and get expert guidance from Dr. Jan Duffy, REALTOR®,
+              licensed since 2008 · 35 years in Las Vegas.
             </p>
           </>
         }
@@ -61,15 +61,18 @@ export default function MapsPage() {
         alt="Maps and trail access in Cadence Henderson NV 89011"
       />
 
-
       {/* Embedded Google Map */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
             {CONTACT_INFO.siteName} office map
           </h2>
-          <p className="aeo-lead text-xl text-gray-600 mb-8 text-center" data-speakable>
-            {CONTACT_INFO.welcomeCenter} · {CONTACT_INFO.phone} · {CONTACT_INFO.hours}
+          <p
+            className="aeo-lead text-xl text-gray-600 mb-8 text-center"
+            data-speakable
+          >
+            {CONTACT_INFO.welcomeCenter} · {CONTACT_INFO.phone} ·{' '}
+            {CONTACT_INFO.hours}
           </p>
           <div className="bg-white rounded-lg shadow-xl overflow-hidden">
             <iframe
@@ -238,7 +241,10 @@ export default function MapsPage() {
       <section className="py-16 bg-gray-50" aria-labelledby="maps-faq-heading">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 id="maps-faq-heading" className="text-3xl font-bold text-gray-900 mb-2 text-center">
+            <h2
+              id="maps-faq-heading"
+              className="text-3xl font-bold text-gray-900 mb-2 text-center"
+            >
               Cadence Henderson maps FAQs
             </h2>
             <p className="text-center text-gray-600 mb-8">
@@ -289,17 +295,36 @@ export default function MapsPage() {
             />
             <div className="space-y-4">
               {[
-                { q: 'Where is Cadence Henderson located?', a: `Cadence Henderson is at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. The office is at ${CONTACT_INFO.welcomeCenter}.` },
-                { q: 'How do I get directions to Cadence Henderson?', a: `Click Get Directions above or search ${CONTACT_INFO.welcomeCenter} in Google Maps. About 20 minutes from the Las Vegas Strip.` },
-                { q: 'What landmarks are near Cadence Henderson NV 89011?', a: '15 min from Harry Reid Airport, 20 min from the Strip, 15 min from Lake Mead. Galleria at Sunset mall is 5 minutes away.' },
-                { q: 'What are the Cadence Henderson office hours?', a: `Open 10AM–6PM daily at ${CONTACT_INFO.welcomeCenter}. Call ${CONTACT_INFO.phone} before visiting.` },
+                {
+                  q: 'Where is Cadence Henderson located?',
+                  a: `Cadence Henderson is at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. The office is at ${CONTACT_INFO.welcomeCenter}.`,
+                },
+                {
+                  q: 'How do I get directions to Cadence Henderson?',
+                  a: `Click Get Directions above or search ${CONTACT_INFO.welcomeCenter} in Google Maps. About 20 minutes from the Las Vegas Strip.`,
+                },
+                {
+                  q: 'What landmarks are near Cadence Henderson NV 89011?',
+                  a: '15 min from Harry Reid Airport, 20 min from the Strip, 15 min from Lake Mead. Galleria at Sunset mall is 5 minutes away.',
+                },
+                {
+                  q: 'What are the Cadence Henderson office hours?',
+                  a: `Open 10AM–6PM daily at ${CONTACT_INFO.welcomeCenter}. Call ${CONTACT_INFO.phone} before visiting.`,
+                },
               ].map(({ q, a }) => (
-                <details key={q} className="group border border-gray-200 rounded-lg p-5 cursor-pointer bg-white">
+                <details
+                  key={q}
+                  className="group border border-gray-200 rounded-lg p-5 cursor-pointer bg-white"
+                >
                   <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
                     {q}
-                    <span className="text-teal-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
+                    <span className="text-teal-900 shrink-0 group-open:rotate-180 transition-transform">
+                      ▾
+                    </span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">
+                    {a}
+                  </p>
                 </details>
               ))}
             </div>
@@ -311,10 +336,11 @@ export default function MapsPage() {
         path="/maps"
         name="Cadence Henderson Location & Directions | Henderson NV 89011"
         description={`Find Cadence Henderson real estate at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. ${CONTACT_INFO.address.street}. Maps, directions & nearby landmarks.`}
-        breadcrumbs={[{ name: 'Maps and directions to Cadence Henderson NV 89011' }]}
+        breadcrumbs={[
+          { name: 'Maps and directions to Cadence Henderson NV 89011' },
+        ]}
       />
       <Footer />
     </div>
   )
 }
-
