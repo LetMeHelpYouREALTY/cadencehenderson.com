@@ -82,7 +82,7 @@ function FaqsPageSchema() {
         name: 'What amenities does Cadence Henderson have?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence Henderson features a 50-acre Central Park, multiple pools and spas, fitness centers, pickleball and sports courts, dog parks, playgrounds, 30+ miles of walking trails, and clubhouses. Most amenities in Cadence Henderson 89011 are free for residents.',
+          text: 'Per cadencenv.com/lifestyle/amenities, Cadence Henderson features a 50-acre Central Park with free wifi, a resident-only community pool with Strip views, two splash pads (including ~2,000 sq ft in the Pool Complex), adventure park/playground, Fitness Court, pickleball courts, trails, a dog park, and Sunset Road Linear Park. Confirm hours and access with the Cadence Master Association at 702-605-3111.',
         },
       },
       {
@@ -90,7 +90,7 @@ function FaqsPageSchema() {
         name: 'What are the HOA fees in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `Cadence Henderson HOA fees vary by neighborhood and builder but typically range from $50–$150/month for the master association, with some sub-associations charging additional fees. Call ${CONTACT_INFO.phone} for current Cadence Henderson HOA fee schedules.`,
+          text: `Cadence Henderson Master Association assessments and any sub-association dues vary by neighborhood and change over time. This site does not publish fee ranges. Call the Cadence Master Association at 702-605-3111 or email Info@CadenceHOA.com for current amounts. Call ${CONTACT_INFO.phone} for Cadence home-buying questions with Dr. Jan Duffy.`,
         },
       },
       {
@@ -98,7 +98,7 @@ function FaqsPageSchema() {
         name: 'Can I reserve amenities for private events in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, Cadence Henderson residents can reserve clubhouses and other amenity spaces for private events through the online resident portal. Some fees may apply.',
+          text: 'Residents may reserve park picnic tables and poolside tables through the Cadence Master Association (702-605-3111 or Association reservation forms). Only picnic tables are reservable; grass areas cannot be reserved, and weddings, professional parties, and company picnics are not permitted. Do not call the realtor line for Association reservations.',
         },
       },
       {

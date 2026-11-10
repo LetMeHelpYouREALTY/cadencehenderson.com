@@ -39,12 +39,12 @@ const FALLBACK_ARTICLES: NewsArticle[] = [
   },
   {
     id: 2,
-    link: 'https://cadencenv.com/',
-    title: 'Summer Concert Series Returns to Cadence',
-    date: 'September 15, 2025',
+    link: 'https://www.cadencecommunityassociation.com/community-calendar/',
+    title: 'Check the Official Cadence Community Calendar',
+    date: 'Updated regularly',
     category: 'Events',
     excerpt:
-      'Join us for live music every Friday evening in Central Park. This year\'s lineup features local and regional artists across multiple genres.',
+      'Upcoming Cadence lifestyle events are published by the Cadence Master Association. Visit the Association community calendar for current dates — not unofficial third-party listings.',
     image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
   },
   {

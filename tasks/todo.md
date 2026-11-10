@@ -1,31 +1,28 @@
-# Task plan — SEO / GEO / AEO
+# Task plan — Association events/amenities accuracy
 
-## Completed (2026-10-17 pass 1)
+## Goal
 
-- [x] Page-matched FAQ schema; contact/gallery graphs; noindex `/projects/`
-- [x] Homepage services link → `/sell-in-cadence`
+Remove or correct website copy that presents unofficial Cadence event schedules and amenity/HOA operations as fact, so residents stop contacting the wrong office.
 
-## Completed (2026-10-17 pass 2)
+## Plan
 
-- [x] Remove unused `faq-page.tsx` (homepage uses `HOME_FAQS` + `PageGraphSchema`)
-- [x] Site-wide `WebSite` + `SearchAction` in `WebsiteSchema` (once in root layout)
-- [x] Deduplicate `WebSite` node from per-page `PageGraphSchema`; `containedInPlace` on Cadence Place
-- [x] Trim meta descriptions >160 chars on key lifestyle/communities/realtor pages
-- [x] `NapStrip` on `/new-homes`, `/lifestyle`, `/rentals`
+- [x] Replace fabricated `/lifestyle/events` calendar with Association + cadencenv.com calendar links
+- [x] Rewrite `/lifestyle/amenities` to match https://cadencenv.com/lifestyle/amenities/
+- [x] Correct amenities / lifestyle / FAQs copy (fees, free access, reservations via realtor phone)
+- [x] Update `HOA_CONTACT` to verified Cadence Master Association details
+- [x] Soften related news/community claims that invent specific Association events
+- [x] Point residents page HOA block at Association phone 702-605-3111
+- [ ] Commit, push, open PR
 
-## Completed (2026-10-17 pass 3)
+## Sources used (Parallel)
 
-- [x] `?query=` on `/find-your-home` — scroll + banner (`FindYourHomeQuerySync`) for WebSite SearchAction
-- [x] `id="home-search"` on `HomeSearchSection` (aligns with nav `/#home-search` via `HomeFinder` on homepage)
-- [x] Trim schools page meta description to ≤160 chars
-- [x] `NapStrip` on `/find-your-home`, `/communities`, `/sell-in-cadence`
+- https://cadencenv.com/lifestyle/events/ (0 upcoming events)
+- https://cadencenv.com/lifestyle/amenities/
+- https://www.cadencecommunityassociation.com/community-calendar
+- https://www.cadencecommunityassociation.com/amenity-information
+- https://www.cadencecommunityassociation.com/cadence-parks
+- https://www.cadencecommunityassociation.com/community-contacts/
 
-## Completed (2026-10-17 pass 4)
+## Review
 
-- [x] `npm run seo:metadata-audit` + GitHub Actions CI (audit, format, lint, build)
-- [x] `NapStrip` on contact, maps, realtors, incentives, apartments, past-homesales, gallery, faqs, residents; new-homes strip moved below hero
-- [x] Extra `data-speakable` / `.aeo-lead` blocks on communities, find-your-home, new-homes, gallery, faqs, apartments, incentives, contact
-
-## Remaining
-
-- [ ] Production Cloudflare image sync token (ops / env — not code)
+Removed invented weekly concert/farmers market/yoga cards and realtor-as-HOA booking FAQs. Amenities now mirror developer list; ops (hours, card, table reservations) cite Master Association only.

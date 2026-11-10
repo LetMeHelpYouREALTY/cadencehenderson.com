@@ -154,8 +154,8 @@ export default function CommunityPage() {
                   Year-Round Events
                 </h3>
                 <p className="text-gray-700">
-                  From concerts to movie nights, farmers markets to holiday
-                  celebrations, there's always something happening.
+                  Association and developer calendars list community gatherings
+                  when scheduled — check official Cadence sources for current dates.
                 </p>
               </div>
 
@@ -167,8 +167,8 @@ export default function CommunityPage() {
                   Clubs and events
                 </h3>
                 <p className="text-gray-700">
-                  Book club, running club, garden club, and Central Park events
-                  run on a posted resident calendar.
+                  Resident programs and Central Park gatherings are posted on the
+                  Cadence Master Association community calendar.
                 </p>
               </div>
             </div>

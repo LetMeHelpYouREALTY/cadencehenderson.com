@@ -58,15 +58,15 @@ const faqCategories = [
     questions: [
       {
         q: 'What amenities are included?',
-        a: 'Cadence features a 50-acre Central Park, multiple pools and spas, fitness centers, sports courts, dog parks, playgrounds, walking trails, and clubhouses. Many amenities are free for residents.',
+        a: 'Per cadencenv.com: 50-acre Central Park with free wifi, resident-only community pool with Strip views, two splash pads, adventure park, Fitness Court, pickleball, trails, dog park, and Sunset Road Linear Park. Confirm hours/access with the Cadence Master Association (702-605-3111).',
       },
       {
         q: 'Are there HOA fees?',
-        a: 'Yes, Cadence has HOA fees that cover maintenance of common areas, amenities, landscaping, and community services. Fees vary by neighborhood. Contact us for specific HOA information.',
+        a: 'Yes. Master Association assessments and any sub-association dues vary by neighborhood. Call the Cadence Master Association at 702-605-3111 for current amounts — not the realtor office.',
       },
       {
         q: 'Can I reserve amenities for private events?',
-        a: 'Yes, residents can reserve clubhouses and other amenity spaces for private events through the online resident portal. Some fees may apply.',
+        a: 'Residents can reserve park picnic tables and poolside tables through the Cadence Master Association (702-605-3111 / Association forms). Grass areas cannot be reserved; weddings and company picnics are not permitted.',
       },
     ],
   },

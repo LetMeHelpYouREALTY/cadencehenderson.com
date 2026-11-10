@@ -1,7 +1,7 @@
 import { PageHero } from '@/components/cadence/page-hero'
 import { SiteImage } from '@/components/cadence/site-image'
 import type { Metadata } from 'next'
-import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { CONTACT_INFO, HOA_CONTACT } from '@/components/cadence/contact-info'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
@@ -10,141 +10,137 @@ import { Button } from '@/components/ui/button'
 import {
   Waves,
   Dumbbell,
-  Users,
-  Wifi,
-  Utensils,
-  Music,
-  Paintbrush,
-  Heart,
+  Trees,
+  Droplets,
+  CircleDot,
+  MapPinned,
+  ExternalLink,
+  Phone,
 } from 'lucide-react'
 import { cfImage, SITE_IMAGES, getAmenityImage } from '@/lib/cloudflare-images'
 import { PageAeo } from '@/components/cadence/page-aeo'
 
+/**
+ * Amenity copy aligned to the developer page:
+ * https://cadencenv.com/lifestyle/amenities/
+ * plus Association access/reservation rules from
+ * https://www.cadencecommunityassociation.com/
+ */
 const amenities = [
   {
-    name: 'Resort-Style Pools',
+    name: 'Community Pool',
     icon: Waves,
     description:
-      'Multiple community pools with lap lanes, splash pads, and heated spa areas. Perfect for year-round enjoyment.',
+      'The resident-only pool offers unobstructed, panoramic views of the Las Vegas Strip, providing a unique and scenic venue for Cadence residents.',
     features: [
-      'Olympic-size lap pool',
-      'Recreation pool',
-      'About 2,000 sq ft splash pad',
-      'Adults-only hot tubs',
-      'Poolside cabanas',
-      'Shaded seating areas',
+      'Six-lane lap pool',
+      'Resident access with Master Association Card',
+      'Seasonal operation (typically May–October)',
+      'Shaded picnic tables (reservable by residents)',
+      'Turf area for relaxing',
+      'Las Vegas Strip views',
     ],
     image: getAmenityImage('pool', 'card'),
   },
   {
-    name: 'State-of-the-Art Fitness Centers',
+    name: 'Splash Pads',
+    icon: Droplets,
+    description:
+      'Cadence is home to two splash pads — one near the children’s play area and one in the Pool Complex that’s about 2,000 square feet.',
+    features: [
+      'Pool Complex splash pad (~2,000 sq ft)',
+      'Second splash pad near play areas',
+      'Family-friendly water play',
+      'Part of Central Park / pool complex',
+    ],
+    image: getAmenityImage('splashPad', 'card'),
+  },
+  {
+    name: 'Central Park',
+    icon: Trees,
+    description:
+      'Central Park is a 50-acre expanse of turf areas, amphitheater seating, pickleball courts, children’s play areas, a six-lane lap pool, a 2,000-square-foot splash pad, and free wifi and outlets to keep you connected.',
+    features: [
+      'About 50 acres of open space',
+      'Amphitheater(s) and turf areas',
+      'Adventure playground and play areas',
+      'Fitness Court and pickleball courts',
+      'Free wifi and charging outlets',
+      'Open to the public dawn–10 p.m. daily (Association hours)',
+    ],
+    image: getAmenityImage('centralPark', 'card'),
+  },
+  {
+    name: 'Fitness Court',
     icon: Dumbbell,
     description:
-      'Fully equipped fitness facilities with modern cardio equipment, free weights, and group exercise studios.',
+      'A fitness space with quality equipment is right around the corner in Central Park — an outdoor bodyweight training court for adults of all fitness levels.',
     features: [
-      'Cardio machines with TVs',
-      'Free weights and strength equipment',
-      'Yoga and spin studios',
-      'Personal training available',
-      'Locker rooms with showers',
-      '24/7 access for residents',
+      'Outdoor Fitness Court® in Central Park',
+      'Bodyweight training stations',
+      'Open during park hours',
+      'No separate gym membership required for this court',
     ],
     image: getAmenityImage('fitness', 'card'),
   },
   {
-    name: 'Clubhouses',
-    icon: Users,
+    name: 'Pickleball Courts',
+    icon: CircleDot,
     description:
-      'Beautiful clubhouses available for private events, meetings, and community gatherings.',
+      'Pickleball courts are located in Central Park and offer a great place for outdoor recreation.',
     features: [
-      'Full kitchen facilities',
-      'Indoor/outdoor seating',
-      'Reservation system',
-      'WiFi and AV equipment',
-      'Catering-friendly',
-      'Party rooms',
-    ],
-    image: getAmenityImage('clubhouse', 'card'),
-  },
-  {
-    name: 'Sports Courts',
-    icon: Heart,
-    description:
-      'Tennis, basketball, and pickleball courts for active recreation and friendly competition.',
-    features: [
-      'Lighted tennis courts',
-      'Full basketball court',
-      'Pickleball courts',
-      'Equipment available',
-      'League play',
-      'Private lessons',
+      'Courts in Central Park',
+      'Open during regular park hours',
+      'Public access during park hours',
     ],
     image: getAmenityImage('sportsCourts', 'card'),
+  },
+  {
+    name: 'Sunset Road Linear Park',
+    icon: MapPinned,
+    description:
+      'Enjoy the linear park along Sunset Road just north of Cadence Vista Drive — bounce pads, play structures, table tennis, corn hole, and more.',
+    features: [
+      'Bounce pads and play structures',
+      'Table tennis',
+      'Corn hole',
+      'Gazebo / gathering spaces along Sunset Road',
+    ],
+    image: getAmenityImage('playground', 'card'),
+  },
+]
+
+const AMENITIES_FAQS = [
+  {
+    q: 'What amenities does Cadence Henderson have?',
+    a: 'Per the Cadence developer lifestyle page, amenities include a 50-acre Central Park with free wifi, a resident-only community pool with Strip views, two splash pads (including a ~2,000 sq ft pad in the Pool Complex), an adventure park/playground, Fitness Court, pickleball courts, trails, a dog park, and Sunset Road Linear Park with bounce pads, play structures, table tennis, and corn hole. Confirm hours and access with the Cadence Master Association.',
+  },
+  {
+    q: 'Is Cadence Henderson Central Park open to residents?',
+    a: `Central Park (1125 E. Sunset Road) is owned and maintained by the Cadence Community Association and is open to the public year-round, typically dawn–10 p.m. daily. The Central Park Pool is resident-only and requires a Cadence Master Association Card. Call the Association at ${HOA_CONTACT.phone} for current rules.`,
+  },
+  {
+    q: 'How do HOA fees work in Cadence Henderson?',
+    a: `Master Association assessments and any sub-association dues vary by neighborhood and change over time. This real estate site does not publish fee schedules. Contact the Cadence Master Association at ${HOA_CONTACT.phone} or ${HOA_CONTACT.email}, or your sub-association manager, for current amounts. Call ${CONTACT_INFO.phone} for Cadence home-buying questions with Dr. Jan Duffy.`,
+  },
+  {
+    q: 'Can I reserve Cadence Henderson amenities for private events?',
+    a: `Residents may reserve park picnic tables and poolside tables through the Cadence Master Association (call ${HOA_CONTACT.phone} or submit Association reservation forms). Only picnic tables are reservable — grass areas cannot be reserved, and weddings, professional parties, and company picnics are not permitted. Do not call the realtor line for Association reservations.`,
   },
 ]
 
 export const metadata: Metadata = {
   title: 'Cadence Henderson Amenities – Central Park, Pools & Trails',
   description:
-    '50-acre Central Park, resort pools, splash pads, fitness centers, pickleball courts, dog parks & 30+ miles of trails in Cadence Henderson NV 89011.',
+    '50-acre Central Park, resident pool, splash pads, Fitness Court, pickleball & Sunset Road Linear Park in Cadence Henderson NV 89011. Tour with Dr. Jan Duffy.',
   alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/amenities' },
   openGraph: {
     title: 'Cadence Henderson Amenities – Central Park, Pools & Trails',
-    description: '50-acre Central Park, resort pools, fitness centers, pickleball courts & trails in Cadence Henderson NV 89011.',
+    description:
+      'Central Park, resident pool, splash pads, Fitness Court, pickleball and trails in Cadence Henderson NV 89011.',
     url: 'https://www.cadencehenderson.com/lifestyle/amenities',
   },
 }
-
-const additionalAmenities = [
-  {
-    category: 'Recreation',
-    items: [
-      'Dog parks with agility equipment',
-      'Playground areas for all ages',
-      'BBQ and picnic areas',
-      'Fire pits and lounge seating',
-      'Walking and biking trails',
-      'Community garden plots',
-      'Sunset Road Linear Park with bounce pads, play structures, table tennis, and corn hole',
-      'Resident pool with Las Vegas Strip views',
-      'Pickleball courts in Central Park',
-    ],
-  },
-  {
-    category: 'Technology',
-    items: [
-      'High-speed fiber internet',
-      'Free wifi at amenity areas',
-      'Smart community features',
-      'Mobile app for amenity booking',
-      'Online portal access',
-      'Security cameras',
-      'Smart home ready',
-    ],
-  },
-  {
-    category: 'Services',
-    items: [
-      'On-site management team',
-      'Concierge services',
-      'Package delivery lockers',
-      'Car wash station',
-      'EV charging stations',
-      'Maintenance request system',
-    ],
-  },
-  {
-    category: 'Events & Programs',
-    items: [
-      'Fitness classes',
-      'Social events',
-      'Holiday celebrations',
-      'Kids activities',
-      'Movie nights',
-      'Food truck events',
-    ],
-  },
-]
 
 export default function AmenitiesPage() {
   return (
@@ -152,10 +148,10 @@ export default function AmenitiesPage() {
       <Navigation />
 
       <PageHero
-        title="World-Class Amenities"
-        subtitle="Experience resort-style living every day at Cadence. From multiple pools and fitness centers to sports courts and clubhouses, our amenities are designed to enhance your lifestyle."
+        title="Cadence Henderson amenities NV 89011"
+        subtitle="Aligned with Cadence’s published lifestyle amenities: Central Park, resident pool, splash pads, Fitness Court, pickleball, trails, and Sunset Road Linear Park."
         imageSrc={cfImage(SITE_IMAGES.hero.amenities, 'hero')}
-        imageAlt="Resort-style amenities at Cadence Henderson NV 89011"
+        imageAlt="Amenities at Cadence Henderson NV 89011"
         icon={Waves}
       >
         <CalendlyLink>
@@ -170,12 +166,42 @@ export default function AmenitiesPage() {
 
       <RealScoutOfficeListings />
 
-      {/* Main Amenities Grid */}
+      <section className="py-12 bg-cyan-50">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <p className="text-gray-700 leading-relaxed">
+            Amenity descriptions below follow the official Cadence developer page at{' '}
+            <a
+              href="https://cadencenv.com/lifestyle/amenities/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-900 font-medium hover:underline"
+            >
+              cadencenv.com/lifestyle/amenities
+            </a>
+            . Hours, cards, and reservations are set by the{' '}
+            <a
+              href={HOA_CONTACT.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-900 font-medium hover:underline"
+            >
+              Cadence Master Association
+            </a>
+            — not this real estate office.
+          </p>
+        </div>
+      </section>
+
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            Cadence Henderson amenities in NV 89011
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+            Cadence Living amenities
           </h2>
+          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+            The 50-acre Central Park is the community’s biggest amenity for walking and
+            biking, with free wifi. Nearby: splash pads, the resident pool, adventure
+            park, Fitness Court, trails, and a dog park.
+          </p>
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {amenities.map((amenity) => {
               const IconComponent = amenity.icon
@@ -195,9 +221,7 @@ export default function AmenitiesPage() {
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="flex items-center text-white mb-2">
                         <IconComponent size={32} className="mr-3" />
-                        <h3 className="text-2xl font-bold">
-                          {amenity.name}
-                        </h3>
+                        <h3 className="text-2xl font-bold">{amenity.name}</h3>
                       </div>
                     </div>
                   </div>
@@ -205,7 +229,7 @@ export default function AmenitiesPage() {
                     <p className="text-gray-700 mb-4">{amenity.description}</p>
                     <div className="border-t pt-4">
                       <h4 className="font-bold text-gray-900 mb-3 text-sm">
-                        Features Include:
+                        Features include
                       </h4>
                       <div className="grid grid-cols-2 gap-2">
                         {amenity.features.map((feature) => (
@@ -227,165 +251,78 @@ export default function AmenitiesPage() {
         </div>
       </section>
 
-      {/* Additional Amenities */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-              Even More to Enjoy
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {additionalAmenities.map((category) => (
-                <div
-                  key={category.category}
-                  className="bg-white rounded-lg shadow-lg p-6"
-                >
-                  <h3 className="text-xl font-bold text-cyan-900 mb-4 text-center border-b pb-3">
-                    {category.category}
-                  </h3>
-                  <ul className="space-y-2">
-                    {category.items.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start text-sm text-gray-700"
-                      >
-                        <span className="w-1.5 h-1.5 bg-cyan-900 rounded-full mr-2 mt-1.5 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Central Park Highlight */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
-                <SiteImage
-                  src={getAmenityImage('centralPark', 'hero')}
-                  alt="Central Park at Cadence Henderson NV 89011"
-                  fill
-                />
-              </div>
-              <div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                  50-Acre Central Park
-                </h2>
-                <p className="text-lg text-gray-700 mb-6">
-                  The crown jewel of Cadence amenities, Central Park offers
-                  nearly 50 acres of open space with stunning mountain views,
-                  multiple playgrounds, walking trails, and event spaces.
-                </p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
-                      Multi-age playgrounds with modern equipment
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
-                      About 2,000 sq ft splash pad with water features
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
-                      Large event lawn for community gatherings
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
-                      Pickleball courts plus scenic walking and biking trails
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
-                      Sunset Road Linear Park: bounce pads, play structures,
-                      table tennis, and corn hole
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
-                      Resident pool with Las Vegas Strip views and free wifi at
-                      amenity areas
-                    </span>
-                  </li>
-                </ul>
-                <Button
-                  size="lg"
-                  className="bg-cyan-900 hover:bg-cyan-800"
-                >
-                  Explore Central Park
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Amenity Hours */}
-      <section className="py-16 bg-cyan-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Amenity Hours & Access
+              Access, hours & reservations
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="bg-white rounded-lg shadow-md p-6 text-center">
                 <Waves size={40} className="mx-auto mb-3 text-cyan-900" />
-                <h3 className="font-bold text-gray-900 mb-2">Pools</h3>
+                <h3 className="font-bold text-gray-900 mb-2">Central Park Pool</h3>
                 <p className="text-sm text-gray-600">
-                  Daily: 6 AM - 10 PM
+                  Residents only · Master Association Card required
                   <br />
-                  Seasonal hours vary
+                  Typically 6 a.m.–9 p.m. (May–October; dates subject to change)
                 </p>
               </div>
               <div className="bg-white rounded-lg shadow-md p-6 text-center">
-                <Dumbbell size={40} className="mx-auto mb-3 text-cyan-900" />
-                <h3 className="font-bold text-gray-900 mb-2">
-                  Fitness Centers
-                </h3>
+                <Trees size={40} className="mx-auto mb-3 text-cyan-900" />
+                <h3 className="font-bold text-gray-900 mb-2">Central Park</h3>
                 <p className="text-sm text-gray-600">
-                  24/7 Access
+                  Open to the public year-round
                   <br />
-                  with resident key card
+                  Dawn–10 p.m. daily (Association hours)
                 </p>
               </div>
               <div className="bg-white rounded-lg shadow-md p-6 text-center">
-                <Users size={40} className="mx-auto mb-3 text-cyan-900" />
-                <h3 className="font-bold text-gray-900 mb-2">Clubhouses</h3>
+                <Phone size={40} className="mx-auto mb-3 text-cyan-900" />
+                <h3 className="font-bold text-gray-900 mb-2">Table reservations</h3>
                 <p className="text-sm text-gray-600">
-                  Daily: 8 AM - 10 PM
+                  Picnic / poolside tables via Association only
                   <br />
-                  Reservations required
+                  Call {HOA_CONTACT.phone} — not the realtor line
                 </p>
+              </div>
+            </div>
+            <div className="border border-cyan-200 bg-white rounded-lg p-6 text-center">
+              <p className="text-gray-700 mb-4">
+                <strong>{HOA_CONTACT.name}</strong> · {HOA_CONTACT.address}
+                <br />
+                {HOA_CONTACT.hours}
+              </p>
+              <div className="flex flex-wrap gap-3 justify-center">
+                <a href={`tel:${HOA_CONTACT.phone.replace(/-/g, '')}`}>
+                  <Button className="bg-cyan-900 hover:bg-cyan-800 text-white">
+                    Call Association {HOA_CONTACT.phone}
+                  </Button>
+                </a>
+                <a
+                  href="https://www.cadencecommunityassociation.com/amenity-information"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" className="border-cyan-900 text-cyan-900">
+                    Association amenity overview
+                    <ExternalLink size={16} className="ml-2" />
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Reservation CTA */}
       <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">
-              Reserve Amenities Online
+              Tour Cadence homes with Dr. Jan Duffy
             </h2>
             <p className="text-xl mb-8">
-              Residents can easily book clubhouses, sports courts, and other
-              amenities through our online portal.
+              See villages near Central Park and the pool — Association staff handle
+              amenity cards and reservations.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
@@ -410,7 +347,6 @@ export default function AmenitiesPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -426,69 +362,25 @@ export default function AmenitiesPage() {
                 __html: JSON.stringify({
                   '@context': 'https://schema.org',
                   '@type': 'FAQPage',
-                  mainEntity: [
-                    {
-                      '@type': 'Question',
-                      name: 'What amenities does Cadence Henderson have?',
-                      acceptedAnswer: {
-                        '@type': 'Answer',
-                        text: 'Cadence Henderson NV 89011 features a 50-acre Central Park, multiple resort-style pools and heated spas, fully equipped fitness centers, pickleball and sports courts, dog parks, playgrounds, 30+ miles of walking and biking trails, and resident clubhouses. Most amenities in Cadence Henderson are free for all residents.',
-                      },
-                    },
-                    {
-                      '@type': 'Question',
-                      name: 'Is Cadence Henderson Central Park open to residents?',
-                      acceptedAnswer: {
-                        '@type': 'Answer',
-                        text: "Yes! Cadence Henderson's 50-acre Central Park is open daily to all Cadence Henderson NV 89011 residents and their guests. It features event lawns, splash pads, playgrounds, picnic areas, mountain views, and trails. No admission fee for residents.",
-                      },
-                    },
-                    {
-                      '@type': 'Question',
-                      name: 'What are the HOA fees in Cadence Henderson?',
-                      acceptedAnswer: {
-                        '@type': 'Answer',
-                        text: `Cadence Henderson HOA fees vary by neighborhood and builder but typically range from $50–$150/month for the master association, which covers access to community amenities. Some sub-associations within Cadence Henderson 89011 may charge additional fees. Call ${CONTACT_INFO.phone} for current fee information.`,
-                      },
-                    },
-                    {
-                      '@type': 'Question',
-                      name: 'Can I reserve Cadence Henderson amenities for private events?',
-                      acceptedAnswer: {
-                        '@type': 'Answer',
-                        text: `Yes, Cadence Henderson NV 89011 residents can reserve clubhouses and other amenity spaces for private events through the resident online portal. Reservation fees may apply for private use. Contact the Cadence HOA or call ${CONTACT_INFO.phone} for booking details.`,
-                      },
-                    },
-                  ],
+                  mainEntity: AMENITIES_FAQS.map(({ q, a }) => ({
+                    '@type': 'Question',
+                    name: q,
+                    acceptedAnswer: { '@type': 'Answer', text: a },
+                  })),
                 }),
               }}
             />
             <div className="space-y-4">
-              {[
-                {
-                  q: 'What amenities does Cadence Henderson have?',
-                  a: 'Cadence Henderson NV 89011 features a 50-acre Central Park, resort-style pools and spas, fitness centers, pickleball and sports courts, dog parks, playgrounds, 30+ miles of trails, and resident clubhouses. Most amenities are free for all residents.',
-                },
-                {
-                  q: 'Is Cadence Henderson Central Park open to residents?',
-                  a: "Yes! Cadence Henderson's 50-acre Central Park is open daily to all residents and guests. It features event lawns, splash pads, playgrounds, picnic areas, mountain views, and trails — at no admission fee for residents.",
-                },
-                {
-                  q: 'What are the HOA fees in Cadence Henderson?',
-                  a: `Cadence Henderson HOA fees typically range from $50–$150/month for the master association, covering access to community amenities. Some sub-associations may charge additional fees. Call ${CONTACT_INFO.phone} for current fee information.`,
-                },
-                {
-                  q: 'Can I reserve Cadence Henderson amenities for private events?',
-                  a: `Yes, Cadence Henderson NV 89011 residents can reserve clubhouses and amenity spaces for private events through the resident online portal. Reservation fees may apply. Call ${CONTACT_INFO.phone} for booking details.`,
-                },
-              ].map(({ q, a }) => (
+              {AMENITIES_FAQS.map(({ q, a }) => (
                 <details
                   key={q}
                   className="group border border-gray-200 rounded-lg p-5 cursor-pointer"
                 >
                   <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
                     {q}
-                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
+                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">
+                      ▾
+                    </span>
                   </summary>
                   <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
                 </details>
@@ -501,7 +393,8 @@ export default function AmenitiesPage() {
       <PageAeo
         path="/lifestyle/amenities"
         name="Cadence Henderson Amenities – Central Park, Pools & Trails"
-        description="50-acre Central Park, resort pools, splash pads, fitness centers, pickleball courts, dog parks & 30+ miles of trails in Cadence Henderson NV 89011."
+        description="50-acre Central Park, resident pool, splash pads, Fitness Court, pickleball & Sunset Road Linear Park in Cadence Henderson NV 89011."
+        faqs={AMENITIES_FAQS.map(({ q, a }) => ({ question: q, answer: a }))}
         breadcrumbs={[
           { name: 'Lifestyle', path: '/lifestyle' },
           { name: 'Amenities in Cadence Henderson NV 89011' },
@@ -511,4 +404,3 @@ export default function AmenitiesPage() {
     </div>
   )
 }
-

@@ -204,12 +204,27 @@ export default function ResidentsPage() {
                 </p>
                 <div className="space-y-2 text-sm">
                   <p className="text-gray-700">
-                    Current HOA phone numbers are posted in the resident portal
-                    and in closing documents — they change with the management
-                    company.
+                    <strong>Association:</strong>{' '}
+                    <a
+                      href="tel:7026053111"
+                      className="text-emerald-900 hover:underline"
+                    >
+                      702-605-3111
+                    </a>
+                    {' · '}
+                    <a
+                      href="mailto:Info@CadenceHOA.com"
+                      className="text-emerald-900 hover:underline"
+                    >
+                      Info@CadenceHOA.com
+                    </a>
                   </p>
                   <p className="text-gray-700">
-                    <strong>Realtor line:</strong>{' '}
+                    1170 E. Sunset Rd., Suite 101, Henderson, NV 89011 · Mon–Fri
+                    9 AM–5 PM
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>Realtor line (homes only):</strong>{' '}
                     <a
                       href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
                       className="text-emerald-900 hover:underline"

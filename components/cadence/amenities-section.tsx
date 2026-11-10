@@ -15,7 +15,7 @@ export function AmenitiesSection() {
               Amenities in Cadence Henderson NV 89011
             </h2>
             <p className="aeo-lead text-xl text-gray-700 mb-8 leading-relaxed" data-speakable>
-              Cadence Henderson NV 89011 includes a ~50-acre Central Park, pools, a ~2,000 sq ft splash pad, pickleball, trails, and resident wifi at amenity areas. Confirm hours with the HOA; tour homes with Dr. Jan Duffy.
+              Cadence Henderson NV 89011 includes a ~50-acre Central Park with free wifi, a resident-only pool, splash pads (~2,000 sq ft in the Pool Complex), Fitness Court, pickleball, trails, dog park, and Sunset Road Linear Park. Confirm hours with the Cadence Master Association; tour homes with Dr. Jan Duffy.
             </p>
             <Button
               size="lg"
