@@ -14,9 +14,9 @@ import {
   Droplets,
   CircleDot,
   MapPinned,
-  ExternalLink,
   Phone,
 } from 'lucide-react'
+import Link from 'next/link'
 import { cfImage, SITE_IMAGES, getAmenityImage } from '@/lib/cloudflare-images'
 import { PageAeo } from '@/components/cadence/page-aeo'
 
@@ -113,7 +113,7 @@ const amenities = [
 const AMENITIES_FAQS = [
   {
     q: 'What amenities does Cadence Henderson have?',
-    a: 'Per the Cadence developer lifestyle page, amenities include a 50-acre Central Park with free wifi, a resident-only community pool with Strip views, two splash pads (including a ~2,000 sq ft pad in the Pool Complex), an adventure park/playground, Fitness Court, pickleball courts, trails, a dog park, and Sunset Road Linear Park with bounce pads, play structures, table tennis, and corn hole. Confirm hours and access with the Cadence Master Association.',
+    a: 'Cadence Henderson amenities include a 50-acre Central Park with free wifi, a resident-only community pool with Strip views, two splash pads (including a ~2,000 sq ft pad in the Pool Complex), an adventure park/playground, Fitness Court, pickleball courts, trails, a dog park, and Sunset Road Linear Park with bounce pads, play structures, table tennis, and corn hole. Confirm hours and access with the Cadence Master Association.',
   },
   {
     q: 'Is Cadence Henderson Central Park open to residents?',
@@ -166,41 +166,18 @@ export default function AmenitiesPage() {
 
       <RealScoutOfficeListings />
 
-      <section className="py-12 bg-cyan-50">
-        <div className="container mx-auto px-4 max-w-3xl text-center">
-          <p className="text-gray-700 leading-relaxed">
-            Amenity descriptions below follow the official Cadence developer page at{' '}
-            <a
-              href="https://cadencenv.com/lifestyle/amenities/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-900 font-medium hover:underline"
-            >
-              cadencenv.com/lifestyle/amenities
-            </a>
-            . Hours, cards, and reservations are set by the{' '}
-            <a
-              href={HOA_CONTACT.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-900 font-medium hover:underline"
-            >
-              Cadence Master Association
-            </a>
-            — not this real estate office.
-          </p>
-        </div>
-      </section>
-
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
-            Cadence Living amenities
+            Wake up to amenities
           </h2>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-            The 50-acre Central Park is the community’s biggest amenity for walking and
-            biking, with free wifi. Nearby: splash pads, the resident pool, adventure
-            park, Fitness Court, trails, and a dog park.
+            Cadence amenities speak for themselves: the 50-acre Central Park is perfect
+            for walking and biking and offers free wifi so you can stay connected. For
+            more outdoor fun, check out the splash pads, resident pool, adventure park,
+            Fitness Court, and trails — plus a dog park for Fido. Hours, cards, and
+            table reservations are handled by the Cadence Master Association — not this
+            real estate office.
           </p>
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {amenities.map((amenity) => {
@@ -298,16 +275,14 @@ export default function AmenitiesPage() {
                     Call Association {HOA_CONTACT.phone}
                   </Button>
                 </a>
-                <a
-                  href="https://www.cadencecommunityassociation.com/amenity-information"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={`mailto:${HOA_CONTACT.email}`}>
                   <Button variant="outline" className="border-cyan-900 text-cyan-900">
-                    Association amenity overview
-                    <ExternalLink size={16} className="ml-2" />
+                    Email {HOA_CONTACT.email}
                   </Button>
                 </a>
+                <Button variant="outline" className="border-cyan-900 text-cyan-900" asChild>
+                  <Link href="/lifestyle/events">Cadence community events</Link>
+                </Button>
               </div>
             </div>
           </div>

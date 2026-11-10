@@ -82,7 +82,7 @@ function FaqsPageSchema() {
         name: 'What amenities does Cadence Henderson have?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Per cadencenv.com/lifestyle/amenities, Cadence Henderson features a 50-acre Central Park with free wifi, a resident-only community pool with Strip views, two splash pads (including ~2,000 sq ft in the Pool Complex), adventure park/playground, Fitness Court, pickleball courts, trails, a dog park, and Sunset Road Linear Park. Confirm hours and access with the Cadence Master Association at 702-605-3111.',
+          text: 'Cadence Henderson features a 50-acre Central Park with free wifi, a resident-only community pool with Strip views, two splash pads (including ~2,000 sq ft in the Pool Complex), adventure park/playground, Fitness Court, pickleball courts, trails, a dog park, and Sunset Road Linear Park. Confirm hours and access with the Cadence Master Association at 702-605-3111.',
         },
       },
       {

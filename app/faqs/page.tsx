@@ -58,7 +58,7 @@ const faqCategories = [
     questions: [
       {
         q: 'What amenities are included?',
-        a: 'Per cadencenv.com: 50-acre Central Park with free wifi, resident-only community pool with Strip views, two splash pads, adventure park, Fitness Court, pickleball, trails, dog park, and Sunset Road Linear Park. Confirm hours/access with the Cadence Master Association (702-605-3111).',
+        a: '50-acre Central Park with free wifi, resident-only community pool with Strip views, two splash pads, adventure park, Fitness Court, pickleball, trails, dog park, and Sunset Road Linear Park. Confirm hours/access with the Cadence Master Association (702-605-3111).',
       },
       {
         q: 'Are there HOA fees?',

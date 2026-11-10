@@ -39,12 +39,12 @@ const FALLBACK_ARTICLES: NewsArticle[] = [
   },
   {
     id: 2,
-    link: 'https://www.cadencecommunityassociation.com/community-calendar/',
-    title: 'Check the Official Cadence Community Calendar',
-    date: 'Updated regularly',
+    link: '/lifestyle/events',
+    title: 'Cadence Community Events & Central Park Gatherings',
+    date: 'Lifestyle',
     category: 'Events',
     excerpt:
-      'Upcoming Cadence lifestyle events are published by the Cadence Master Association. Visit the Association community calendar for current dates — not unofficial third-party listings.',
+      'Concerts, car shows, and Association lifestyle programs are part of Cadence living. Confirm current dates with the Master Association at 702-605-3111 — then tour homes with Dr. Jan Duffy.',
     image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
   },
   {
