@@ -7,6 +7,7 @@ import {
   ALL_CADENCE_COMMUNITIES,
   CADENCE_BUILDER_HUBS,
 } from './cadence-nv-catalog'
+import { CADENCE_NEWS_FALLBACK_SLUGS } from './cadence-news-fallback'
 
 export const SITEMAP_BASE_URL = 'https://www.cadencehenderson.com'
 
@@ -127,6 +128,15 @@ export function getSitemapEntries(): SitemapEntry[] {
     priority: 0.8,
   }))
 
+  const newsArticlePages: SitemapEntry[] = CADENCE_NEWS_FALLBACK_SLUGS.map(
+    (slug) => ({
+      url: `${base}/news/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })
+  )
+
   return [
     ...mainPages,
     ...rentalPages,
@@ -134,5 +144,6 @@ export function getSitemapEntries(): SitemapEntry[] {
     ...builderPages,
     ...resourcePages,
     ...communityPages,
+    ...newsArticlePages,
   ].filter((e) => !REDIRECTED_PATH.test(e.url.slice(base.length)))
 }

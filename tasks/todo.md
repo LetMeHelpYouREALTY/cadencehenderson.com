@@ -40,6 +40,7 @@
 - [x] Defer RealScout office listings until near viewport
 - [x] Wire `sizes` on SiteImage; long-cache `/images/*`; lucide optimizePackageImports
 - [x] Analytics → `lazyOnload`; drop unused Geist Mono + unused preconnects
+- [x] News: replace copied cadencenv.com images with original WebP generated from each article H1/H2/H3 + content; strip remote `<img>` from body HTML; sitemap includes `/news/[slug]`
 
 ## Ops follow-up (needs secrets / GSC)
 

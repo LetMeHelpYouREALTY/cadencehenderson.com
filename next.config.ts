@@ -20,11 +20,6 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
-      {
-        protocol: 'https',
-        hostname: 'cadencenv.com',
-        pathname: '/wp-content/**',
-      },
     ],
   },
   async redirects() {
