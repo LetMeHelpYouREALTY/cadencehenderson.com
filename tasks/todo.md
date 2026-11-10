@@ -11,7 +11,7 @@ Ship recommendation follow-ups: shared amenity/events module, quarterly SOP, GSC
 - [x] Remove off-site RealScout redirects for `/rentals` and `/new-homes/beazer-homes`; keep on-site pages
 - [x] Soft marketing: FAQs / realtor “world-class” / “top 10”
 - [x] Regency inbound: verified footer-only Cadence link (no inventons) — documented in SOP
-- [ ] Typecheck, commit, push, update PR #20
+- [x] Typecheck, commit, push, update PR #20
 
 ## Review
 
