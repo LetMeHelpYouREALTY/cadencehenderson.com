@@ -14,48 +14,42 @@ import Link from 'next/link'
 const parks = [
   {
     name: 'Central Park',
-    size: '50 acres',
+    size: '~50 acres',
     description:
-      'The crown jewel of Cadence, Central Park features stunning mountain views, multiple playgrounds, walking trails, splash pads, and large event lawns perfect for community gatherings.',
+      'Cadence Central Park anchors community living with turf areas, amphitheater seating, play areas, trails, free wifi, charging outlets, Fitness Court, pickleball, splash pads, and the resident pool complex.',
     features: [
-      'Multiple playgrounds for different age groups',
-      'Splash pad and water features',
-      'Walking and jogging trails',
-      'Large event lawn',
+      'Adventure playground and play areas',
+      'Splash pads (~2,000 sq ft at Pool Complex)',
+      'Walking and biking with free wifi',
+      'Fitness Court and pickleball courts',
+      'Amphitheater seating and turf areas',
       'Mountain and desert views',
-      'Picnic areas with shade structures',
-      'Open green spaces',
-      'Dog-friendly areas',
+      'Resident pool (Master Association Card)',
+      'Dog park nearby in the amenity mix',
     ],
     image: getGalleryImage('parkVista', 'card'),
   },
   {
-    name: 'Neighborhood Parks',
-    size: 'Throughout community',
+    name: 'Sunset Road Linear Park',
+    size: 'Along Sunset Road',
     description:
-      'Smaller neighborhood parks are strategically located throughout Cadence, providing convenient access to outdoor recreation for all residents.',
+      'Linear park space published with Cadence living amenities — open recreation along the community corridor.',
     features: [
-      'Tot lots and playground equipment',
-      'Playground equipment',
-      'Benches and seating areas',
-      'Shade structures',
-      'Walking paths',
-      'Pet waste stations',
+      'Linear park corridor',
+      'Walking access',
+      'Community green space',
     ],
     image: getAmenityImage('playground', 'card'),
   },
   {
-    name: 'Dog Parks',
-    size: '2 locations',
+    name: 'Dog park',
+    size: 'Community amenity',
     description:
-      'Dedicated off-leash dog parks with separate areas for small and large dogs, providing a safe space for your furry friends to play and socialize.',
+      'Cadence living amenities include a dog park for residents. Confirm rules and hours with the Cadence Master Association.',
     features: [
-      'Separate small and large dog areas',
-      'Double-gated entry for safety',
-      'Water fountains for pets',
-      'Agility equipment',
-      'Benches and shade',
-      'Pet waste stations and bags',
+      'Listed on official Cadence amenities',
+      'Confirm access with Master Association',
+      'Pair with Central Park trails for walks',
     ],
     image: getAmenityImage('dogPark', 'card'),
   },
@@ -302,35 +296,23 @@ export default function ParksTrailsPage() {
       {/* Activities Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Activities & Programs
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Activities & programs
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <div className="text-4xl mb-3">🏃</div>
-                <h3 className="font-bold text-gray-900 mb-2">
-                  Running Club
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Saturday mornings at 7 AM
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <div className="text-4xl mb-3">🚴</div>
-                <h3 className="font-bold text-gray-900 mb-2">Bike Group</h3>
-                <p className="text-sm text-gray-600">
-                  Sunday mornings at 8 AM
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <div className="text-4xl mb-3">🌅</div>
-                <h3 className="font-bold text-gray-900 mb-2">Yoga in Park</h3>
-                <p className="text-sm text-gray-600">
-                  Tuesday & Thursday at 7 AM
-                </p>
-              </div>
-            </div>
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              Central Park and Cadence trails support walking, biking, and outdoor
+              recreation year-round. Date-specific Association programs (classes,
+              clubs, or gatherings) change — confirm current schedules with the
+              Cadence Master Association at{' '}
+              <a href="tel:7026053111" className="text-green-900 font-medium hover:underline">
+                702-605-3111
+              </a>
+              . This page does not invent weekly class times.
+            </p>
+            <Button className="bg-green-900 hover:bg-green-800" asChild>
+              <Link href="/lifestyle/events">Cadence community events</Link>
+            </Button>
           </div>
         </div>
       </section>

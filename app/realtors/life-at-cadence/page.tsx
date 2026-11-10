@@ -43,7 +43,7 @@ const facts = [
   },
   {
     title: 'On-site recreation',
-    body: 'Residents use pools, splash pads, fitness rooms, pickleball and sports courts, dog parks, clubhouses, and miles of walking paths. Amenity access and HOA dues vary by village.',
+    body: 'Official Cadence amenities around Central Park include a resident pool (Master Association Card), splash pads, Fitness Court, pickleball, dog park, trails, and Sunset Road Linear Park. Village access and HOA dues vary — confirm ops with the Cadence Master Association at 702-605-3111.',
   },
 ]
 

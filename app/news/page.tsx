@@ -19,26 +19,16 @@ import { fetchNews, type NewsArticle } from '@/lib/fetch-news'
 const FALLBACK_ARTICLES: NewsArticle[] = [
   {
     id: 0,
-    title: 'Cadence Named Top 10 Best-Selling Community in the Nation',
-    date: 'October 5, 2025',
-    category: 'Awards',
-    excerpt:
-      'Cadence has been recognized as one of the top 10 best-selling master-planned communities in the United States for the third consecutive year.',
-    link: 'https://cadencenv.com/',
-    image: cfImage(SITE_IMAGES.homes.exterior1, 'card'),
-  },
-  {
-    id: 1,
-    link: 'https://cadencenv.com/',
-    title: 'New Central Park Expansion Opens This Fall',
-    date: 'September 28, 2025',
+    title: 'Cadence Amenities Around Central Park',
+    date: 'Lifestyle',
     category: 'Community',
     excerpt:
-      'Experience even more outdoor recreation with the opening of the new Central Park expansion featuring additional trails, picnic areas, and a new adventure playground.',
+      'Resident pool, splash pads, Fitness Court, pickleball, dog park, trails, and Sunset Road Linear Park — mirrored from official Cadence amenities for buyers touring with Dr. Jan Duffy.',
+    link: '/lifestyle/amenities',
     image: cfImage(SITE_IMAGES.gallery.parkVista, 'card'),
   },
   {
-    id: 2,
+    id: 1,
     link: '/lifestyle/events',
     title: 'Cadence Community Events & Central Park Gatherings',
     date: 'Lifestyle',
@@ -48,34 +38,44 @@ const FALLBACK_ARTICLES: NewsArticle[] = [
     image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
   },
   {
+    id: 2,
+    link: '/lifestyle/parks-trails',
+    title: 'Parks & Trails in Cadence Henderson',
+    date: 'Lifestyle',
+    category: 'Community',
+    excerpt:
+      'Nearly 50-acre Central Park, walking trails, and outdoor recreation throughout Cadence Henderson NV 89011.',
+    image: cfImage(SITE_IMAGES.gallery.parkVista, 'card'),
+  },
+  {
     id: 3,
-    link: 'https://cadencenv.com/',
-    title: 'Cadence Schools Receive High Academic Ratings',
-    date: 'August 22, 2025',
+    link: '/lifestyle/schools',
+    title: 'Schools Serving Cadence Henderson',
+    date: 'Lifestyle',
     category: 'Education',
     excerpt:
-      'Clark County School District announces that schools serving Cadence residents have achieved outstanding academic ratings for the 2024-2025 school year.',
+      'Cadence Elementary is on-site. Confirm Clark County attendance zones by address before you buy — Dr. Jan Duffy can help you tour by village.',
     image: cfImage(SITE_IMAGES.hero.schools, 'card'),
   },
   {
     id: 4,
-    link: 'https://cadencenv.com/',
-    title: 'New Home Builders Join Cadence Community',
-    date: 'August 10, 2025',
+    link: '/new-homes',
+    title: 'New Homes in Cadence Henderson',
+    date: 'Lifestyle',
     category: 'New Homes',
     excerpt:
-      'We\'re excited to welcome two new home builders to Cadence, expanding our selection of quality homes and architectural styles.',
+      'Explore builder villages and current new-home options in Cadence Henderson with Dr. Jan Duffy, REALTOR®.',
     image: cfImage(SITE_IMAGES.homes.exterior2, 'card'),
   },
   {
     id: 5,
-    link: 'https://cadencenv.com/',
-    title: 'Cadence Residents Celebrate Community Garden Harvest',
-    date: 'July 28, 2025',
+    link: '/lifestyle/community',
+    title: 'Community Life in Cadence',
+    date: 'Lifestyle',
     category: 'Community',
     excerpt:
-      'The Cadence Community Garden celebrates its first successful harvest, bringing residents together to share fresh produce and gardening tips.',
-    image: cfImage(SITE_IMAGES.lifestyle.farmersMarket, 'card'),
+      'How residents connect around Central Park amenities and Association lifestyle programs — without invented club schedules on this site.',
+    image: cfImage(SITE_IMAGES.lifestyle.community, 'card'),
   },
 ]
 
@@ -120,15 +120,18 @@ export default async function NewsPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article) => (
+            {articles.map((article) => {
+              const external = /^https?:\/\//i.test(article.link)
+              return (
               <article
                 key={article.id}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <Link
                   href={article.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(external
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
                   className="block"
                 >
                   <div className="relative h-56 overflow-hidden bg-gray-200">
@@ -170,13 +173,19 @@ export default async function NewsPage() {
                     className="border-indigo-900 text-indigo-900 hover:bg-indigo-900 hover:text-white"
                     asChild
                   >
-                    <Link href={article.link} target="_blank" rel="noopener noreferrer">
+                    <Link
+                      href={article.link}
+                      {...(external
+                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                        : {})}
+                    >
                       Read More
                     </Link>
                   </Button>
                 </div>
               </article>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>

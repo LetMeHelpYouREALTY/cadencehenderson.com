@@ -306,7 +306,7 @@ export default function RentalsPage() {
                       name: 'Do rental homes in Cadence Henderson include community amenities?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Yes! All residents in Cadence Henderson 89011, including renters, have access to community amenities including the 50-acre Central Park, pools, fitness centers, trails, and dog parks, depending on your rental agreement and HOA access terms.',
+                        text: 'Cadence Henderson 89011 residents — including many renters — may use community amenities such as Central Park, the resident pool (Master Association Card), splash pads, Fitness Court, pickleball, trails, and dog parks, subject to the rental agreement and Association access terms. Confirm access with the property manager and Cadence Master Association at 702-605-3111.',
                       },
                     },
                   ],
@@ -329,7 +329,7 @@ export default function RentalsPage() {
                 },
                 {
                   q: 'Do rental homes in Cadence Henderson include community amenities?',
-                  a: 'Yes! All Cadence Henderson 89011 residents — including renters — have access to community amenities including the 50-acre Central Park, pools, fitness centers, trails, and dog parks, subject to rental agreement and HOA access terms.',
+                  a: 'Cadence Henderson 89011 residents — including many renters — may use amenities such as Central Park, the resident pool (Master Association Card), splash pads, Fitness Court, pickleball, trails, and dog parks, subject to the rental agreement and Association access terms. Confirm with the property manager and Cadence Master Association at 702-605-3111.',
                 },
               ].map(({ q, a }) => (
                 <details
