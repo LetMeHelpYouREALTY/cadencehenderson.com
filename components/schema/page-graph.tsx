@@ -49,7 +49,15 @@ export function PageGraphSchema({
       isPartOf: { '@id': WEBSITE_ID },
       about: {
         '@type': 'Place',
+        '@id': `${BASE}/#cadence-henderson-place`,
         name: 'Cadence Henderson',
+        description:
+          'Master-planned community in Henderson, Nevada 89011 with new homes, parks, trails, and amenities.',
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 36.0175,
+          longitude: -114.9607,
+        },
         containedInPlace: {
           '@type': 'City',
           name: 'Henderson',

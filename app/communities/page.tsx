@@ -14,6 +14,7 @@ import {
   ROOT_COMMUNITIES,
 } from '@/lib/cadence-nv-catalog'
 import { PageAeo } from '@/components/cadence/page-aeo'
+import { ItemListSchema } from '@/components/schema/item-list'
 import { defaultPageFaqs } from '@/lib/page-aeo'
 import { NapStrip } from '@/components/cadence/nap-strip'
 
@@ -133,6 +134,24 @@ export default function CommunitiesIndexPage() {
           </div>
         </div>
       </section>
+      <ItemListSchema
+        path="/communities"
+        name="Cadence Henderson builder hubs and villages"
+        description="Builder hubs and neighborhoods in Cadence Henderson NV 89011."
+        itemType="Place"
+        items={[
+          ...CADENCE_BUILDER_HUBS.map((hub) => ({
+            name: hub.name,
+            url: `/communities/${hub.slug}`,
+            description: `${hub.name} villages in Cadence Henderson NV 89011`,
+          })),
+          ...ROOT_COMMUNITIES.map((item) => ({
+            name: item.name,
+            url: item.cadencePath,
+            description: `${item.name} in Cadence Henderson NV 89011`,
+          })),
+        ]}
+      />
       <PageAeo
         path="/communities"
         name="Cadence Henderson Neighborhoods | All Villages 89011"

@@ -13,6 +13,7 @@ import { CONTACT_INFO, HOA_CONTACT } from '@/components/cadence/contact-info'
 import { Newspaper, Calendar, Image as ImageIcon, Phone, Mail } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { fetchNews } from '@/lib/fetch-news'
+import { ItemListSchema } from '@/components/schema/item-list'
 
 const NEWS_FAQS = [
   {
@@ -210,6 +211,18 @@ export default async function NewsPage() {
         </div>
       </section>
 
+      <ItemListSchema
+        path="/news"
+        name="Cadence Henderson news articles"
+        description="Official Cadence master-planned community news mirrored on cadencehenderson.com."
+        itemType="NewsArticle"
+        items={articles.map((article) => ({
+          name: article.title,
+          url: article.link,
+          description: article.excerpt.slice(0, 160),
+          image: article.image,
+        }))}
+      />
       <PageAeo
         path="/news"
         name="News | Cadence Henderson NV 89011"

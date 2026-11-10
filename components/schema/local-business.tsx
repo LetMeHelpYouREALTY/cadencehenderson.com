@@ -52,6 +52,7 @@ export function LocalBusinessSchema() {
     areaServed: [
       {
         '@type': 'Place',
+        '@id': 'https://www.cadencehenderson.com/#cadence-henderson-place',
         name: 'Cadence Henderson, Henderson NV 89011',
       },
       {

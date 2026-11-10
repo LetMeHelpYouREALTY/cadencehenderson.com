@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { PageAeo } from '@/components/cadence/page-aeo'
+import { NewsArticleSchema } from '@/components/schema/news-article'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Calendar, ArrowLeft, Phone } from 'lucide-react'
@@ -125,6 +126,13 @@ export default async function NewsArticlePage({ params }: PageProps) {
         </div>
       </article>
 
+      <NewsArticleSchema
+        slug={article.slug}
+        title={article.title}
+        description={article.excerpt.slice(0, 160)}
+        dateIso={article.dateIso}
+        image={article.image}
+      />
       <PageAeo
         path={`/news/${article.slug}`}
         name={`${article.title} | Cadence Henderson NV 89011`}
@@ -137,7 +145,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
           {
             question: 'Where can I read more Cadence news?',
             answer:
-              'Browse all Cadence community news on the News page at cadencehenderson.com/news.',
+              'Browse all Cadence community news on the News page at https://www.cadencehenderson.com/news.',
           },
         ]}
         breadcrumbs={[

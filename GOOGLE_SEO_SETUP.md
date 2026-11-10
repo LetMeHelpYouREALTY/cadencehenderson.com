@@ -9,10 +9,10 @@ Your Cadence Henderson website is now fully optimized for Google Search!
 ## 🎯 **WHAT'S BEEN ADDED**
 
 ### 1. **Sitemap.xml** ✅
-- **File:** `app/sitemap.ts`
+- **File:** `lib/sitemap-data.ts` + `app/sitemap.xml/route.ts`
 - **URL:** https://www.cadencehenderson.com/sitemap.xml
-- **Includes:** All 28+ pages with proper priority and change frequency
-- **Auto-generated** by Next.js
+- **Includes:** Public hubs, builders, villages, rentals, news articles
+- **Primary host:** `www.cadencehenderson.com` (apex 301s to www via middleware + Vercel redirects)
 
 **Pages Indexed:**
 - Homepage (priority: 1.0, daily updates)
@@ -51,7 +51,7 @@ Sitemap: https://www.cadencehenderson.com/sitemap.xml
 {
   "@type": "RealEstateAgent",
   "name": "Cadence Henderson Homes By Dr. Jan Duffy",
-  "telephone": "+1-702-500-1955",
+  "telephone": "+1-702-930-8672",
   "email": "DrJanSells@CadenceHenderson.com",
   "address": {
     "streetAddress": "1170 E Sunset Rd, 2nd Floor",
@@ -117,7 +117,7 @@ Cadence Henderson Homes By Dr. Jan Duffy - Master Planned Community
 Discover Cadence, a premier master-planned community in Henderson, Nevada. 
 Featuring new homes, exceptional amenities, and stunning views. 
 Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices. 
-Call 702-500-1955
+Call 702-930-8672
 ```
 
 **Keywords Naturally Included:**
@@ -134,24 +134,30 @@ Call 702-500-1955
 
 ## 📋 **NEXT STEPS FOR GOOGLE**
 
-### **Step 1: Google Search Console** (Required)
+### **Step 1: Google Search Console** (Required) — **www primary**
 
 1. Go to https://search.google.com/search-console
-2. Click "Add Property"
-3. Enter: `www.cadencehenderson.com`
-4. Choose verification method:
-   - **Recommended:** DNS TXT record
-   - Alternative: HTML file upload (placeholder ready in `/public/`)
+2. Add a **URL-prefix** property: `https://www.cadencehenderson.com` (preferred)
+3. Optionally also add the Domain property `cadencehenderson.com`, then set **www as preferred** / confirm apex → www 301s
+4. Verify (DNS TXT recommended)
 5. Submit sitemap: `https://www.cadencehenderson.com/sitemap.xml`
+6. Use URL Inspection on a few apex URLs — they should report **301 → www**
+7. Request indexing for key hubs after production deploy
+
+**Site already enforces www:**
+- `metadataBase` + canonicals = `https://www.cadencehenderson.com`
+- `middleware.ts` 301 apex → www (and HTTP → HTTPS)
+- `vercel.json` host redirect apex → www
+- `robots.ts` `host` + sitemap on www
 
 ### **Step 2: Google Business Profile** (Highly Recommended)
 
 1. Go to https://business.google.com
 2. Create/claim business listing
-3. Use exact name: **"Cadence Henderson Homes By Dr. Jan Duffy"**
+3. Use exact name matching site NAP / CONTACT_INFO
 4. Category: Real Estate Agent
 5. Address: 1170 E Sunset Rd, 2nd Floor, Henderson, NV 89011
-6. Phone: 702-500-1955
+6. Phone: 702-930-8672
 7. Website: https://www.cadencehenderson.com
 8. Verify with postcard or phone
 9. Add photos and business hours

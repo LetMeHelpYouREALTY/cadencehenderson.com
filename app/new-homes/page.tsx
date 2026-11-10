@@ -5,6 +5,7 @@ import { BUILDER_LOGO_SRCS, BUILDER_PHOTO_KEYS } from '@/lib/builder-logos'
 import { SiteImage } from '@/components/cadence/site-image'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { HowToBuySchema } from '@/components/schema/how-to-buy'
+import { ItemListSchema } from '@/components/schema/item-list'
 import { RealScoutAdvancedSearch } from '@/components/idx/realscout-advanced-search'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
@@ -400,6 +401,17 @@ export default function NewHomesPage() {
         </div>
       </section>
 
+      <ItemListSchema
+        path="/new-homes"
+        name="New home builders in Cadence Henderson"
+        description="Award-winning builders offering new construction in Cadence Henderson NV 89011."
+        itemType="Organization"
+        items={builders.map((builder) => ({
+          name: builder.name,
+          url: `/new-homes/${builder.slug}`,
+          description: builder.description,
+        }))}
+      />
       <PageAeo
         path="/new-homes"
         name="New Homes for Sale – Cadence Henderson NV 89011"

@@ -1,55 +1,27 @@
-# Task plan — PageSpeed mobile + GSC coverage (2026-11-10)
+# Task plan — SEO / GEO / AEO + www GSC prep (2026-11-10)
 
-## Sources
+## Goals
 
-- PageSpeed mobile: https://pagespeed.web.dev/analysis/https-cadencehenderson-com/c1132q0lv5
-- Local Lighthouse (mobile simulate): Performance **70**, LCP **13.0s**, CLS 0, TBT 60ms
-- GSC exports (2026-11-09): Coverage, Coverage Drilldown, Latest links, More sample links
+- Optimize for SEO, GEO, AEO with updated schemas so major sections on every page can rank
+- Audit and fix code/schema errors
+- Prepare site for Google Search Console with **www** as primary
+- Commit, push, deploy production
 
-## Findings
+## Plan
 
-### PageSpeed / LCP
-
-- [x] LCP element = homepage hero; load delay ~66% of LCP
-- [x] `imagedelivery.net/.../cadence-hero-homepage/hero` returns **404** → SiteImage falls back to 436KB JPEG
-- [x] Oversized git JPEGs (hero, central-park, exterior-1, market-snapshot)
-- [x] Render-blocking Calendly CSS in `<head>`
-- [x] Calendly + RealScout third-party weight; Calendly script was `afterInteractive`
-- [x] No `CLOUDFLARE_API_TOKEN` on Vercel project; hosted Images never uploaded
-
-### Search Console coverage
-
-- Indexed ~79 / Not indexed ~46 (as of 2026-11-05)
-- Critical: Discovered–not indexed **32**, Crawled–not indexed **9**, redirect **3**, 404 **1**, robots **1**
-- Drilldown URLs are mostly village/rental/lifestyle hubs already in sitemap
-- External links: only **regencyvegas.com** samples (thin referring domains)
-
-### Deploy note
-
-- Production Vercel target was last deployed from `cursor/remove-inaccurate-hoa-events-099b`, not `main`
-
-## Fixes in this branch
-
-- [x] Compress critical images + add WebP siblings
-- [x] Gate CF delivery behind `NEXT_PUBLIC_CLOUDFLARE_IMAGES_LIVE` (git WebP until live)
-- [x] Remove head Calendly CSS; Calendly loads on demand only (no layout ScriptLoader)
-- [x] Drop off-site RealScout redirects for `/rentals*` and `/new-homes/beazer-homes`
-- [x] Sitemap excludes only permanent on-site redirect aliases
-- [x] Homepage key-facts internal links to discovered hubs
-- [x] Hero: static search CTA (no RealScout widget in LCP viewport)
-- [x] Defer RealScout office listings until near viewport
-- [x] Wire `sizes` on SiteImage; long-cache `/images/*`; lucide optimizePackageImports
-- [x] Analytics → `lazyOnload`; drop unused Geist Mono + unused preconnects
-- [x] News: replace copied cadencenv.com images with original WebP generated from each article H1/H2/H3 + content; strip remote `<img>` from body HTML; sitemap includes `/news/[slug]`
-
-## Ops follow-up (needs secrets / GSC)
-
-- [ ] Add Cloudflare Images token + account ID; run `npm run cloudflare:images:sync`
-- [ ] Set `NEXT_PUBLIC_CLOUDFLARE_IMAGES_LIVE=1` after upload
-- [ ] Point Vercel production deployments at `main`
-- [ ] GSC: Inspect + Request indexing for the 32 discovered URLs after deploy
-- [ ] Earn/add more referring domains beyond regencyvegas.com
+- [x] P0: Sync `/faqs` visible Q&A with FAQPage JSON-LD (single source)
+- [x] P0: Confirm `/gallery` FAQ schema matches visible FAQ (already matched)
+- [x] P0: Add Article schema on `/news/[slug]`
+- [x] P1: ItemList schema on hub pages (new-homes, rentals, news, communities)
+- [x] P1: Harden apex→www in vercel.json (+ keep middleware)
+- [x] P1: SearchAction already honored via FindYourHomeQuerySync
+- [x] P1: HowTo sell schema on `/sell-in-cadence`; Place `@id` on WebPage + RealEstateAgent
+- [x] Audit: `tsc --noEmit` clean on touched tree
+- [x] Commit, push, production deploy, update PR
 
 ## Review
 
-Mobile LCP should drop from ~13s to a few seconds once the hero loads from local WebP without waiting on CF 404. Indexing improves by keeping rental/Beazer hubs on-site and linking them from the homepage; Google still decides crawl/index — request indexing after production ships on `main`.
+- FAQ schema/UI now share `lib/faqs-page-data.ts` (removed mismatched “Cadence Henderson…” schema-only questions and community-only address confusion).
+- News articles emit `NewsArticle` + local WebP heroes; hubs emit `ItemList`.
+- www primary: middleware + vercel.json host redirect + metadataBase/canonicals/sitemap/robots host.
+- GSC ops: add URL-prefix property `https://www.cadencehenderson.com`, submit sitemap, confirm apex 301s (see `GOOGLE_SEO_SETUP.md`).
