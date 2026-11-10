@@ -18,7 +18,7 @@ Remove or correct website copy that presents unofficial Cadence event schedules 
 - [x] Option A residual: `/realtors/life-at-cadence` recreation blurb
 - [x] Option A residual: `/news` FALLBACK_ARTICLES (on-site accurate lifestyle links)
 - [x] Option A residual: `/rentals` fitness-centers FAQ wording
-- [ ] Commit, push, update PR #20
+- [x] Commit, push, update PR #20
 
 ## GSC exports reviewed (2026-11-09)
 
