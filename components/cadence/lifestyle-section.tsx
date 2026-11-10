@@ -24,12 +24,12 @@ export function LifestyleSection() {
           <div className="order-1 md:order-2">
             <h2
               id="lifestyle-heading"
-              className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-8"
+              className="text-4xl font-semibold tracking-[0.06em] text-neutral-900 mb-8"
             >
               Lifestyle in Cadence Henderson NV 89011
             </h2>
             <p
-              className="aeo-lead text-xl text-gray-700 mb-8 leading-relaxed"
+              className="aeo-lead text-xl text-gray-900 mb-8 leading-relaxed"
               data-speakable
             >
               Cadence Henderson NV 89011 combines new-home villages with Central

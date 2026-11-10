@@ -137,7 +137,7 @@ export default function FAQsPage() {
 
       <section className="border-b border-neutral-100 py-8">
         <p
-          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-light text-neutral-600"
+          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-normal text-neutral-800"
           data-speakable
         >
           Answers about Cadence Henderson builders, schools, amenities, and
@@ -200,7 +200,7 @@ export default function FAQsPage() {
                         </button>
                         {isOpen && (
                           <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                            <p className="faq-answer text-gray-700 leading-relaxed">
+                            <p className="faq-answer text-gray-900 leading-relaxed">
                               {faq.a}
                             </p>
                           </div>

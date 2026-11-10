@@ -64,10 +64,10 @@ export default function AscendPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl">
-            <h2 className="mb-6 text-3xl font-extralight tracking-[0.06em] text-neutral-900">
+            <h2 className="mb-6 text-3xl font-semibold tracking-[0.06em] text-neutral-900">
               Published floor plans
             </h2>
-            <p className="mb-8 font-light text-neutral-600">
+            <p className="mb-8 font-normal text-neutral-800">
               Square footage and bedroom counts below come from the Cadence
               community listing for Ascend Symmetry. Availability and rent are
               not listed here because they change. Call 702-444-7754 for
@@ -95,7 +95,7 @@ export default function AscendPage() {
                 </tbody>
               </table>
             </div>
-            <p className="mt-8 font-light text-neutral-600">
+            <p className="mt-8 font-normal text-neutral-800">
               Looking to buy instead of lease? Dr. Jan Duffy represents Cadence
               buyers at {CONTACT_INFO.phone}.{' '}
               <Link

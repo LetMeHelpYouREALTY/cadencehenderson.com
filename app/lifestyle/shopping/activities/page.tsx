@@ -83,7 +83,7 @@ export default function ActivitiesPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl space-y-8">
-            <p className="font-light leading-relaxed text-neutral-600">
+            <p className="font-normal leading-relaxed text-neutral-800">
               Cadence Henderson already has Central Park, pocket parks, and
               miles of internal trails. These destinations sit just outside the
               community gates. Distances below are typical drives from 89011 —
@@ -94,7 +94,7 @@ export default function ActivitiesPage() {
                 <h2 className="mb-2 text-2xl font-medium text-neutral-900">
                   {item.name}
                 </h2>
-                <p className="font-light leading-relaxed text-neutral-600">
+                <p className="font-normal leading-relaxed text-neutral-800">
                   {item.note}
                 </p>
               </article>

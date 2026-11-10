@@ -146,7 +146,7 @@ export default function NewHomesPage() {
               Search Henderson Homes for Sale
             </h2>
             <p
-              className="aeo-lead mx-auto mb-6 max-w-2xl text-center font-light text-gray-600"
+              className="aeo-lead mx-auto mb-6 max-w-2xl text-center font-normal text-gray-800"
               data-speakable
             >
               Nine builders sell new construction in Cadence Henderson NV 89011.
@@ -176,7 +176,7 @@ export default function NewHomesPage() {
       <section className="py-8 bg-gray-50 border-b">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-4 justify-center items-center">
-            <div className="text-gray-700 font-medium">Filter by:</div>
+            <div className="text-gray-900 font-medium">Filter by:</div>
             <select className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900">
               <option>Price Range</option>
               <option>$300K - $400K</option>
@@ -206,7 +206,7 @@ export default function NewHomesPage() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               New home builders in Cadence Henderson NV 89011
             </h2>
-            <p className="text-xl text-gray-700">
+            <p className="text-xl text-gray-900">
               Choose from {builders.length} premier home builders offering over
               150 homes.{' '}
               <Link
@@ -256,8 +256,8 @@ export default function NewHomesPage() {
                     <h3 className="text-xl font-bold text-gray-900 mb-3">
                       {builder.name}
                     </h3>
-                    <p className="text-gray-700 mb-4">{builder.description}</p>
-                    <div className="flex items-center justify-between text-sm text-gray-600 mb-4">
+                    <p className="text-gray-900 mb-4">{builder.description}</p>
+                    <div className="flex items-center justify-between text-sm text-gray-800 mb-4">
                       <span className="flex items-center">
                         <Home size={16} className="mr-1" />
                         {builder.homes} Homes
@@ -284,7 +284,7 @@ export default function NewHomesPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Ready to Find Your Dream Home?
             </h2>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-gray-900 mb-8">
               Contact Dr. Jan Duffy to schedule a personalized tour of Cadence.
               I'll guide you through Cadence builders and help you compare floor
               plans, lot orientation, and net monthly cost.
@@ -327,7 +327,7 @@ export default function NewHomesPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
               Cadence Henderson new home FAQs
             </h2>
-            <p className="text-center text-gray-700 mb-8">
+            <p className="text-center text-gray-900 mb-8">
               New homes in Cadence Henderson, Henderson NV 89011
             </p>
             <script
@@ -402,7 +402,7 @@ export default function NewHomesPage() {
                       ▾
                     </span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">
+                  <p className="faq-answer mt-3 text-gray-900 leading-relaxed">
                     {a}
                   </p>
                 </details>

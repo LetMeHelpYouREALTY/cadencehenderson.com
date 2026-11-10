@@ -81,7 +81,7 @@ export function BuildersShowcase() {
       <div className="container mx-auto px-4 sm:px-6">
         <h2
           id="builders-heading"
-          className="text-4xl font-extralight tracking-[0.06em] text-center text-neutral-900 mb-16"
+          className="text-4xl font-semibold tracking-[0.06em] text-center text-neutral-900 mb-16"
         >
           New Home Builders in Cadence Henderson
         </h2>
@@ -100,7 +100,7 @@ export function BuildersShowcase() {
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
-                <h3 className="font-light tracking-[0.08em] uppercase text-neutral-700 text-xs">
+                <h3 className="font-normal tracking-[0.08em] uppercase text-neutral-900 text-xs">
                   {builder.name}
                 </h3>
               </>

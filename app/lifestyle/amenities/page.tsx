@@ -203,7 +203,7 @@ export default function AmenitiesPage() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <p className="text-gray-700 mb-4">{amenity.description}</p>
+                    <p className="text-gray-900 mb-4">{amenity.description}</p>
                     <div className="border-t pt-4">
                       <h4 className="font-bold text-gray-900 mb-3 text-sm">
                         Features Include:
@@ -212,7 +212,7 @@ export default function AmenitiesPage() {
                         {amenity.features.map((feature) => (
                           <div
                             key={feature}
-                            className="flex items-start text-sm text-gray-700"
+                            className="flex items-start text-sm text-gray-900"
                           >
                             <span className="w-1.5 h-1.5 bg-cyan-900 rounded-full mr-2 mt-1.5 flex-shrink-0" />
                             <span>{feature}</span>
@@ -248,7 +248,7 @@ export default function AmenitiesPage() {
                     {category.items.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start text-sm text-gray-700"
+                        className="flex items-start text-sm text-gray-900"
                       >
                         <span className="w-1.5 h-1.5 bg-cyan-900 rounded-full mr-2 mt-1.5 flex-shrink-0" />
                         {item}
@@ -278,7 +278,7 @@ export default function AmenitiesPage() {
                 <h2 className="text-4xl font-bold text-gray-900 mb-6">
                   50-Acre Central Park
                 </h2>
-                <p className="text-lg text-gray-700 mb-6">
+                <p className="text-lg text-gray-900 mb-6">
                   The crown jewel of Cadence amenities, Central Park offers
                   nearly 50 acres of open space with stunning mountain views,
                   multiple playgrounds, walking trails, and event spaces.
@@ -286,38 +286,38 @@ export default function AmenitiesPage() {
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Multi-age playgrounds with modern equipment
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       About 2,000 sq ft splash pad with water features
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Large event lawn for community gatherings
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Pickleball courts plus scenic walking and biking trails
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Sunset Road Linear Park: bounce pads, play structures,
                       table tennis, and corn hole
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Resident pool with Las Vegas Strip views and free wifi at
                       amenity areas
                     </span>
@@ -343,7 +343,7 @@ export default function AmenitiesPage() {
               <div className="bg-white rounded-lg shadow-md p-6 text-center">
                 <Waves size={40} className="mx-auto mb-3 text-cyan-900" />
                 <h3 className="font-bold text-gray-900 mb-2">Pools</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-800">
                   Daily: 6 AM - 10 PM
                   <br />
                   Seasonal hours vary
@@ -354,7 +354,7 @@ export default function AmenitiesPage() {
                 <h3 className="font-bold text-gray-900 mb-2">
                   Fitness Centers
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-800">
                   24/7 Access
                   <br />
                   with resident key card
@@ -363,7 +363,7 @@ export default function AmenitiesPage() {
               <div className="bg-white rounded-lg shadow-md p-6 text-center">
                 <Users size={40} className="mx-auto mb-3 text-cyan-900" />
                 <h3 className="font-bold text-gray-900 mb-2">Clubhouses</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-800">
                   Daily: 8 AM - 10 PM
                   <br />
                   Reservations required
@@ -415,7 +415,7 @@ export default function AmenitiesPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
               Cadence Henderson amenities FAQs
             </h2>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-center text-gray-800 mb-8">
               Amenities at Cadence Henderson, Henderson NV 89011
             </p>
             <script
@@ -490,7 +490,7 @@ export default function AmenitiesPage() {
                       ▾
                     </span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">
+                  <p className="faq-answer mt-3 text-gray-900 leading-relaxed">
                     {a}
                   </p>
                 </details>

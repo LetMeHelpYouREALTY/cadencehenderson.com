@@ -56,8 +56,8 @@ export default function ElysianPage() {
 
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl space-y-6 font-light leading-relaxed text-neutral-600">
-            <h2 className="text-3xl font-extralight tracking-[0.06em] text-neutral-900">
+          <div className="mx-auto max-w-3xl space-y-6 font-normal leading-relaxed text-neutral-800">
+            <h2 className="text-3xl font-semibold tracking-[0.06em] text-neutral-900">
               Rent a house inside the master plan
             </h2>
             <p>

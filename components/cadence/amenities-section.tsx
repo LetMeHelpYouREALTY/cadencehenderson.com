@@ -13,12 +13,12 @@ export function AmenitiesSection() {
           <div>
             <h2
               id="amenities-heading"
-              className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-8"
+              className="text-4xl font-semibold tracking-[0.06em] text-neutral-900 mb-8"
             >
               Amenities in Cadence Henderson NV 89011
             </h2>
             <p
-              className="aeo-lead text-xl text-gray-700 mb-8 leading-relaxed"
+              className="aeo-lead text-xl text-gray-900 mb-8 leading-relaxed"
               data-speakable
             >
               Cadence Henderson NV 89011 includes a ~50-acre Central Park,

@@ -149,7 +149,7 @@ export default function CommunityPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Neighborly Spirit
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-900">
                   Experience genuine connections with friendly neighbors who
                   care about building a strong, supportive community.
                 </p>
@@ -162,7 +162,7 @@ export default function CommunityPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Year-Round Events
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-900">
                   From concerts to movie nights, farmers markets to holiday
                   celebrations, there's always something happening.
                 </p>
@@ -175,7 +175,7 @@ export default function CommunityPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Clubs and events
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-900">
                   Book club, running club, garden club, and Central Park events
                   run on a posted resident calendar.
                 </p>
@@ -194,7 +194,7 @@ export default function CommunityPage() {
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
                 Clubs & Interest Groups
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-800">
                 Join like-minded neighbors and pursue your passions
               </p>
             </div>
@@ -209,7 +209,7 @@ export default function CommunityPage() {
                   <h3 className="font-bold text-lg text-gray-900 mb-2">
                     {club.name}
                   </h3>
-                  <p className="text-sm text-gray-700 mb-3">
+                  <p className="text-sm text-gray-900 mb-3">
                     {club.description}
                   </p>
                   <p className="text-xs text-amber-900 font-medium">
@@ -247,7 +247,7 @@ export default function CommunityPage() {
                       <h4 className="font-bold text-gray-900 mb-1">
                         {opportunity.title}
                       </h4>
-                      <p className="text-sm text-gray-700">
+                      <p className="text-sm text-gray-900">
                         {opportunity.description}
                       </p>
                     </li>
@@ -263,7 +263,7 @@ export default function CommunityPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   Online Community
                 </h3>
-                <p className="text-gray-700 mb-6">
+                <p className="text-gray-900 mb-6">
                   Stay connected with neighbors through our private online
                   community forum. Share recommendations, organize activities,
                   and stay informed about community news.
@@ -271,25 +271,25 @@ export default function CommunityPage() {
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-900 rounded-full mr-2 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Private residents-only access
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-900 rounded-full mr-2 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Discussion forums and groups
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-900 rounded-full mr-2 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Event calendar and RSVPs
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-900 rounded-full mr-2 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Classified ads and marketplace
                     </span>
                   </li>
@@ -318,12 +318,12 @@ export default function CommunityPage() {
                     <div className="font-bold text-gray-900">
                       Sarah & Mike T.
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-800">
                       Residents since 2022
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-700 italic">
+                <p className="text-gray-900 italic">
                   "We've lived in many neighborhoods, but Cadence truly feels
                   like home. The sense of community here is incredible—our
                   neighbors have become our best friends!"
@@ -335,12 +335,12 @@ export default function CommunityPage() {
                   <div className="text-4xl mr-3">👤</div>
                   <div>
                     <div className="font-bold text-gray-900">Jennifer M.</div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-800">
                       Resident since 2021
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-700 italic">
+                <p className="text-gray-900 italic">
                   "The community events and clubs make it so easy to meet people
                   and stay active. My kids love living here, and so do we!"
                 </p>

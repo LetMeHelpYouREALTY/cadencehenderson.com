@@ -80,17 +80,17 @@ export default function PocketParksPage() {
               />
             </div>
             <div>
-              <h2 className="mb-4 text-3xl font-extralight tracking-[0.06em] text-neutral-900">
+              <h2 className="mb-4 text-3xl font-semibold tracking-[0.06em] text-neutral-900">
                 Parks scaled to the block
               </h2>
-              <p className="mb-4 font-light leading-relaxed text-neutral-600">
+              <p className="mb-4 font-normal leading-relaxed text-neutral-800">
                 Cadence Henderson is not only the large Central Park. The master
                 plan sprinkles pocket parks through residential villages so most
                 homes sit a short walk from a green. These spaces are smaller
                 than the 50-acre park: a playground, turf, and seating rather
                 than event lawns and splash pads.
               </p>
-              <p className="font-light leading-relaxed text-neutral-600">
+              <p className="font-normal leading-relaxed text-neutral-800">
                 When you tour lots, note which pocket park is nearest the
                 driveway and how the sidewalk connects to the main loop trail.
                 That walk is part of daily life here — not a weekend outing.
@@ -108,7 +108,7 @@ export default function PocketParksPage() {
                 <h3 className="mb-3 text-lg font-medium text-neutral-900">
                   {feature.title}
                 </h3>
-                <p className="font-light leading-relaxed text-neutral-600">
+                <p className="font-normal leading-relaxed text-neutral-800">
                   {feature.body}
                 </p>
               </article>

@@ -61,7 +61,7 @@ export default function ResidentsPage() {
           <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
             How Dr. Jan Can Help Current Residents
           </h2>
-          <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+          <p className="text-xl text-gray-800 mb-12 text-center max-w-3xl mx-auto">
             Already living in Cadence? I'm here to help with your real estate
             needs and questions.
           </p>
@@ -71,7 +71,7 @@ export default function ResidentsPage() {
               <h3 className="font-bold text-lg text-gray-900 mb-2">
                 Home Value Update
               </h3>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-gray-800 mb-4">
                 Curious what your home is worth? Get a free market analysis
               </p>
               <a
@@ -92,7 +92,7 @@ export default function ResidentsPage() {
               <h3 className="font-bold text-lg text-gray-900 mb-2">
                 Referral Rewards
               </h3>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-gray-800 mb-4">
                 Know someone looking in Cadence? Earn rewards for referrals
               </p>
               <a href={`mailto:${CONTACT_INFO.email}?subject=Referral`}>
@@ -111,7 +111,7 @@ export default function ResidentsPage() {
               <h3 className="font-bold text-lg text-gray-900 mb-2">
                 Thinking of Selling?
               </h3>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-gray-800 mb-4">
                 Ready to upgrade or relocate? Let's discuss your options
               </p>
               <a href={`mailto:${CONTACT_INFO.email}?subject=Selling My Home`}>
@@ -130,7 +130,7 @@ export default function ResidentsPage() {
               <h3 className="font-bold text-lg text-gray-900 mb-2">
                 Investment Properties
               </h3>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-gray-800 mb-4">
                 Looking to invest in more Cadence properties? I can help
               </p>
               <a
@@ -154,7 +154,7 @@ export default function ResidentsPage() {
               <h3 className="font-bold text-lg text-gray-900 mb-2">
                 Community Events
               </h3>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-gray-800 mb-4">
                 See what's happening in your neighborhood
               </p>
               <Button
@@ -172,7 +172,7 @@ export default function ResidentsPage() {
             >
               <HelpCircle size={48} className="mx-auto mb-4 text-emerald-900" />
               <h3 className="font-bold text-lg text-gray-900 mb-2">FAQs</h3>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-gray-800 mb-4">
                 Common questions about living in Cadence
               </p>
               <Button
@@ -199,17 +199,17 @@ export default function ResidentsPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   HOA Management
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-900 mb-4">
                   For HOA dues, documents, maintenance requests, and amenity
                   reservations, contact the Cadence Master Association:
                 </p>
                 <div className="space-y-2 text-sm">
-                  <p className="text-gray-700">
+                  <p className="text-gray-900">
                     Current HOA phone numbers are posted in the resident portal
                     and in closing documents — they change with the management
                     company.
                   </p>
-                  <p className="text-gray-700">
+                  <p className="text-gray-900">
                     <strong>Realtor line:</strong>{' '}
                     <a
                       href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
@@ -220,7 +220,7 @@ export default function ResidentsPage() {
                   </p>
                 </div>
                 <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-                  <p className="text-sm text-gray-700">
+                  <p className="text-sm text-gray-900">
                     💡 <strong>Note:</strong> For HOA portal access and official
                     documents, contact the management company directly.
                   </p>
@@ -231,7 +231,7 @@ export default function ResidentsPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   Your Real Estate Agent
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-900 mb-4">
                   For real estate questions, home valuations, or if you're
                   thinking of selling, contact Dr. Jan Duffy:
                 </p>
@@ -256,7 +256,7 @@ export default function ResidentsPage() {
                   </div>
                   <div className="flex items-start">
                     <MapPin size={18} className="mr-2 text-emerald-900 mt-1" />
-                    <p className="text-gray-700 text-sm">
+                    <p className="text-gray-900 text-sm">
                       {CONTACT_INFO.address.street}
                       <br />
                       {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state}{' '}
@@ -306,7 +306,7 @@ export default function ResidentsPage() {
                   <h3 className="font-bold text-gray-900 mb-2">
                     After-hours HOA
                   </h3>
-                  <p className="text-sm text-gray-700">
+                  <p className="text-sm text-gray-900">
                     Use the number in your resident portal. For Cadence home
                     questions, call {CONTACT_INFO.phone}.
                   </p>
@@ -324,7 +324,7 @@ export default function ResidentsPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Community Resources
             </h2>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-center text-gray-800 mb-8">
               Helpful links and information for Cadence residents
             </p>
             <div className="space-y-4">
@@ -334,7 +334,7 @@ export default function ResidentsPage() {
                     <FileText className="mr-4 text-emerald-900" size={32} />
                     <div>
                       <h3 className="font-bold text-gray-900">HOA Documents</h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-800">
                         CC&Rs, bylaws, and guidelines - Contact HOA management
                       </p>
                     </div>
@@ -359,7 +359,7 @@ export default function ResidentsPage() {
                         <h3 className="font-bold text-gray-900">
                           Community Map
                         </h3>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-gray-800">
                           Explore amenities, trails, and neighborhood layout
                         </p>
                       </div>
@@ -383,7 +383,7 @@ export default function ResidentsPage() {
                         <h3 className="font-bold text-gray-900">
                           Events Calendar
                         </h3>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-gray-800">
                           View upcoming community events and activities
                         </p>
                       </div>
@@ -407,7 +407,7 @@ export default function ResidentsPage() {
                         <h3 className="font-bold text-gray-900">
                           Amenities Guide
                         </h3>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-gray-800">
                           Hours, rules, and details for all community amenities
                         </p>
                       </div>

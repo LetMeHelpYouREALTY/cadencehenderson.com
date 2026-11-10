@@ -74,11 +74,11 @@ export function ServicesSection() {
         <div className="text-center mb-12">
           <h2
             id="services-heading"
-            className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-6"
+            className="text-4xl font-semibold tracking-[0.06em] text-neutral-900 mb-6"
           >
             What Buyers Get at Cadence Henderson — Free Expert Representation
           </h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-900 max-w-2xl mx-auto">
             Dr. Jan Duffy represents new home buyers only at Cadence Henderson
             NV 89011. The builder pays her fee — free to buyers. Licensed since
             2008 · 35 years in Las Vegas.{' '}
@@ -96,7 +96,7 @@ export function ServicesSection() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-800 text-sm leading-relaxed">
                   {service.description}
                 </p>
               </>
@@ -130,11 +130,11 @@ export function ServicesSection() {
           })}
         </div>
         <div className="mt-10 text-center">
-          <p className="text-gray-600 mb-2">
+          <p className="text-gray-800 mb-2">
             <MapPin className="inline w-4 h-4 mr-1" aria-hidden />
             Serving Cadence, Henderson NV 89011 and the greater Henderson area
           </p>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-gray-800">
             {CONTACT_INFO.welcomeCenter} · {CONTACT_INFO.phone}
           </p>
         </div>

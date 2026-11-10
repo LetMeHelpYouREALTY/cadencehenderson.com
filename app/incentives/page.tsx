@@ -83,7 +83,7 @@ export default function IncentivesPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <p
-            className="aeo-lead mx-auto mb-10 max-w-3xl text-center font-light text-neutral-600"
+            className="aeo-lead mx-auto mb-10 max-w-3xl text-center font-normal text-neutral-800"
             data-speakable
           >
             Builder incentives in Cadence Henderson NV 89011 can lower your
@@ -103,7 +103,7 @@ export default function IncentivesPage() {
                   <h2 className="mb-3 text-xl font-medium text-neutral-900">
                     {item.title}
                   </h2>
-                  <p className="font-light leading-relaxed text-neutral-600">
+                  <p className="font-normal leading-relaxed text-neutral-800">
                     {item.body}
                   </p>
                 </article>
@@ -116,16 +116,16 @@ export default function IncentivesPage() {
       <section className="bg-neutral-50 py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl">
-            <h2 className="mb-4 text-3xl font-extralight tracking-[0.06em] text-neutral-900">
+            <h2 className="mb-4 text-3xl font-semibold tracking-[0.06em] text-neutral-900">
               Why a buyer’s agent still matters
             </h2>
-            <p className="mb-4 font-light leading-relaxed text-neutral-600">
+            <p className="mb-4 font-normal leading-relaxed text-neutral-800">
               Incentives look generous on a sign. Net cost is what you keep
               after rate, points, HOA, taxes, and option pricing. Dr. Jan Duffy
               compares Cadence builders side by side so you are not shopping
               credits in isolation.
             </p>
-            <p className="font-light leading-relaxed text-neutral-600">
+            <p className="font-normal leading-relaxed text-neutral-800">
               Buyer representation on new construction in Cadence Henderson is
               typically paid by the builder. Call {CONTACT_INFO.phone} or
               schedule a 15-minute consult before you visit a model park.

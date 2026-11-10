@@ -77,11 +77,11 @@ export default function SellInCadencePage() {
 
       <section className="py-16 border-b border-neutral-200">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl font-extralight tracking-[0.06em] text-neutral-900 mb-6 text-center">
+          <h2 className="text-3xl font-semibold tracking-[0.06em] text-neutral-900 mb-6 text-center">
             Why sell-to-buy in Cadence?
           </h2>
           <p
-            className="aeo-lead text-center font-light text-neutral-600 mb-8"
+            className="aeo-lead text-center font-normal text-neutral-800 mb-8"
             data-speakable
           >
             Cadence is a master-planned community in Henderson NV 89011 with
@@ -92,7 +92,7 @@ export default function SellInCadencePage() {
             construction for the purchase; she can also discuss listing your
             current home.
           </p>
-          <ul className="space-y-4 text-neutral-700 font-light">
+          <ul className="space-y-4 text-neutral-900 font-normal">
             <li className="flex gap-3">
               <Home className="shrink-0 text-primary" size={22} aria-hidden />
               <span>
@@ -154,11 +154,11 @@ export default function SellInCadencePage() {
           <div className="max-w-2xl mx-auto text-center">
             <h2
               id="valuation-heading"
-              className="text-3xl font-extralight tracking-[0.06em] text-neutral-900 mb-4"
+              className="text-3xl font-semibold tracking-[0.06em] text-neutral-900 mb-4"
             >
               Start with your current home value
             </h2>
-            <p className="text-neutral-600 font-light mb-8">
+            <p className="text-neutral-800 font-normal mb-8">
               Use the tool below for a quick estimate on the home you plan to
               sell. Then book a listing consultation so Dr. Jan Duffy can
               sanity-check net proceeds against Cadence builder pricing.
@@ -181,7 +181,7 @@ export default function SellInCadencePage() {
 
       <section className="py-12 border-t border-neutral-200">
         <div className="container mx-auto px-4 text-center max-w-2xl">
-          <p className="text-neutral-600 font-light mb-4">
+          <p className="text-neutral-800 font-normal mb-4">
             Shopping Cadence inventory while you plan your sale?
           </p>
           <Link

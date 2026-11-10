@@ -23,7 +23,7 @@ export function RealtorsSection() {
           <div className="order-1 md:order-2">
             <h2
               id="realtors-heading"
-              className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-8"
+              className="text-4xl font-semibold tracking-[0.06em] text-neutral-900 mb-8"
             >
               Why Use a Buyer&apos;s Agent for New Construction in Henderson NV
             </h2>
@@ -38,16 +38,16 @@ export function RealtorsSection() {
                 />
               </div>
               <div>
-                <p className="text-sm font-semibold text-gray-600">
+                <p className="text-sm font-semibold text-gray-800">
                   Your buyer&apos;s agent
                 </p>
-                <p className="text-lg font-light tracking-[0.04em] text-neutral-900">
+                <p className="text-lg font-normal tracking-[0.04em] text-neutral-900">
                   Dr. Jan Duffy
                 </p>
               </div>
             </div>
             <p
-              className="aeo-lead text-xl text-gray-700 mb-8 leading-relaxed"
+              className="aeo-lead text-xl text-gray-900 mb-8 leading-relaxed"
               data-speakable
             >
               Dr. Jan Duffy provides free new home buyer representation at

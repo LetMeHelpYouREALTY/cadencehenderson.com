@@ -102,7 +102,7 @@ export default function RealtorToolkitPage() {
                 {talkingPoints.map((point) => (
                   <li
                     key={point}
-                    className="font-light leading-relaxed text-neutral-600"
+                    className="font-normal leading-relaxed text-neutral-800"
                   >
                     {point}
                   </li>
@@ -119,7 +119,7 @@ export default function RealtorToolkitPage() {
             <h2 className="mb-3 text-xl font-medium text-neutral-900">
               Fair Housing
             </h2>
-            <p className="font-light leading-relaxed text-neutral-600">
+            <p className="font-normal leading-relaxed text-neutral-800">
               Marketing for Cadence Henderson must follow the Fair Housing Act.
               Describe square footage, amenities, campus names, and commute
               times. Do not use protected-class language or proxies such as

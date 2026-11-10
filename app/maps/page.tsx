@@ -68,7 +68,7 @@ export default function MapsPage() {
             {CONTACT_INFO.siteName} office map
           </h2>
           <p
-            className="aeo-lead text-xl text-gray-600 mb-8 text-center"
+            className="aeo-lead text-xl text-gray-800 mb-8 text-center"
             data-speakable
           >
             {CONTACT_INFO.welcomeCenter} · {CONTACT_INFO.phone} ·{' '}
@@ -113,8 +113,8 @@ export default function MapsPage() {
               <h3 className="font-bold text-lg text-gray-900 mb-2">
                 Las Vegas Airport
               </h3>
-              <p className="text-gray-600 mb-2">15 minutes</p>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-800 mb-2">15 minutes</p>
+              <p className="text-sm text-gray-800">
                 Easy access to Harry Reid International
               </p>
             </div>
@@ -124,8 +124,8 @@ export default function MapsPage() {
               <h3 className="font-bold text-lg text-gray-900 mb-2">
                 Las Vegas Strip
               </h3>
-              <p className="text-gray-600 mb-2">20 minutes</p>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-800 mb-2">20 minutes</p>
+              <p className="text-sm text-gray-800">
                 World-class entertainment nearby
               </p>
             </div>
@@ -135,8 +135,8 @@ export default function MapsPage() {
               <h3 className="font-bold text-lg text-gray-900 mb-2">
                 Lake Mead
               </h3>
-              <p className="text-gray-600 mb-2">15 minutes</p>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-800 mb-2">15 minutes</p>
+              <p className="text-sm text-gray-800">
                 Recreation and natural beauty
               </p>
             </div>
@@ -146,8 +146,8 @@ export default function MapsPage() {
               <h3 className="font-bold text-lg text-gray-900 mb-2">
                 Shopping Centers
               </h3>
-              <p className="text-gray-600 mb-2">5-10 minutes</p>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-800 mb-2">5-10 minutes</p>
+              <p className="text-sm text-gray-800">
                 Galleria Mall and local retail
               </p>
             </div>
@@ -164,7 +164,7 @@ export default function MapsPage() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   {CONTACT_INFO.siteName}
                 </h3>
-                <p className="text-sm text-gray-600 mb-6">
+                <p className="text-sm text-gray-800 mb-6">
                   Dr. Jan Duffy, Las Vegas REALTOR®
                 </p>
                 <div className="space-y-4">
@@ -172,7 +172,7 @@ export default function MapsPage() {
                     <h4 className="font-bold text-gray-900 mb-2">
                       Office Address
                     </h4>
-                    <p className="text-gray-700">
+                    <p className="text-gray-900">
                       {CONTACT_INFO.address.street}
                       <br />
                       {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state}{' '}
@@ -181,7 +181,7 @@ export default function MapsPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">Hours</h4>
-                    <p className="text-gray-700">
+                    <p className="text-gray-900">
                       Monday - Sunday: 10:00 AM - 6:00 PM
                       <br />
                       Closed major holidays
@@ -189,7 +189,7 @@ export default function MapsPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">Contact</h4>
-                    <p className="text-gray-700">
+                    <p className="text-gray-900">
                       Phone: {CONTACT_INFO.phone}
                       <br />
                       Email: {CONTACT_INFO.email}
@@ -247,7 +247,7 @@ export default function MapsPage() {
             >
               Cadence Henderson maps FAQs
             </h2>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-center text-gray-800 mb-8">
               Cadence Henderson location and directions – Henderson NV 89011
             </p>
             <script
@@ -322,7 +322,7 @@ export default function MapsPage() {
                       ▾
                     </span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">
+                  <p className="faq-answer mt-3 text-gray-900 leading-relaxed">
                     {a}
                   </p>
                 </details>

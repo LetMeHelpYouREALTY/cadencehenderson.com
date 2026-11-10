@@ -133,7 +133,7 @@ export default function EventsPage() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Upcoming Events
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-800">
               Join us for exciting community activities and celebrations
             </p>
           </div>
@@ -164,14 +164,14 @@ export default function EventsPage() {
                       {event.title}
                     </h3>
                     <div className="space-y-2 mb-4">
-                      <div className="flex items-start text-sm text-gray-700">
+                      <div className="flex items-start text-sm text-gray-900">
                         <Clock
                           size={16}
                           className="mr-2 mt-0.5 flex-shrink-0"
                         />
                         <span>{event.date}</span>
                       </div>
-                      <div className="flex items-start text-sm text-gray-700">
+                      <div className="flex items-start text-sm text-gray-900">
                         <MapPin
                           size={16}
                           className="mr-2 mt-0.5 flex-shrink-0"
@@ -179,7 +179,7 @@ export default function EventsPage() {
                         <span>{event.location}</span>
                       </div>
                     </div>
-                    <p className="text-gray-700 mb-4">{event.description}</p>
+                    <p className="text-gray-900 mb-4">{event.description}</p>
                     <Button
                       variant="outline"
                       className="w-full border-orange-900 text-orange-900 hover:bg-orange-900 hover:text-white"

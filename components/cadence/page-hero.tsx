@@ -41,19 +41,19 @@ export function PageHero({
           {Icon ? (
             <Icon size={40} className="mx-auto mb-8 opacity-80" aria-hidden />
           ) : null}
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-white/75">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-white">
             Cadence Henderson NV {CONTACT_INFO.address.zip} ·{' '}
             {CONTACT_INFO.phone}
           </p>
           <h1
             id="page-hero-heading"
-            className="mb-6 text-4xl md:text-5xl font-extralight tracking-[0.08em]"
+            className="mb-6 text-4xl md:text-5xl font-semibold tracking-[0.08em]"
           >
             {title}
           </h1>
           {subtitle ? (
             <div
-              className="aeo-lead mb-10 text-lg font-light text-white/90"
+              className="aeo-lead mb-10 text-lg font-normal text-white"
               data-speakable
             >
               {subtitle}

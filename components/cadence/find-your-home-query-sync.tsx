@@ -22,7 +22,7 @@ export function FindYourHomeQuerySync() {
 
   return (
     <div className="border-b border-primary/20 bg-blue-50 py-4">
-      <div className="container mx-auto px-4 text-center text-sm font-light text-neutral-800">
+      <div className="container mx-auto px-4 text-center text-sm font-normal text-neutral-800">
         <p>
           Search term:{' '}
           <span className="font-medium text-neutral-900">{query}</span>

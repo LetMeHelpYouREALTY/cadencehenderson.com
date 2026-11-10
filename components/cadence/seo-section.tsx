@@ -27,13 +27,13 @@ export function SeoSection({
         <div className="mx-auto max-w-4xl">
           <h2
             id={headingId}
-            className="mb-4 text-3xl font-extralight tracking-[0.06em] text-neutral-900"
+            className="mb-4 text-3xl font-semibold tracking-[0.06em] text-neutral-900"
           >
             {heading}
           </h2>
           {lead ? (
             <p
-              className="aeo-lead mb-8 font-light leading-relaxed text-neutral-700"
+              className="aeo-lead mb-8 font-normal leading-relaxed text-neutral-900"
               data-speakable
             >
               {lead}

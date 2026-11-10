@@ -24,7 +24,7 @@ export function PageFaq({
         <div className="mx-auto max-w-3xl">
           <h2
             id="page-faq-heading"
-            className="mb-10 text-center text-3xl font-extralight tracking-[0.06em] text-neutral-900"
+            className="mb-10 text-center text-3xl font-semibold tracking-[0.06em] text-neutral-900"
           >
             {heading}
           </h2>
@@ -37,7 +37,7 @@ export function PageFaq({
                 <dt className="mb-3 text-lg font-medium text-neutral-900">
                   {item.question}
                 </dt>
-                <dd className="faq-answer font-light leading-relaxed text-neutral-700">
+                <dd className="faq-answer font-normal leading-relaxed text-neutral-900">
                   {item.answer}
                 </dd>
               </div>

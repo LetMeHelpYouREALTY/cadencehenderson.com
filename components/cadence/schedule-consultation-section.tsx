@@ -50,7 +50,7 @@ export function ScheduleConsultationSection() {
         <div className="max-w-4xl mx-auto text-center">
           <h2
             id="schedule-consultation-heading"
-            className="text-3xl md:text-4xl font-extralight tracking-[0.06em] mb-6 text-white"
+            className="text-3xl md:text-4xl font-semibold tracking-[0.06em] mb-6 text-white"
           >
             Ready to Buy New Homes at Cadence Henderson?
           </h2>
@@ -92,7 +92,7 @@ export function ScheduleConsultationSection() {
         <div className="max-w-4xl mx-auto overflow-hidden bg-white border border-white/20 p-4 md:p-8">
           {showLoadingFallback && !calendarReady && !showIframeFallback && (
             <p
-              className="text-center text-gray-500 py-4 text-sm"
+              className="text-center text-gray-900 py-4 text-sm"
               aria-live="polite"
             >
               Loading calendar…
@@ -116,7 +116,7 @@ export function ScheduleConsultationSection() {
               />
             </CalendlyWhenVisible>
           )}
-          <p className="text-center text-sm text-gray-600 mt-4">
+          <p className="text-center text-sm text-gray-800 mt-4">
             <a
               href={CONTACT_INFO.calendlyUrl}
               target="_blank"

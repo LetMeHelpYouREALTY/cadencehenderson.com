@@ -287,7 +287,7 @@ export default async function RentalCommunityPage({
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               About {community.name}
             </h2>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-900 mb-8 leading-relaxed">
               {community.longDescription}
             </p>
             <div className="grid md:grid-cols-3 gap-6 bg-white rounded-lg shadow-lg p-6">
@@ -314,7 +314,7 @@ export default async function RentalCommunityPage({
               <div className="text-center">
                 <Building2 className="mx-auto mb-3 text-purple-900" size={32} />
                 <h3 className="font-bold text-gray-900 mb-2">Floor Plans</h3>
-                <p className="text-gray-700">
+                <p className="text-gray-900">
                   {community.floorPlans.length} Options
                 </p>
               </div>
@@ -360,33 +360,33 @@ export default async function RentalCommunityPage({
                   </div>
                   <div className="grid grid-cols-3 gap-4 mb-4 pb-4 border-b">
                     <div className="text-center">
-                      <Bed size={20} className="mx-auto mb-1 text-gray-600" />
+                      <Bed size={20} className="mx-auto mb-1 text-gray-800" />
                       <div className="font-bold text-gray-900">
                         {plan.beds || 'Studio'}
                       </div>
-                      <div className="text-xs text-gray-600">Beds</div>
+                      <div className="text-xs text-gray-800">Beds</div>
                     </div>
                     <div className="text-center">
-                      <Bath size={20} className="mx-auto mb-1 text-gray-600" />
+                      <Bath size={20} className="mx-auto mb-1 text-gray-800" />
                       <div className="font-bold text-gray-900">
                         {plan.baths}
                       </div>
-                      <div className="text-xs text-gray-600">Baths</div>
+                      <div className="text-xs text-gray-800">Baths</div>
                     </div>
                     <div className="text-center">
                       <Building2
                         size={20}
-                        className="mx-auto mb-1 text-gray-600"
+                        className="mx-auto mb-1 text-gray-800"
                       />
                       <div className="font-bold text-gray-900">{plan.sqft}</div>
-                      <div className="text-xs text-gray-600">Sq Ft</div>
+                      <div className="text-xs text-gray-800">Sq Ft</div>
                     </div>
                   </div>
                   <ul className="space-y-2 mb-6">
                     {plan.features.map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-center text-sm text-gray-700"
+                        className="flex items-center text-sm text-gray-900"
                       >
                         <span className="w-2 h-2 bg-purple-900 rounded-full mr-2" />
                         {feature}
@@ -410,7 +410,7 @@ export default async function RentalCommunityPage({
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Ready to Call {community.name} Home?
             </h2>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-gray-900 mb-8">
               Contact Dr. Jan Duffy today to tour {community.name} and check
               availability. I can connect you directly with their leasing team
               and help you find the perfect rental.

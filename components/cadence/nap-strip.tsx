@@ -15,11 +15,11 @@ export function NapStrip() {
         <p className="text-sm font-medium text-neutral-900">
           Dr. Jan Duffy, Las Vegas REALTOR®
         </p>
-        <p className="mt-2 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm font-light text-neutral-700">
+        <p className="mt-2 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm font-normal text-neutral-900">
           <MapPin size={16} className="shrink-0 text-primary" aria-hidden />
           <span>{CONTACT_INFO.welcomeCenter}</span>
         </p>
-        <p className="mt-1 text-sm font-light text-neutral-600">
+        <p className="mt-1 text-sm font-normal text-neutral-800">
           {CONTACT_INFO.hours}
         </p>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-sm font-medium">

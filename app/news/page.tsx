@@ -159,7 +159,7 @@ export default async function NewsPage() {
                   </div>
                 </Link>
                 <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                  <div className="flex items-center gap-4 text-sm text-gray-800 mb-3">
                     <span className="inline-flex items-center">
                       <Calendar size={14} className="mr-1" />
                       {article.date}
@@ -171,7 +171,7 @@ export default async function NewsPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
                     {article.title}
                   </h3>
-                  <p className="text-gray-700 mb-4 line-clamp-3">
+                  <p className="text-gray-900 mb-4 line-clamp-3">
                     {article.excerpt}
                   </p>
                   <Button
@@ -201,7 +201,7 @@ export default async function NewsPage() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Photo Gallery
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-800">
               Explore life in Cadence through our community photo gallery
             </p>
           </div>

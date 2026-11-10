@@ -145,7 +145,7 @@ export default function ParksTrailsPage() {
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
                 Central Park in Cadence Henderson NV 89011
               </h2>
-              <p className="aeo-lead text-xl text-gray-600" data-speakable>
+              <p className="aeo-lead text-xl text-gray-800" data-speakable>
                 About 50 acres of parkland in Cadence Henderson NV 89011 —
                 playgrounds, splash pads, trails, and event lawns.
               </p>
@@ -164,7 +164,7 @@ export default function ParksTrailsPage() {
                   A Space for Everyone
                 </h3>
                 <p
-                  className="aeo-lead text-lg text-gray-700 mb-6"
+                  className="aeo-lead text-lg text-gray-900 mb-6"
                   data-speakable
                 >
                   Central Park is designed for daily use: jogging loops, picnic
@@ -174,25 +174,25 @@ export default function ParksTrailsPage() {
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Three distinct playground areas for all ages
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Splash pad with interactive water features
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Multi-purpose event lawn for concerts and gatherings
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Panoramic mountain and valley views
                     </span>
                   </li>
@@ -232,7 +232,7 @@ export default function ParksTrailsPage() {
                       {park.size}
                     </span>
                   </div>
-                  <p className="text-gray-700 mb-4">{park.description}</p>
+                  <p className="text-gray-900 mb-4">{park.description}</p>
                   <div className="border-t pt-4">
                     <h4 className="font-bold text-gray-900 mb-2 text-sm">
                       Features:
@@ -241,7 +241,7 @@ export default function ParksTrailsPage() {
                       {park.features.slice(0, 4).map((feature) => (
                         <li
                           key={feature}
-                          className="flex items-start text-sm text-gray-700"
+                          className="flex items-start text-sm text-gray-900"
                         >
                           <span className="w-1.5 h-1.5 bg-green-900 rounded-full mr-2 mt-1.5" />
                           {feature}
@@ -265,7 +265,7 @@ export default function ParksTrailsPage() {
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
                 Walking & Biking Trails
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-800">
                 Over 8 miles of scenic trails connecting the entire community
               </p>
             </div>
@@ -284,10 +284,10 @@ export default function ParksTrailsPage() {
                       {trail.difficulty}
                     </span>
                   </div>
-                  <p className="text-gray-600 mb-2 font-medium">
+                  <p className="text-gray-800 mb-2 font-medium">
                     Distance: {trail.distance}
                   </p>
-                  <p className="text-gray-700">{trail.description}</p>
+                  <p className="text-gray-900">{trail.description}</p>
                 </div>
               ))}
             </div>
@@ -297,7 +297,7 @@ export default function ParksTrailsPage() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Pet-Friendly Trails
               </h3>
-              <p className="text-lg text-gray-700 mb-6">
+              <p className="text-lg text-gray-900 mb-6">
                 All trails in Cadence are pet-friendly! Bring your furry friends
                 along for the adventure. Please keep dogs on leashes and use
                 provided waste stations.
@@ -321,19 +321,19 @@ export default function ParksTrailsPage() {
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <div className="text-4xl mb-3">🏃</div>
                 <h3 className="font-bold text-gray-900 mb-2">Running Club</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-800">
                   Saturday mornings at 7 AM
                 </p>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <div className="text-4xl mb-3">🚴</div>
                 <h3 className="font-bold text-gray-900 mb-2">Bike Group</h3>
-                <p className="text-sm text-gray-600">Sunday mornings at 8 AM</p>
+                <p className="text-sm text-gray-800">Sunday mornings at 8 AM</p>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <div className="text-4xl mb-3">🌅</div>
                 <h3 className="font-bold text-gray-900 mb-2">Yoga in Park</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-800">
                   Tuesday & Thursday at 7 AM
                 </p>
               </div>

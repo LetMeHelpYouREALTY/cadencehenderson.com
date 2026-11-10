@@ -81,12 +81,12 @@ export default function LifeAtCadencePage() {
                 <h2 className="mb-3 text-2xl font-medium text-neutral-900">
                   {item.title}
                 </h2>
-                <p className="font-light leading-relaxed text-neutral-600">
+                <p className="font-normal leading-relaxed text-neutral-800">
                   {item.body}
                 </p>
               </article>
             ))}
-            <p className="font-light leading-relaxed text-neutral-600">
+            <p className="font-normal leading-relaxed text-neutral-800">
               Dr. Jan Duffy, REALTOR®, licensed since 2008 · 35 years in Las
               Vegas, tours Cadence with buyers at {CONTACT_INFO.welcomeCenter}.
               Call {CONTACT_INFO.phone}.

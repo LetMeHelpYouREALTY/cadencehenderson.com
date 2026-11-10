@@ -101,7 +101,7 @@ export default function ApartmentsPage() {
 
       <section className="py-8">
         <p
-          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-light text-neutral-600"
+          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-normal text-neutral-800"
           data-speakable
         >
           Lease apartments or built-to-rent homes inside Cadence Henderson NV
@@ -131,7 +131,7 @@ export default function ApartmentsPage() {
                     {community.name}
                   </Link>
                 </h2>
-                <p className="font-light text-neutral-600">
+                <p className="font-normal text-neutral-800">
                   {community.summary}
                 </p>
               </article>

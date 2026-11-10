@@ -18,10 +18,10 @@ export function Newsletter() {
             <div className="inline-flex items-center justify-center w-16 h-16 border border-white/30 mb-8">
               <Calendar size={28} className="text-white" />
             </div>
-            <h2 className="text-4xl font-extralight tracking-[0.06em] mb-6">
+            <h2 className="text-4xl font-semibold tracking-[0.06em] mb-6">
               Schedule Your Cadence Consultation
             </h2>
-            <p className="text-lg font-light text-white/85 mb-8">
+            <p className="text-lg font-normal text-white mb-8">
               Book a 15-minute call with Dr. Jan Duffy. Get personalized
               guidance, schedule a tour, or learn about available homes in
               Cadence Henderson.

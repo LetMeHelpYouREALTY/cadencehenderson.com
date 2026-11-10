@@ -90,13 +90,13 @@ export default function AnimalHospitalPage() {
             <h2 className="text-4xl font-bold text-gray-900 mb-6 text-center">
               Welcome to Your Neighborhood Animal Hospital
             </h2>
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+            <p className="text-lg text-gray-900 mb-6 leading-relaxed">
               Cadence Animal Hospital is dedicated to providing exceptional
               veterinary care for dogs, cats, and other small animals. Our
               experienced team combines advanced medical knowledge with genuine
               compassion to ensure your pets receive the best possible care.
             </p>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-900 mb-8 leading-relaxed">
               Conveniently located within the Cadence community, we offer a full
               range of veterinary services from routine wellness exams to
               advanced surgical procedures. We're here to be your partner in
@@ -127,7 +127,7 @@ export default function AnimalHospitalPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">
                     {service.name}
                   </h3>
-                  <p className="text-gray-700 text-center">
+                  <p className="text-gray-900 text-center">
                     {service.description}
                   </p>
                 </div>
@@ -157,7 +157,7 @@ export default function AnimalHospitalPage() {
                     />
                     <div>
                       <p className="font-bold text-gray-900">Location</p>
-                      <p className="text-gray-700">
+                      <p className="text-gray-900">
                         Cadence Marketplace
                         <br />
                         Henderson, NV 89052
@@ -177,7 +177,7 @@ export default function AnimalHospitalPage() {
                       >
                         {CONTACT_INFO.phone} — Dr. Jan Duffy for Cadence homes
                       </a>
-                      <p className="mt-1 text-sm text-gray-600">
+                      <p className="mt-1 text-sm text-gray-800">
                         Confirm current veterinary hours at the hospital. Do not
                         use placeholder numbers.
                       </p>
@@ -190,7 +190,7 @@ export default function AnimalHospitalPage() {
                     />
                     <div>
                       <p className="font-bold text-gray-900">Hours</p>
-                      <p className="text-gray-700">
+                      <p className="text-gray-900">
                         Monday - Friday: 8 AM - 6 PM
                         <br />
                         Saturday: 9 AM - 4 PM
@@ -206,32 +206,32 @@ export default function AnimalHospitalPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-6">
                   New Patient?
                 </h3>
-                <p className="text-gray-700 mb-6">
+                <p className="text-gray-900 mb-6">
                   We welcome new patients! Schedule your first appointment and
                   let us become your trusted partner in pet care.
                 </p>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-teal-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Bring previous medical records
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-teal-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       List of current medications
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-teal-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Arrive 10 minutes early
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-teal-900 rounded-full mr-3 mt-2" />
-                    <span className="text-gray-700">
+                    <span className="text-gray-900">
                       Questions or concerns ready
                     </span>
                   </li>
@@ -257,7 +257,7 @@ export default function AnimalHospitalPage() {
                 <h3 className="font-bold text-lg text-gray-900 mb-3">
                   🏘️ Convenient Location
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-900">
                   Right in your neighborhood - no need to travel far for quality
                   pet care.
                 </p>
@@ -266,7 +266,7 @@ export default function AnimalHospitalPage() {
                 <h3 className="font-bold text-lg text-gray-900 mb-3">
                   👨‍⚕️ Experienced Team
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-900">
                   Board-certified veterinarians with years of experience caring
                   for pets.
                 </p>
@@ -275,7 +275,7 @@ export default function AnimalHospitalPage() {
                 <h3 className="font-bold text-lg text-gray-900 mb-3">
                   💚 Compassionate Care
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-900">
                   We treat pets with gentle, consistent attention.
                 </p>
               </div>
@@ -283,7 +283,7 @@ export default function AnimalHospitalPage() {
                 <h3 className="font-bold text-lg text-gray-900 mb-3">
                   🔬 Modern Facility
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-900">
                   State-of-the-art equipment and technology for accurate
                   diagnosis and treatment.
                 </p>

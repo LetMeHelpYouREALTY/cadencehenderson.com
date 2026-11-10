@@ -106,7 +106,7 @@ export default function LifestylePage() {
               Cadence Henderson lifestyle in Henderson NV 89011
             </h2>
             <p
-              className="aeo-lead text-xl text-gray-600 max-w-3xl mx-auto"
+              className="aeo-lead text-xl text-gray-800 max-w-3xl mx-auto"
               data-speakable
             >
               From Central Park amenities to community events, discover how
@@ -134,7 +134,7 @@ export default function LifestylePage() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <p className="text-gray-700 mb-4">{feature.description}</p>
+                    <p className="text-gray-900 mb-4">{feature.description}</p>
                     <Button
                       className="w-full bg-green-900 hover:bg-green-800"
                       variant="default"
@@ -157,7 +157,7 @@ export default function LifestylePage() {
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 Central Park: The Heart of Cadence
               </h2>
-              <p className="text-lg text-gray-700 mb-6">
+              <p className="text-lg text-gray-900 mb-6">
                 Our nearly 50-acre Central Park is the crown jewel of the
                 community, offering residents a spectacular outdoor space for
                 recreation, relaxation, and community gatherings.
@@ -165,31 +165,31 @@ export default function LifestylePage() {
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                  <span className="text-gray-700">
+                  <span className="text-gray-900">
                     Multiple playgrounds for all ages
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                  <span className="text-gray-700">
+                  <span className="text-gray-900">
                     Walking and biking trails throughout
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                  <span className="text-gray-700">
+                  <span className="text-gray-900">
                     Large event lawn for community gatherings
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                  <span className="text-gray-700">
+                  <span className="text-gray-900">
                     Splash pads and water features
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                  <span className="text-gray-700">
+                  <span className="text-gray-900">
                     Stunning mountain and desert views
                   </span>
                 </li>
@@ -216,7 +216,7 @@ export default function LifestylePage() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Resort-Style Amenities
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-800">
               Live like you're on vacation every day
             </p>
           </div>
@@ -225,28 +225,28 @@ export default function LifestylePage() {
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <div className="text-4xl mb-3">🏊</div>
               <h3 className="font-bold text-gray-900 mb-2">Pools & Spas</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-800">
                 Multiple community pools and hot tubs
               </p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <div className="text-4xl mb-3">💪</div>
               <h3 className="font-bold text-gray-900 mb-2">Fitness Centers</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-800">
                 State-of-the-art gym equipment
               </p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <div className="text-4xl mb-3">🐕</div>
               <h3 className="font-bold text-gray-900 mb-2">Dog Parks</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-800">
                 Dedicated spaces for your furry friends
               </p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <div className="text-4xl mb-3">🎾</div>
               <h3 className="font-bold text-gray-900 mb-2">Sports Courts</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-800">
                 Basketball, tennis, and pickleball
               </p>
             </div>
@@ -309,7 +309,7 @@ export default function LifestylePage() {
             >
               Cadence Henderson lifestyle FAQs
             </h2>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-center text-gray-800 mb-8">
               Cadence Henderson community and lifestyle – Henderson NV 89011
             </p>
             <script
@@ -384,7 +384,7 @@ export default function LifestylePage() {
                       ▾
                     </span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">
+                  <p className="faq-answer mt-3 text-gray-900 leading-relaxed">
                     {a}
                   </p>
                 </details>
