@@ -1,5 +1,3 @@
-import { PageHero } from '@/components/cadence/page-hero'
-import { SiteImage } from '@/components/cadence/site-image'
 import type { Metadata } from 'next'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
@@ -7,82 +5,60 @@ import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageHero } from '@/components/cadence/page-hero'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO, HOA_CONTACT } from '@/components/cadence/contact-info'
-import { Calendar, Clock, Mail, MapPin, Phone } from 'lucide-react'
+import { Calendar, Clock, ExternalLink, Mail, MapPin, Phone } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import {
+  getUpcomingHendersonCityEvents,
+  HENDERSON_SPECIAL_EVENTS_SOURCE_URL,
+} from '@/lib/henderson-city-events'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Community Events in Cadence Henderson NV | 89011',
   description:
-    'Past Cadence Henderson community events: Beazer Cantata Point pet adoption (Nov 9, 2024) and Cadence Car Show at Central Park (Oct 13, 2024). Tour with Dr. Jan Duffy.',
+    'Upcoming City of Henderson special events near Cadence NV 89011. Cadence Association lifestyle dates: call 702-605-3111. Tour with Dr. Jan Duffy.',
   alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/events' },
   openGraph: {
     title: 'Community Events in Cadence Henderson NV | 89011',
     description:
-      'Documented past Cadence Henderson events at Cantata Point and Central Park. Confirm current dates with the Master Association; tour homes with Dr. Jan Duffy.',
+      'Upcoming City of Henderson Parks & Recreation special events. Confirm Cadence Association dates with the Master Association; tour homes with Dr. Jan Duffy.',
     url: 'https://www.cadencehenderson.com/lifestyle/events',
   },
 }
 
-/**
- * Only dated events confirmed for this page — no invented weekly calendars.
- * Sources: Cadence / Beazer community event announcements (2024).
- */
-const PAST_EVENTS = [
-  {
-    id: 'pet-adoption-2024-11-09',
-    title: 'Beazer Homes’ Cantata Point Hosts Pet Adoption Event',
-    dateLabel: 'November 9, 2024',
-    timeLabel: '11:00 am – 2:00 pm',
-    monthShort: 'Nov',
-    day: '9',
-    year: '2024',
-    location: 'Cantata Point, 334 Ukelele Place, Henderson',
-    description:
-      'Join us at Cantata Point by Beazer Homes this Saturday, Nov. 9, from 11 a.m. to 2 p.m. for a pet adoption event. The Nevada SPCA will be on site for community residents and visitors.',
-    image: cfImage(SITE_IMAGES.lifestyle.events, 'card'),
-  },
-  {
-    id: 'car-show-2024-10-13',
-    title: 'Cadence Car Show',
-    dateLabel: 'October 13, 2024',
-    timeLabel: '10:00 am – 3:00 pm',
-    monthShort: 'Oct',
-    day: '13',
-    year: '2024',
-    location: 'Central Park, 1015 E. Sunset Road, Henderson',
-    description:
-      'Save the date: Cadence Car Show on Sunday, Oct. 13, from 10 a.m. to 3 p.m. on Sunset Road along Central Park, with classic and custom vehicles on display.',
-    image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
-  },
-] as const
-
 const EVENTS_FAQS = [
   {
     q: 'What events are listed on this page?',
-    a: 'This page lists only two documented past Cadence community events: the Beazer Homes Cantata Point pet adoption event (November 9, 2024, 11 a.m.–2 p.m.) and the Cadence Car Show at Central Park (October 13, 2024, 10 a.m.–3 p.m.). We do not invent weekly calendars.',
+    a: 'Upcoming City of Henderson Parks & Recreation special events from the official city calendar (Next 30 Days). Past events are not listed. This is not a Cadence HOA calendar.',
   },
   {
-    q: 'Are there upcoming Cadence events right now?',
-    a: `For current Association lifestyle programs and new dates, call the ${HOA_CONTACT.name} at ${HOA_CONTACT.phone} or email ${HOA_CONTACT.lifestyleEmail}. For Cadence home tours, call Dr. Jan Duffy at ${CONTACT_INFO.phone}.`,
+    q: 'Where do these Henderson event dates come from?',
+    a: 'Titles, dates, and times are taken from the City of Henderson special events calendar. Confirm details and locations on the city site before you go — schedules can change.',
   },
   {
-    q: 'Who should I call about Cadence community events?',
-    a: `Event and lifestyle program questions: ${HOA_CONTACT.name} at ${HOA_CONTACT.phone} (${HOA_CONTACT.lifestyleEmail}). Buying or selling a Cadence home: Dr. Jan Duffy at ${CONTACT_INFO.phone}.`,
+    q: 'Are there Cadence Association lifestyle events?',
+    a: `For Cadence Master Association lifestyle programs and new dates, call ${HOA_CONTACT.name} at ${HOA_CONTACT.phone} or email ${HOA_CONTACT.lifestyleEmail}. We do not invent weekly HOA calendars on this site.`,
+  },
+  {
+    q: 'Who helps with Cadence home tours?',
+    a: `Dr. Jan Duffy, REALTOR®, at ${CONTACT_INFO.phone} — new homes and resale in Cadence Henderson NV 89011.`,
   },
 ]
 
 export default function EventsPage() {
+  const upcoming = getUpcomingHendersonCityEvents()
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
 
       <PageHero
         title="Community events in Cadence Henderson NV 89011"
-        subtitle="Documented past Cadence gatherings only — confirm any new dates with the Master Association."
+        subtitle="Upcoming City of Henderson special events — past dates removed. Cadence Association schedules: call the Master Association."
         imageSrc={cfImage(SITE_IMAGES.hero.events, 'hero')}
         imageAlt="Community events at Cadence Henderson NV 89011"
         icon={Calendar}
@@ -103,71 +79,106 @@ export default function EventsPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Past community events
+              Upcoming Henderson special events
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              These are the only events listed on this site. They are past,
-              dated gatherings — not a live Association calendar.
+              From the City of Henderson Parks &amp; Recreation special events
+              calendar (Next 30 Days). Only upcoming dates are shown — past
+              events are filtered out. Confirm times and locations on the city
+              calendar before attending.
+            </p>
+            <p className="mt-4">
+              <a
+                href={HENDERSON_SPECIAL_EVENTS_SOURCE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-orange-900 font-medium hover:underline"
+              >
+                Official City of Henderson calendar
+                <ExternalLink size={16} />
+              </a>
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-8 mb-12">
-            {PAST_EVENTS.map((event) => (
-              <article
-                key={event.id}
-                className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100"
-              >
-                <div className="md:flex">
-                  <div className="relative h-56 md:h-auto md:w-56 shrink-0 bg-orange-900 text-white flex flex-col items-center justify-center p-6">
-                    <span className="text-sm uppercase tracking-widest opacity-90">
-                      {event.monthShort}
-                    </span>
-                    <span className="text-5xl font-bold leading-none my-1">
-                      {event.day}
-                    </span>
-                    <span className="text-sm opacity-90">{event.year}</span>
-                  </div>
-                  <div className="relative hidden md:block md:w-48 shrink-0">
-                    <SiteImage
-                      src={event.image}
-                      alt={`${event.title} in Cadence Henderson NV 89011`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6 flex-1">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-orange-900 mb-2">
-                      Past event
-                    </p>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                      {event.title}
-                    </h3>
-                    <p className="flex items-start text-sm text-gray-700 mb-2">
-                      <Clock size={16} className="mr-2 mt-0.5 shrink-0 text-orange-900" />
-                      <span>
-                        {event.dateLabel} @ {event.timeLabel}
+          {upcoming.length === 0 ? (
+            <div className="max-w-3xl mx-auto border border-gray-200 rounded-lg p-8 text-center mb-12">
+              <p className="text-gray-700 leading-relaxed">
+                No upcoming City of Henderson special events are listed here
+                right now. Check the{' '}
+                <a
+                  href={HENDERSON_SPECIAL_EVENTS_SOURCE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-orange-900 underline"
+                >
+                  official city calendar
+                </a>{' '}
+                for the latest dates.
+              </p>
+            </div>
+          ) : (
+            <div className="max-w-4xl mx-auto space-y-6 mb-12">
+              {upcoming.map((event) => (
+                <article
+                  key={event.id}
+                  className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100"
+                >
+                  <div className="md:flex">
+                    <div className="relative h-40 md:h-auto md:w-40 shrink-0 bg-orange-900 text-white flex flex-col items-center justify-center p-6">
+                      <span className="text-sm uppercase tracking-widest opacity-90">
+                        {event.monthShort}
                       </span>
-                    </p>
-                    <p className="flex items-start text-sm text-gray-700 mb-4">
-                      <MapPin size={16} className="mr-2 mt-0.5 shrink-0 text-orange-900" />
-                      {event.location}
-                    </p>
-                    <p className="text-gray-700 leading-relaxed">
-                      {event.description}
-                    </p>
+                      <span className="text-5xl font-bold leading-none my-1">
+                        {event.day}
+                      </span>
+                      <span className="text-sm opacity-90">{event.year}</span>
+                    </div>
+                    <div className="p-6 flex-1">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-orange-900 mb-2">
+                        City of Henderson · Upcoming
+                      </p>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                        {event.title}
+                      </h3>
+                      <p className="flex items-start text-sm text-gray-700 mb-2">
+                        <Clock
+                          size={16}
+                          className="mr-2 mt-0.5 shrink-0 text-orange-900"
+                        />
+                        <span>
+                          {event.dateLabel}
+                          {event.timeLabel ? ` · ${event.timeLabel}` : ''}
+                        </span>
+                      </p>
+                      {event.location ? (
+                        <p className="flex items-start text-sm text-gray-700 mb-3">
+                          <MapPin
+                            size={16}
+                            className="mr-2 mt-0.5 shrink-0 text-orange-900"
+                          />
+                          {event.location}
+                        </p>
+                      ) : (
+                        <p className="text-sm text-gray-600 mb-3">
+                          Confirm location on the City of Henderson calendar.
+                        </p>
+                      )}
+                      <p className="text-xs text-gray-500">{event.sourceNote}</p>
+                    </div>
                   </div>
-                </div>
-              </article>
-            ))}
-          </div>
+                </article>
+              ))}
+            </div>
+          )}
 
           <div className="max-w-3xl mx-auto border border-orange-200 bg-orange-50 rounded-lg p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-3">
-              Current schedules
+              Cadence Association schedules
             </h3>
             <p className="text-gray-700 mb-4 leading-relaxed">
-              For new or upcoming Association lifestyle programs, contact the{' '}
-              {HOA_CONTACT.name}. Then tour Cadence homes with Dr. Jan Duffy.
+              City events above are not Cadence HOA programs. For Master
+              Association lifestyle dates, contact the {HOA_CONTACT.name}. Tour
+              Cadence homes with Dr. Jan Duffy.
             </p>
             <ul className="space-y-2 text-gray-700 mb-6 text-sm">
               <li>
@@ -189,7 +200,8 @@ export default function EventsPage() {
                 </a>
               </li>
               <li>
-                <strong>Office:</strong> {HOA_CONTACT.address} · {HOA_CONTACT.hours}
+                <strong>Office:</strong> {HOA_CONTACT.address} ·{' '}
+                {HOA_CONTACT.hours}
               </li>
             </ul>
             <div className="flex flex-wrap gap-3">
@@ -198,7 +210,11 @@ export default function EventsPage() {
                   Schedule a Cadence home tour
                 </Button>
               </CalendlyLink>
-              <Button variant="outline" className="border-orange-900 text-orange-900" asChild>
+              <Button
+                variant="outline"
+                className="border-orange-900 text-orange-900"
+                asChild
+              >
                 <Link href="/lifestyle/amenities">See Cadence amenities</Link>
               </Button>
             </div>
@@ -247,53 +263,10 @@ export default function EventsPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
-              Cadence Henderson events — questions
-            </h2>
-            <p className="text-center text-gray-600 mb-8">
-              Community lifestyle in Cadence Henderson NV 89011
-            </p>
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  '@context': 'https://schema.org',
-                  '@type': 'FAQPage',
-                  mainEntity: EVENTS_FAQS.map(({ q, a }) => ({
-                    '@type': 'Question',
-                    name: q,
-                    acceptedAnswer: { '@type': 'Answer', text: a },
-                  })),
-                }),
-              }}
-            />
-            <div className="space-y-4">
-              {EVENTS_FAQS.map(({ q, a }) => (
-                <details
-                  key={q}
-                  className="group border border-gray-200 rounded-lg p-5 cursor-pointer"
-                >
-                  <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
-                    {q}
-                    <span className="text-orange-900 shrink-0 group-open:rotate-180 transition-transform">
-                      ▾
-                    </span>
-                  </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <PageAeo
         path="/lifestyle/events"
         name="Community Events in Cadence Henderson NV | 89011"
-        description="Past Cadence Henderson events: Cantata Point pet adoption (Nov 9, 2024) and Cadence Car Show (Oct 13, 2024). Tour with Dr. Jan Duffy."
+        description="Upcoming City of Henderson special events near Cadence NV 89011. Association dates via Master Association; tours with Dr. Jan Duffy."
         faqs={EVENTS_FAQS.map(({ q, a }) => ({ question: q, answer: a }))}
         breadcrumbs={[
           { name: 'Lifestyle', path: '/lifestyle' },

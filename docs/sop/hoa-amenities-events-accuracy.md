@@ -1,15 +1,15 @@
 # SOP: Cadence amenities & events accuracy
 
 **Applies to:** cadencehenderson.com lifestyle, FAQs, news, residents, rentals (Cadence-wide copy), gallery, realtor briefs.  
-**Code source of truth:** `lib/cadence-amenities.ts` + `HOA_CONTACT` in `components/cadence/contact-info.tsx`.
+**Code source of truth:** `lib/cadence-amenities.ts`, `lib/henderson-city-events.ts`, + `HOA_CONTACT` in `components/cadence/contact-info.tsx`.
 
 ---
 
 ## Rule
 
 1. **Amenities** come from the developer list (cadencenv.com/lifestyle/amenities) — Central Park, resident pool, splash pads, Fitness Court (outdoor), pickleball, dog park, Sunset Road Linear Park, trails.
-2. **Events** never invent weekly schedules. Describe lifestyle types (concerts, car shows, Association programs) and send ops to the Association phone/email.
-3. **Keep visitors on-site.** Use `tel:` / `mailto:` for Association. Do not deep-link Association calendars from lifestyle pages. Do not redirect `/rentals` or builder hubs off-site to RealScout.
+2. **Events:** Never invent Cadence HOA weekly schedules. City of Henderson Parks & Recreation special events may be listed from the official city calendar (`lib/henderson-city-events.ts`) with past dates filtered out. Label them as city events, not Association programs. Association ops stay on phone/email.
+3. **Keep visitors on-site** for Cadence amenity/tour content. Use `tel:` / `mailto:` for Association. Do not deep-link Association calendars from lifestyle pages. City calendar attribution link is OK. Do not redirect `/rentals` or builder hubs off-site to RealScout.
 4. **Rental-private amenities** (Element 12 / Avela pool, spa, fitness) are OK only when clearly scoped to that community.
 
 ---
@@ -39,13 +39,11 @@ Run every quarter (or after Association/developer site changes):
 
 ---
 
-## Events workflow (optional dated posts)
+## Events workflow
 
-If Dr. Jan wants “what’s happening” content:
-
-1. Confirm the date with the Cadence Master Association (`702-605-3111` / `Lifestyle@CadenceHOA.com`) or a dated official announcement.
-2. Publish only that dated item on `/news` or `/lifestyle/events` — never a recurring invented card.
-3. Primary buyer CTA remains tour/consult with Dr. Jan; Association ops stay on the Association line.
+1. **City of Henderson:** Refresh `lib/henderson-city-events.ts` from https://www.cityofhenderson.com/government/departments/parks-and-recreation/special-events/-toggle-next30days-1283. Rely on `getUpcomingHendersonCityEvents()` so past dates drop automatically.
+2. **Cadence Association:** Confirm any Cadence-specific date with the Master Association (`702-605-3111` / `Lifestyle@CadenceHOA.com`) or a dated official announcement before publishing.
+3. Never invent recurring HOA cards. Primary buyer CTA remains tour/consult with Dr. Jan; Association ops stay on the Association line.
 
 ---
 

@@ -23,3 +23,8 @@ Shared facts module + SOP prevent re-invention. GSC redirect count should drop a
 - [x] On-site `/news` listing from official Cadence WP feed + fallback capture
 - [x] On-site `/news/[slug]` article pages (no off-site deep links)
 - [x] Sitemap includes news article URLs
+
+## Follow-up — Henderson city events
+
+- [x] Remove past Cadence event cards from `/lifestyle/events`
+- [x] Add upcoming City of Henderson special events (`lib/henderson-city-events.ts`, past filtered)
