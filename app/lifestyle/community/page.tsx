@@ -1,5 +1,6 @@
 import { PageHero } from '@/components/cadence/page-hero'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
@@ -369,7 +370,7 @@ export default function CommunityPage() {
                   Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
-              <a href="/new-homes">
+              <Link href="/new-homes">
                 <Button
                   size="lg"
                   variant="outline"
@@ -377,7 +378,7 @@ export default function CommunityPage() {
                 >
                   View Available Homes
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

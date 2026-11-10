@@ -55,6 +55,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.28",
     "prettier": "^3.6.2",
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
