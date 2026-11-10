@@ -1,20 +1,18 @@
-# Task plan — Association events/amenities accuracy (option A)
+# Task plan — Implement accuracy recommendations
 
 ## Goal
 
-Make amenities and events correct on every page — no invented HOA schedules, fitness centers, clubhouses, trail mileage, or plural “pools/dog parks” as Cadence master amenities.
+Ship recommendation follow-ups: shared amenity/events module, quarterly SOP, GSC redirect cleanup, soft marketing tighten, Regency inbound note.
 
 ## Plan
 
-- [x] Events + amenities core pages (official sources)
-- [x] Residual lifestyle / parks / community / realtor / news / rentals
-- [x] Sitewide sweep: parks-trails invented trails, gallery Fitness Center, residents calendar/clubhouse, plural pools/dog parks on FAQs/rentals/elysian/meta
-- [x] Typecheck, commit, push, update PR #20
-
-## Official amenity list (cadencenv)
-
-Central Park (~50 acres), resident pool (card), two splash pads, Fitness Court, pickleball, dog park, Sunset Road Linear Park, trails. Association ops: 702-605-3111.
+- [x] `lib/cadence-amenities.ts` single source of truth; wire amenities page, homepage section, FAQs, lifestyle FAQs
+- [x] `docs/sop/hoa-amenities-events-accuracy.md` (quarterly check + events workflow)
+- [x] Remove off-site RealScout redirects for `/rentals` and `/new-homes/beazer-homes`; keep on-site pages
+- [x] Soft marketing: FAQs / realtor “world-class” / “top 10”
+- [x] Regency inbound: verified footer-only Cadence link (no inventons) — documented in SOP
+- [ ] Typecheck, commit, push, update PR #20
 
 ## Review
 
-Sitewide copy now mirrors official amenities; events say “when scheduled” + Association contact; rental-private fitness/spa left intact where scoped to Element 12 / Avela.
+Shared facts module + SOP prevent re-invention. GSC redirect count should drop after deploy when `/rentals` and Beazer hub serve on-site again.

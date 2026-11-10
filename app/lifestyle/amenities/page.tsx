@@ -19,105 +19,38 @@ import {
 import Link from 'next/link'
 import { cfImage, SITE_IMAGES, getAmenityImage } from '@/lib/cloudflare-images'
 import { PageAeo } from '@/components/cadence/page-aeo'
+import {
+  CADENCE_AMENITIES,
+  amenitiesFaqAnswer,
+  amenityReservationFaqAnswer,
+  centralParkAccessFaqAnswer,
+} from '@/lib/cadence-amenities'
+import type { LucideIcon } from 'lucide-react'
 
-/**
- * Amenity copy aligned to the developer page:
- * https://cadencenv.com/lifestyle/amenities/
- * plus Association access/reservation rules from
- * https://www.cadencecommunityassociation.com/
- */
-const amenities = [
-  {
-    name: 'Community Pool',
-    icon: Waves,
-    description:
-      'The resident-only pool offers unobstructed, panoramic views of the Las Vegas Strip, providing a unique and scenic venue for Cadence residents.',
-    features: [
-      'Six-lane lap pool',
-      'Resident access with Master Association Card',
-      'Seasonal operation (typically May–October)',
-      'Shaded picnic tables (reservable by residents)',
-      'Turf area for relaxing',
-      'Las Vegas Strip views',
-    ],
-    image: getAmenityImage('pool', 'card'),
-  },
-  {
-    name: 'Splash Pads',
-    icon: Droplets,
-    description:
-      'Cadence is home to two splash pads — one near the children’s play area and one in the Pool Complex that’s about 2,000 square feet.',
-    features: [
-      'Pool Complex splash pad (~2,000 sq ft)',
-      'Second splash pad near play areas',
-      'Family-friendly water play',
-      'Part of Central Park / pool complex',
-    ],
-    image: getAmenityImage('splashPad', 'card'),
-  },
-  {
-    name: 'Central Park',
-    icon: Trees,
-    description:
-      'Central Park is a 50-acre expanse of turf areas, amphitheater seating, pickleball courts, children’s play areas, a six-lane lap pool, a 2,000-square-foot splash pad, and free wifi and outlets to keep you connected.',
-    features: [
-      'About 50 acres of open space',
-      'Amphitheater(s) and turf areas',
-      'Adventure playground and play areas',
-      'Fitness Court and pickleball courts',
-      'Free wifi and charging outlets',
-      'Open to the public dawn–10 p.m. daily (Association hours)',
-    ],
-    image: getAmenityImage('centralPark', 'card'),
-  },
-  {
-    name: 'Fitness Court',
-    icon: Dumbbell,
-    description:
-      'A fitness space with quality equipment is right around the corner in Central Park — an outdoor bodyweight training court for adults of all fitness levels.',
-    features: [
-      'Outdoor Fitness Court® in Central Park',
-      'Bodyweight training stations',
-      'Open during park hours',
-      'No separate gym membership required for this court',
-    ],
-    image: getAmenityImage('fitness', 'card'),
-  },
-  {
-    name: 'Pickleball Courts',
-    icon: CircleDot,
-    description:
-      'Pickleball courts are located in Central Park and offer a great place for outdoor recreation.',
-    features: [
-      'Courts in Central Park',
-      'Open during regular park hours',
-      'Public access during park hours',
-    ],
-    image: getAmenityImage('sportsCourts', 'card'),
-  },
-  {
-    name: 'Sunset Road Linear Park',
-    icon: MapPinned,
-    description:
-      'Enjoy the linear park along Sunset Road just north of Cadence Vista Drive — bounce pads, play structures, table tennis, corn hole, and more.',
-    features: [
-      'Bounce pads and play structures',
-      'Table tennis',
-      'Corn hole',
-      'Gazebo / gathering spaces along Sunset Road',
-    ],
-    image: getAmenityImage('playground', 'card'),
-  },
-]
+/** Icons stay in the page; facts come from lib/cadence-amenities.ts */
+const AMENITY_ICONS: Record<(typeof CADENCE_AMENITIES)[number]['id'], LucideIcon> = {
+  'community-pool': Waves,
+  'splash-pads': Droplets,
+  'central-park': Trees,
+  'fitness-court': Dumbbell,
+  pickleball: CircleDot,
+  'linear-park': MapPinned,
+}
+
+const amenities = CADENCE_AMENITIES.map((item) => ({
+  ...item,
+  icon: AMENITY_ICONS[item.id],
+  image: getAmenityImage(item.imageKey, 'card'),
+}))
 
 const AMENITIES_FAQS = [
   {
     q: 'What amenities does Cadence Henderson have?',
-    a: 'Cadence Henderson amenities include a 50-acre Central Park with free wifi, a resident-only community pool with Strip views, two splash pads (including a ~2,000 sq ft pad in the Pool Complex), an adventure park/playground, Fitness Court, pickleball courts, trails, a dog park, and Sunset Road Linear Park with bounce pads, play structures, table tennis, and corn hole. Confirm hours and access with the Cadence Master Association.',
+    a: amenitiesFaqAnswer(),
   },
   {
     q: 'Is Cadence Henderson Central Park open to residents?',
-    a: `Central Park (1125 E. Sunset Road) is owned and maintained by the Cadence Community Association and is open to the public year-round, typically dawn–10 p.m. daily. The Central Park Pool is resident-only and requires a Cadence Master Association Card. Call the Association at ${HOA_CONTACT.phone} for current rules.`,
+    a: centralParkAccessFaqAnswer(),
   },
   {
     q: 'How do HOA fees work in Cadence Henderson?',
@@ -125,7 +58,7 @@ const AMENITIES_FAQS = [
   },
   {
     q: 'Can I reserve Cadence Henderson amenities for private events?',
-    a: `Residents may reserve park picnic tables and poolside tables through the Cadence Master Association (call ${HOA_CONTACT.phone} or submit Association reservation forms). Only picnic tables are reservable — grass areas cannot be reserved, and weddings, professional parties, and company picnics are not permitted. Do not call the realtor line for Association reservations.`,
+    a: amenityReservationFaqAnswer(),
   },
 ]
 

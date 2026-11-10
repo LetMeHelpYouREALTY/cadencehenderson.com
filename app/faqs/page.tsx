@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
-import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { CONTACT_INFO, HOA_CONTACT } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -13,6 +13,10 @@ import { ChevronDown, ChevronUp, HelpCircle, Calendar, Phone, Mail } from 'lucid
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { NapStrip } from '@/components/cadence/nap-strip'
+import {
+  amenitiesFaqAnswer,
+  amenityReservationFaqAnswer,
+} from '@/lib/cadence-amenities'
 
 const faqCategories = [
   {
@@ -20,7 +24,7 @@ const faqCategories = [
     questions: [
       {
         q: 'What is Cadence?',
-        a: 'Cadence is a master-planned community in Henderson, Nevada, offering new homes from multiple builders, world-class amenities, and a vibrant lifestyle. Located just minutes from the Las Vegas Strip and Lake Mead, Cadence is one of the top 10 best-selling communities in the nation.',
+        a: 'Cadence is a master-planned community in Henderson, Nevada 89011, with new homes from multiple builders, Central Park amenities, and neighborhoods near the Las Vegas Strip and Lake Mead. Tour with Dr. Jan Duffy.',
       },
       {
         q: 'Where is Cadence located?',
@@ -58,15 +62,15 @@ const faqCategories = [
     questions: [
       {
         q: 'What amenities are included?',
-        a: '50-acre Central Park with free wifi, resident-only community pool with Strip views, two splash pads, adventure park, Fitness Court, pickleball, trails, dog park, and Sunset Road Linear Park. Confirm hours/access with the Cadence Master Association (702-605-3111).',
+        a: amenitiesFaqAnswer(),
       },
       {
         q: 'Are there HOA fees?',
-        a: 'Yes. Master Association assessments and any sub-association dues vary by neighborhood. Call the Cadence Master Association at 702-605-3111 for current amounts — not the realtor office.',
+        a: `Yes. Master Association assessments and any sub-association dues vary by neighborhood. Call the Cadence Master Association at ${HOA_CONTACT.phone} for current amounts — not the realtor office.`,
       },
       {
         q: 'Can I reserve amenities for private events?',
-        a: 'Residents can reserve park picnic tables and poolside tables through the Cadence Master Association (702-605-3111 / Association forms). Grass areas cannot be reserved; weddings and company picnics are not permitted.',
+        a: amenityReservationFaqAnswer(),
       },
     ],
   },
@@ -100,7 +104,7 @@ const faqCategories = [
       },
       {
         q: 'How far is Cadence from the Las Vegas Strip?',
-        a: 'Cadence is approximately 20 minutes from the Las Vegas Strip, giving you easy access to world-class entertainment, dining, and shows while enjoying the peace of a residential community.',
+        a: 'Cadence is approximately 20 minutes from the Las Vegas Strip, with access to entertainment and dining while living in a residential master-planned community in Henderson 89011.',
       },
     ],
   },

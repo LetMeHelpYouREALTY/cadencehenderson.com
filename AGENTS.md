@@ -29,6 +29,8 @@ Read the skill’s `SKILL.md` when the task matches; apply its rules. If multipl
 ## Single sources of truth
 
 - **Contact/NAP/URLs:** `components/cadence/contact-info.tsx` (`CONTACT_INFO`). Do not hardcode address, phone, email, or Calendly/RealScout URLs.
+- **Cadence Master Association:** `HOA_CONTACT` in the same file (702-605-3111). Do not use the realtor line for HOA ops.
+- **Amenities & events facts:** `lib/cadence-amenities.ts`. SOP: `docs/sop/hoa-amenities-events-accuracy.md`. Do not invent schedules, fitness centers, clubhouses, or trail mileage.
 - **Sitemap URLs:** `lib/sitemap-data.ts`. Sitemap route and any listing logic should use this.
 - **Declared CLI skills:** `skills.json` (manifest). Workflow list: `skills-workflow.json` (`workflowRepos`). Keep in sync via `npm run skills:workflow`.
 - **Images:** Cloudflare account `2cc579c1ec9e426ed585e933ebf4753b` / hash `byE6BTe9lNqo21V57n4aPQ`. Catalog: `lib/cloudflare-images.ts`. Global settings: `docs/sop/cloudflare-images-global-settings.json`.

@@ -11,6 +11,7 @@ import { NapStrip } from '@/components/cadence/nap-strip'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { amenitiesFaqAnswer, eventsFaqAnswer } from '@/lib/cadence-amenities'
 import {
   Calendar,
   Trees,
@@ -318,7 +319,7 @@ export default function LifestylePage() {
                       name: 'What amenities does Cadence Henderson have?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Cadence Henderson NV 89011 amenities include a 50-acre Central Park with free wifi, a resident-only community pool with Strip views, two splash pads, adventure park/playground, Fitness Court, pickleball courts, trails, a dog park, and Sunset Road Linear Park. Confirm hours and access with the Cadence Master Association at 702-605-3111.',
+                        text: amenitiesFaqAnswer(),
                       },
                     },
                     {
@@ -326,7 +327,7 @@ export default function LifestylePage() {
                       name: 'What events happen in Cadence Henderson?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Cadence Central Park has hosted concerts, car shows, and community gatherings. The Master Association also runs lifestyle programs such as food trucks near Central Park. Schedules change — call Lifestyle@CadenceHOA.com or 702-605-3111 for current Association programs. Call Dr. Jan Duffy for home tours.',
+                        text: eventsFaqAnswer(),
                       },
                     },
                     {
@@ -351,8 +352,8 @@ export default function LifestylePage() {
             />
             <div className="space-y-4">
               {[
-                { q: 'What amenities does Cadence Henderson have?', a: '50-acre Central Park with free wifi, resident-only community pool with Strip views, two splash pads, adventure park, Fitness Court, pickleball, trails, dog park, and Sunset Road Linear Park. Confirm access with the Cadence Master Association at 702-605-3111.' },
-                { q: 'What events happen in Cadence Henderson?', a: 'Central Park has hosted concerts, car shows, and gatherings; the Association also runs lifestyle programs like food trucks. Call 702-605-3111 or Lifestyle@CadenceHOA.com for current dates — this site does not invent weekly schedules.' },
+                { q: 'What amenities does Cadence Henderson have?', a: amenitiesFaqAnswer() },
+                { q: 'What events happen in Cadence Henderson?', a: eventsFaqAnswer() },
                 { q: 'What schools serve Cadence Henderson NV 89011?', a: 'Cadence Elementary (on-site), Legacy Traditional, and Clark County schools. Green Valley High School nearby.' },
                 { q: 'Is there shopping near Cadence Henderson?', a: 'Yes. Galleria at Sunset, Cadence Marketplace, and Sunset Station are 5–10 minutes from Cadence Henderson NV 89011.' },
               ].map(({ q, a }) => (
