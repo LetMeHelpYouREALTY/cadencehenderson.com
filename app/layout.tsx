@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import { CalendlyProvider } from '../components/calendly/calendly-loader'
 import { SkipToContent } from '../components/cadence/skip-to-content'
+import { DeferredAnalytics } from '../components/cadence/deferred-analytics'
+import { RealScoutAutoLoader } from '../components/cadence/realscout-auto-loader'
 import { Sora } from 'next/font/google'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { ThemeProvider } from 'next-themes'
@@ -13,6 +14,11 @@ import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import './globals.css'
 
 const HERO_IMAGE = cfImage(SITE_IMAGES.hero.homepage, 'hero')
+/** Prefer mobile-sized LCP preload when serving git WebP (PageSpeed mobile). */
+const HERO_PRELOAD =
+  HERO_IMAGE.startsWith('/images/')
+    ? '/images/hero/homepage-828.webp'
+    : HERO_IMAGE
 /** Crawlers do not run the JS git fallback — keep a stable git URL for OG/schema. */
 const OG_IMAGE = '/og-image.jpg'
 
@@ -61,9 +67,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const heroType = HERO_IMAGE.endsWith('.webp')
+  const heroType = HERO_PRELOAD.endsWith('.webp')
     ? 'image/webp'
-    : HERO_IMAGE.endsWith('.jpg') || HERO_IMAGE.endsWith('.jpeg')
+    : HERO_PRELOAD.endsWith('.jpg') || HERO_PRELOAD.endsWith('.jpeg')
       ? 'image/jpeg'
       : undefined
 
@@ -77,60 +83,24 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_LIVE === '1' ? (
           <link rel="preconnect" href="https://imagedelivery.net" />
         ) : null}
-        {/* LCP image preload — git WebP until NEXT_PUBLIC_CLOUDFLARE_IMAGES_LIVE=1 */}
+        {/* LCP image preload — mobile-sized git WebP until CF Images LIVE */}
         <link
           rel="preload"
           as="image"
-          href={HERO_IMAGE}
+          href={HERO_PRELOAD}
           {...(heroType ? { type: heroType } : {})}
+          {...(HERO_IMAGE.startsWith('/images/')
+            ? {
+                imageSrcSet:
+                  '/images/hero/homepage-640.webp 640w, /images/hero/homepage-828.webp 828w, /images/hero/homepage.webp 1280w',
+                imageSizes: '100vw',
+              }
+            : {})}
         />
       </head>
       <body className={`${sora.variable} antialiased font-sans`}>
-        {/* RealScout UMD stays lazy; hero no longer mounts the widget above the fold */}
-        <Script
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          type="module"
-          strategy="lazyOnload"
-        />
-        {process.env.NEXT_PUBLIC_REALSCOUT_EMBED_ID ? (
-          <Script
-            src={`https://em.realscout.com/embed/${process.env.NEXT_PUBLIC_REALSCOUT_EMBED_ID}.js`}
-            strategy="lazyOnload"
-          />
-        ) : null}
-        {process.env.NEXT_PUBLIC_GOOGLE_TAG_ID ? (
-          <>
-            <Script
-              id="google-tag"
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_TAG_ID}`}
-              strategy="lazyOnload"
-            />
-            <Script id="google-tag-config" strategy="lazyOnload">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_TAG_ID}');
-              `}
-            </Script>
-          </>
-        ) : null}
-        {process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID ? (
-          <Script id="facebook-pixel" strategy="lazyOnload">
-            {`
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}');
-              fbq('track', 'PageView');
-            `}
-          </Script>
-        ) : null}
+        <DeferredAnalytics />
+        <RealScoutAutoLoader />
         <CalendlyProvider>
           <SkipToContent />
           <ThemeProvider

@@ -12,6 +12,7 @@ type SiteImageProps = {
   height?: number
   priority?: boolean
   sizes?: string
+  srcSet?: string
   loading?: 'lazy' | 'eager'
 }
 
@@ -55,6 +56,7 @@ export function SiteImage({
   height,
   priority,
   sizes,
+  srcSet,
   loading,
 }: SiteImageProps) {
   const gitSrc = gitFallbackFromSrc(src)
@@ -90,10 +92,11 @@ export function SiteImage({
       width={fill ? undefined : width}
       height={fill ? undefined : height}
       sizes={sizes ?? (fill ? '100vw' : undefined)}
+      srcSet={srcSet}
       className={[fillClass, className].filter(Boolean).join(' ')}
       fetchPriority={priority ? 'high' : undefined}
       loading={priority ? 'eager' : loading ?? 'lazy'}
-      decoding={priority ? 'sync' : 'async'}
+      decoding={priority ? 'async' : 'async'}
       onError={() => {
         setStage((current) => {
           if (current === 'cloudflare' && canGitFallback) return 'git'

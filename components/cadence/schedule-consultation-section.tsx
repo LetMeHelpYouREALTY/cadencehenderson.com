@@ -1,42 +1,60 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
-import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
+import { useCalendly } from '@/components/calendly/calendly-loader'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { SectionPhoto } from '@/components/cadence/section-photo'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { Calendar, Mail, Phone } from 'lucide-react'
 
-/** If the JS widget does not load within this time, show iframe fallback. */
 const IFRAME_FALLBACK_MS = 5000
 
 /**
- * Consultation CTA: high-contrast layout, primary "book a call" for home buyers.
- * Calendly on white card for readability; section copy for SEO/AEO/GEO.
- * Uses iframe fallback so the scheduler (https://calendly.com/drjanduffy/15min) always appears.
+ * Consultation CTA. Calendly assets load only when this section nears the viewport
+ * (critical for mobile PageSpeed — booking JS/CSS is multi‑MB).
  */
 export function ScheduleConsultationSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const { loadCalendly } = useCalendly()
+  const [inView, setInView] = useState(false)
   const [calendarReady, setCalendarReady] = useState(false)
-  const [showLoadingFallback, setShowLoadingFallback] = useState(true)
   const [showIframeFallback, setShowIframeFallback] = useState(false)
 
   useEffect(() => {
-    const hideLoading = setTimeout(() => setShowLoadingFallback(false), 8000)
-    return () => clearTimeout(hideLoading)
+    const el = sectionRef.current
+    if (!el) return
+    if (typeof IntersectionObserver === 'undefined') {
+      setInView(true)
+      return
+    }
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setInView(true)
+          obs.disconnect()
+        }
+      },
+      { rootMargin: '120px 0px', threshold: 0 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
   }, [])
 
   useEffect(() => {
-    const t = setTimeout(() => {
+    if (!inView) return
+    void loadCalendly()
+    const t = window.setTimeout(() => {
       setShowIframeFallback(true)
     }, IFRAME_FALLBACK_MS)
-    return () => clearTimeout(t)
-  }, [])
+    return () => window.clearTimeout(t)
+  }, [inView, loadCalendly])
 
   return (
     <section
+      ref={sectionRef}
       className="py-24 bg-cadence-ink text-white"
       aria-labelledby="schedule-consultation-heading"
     >
@@ -48,11 +66,16 @@ export function ScheduleConsultationSection() {
           />
         </div>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 id="schedule-consultation-heading" className="text-3xl md:text-4xl font-extralight tracking-[0.06em] mb-6 text-white">
+          <h2
+            id="schedule-consultation-heading"
+            className="text-3xl md:text-4xl font-extralight tracking-[0.06em] mb-6 text-white"
+          >
             Ready to Buy New Homes at Cadence Henderson?
           </h2>
           <p className="text-lg md:text-xl text-white mb-6 max-w-2xl mx-auto">
-            Schedule your free 15-minute buyer consultation with Dr. Jan Duffy. New homes Cadence Henderson NV 89011 — builder pays her fee; free to you.
+            Schedule your free 15-minute buyer consultation with Dr. Jan Duffy.
+            New homes Cadence Henderson NV 89011 — builder pays her fee; free to
+            you.
           </p>
           <div className="flex flex-wrap gap-3 justify-center mb-8">
             <Button
@@ -83,14 +106,12 @@ export function ScheduleConsultationSection() {
             </a>
           </div>
         </div>
-        {/* Calendly on white card so text is readable (no white-on-blue) */}
         <div className="max-w-4xl mx-auto overflow-hidden bg-white border border-white/20 p-4 md:p-8">
-          {showLoadingFallback && !calendarReady && !showIframeFallback && (
-            <p className="text-center text-gray-500 py-4 text-sm" aria-live="polite">
-              Loading calendar…
+          {!inView ? (
+            <p className="text-center text-gray-500 py-8 text-sm">
+              Scroll to load the scheduling calendar…
             </p>
-          )}
-          {showIframeFallback && !calendarReady ? (
+          ) : showIframeFallback && !calendarReady ? (
             <iframe
               title="Schedule a 15-minute call with Dr. Jan Duffy"
               src={`${CONTACT_INFO.calendlyUrl}?embed_domain=www.cadencehenderson.com`}
@@ -98,15 +119,14 @@ export function ScheduleConsultationSection() {
               height={630}
               style={{ minWidth: 280, border: 0 }}
               className="overflow-hidden w-full"
+              loading="lazy"
             />
           ) : (
-            <CalendlyWhenVisible loadOnMount>
-              <CalendlyInlineWidget
-                className="overflow-hidden w-full"
-                style={{ minWidth: 280, height: 630 }}
-                onReady={() => setCalendarReady(true)}
-              />
-            </CalendlyWhenVisible>
+            <CalendlyInlineWidget
+              className="overflow-hidden w-full"
+              style={{ minWidth: 280, height: 630 }}
+              onReady={() => setCalendarReady(true)}
+            />
           )}
           <p className="text-center text-sm text-gray-600 mt-4">
             <a
@@ -116,13 +136,10 @@ export function ScheduleConsultationSection() {
               className="underline hover:no-underline text-neutral-900"
             >
               Open scheduler in a new tab
-            </a>
-            {' '}if the calendar doesn’t load.
+            </a>{' '}
+            if the calendar doesn’t load.
           </p>
         </div>
-        <p className="text-center text-sm text-white mt-6">
-          Dr. Jan Duffy, REALTOR® — Cadence Henderson new home buyer’s agent, licensed since 2008 · 35 years in Las Vegas.
-        </p>
       </div>
     </section>
   )

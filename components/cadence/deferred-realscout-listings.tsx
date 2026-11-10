@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import { useEffect, useRef, useState } from 'react'
+import { loadRealScoutScript } from '@/components/cadence/realscout-script'
 
 const RealScoutOfficeListings = dynamic(
   () =>
@@ -48,6 +49,11 @@ export function DeferredRealScoutListings() {
     )
     observer.observe(node)
     return () => observer.disconnect()
+  }, [show])
+
+  useEffect(() => {
+    if (!show) return
+    void loadRealScoutScript()
   }, [show])
 
   return <div ref={ref}>{show ? <RealScoutOfficeListings /> : null}</div>

@@ -8,6 +8,15 @@ import { SiteImage } from '@/components/cadence/site-image'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const HERO_IMAGE = cfImage(SITE_IMAGES.hero.homepage, 'hero')
+/** Mobile-first LCP — serve 828w by default; srcSet upgrades on larger viewports. */
+const HERO_SRC =
+  HERO_IMAGE.startsWith('/images/')
+    ? '/images/hero/homepage-828.webp'
+    : HERO_IMAGE
+const HERO_SRC_SET =
+  HERO_IMAGE.startsWith('/images/')
+    ? '/images/hero/homepage-640.webp 640w, /images/hero/homepage-828.webp 828w, /images/hero/homepage.webp 1280w'
+    : undefined
 
 export function Hero() {
   return (
@@ -16,11 +25,12 @@ export function Hero() {
       aria-label="Hero"
     >
       <SiteImage
-        src={HERO_IMAGE}
+        src={HERO_SRC}
         alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
         fill
         priority
         sizes="100vw"
+        srcSet={HERO_SRC_SET}
         className="object-center opacity-80"
       />
       <div
