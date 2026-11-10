@@ -11,8 +11,9 @@
 - [x] Remove eager RealScout UMD from `app/layout.tsx` — load via `RealScoutAutoLoader` + deferred listings
 - [x] Defer GTM/Facebook via `DeferredAnalytics` (interaction or 6s)
 - [x] Mobile hero srcSet (640/828/1280) + preload 828w
-- [ ] Verify with local Lighthouse / build
-- [ ] Commit, push, update PR, deploy production
+- [x] Verify with local Lighthouse / build (Perf 82, LCP 4.9s, no 3P on first load)
+- [x] Commit, push, update PR
+- [ ] Deploy production + recheck PageSpeed Insights
 
 ## Prior SEO (done)
 
