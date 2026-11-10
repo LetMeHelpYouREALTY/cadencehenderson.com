@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Navigation } from '@/components/cadence/navigation'
 import { Hero } from '@/components/cadence/hero'
@@ -13,10 +14,26 @@ import { RealtorsSection } from '@/components/cadence/realtors-section'
 import { NewsSection } from '@/components/cadence/news-section'
 import { BuildersShowcase } from '@/components/cadence/builders-showcase'
 import { HomepageFAQSection } from '@/components/cadence/homepage-faq-section'
-import { ScheduleConsultationSection } from '@/components/cadence/schedule-consultation-section'
 import { Footer } from '@/components/cadence/footer'
 import { PageGraphSchema } from '@/components/schema/page-graph'
 import { HOME_FAQS } from '@/lib/page-aeo'
+
+/** Keep Calendly booking JS out of the initial homepage chunk. */
+const ScheduleConsultationSection = dynamic(
+  () =>
+    import('@/components/cadence/schedule-consultation-section').then(
+      (m) => m.ScheduleConsultationSection,
+    ),
+  {
+    loading: () => (
+      <section className="py-24 bg-cadence-ink" aria-hidden>
+        <div className="container mx-auto px-4">
+          <div className="mx-auto h-40 max-w-4xl animate-pulse bg-white/10" />
+        </div>
+      </section>
+    ),
+  },
+)
 
 const BASE = 'https://www.cadencehenderson.com'
 /** Crawlers need a stable git URL; metadataBase resolves to absolute og:image. */

@@ -1,11 +1,8 @@
-'use client'
-
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
-import { CalendlyLink } from '@/components/calendly/calendly-link'
-import { Button } from '@/components/ui/button'
-import { Calendar, Search } from 'lucide-react'
+import { HeroActions } from '@/components/cadence/hero-actions'
 import { SiteImage } from '@/components/cadence/site-image'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { Search } from 'lucide-react'
 
 const HERO_IMAGE = cfImage(SITE_IMAGES.hero.homepage, 'hero')
 /** Mobile-first LCP — serve 828w by default; srcSet upgrades on larger viewports. */
@@ -17,26 +14,42 @@ const HERO_SRC_SET =
   HERO_IMAGE.startsWith('/images/')
     ? '/images/hero/homepage-640.webp 640w, /images/hero/homepage-828.webp 828w, /images/hero/homepage.webp 1280w'
     : undefined
+const USE_GIT_HERO = HERO_IMAGE.startsWith('/images/')
 
+/**
+ * Server Component hero: LCP image ships in initial HTML (no client hydration wait).
+ * Calendly CTA is a small client island.
+ */
 export function Hero() {
   return (
     <section
       className="relative min-h-[560px] sm:min-h-[620px] md:min-h-[680px] lg:min-h-[740px] flex flex-col bg-black overflow-hidden"
       aria-label="Hero"
     >
-      <SiteImage
-        src={HERO_SRC}
-        alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
-        fill
-        priority
-        sizes="100vw"
-        srcSet={HERO_SRC_SET}
-        className="object-center opacity-80"
-      />
-      <div
-        className="absolute inset-0 bg-black/35"
-        aria-hidden
-      />
+      {USE_GIT_HERO ? (
+        // eslint-disable-next-line @next/next/no-img-element -- intentional LCP path; next/image not used site-wide
+        <img
+          src={HERO_SRC}
+          srcSet={HERO_SRC_SET}
+          sizes="100vw"
+          alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-80"
+          fetchPriority="high"
+          decoding="async"
+          width={828}
+          height={1104}
+        />
+      ) : (
+        <SiteImage
+          src={HERO_SRC}
+          alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
+          fill
+          priority
+          sizes="100vw"
+          className="object-center opacity-80"
+        />
+      )}
+      <div className="absolute inset-0 bg-black/35" aria-hidden />
 
       <div className="relative container mx-auto px-4 sm:px-6 flex-1 flex items-center py-24 sm:py-32">
         <div className="max-w-2xl text-white">
@@ -44,7 +57,8 @@ export function Hero() {
             New Home Buyer&apos;s Agent in Cadence Henderson NV 89011
           </h1>
           <p className="text-base md:text-lg font-light text-white/90 mb-10 max-w-xl">
-            New homes Cadence Henderson NV 89011 — your buyer&apos;s agent. Free representation; builder pays the fee.
+            New homes Cadence Henderson NV 89011 — your buyer&apos;s agent. Free
+            representation; builder pays the fee.
           </p>
           {/* Static search CTA avoids mounting RealScout UMD in the LCP viewport */}
           <a
@@ -54,44 +68,16 @@ export function Hero() {
             className="mb-10 flex w-full max-w-xl items-center gap-3 rounded-sm bg-white px-4 py-3 text-left text-neutral-500 shadow-sm transition hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             aria-label="Search Cadence Henderson homes for sale"
           >
-            <Search size={18} className="shrink-0 text-neutral-400" aria-hidden />
+            <Search
+              size={18}
+              className="shrink-0 text-neutral-400"
+              aria-hidden
+            />
             <span className="text-sm font-light text-neutral-600">
               Search Cadence homes for sale…
             </span>
           </a>
-          <div className="flex flex-wrap gap-3">
-            <Button
-              size="default"
-              className="bg-white text-primary hover:bg-blue-50"
-              asChild
-            >
-              <CalendlyLink>
-                <Calendar className="mr-2" size={16} aria-hidden />
-                Schedule a 15-min call
-              </CalendlyLink>
-            </Button>
-            <Button
-              size="default"
-              variant="outline"
-              className="border-white bg-transparent text-white hover:bg-white hover:text-primary"
-              asChild
-            >
-              <a
-                href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
-                aria-label={`Call Dr. Jan Duffy: ${CONTACT_INFO.phone}`}
-              >
-                Call {CONTACT_INFO.phone}
-              </a>
-            </Button>
-            <Button
-              size="default"
-              variant="outline"
-              className="border-white bg-transparent text-white hover:bg-white hover:text-primary"
-              asChild
-            >
-              <a href="/find-your-home">Find your home</a>
-            </Button>
-          </div>
+          <HeroActions />
         </div>
       </div>
     </section>

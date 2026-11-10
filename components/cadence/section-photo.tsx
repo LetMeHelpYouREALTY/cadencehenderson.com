@@ -1,5 +1,3 @@
-'use client'
-
 import { SiteImage } from '@/components/cadence/site-image'
 
 type SectionPhotoProps = {
