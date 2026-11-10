@@ -54,6 +54,7 @@ export function SiteImage({
   width,
   height,
   priority,
+  sizes,
   loading,
 }: SiteImageProps) {
   const gitSrc = gitFallbackFromSrc(src)
@@ -88,6 +89,7 @@ export function SiteImage({
       alt={alt}
       width={fill ? undefined : width}
       height={fill ? undefined : height}
+      sizes={sizes ?? (fill ? '100vw' : undefined)}
       className={[fillClass, className].filter(Boolean).join(' ')}
       fetchPriority={priority ? 'high' : undefined}
       loading={priority ? 'eager' : loading ?? 'lazy'}

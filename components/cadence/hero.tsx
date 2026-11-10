@@ -2,9 +2,8 @@
 
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
-import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { Button } from '@/components/ui/button'
-import { Calendar } from 'lucide-react'
+import { Calendar, Search } from 'lucide-react'
 import { SiteImage } from '@/components/cadence/site-image'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
@@ -21,6 +20,7 @@ export function Hero() {
         alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
         fill
         priority
+        sizes="100vw"
         className="object-center opacity-80"
       />
       <div
@@ -36,9 +36,19 @@ export function Hero() {
           <p className="text-base md:text-lg font-light text-white/90 mb-10 max-w-xl">
             New homes Cadence Henderson NV 89011 — your buyer&apos;s agent. Free representation; builder pays the fee.
           </p>
-          <div className="mb-10 w-full max-w-full text-neutral-900 [&_input]:text-neutral-900 [&_input::placeholder]:text-neutral-500 [&_realscout-simple-search]:max-w-full">
-            <RealScoutSimpleSearch />
-          </div>
+          {/* Static search CTA avoids mounting RealScout UMD in the LCP viewport */}
+          <a
+            href={CONTACT_INFO.realScoutSearchUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-10 flex w-full max-w-xl items-center gap-3 rounded-sm bg-white px-4 py-3 text-left text-neutral-500 shadow-sm transition hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            aria-label="Search Cadence Henderson homes for sale"
+          >
+            <Search size={18} className="shrink-0 text-neutral-400" aria-hidden />
+            <span className="text-sm font-light text-neutral-600">
+              Search Cadence homes for sale…
+            </span>
+          </a>
           <div className="flex flex-wrap gap-3">
             <Button
               size="default"
@@ -69,13 +79,7 @@ export function Hero() {
               className="border-white bg-transparent text-white hover:bg-white hover:text-primary"
               asChild
             >
-              <a
-                href={CONTACT_INFO.realScoutSearchUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Homes for sale
-              </a>
+              <a href="/find-your-home">Find your home</a>
             </Button>
           </div>
         </div>

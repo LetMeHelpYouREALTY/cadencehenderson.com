@@ -32,10 +32,14 @@
 
 - [x] Compress critical images + add WebP siblings
 - [x] Gate CF delivery behind `NEXT_PUBLIC_CLOUDFLARE_IMAGES_LIVE` (git WebP until live)
-- [x] Remove head Calendly CSS; Calendly script → `lazyOnload`
+- [x] Remove head Calendly CSS; Calendly loads on demand only (no layout ScriptLoader)
 - [x] Drop off-site RealScout redirects for `/rentals*` and `/new-homes/beazer-homes`
 - [x] Sitemap excludes only permanent on-site redirect aliases
 - [x] Homepage key-facts internal links to discovered hubs
+- [x] Hero: static search CTA (no RealScout widget in LCP viewport)
+- [x] Defer RealScout office listings until near viewport
+- [x] Wire `sizes` on SiteImage; long-cache `/images/*`; lucide optimizePackageImports
+- [x] Analytics → `lazyOnload`; drop unused Geist Mono + unused preconnects
 
 ## Ops follow-up (needs secrets / GSC)
 

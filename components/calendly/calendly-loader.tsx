@@ -103,23 +103,10 @@ export function CalendlyProvider({ children }: { children: ReactNode }) {
     return loadPromise.current
   }, [])
 
-  // Listen for Calendly script loaded from layout <Script>, and poll so we don't miss the event
+  // Script is loaded on demand via loadCalendly(); sync state if it appears later
   useEffect(() => {
-    const onLoaded = () => setIsLoaded(true)
     if (typeof window !== 'undefined' && window.Calendly) {
       setIsLoaded(true)
-      return
-    }
-    window.addEventListener('calendly-loaded', onLoaded)
-    const poll = setInterval(() => {
-      if (window.Calendly) {
-        setIsLoaded(true)
-        clearInterval(poll)
-      }
-    }, 200)
-    return () => {
-      window.removeEventListener('calendly-loaded', onLoaded)
-      clearInterval(poll)
     }
   }, [])
 
