@@ -64,11 +64,16 @@ export default function AmericanHomesPage() {
             {villages.map((village) => (
               <li key={village.cadencePath}>
                 <h2 className="text-2xl font-medium text-neutral-900">
-                  <Link href={village.cadencePath} className="hover:text-primary">
+                  <Link
+                    href={village.cadencePath}
+                    className="hover:text-primary"
+                  >
                     {village.name}
                   </Link>
                 </h2>
-                <p className="mt-2 font-light text-neutral-600">{village.summary}</p>
+                <p className="mt-2 font-light text-neutral-600">
+                  {village.summary}
+                </p>
               </li>
             ))}
           </ul>

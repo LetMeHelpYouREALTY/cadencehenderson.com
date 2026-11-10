@@ -17,7 +17,8 @@ type ServiceItem = {
 const SERVICES: ServiceItem[] = [
   {
     title: 'Free Buyer Representation',
-    description: 'New homes Cadence Henderson NV 89011. Dr. Jan Duffy represents buyers across all 9 builders — builder pays the fee.',
+    description:
+      'New homes Cadence Henderson NV 89011. Dr. Jan Duffy represents buyers across all 9 builders — builder pays the fee.',
     href: '/new-homes',
     icon: Home,
     ariaLabel: 'View new homes and resale in Cadence Henderson',
@@ -29,7 +30,8 @@ const SERVICES: ServiceItem[] = [
       'Sell your current home and buy new construction in Cadence Henderson NV 89011. Dr. Jan Duffy helps align your sale and builder timeline.',
     href: '/sell-in-cadence',
     icon: RefreshCw,
-    ariaLabel: 'Sell your home to buy new construction in Cadence Henderson NV 89011',
+    ariaLabel:
+      'Sell your home to buy new construction in Cadence Henderson NV 89011',
     external: false,
   },
   {
@@ -42,7 +44,8 @@ const SERVICES: ServiceItem[] = [
   },
   {
     title: 'Free Consultation',
-    description: '15-minute call with Dr. Jan Duffy. Get answers about buying, selling, or living in Cadence.',
+    description:
+      '15-minute call with Dr. Jan Duffy. Get answers about buying, selling, or living in Cadence.',
     href: CONTACT_INFO.calendlyUrl,
     icon: Calendar,
     ariaLabel: 'Schedule a free real estate consultation in Cadence Henderson',
@@ -52,10 +55,7 @@ const SERVICES: ServiceItem[] = [
 
 export function ServicesSection() {
   return (
-    <section
-      className="py-24 bg-neutral-50"
-      aria-labelledby="services-heading"
-    >
+    <section className="py-24 bg-neutral-50" aria-labelledby="services-heading">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="relative h-[200px] sm:h-[240px] overflow-hidden mb-16 bg-neutral-200">
           <CloudflareImage
@@ -66,14 +66,23 @@ export function ServicesSection() {
             className="object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" aria-hidden />
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"
+            aria-hidden
+          />
         </div>
         <div className="text-center mb-12">
-          <h2 id="services-heading" className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-6">
+          <h2
+            id="services-heading"
+            className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-6"
+          >
             What Buyers Get at Cadence Henderson — Free Expert Representation
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Dr. Jan Duffy represents new home buyers only at Cadence Henderson NV 89011. The builder pays her fee — free to buyers. Licensed since 2008 · 35 years in Las Vegas. </p>
+            Dr. Jan Duffy represents new home buyers only at Cadence Henderson
+            NV 89011. The builder pays her fee — free to buyers. Licensed since
+            2008 · 35 years in Las Vegas.{' '}
+          </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {SERVICES.map((service) => {
@@ -108,7 +117,11 @@ export function ServicesSection() {
                     {content}
                   </a>
                 ) : (
-                  <Link href={service.href} className="block" aria-label={service.ariaLabel}>
+                  <Link
+                    href={service.href}
+                    className="block"
+                    aria-label={service.ariaLabel}
+                  >
                     {content}
                   </Link>
                 )}

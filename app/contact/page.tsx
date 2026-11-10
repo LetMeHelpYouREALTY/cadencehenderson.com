@@ -37,7 +37,6 @@ export default function ContactPage() {
         alt="Dr. Jan Duffy office serving Cadence Henderson NV 89011"
       />
 
-
       <HomeSearchSection compact />
 
       {/* Home Value Widget for Sellers */}
@@ -48,7 +47,8 @@ export default function ContactPage() {
               Selling a Cadence Henderson NV 89011 home?
             </h2>
             <p className="aeo-lead text-gray-700 mb-8" data-speakable>
-              Get a free, instant estimate of your home&apos;s value in today&apos;s Henderson market.
+              Get a free, instant estimate of your home&apos;s value in
+              today&apos;s Henderson market.
             </p>
             <div className="flex justify-center">
               <RealScoutHomeValue />
@@ -80,11 +80,20 @@ export default function ContactPage() {
                       itemScope
                       itemType="https://schema.org/PostalAddress"
                     >
-                      <span itemProp="streetAddress">{CONTACT_INFO.address.street}</span>
+                      <span itemProp="streetAddress">
+                        {CONTACT_INFO.address.street}
+                      </span>
                       <br />
-                      <span itemProp="addressLocality">{CONTACT_INFO.address.city}</span>,{' '}
-                      <span itemProp="addressRegion">{CONTACT_INFO.address.state}</span>{' '}
-                      <span itemProp="postalCode">{CONTACT_INFO.address.zip}</span>
+                      <span itemProp="addressLocality">
+                        {CONTACT_INFO.address.city}
+                      </span>
+                      ,{' '}
+                      <span itemProp="addressRegion">
+                        {CONTACT_INFO.address.state}
+                      </span>{' '}
+                      <span itemProp="postalCode">
+                        {CONTACT_INFO.address.zip}
+                      </span>
                     </address>
                   </div>
                 </div>
@@ -94,7 +103,9 @@ export default function ContactPage() {
                     <Phone size={24} className="text-blue-900" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="font-bold text-gray-900 mb-1">Call Dr. Jan</h3>
+                    <h3 className="font-bold text-gray-900 mb-1">
+                      Call Dr. Jan
+                    </h3>
                     <p className="text-gray-700">
                       <a
                         href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
@@ -159,7 +170,10 @@ export default function ContactPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button variant="outline" className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white">
+                  <Button
+                    variant="outline"
+                    className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
+                  >
                     Get Directions
                   </Button>
                 </a>
@@ -168,26 +182,33 @@ export default function ContactPage() {
 
             {/* Schedule a Consultation - Calendly (loads when in view) */}
             <CalendlyWhenVisible>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                Schedule a Consultation
-              </h2>
-              <p className="text-gray-700 mb-6">
-                Book a 15-minute call with Dr. Jan Duffy to discuss Cadence
-                Henderson homes, schedule a tour, or get personalized guidance.
-              </p>
-              <CalendlyInlineWidget className="rounded-lg overflow-hidden" />
-            </div>
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-8">
+                  Schedule a Consultation
+                </h2>
+                <p className="text-gray-700 mb-6">
+                  Book a 15-minute call with Dr. Jan Duffy to discuss Cadence
+                  Henderson homes, schedule a tour, or get personalized
+                  guidance.
+                </p>
+                <CalendlyInlineWidget className="rounded-lg overflow-hidden" />
+              </div>
             </CalendlyWhenVisible>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50" aria-labelledby="contact-faq-heading">
+      <section
+        className="py-16 bg-gray-50"
+        aria-labelledby="contact-faq-heading"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 id="contact-faq-heading" className="text-3xl font-bold text-gray-900 mb-2 text-center">
+            <h2
+              id="contact-faq-heading"
+              className="text-3xl font-bold text-gray-900 mb-2 text-center"
+            >
               Contact Cadence Henderson FAQs
             </h2>
             <p className="text-center text-gray-700 mb-8">
@@ -195,12 +216,19 @@ export default function ContactPage() {
             </p>
             <div className="space-y-4">
               {CONTACT_FAQS.map(({ question, answer }) => (
-                <details key={question} className="group border border-gray-200 rounded-lg p-5 cursor-pointer bg-white">
+                <details
+                  key={question}
+                  className="group border border-gray-200 rounded-lg p-5 cursor-pointer bg-white"
+                >
                   <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
                     {question}
-                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
+                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">
+                      ▾
+                    </span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{answer}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">
+                    {answer}
+                  </p>
                 </details>
               ))}
             </div>

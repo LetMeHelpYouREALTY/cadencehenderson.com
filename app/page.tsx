@@ -18,10 +18,14 @@ import { HOME_FAQS } from '@/lib/page-aeo'
 
 /** Client-only below-fold islands — keep off the critical JS path. */
 const AmenitiesSection = dynamic(() =>
-  import('@/components/cadence/amenities-section').then((m) => m.AmenitiesSection),
+  import('@/components/cadence/amenities-section').then(
+    (m) => m.AmenitiesSection,
+  ),
 )
 const LifestyleSection = dynamic(() =>
-  import('@/components/cadence/lifestyle-section').then((m) => m.LifestyleSection),
+  import('@/components/cadence/lifestyle-section').then(
+    (m) => m.LifestyleSection,
+  ),
 )
 const ScheduleConsultationSection = dynamic(() =>
   import('@/components/cadence/schedule-consultation-section').then(
@@ -34,8 +38,7 @@ const BASE = 'https://www.cadencehenderson.com'
 const OG_IMAGE = '/og-image.jpg'
 
 const HOME_TITLE = 'Cadence Henderson New Homes | Dr. Jan Duffy'
-const HOME_DESCRIPTION =
-  `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`
+const HOME_DESCRIPTION = `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`
 
 // ISR: fresh builder/data hourly for GEO and indexing
 export const revalidate = 3600

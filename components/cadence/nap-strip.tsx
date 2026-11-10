@@ -19,7 +19,9 @@ export function NapStrip() {
           <MapPin size={16} className="shrink-0 text-primary" aria-hidden />
           <span>{CONTACT_INFO.welcomeCenter}</span>
         </p>
-        <p className="mt-1 text-sm font-light text-neutral-600">{CONTACT_INFO.hours}</p>
+        <p className="mt-1 text-sm font-light text-neutral-600">
+          {CONTACT_INFO.hours}
+        </p>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-sm font-medium">
           <a
             href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}

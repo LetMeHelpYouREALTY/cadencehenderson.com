@@ -12,7 +12,13 @@ import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
-import { Newspaper, Calendar, Image as ImageIcon, Phone, Mail } from 'lucide-react'
+import {
+  Newspaper,
+  Calendar,
+  Image as ImageIcon,
+  Phone,
+  Mail,
+} from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { fetchNews, type NewsArticle } from '@/lib/fetch-news'
 
@@ -44,7 +50,7 @@ const FALLBACK_ARTICLES: NewsArticle[] = [
     date: 'September 15, 2025',
     category: 'Events',
     excerpt:
-      'Join us for live music every Friday evening in Central Park. This year\'s lineup features local and regional artists across multiple genres.',
+      "Join us for live music every Friday evening in Central Park. This year's lineup features local and regional artists across multiple genres.",
     image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
   },
   {
@@ -64,7 +70,7 @@ const FALLBACK_ARTICLES: NewsArticle[] = [
     date: 'August 10, 2025',
     category: 'New Homes',
     excerpt:
-      'We\'re excited to welcome two new home builders to Cadence, expanding our selection of quality homes and architectural styles.',
+      "We're excited to welcome two new home builders to Cadence, expanding our selection of quality homes and architectural styles.",
     image: cfImage(SITE_IMAGES.homes.exterior2, 'card'),
   },
   {
@@ -104,7 +110,10 @@ export default async function NewsPage() {
       <section className="py-8 bg-gray-50 border-b">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-4 justify-center items-center">
-            <Button variant="default" className="bg-indigo-900 hover:bg-indigo-800">
+            <Button
+              variant="default"
+              className="bg-indigo-900 hover:bg-indigo-800"
+            >
               All News
             </Button>
             <Button variant="outline">Awards</Button>
@@ -170,7 +179,11 @@ export default async function NewsPage() {
                     className="border-indigo-900 text-indigo-900 hover:bg-indigo-900 hover:text-white"
                     asChild
                   >
-                    <Link href={article.link} target="_blank" rel="noopener noreferrer">
+                    <Link
+                      href={article.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Read More
                     </Link>
                   </Button>
@@ -194,20 +207,22 @@ export default async function NewsPage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            {Object.values(SITE_IMAGES.gallery).slice(0, 8).map((imageId, i) => (
-              <div
-                key={i}
-                className="relative h-48 bg-gray-200 rounded-lg overflow-hidden group cursor-pointer"
-              >
-                <SiteImage
-                  src={cfImage(imageId, 'thumbnail')}
-                  alt={`Cadence Henderson NV 89011 community gallery photo ${i + 1}`}
-                  fill
-                  className="group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-              </div>
-            ))}
+            {Object.values(SITE_IMAGES.gallery)
+              .slice(0, 8)
+              .map((imageId, i) => (
+                <div
+                  key={i}
+                  className="relative h-48 bg-gray-200 rounded-lg overflow-hidden group cursor-pointer"
+                >
+                  <SiteImage
+                    src={cfImage(imageId, 'thumbnail')}
+                    alt={`Cadence Henderson NV 89011 community gallery photo ${i + 1}`}
+                    fill
+                    className="group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+                </div>
+              ))}
           </div>
 
           <div className="text-center mt-8">
@@ -225,9 +240,7 @@ export default async function NewsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
               <Newspaper size={48} className="mx-auto mb-4" />
-              <h2 className="text-3xl font-bold mb-4">
-                Stay in the Loop
-              </h2>
+              <h2 className="text-3xl font-bold mb-4">Stay in the Loop</h2>
               <p className="text-xl text-white mb-6">
                 Schedule a call with Dr. Jan Duffy for the latest news, events,
                 and exclusive Cadence updates—personalized to your interests.
@@ -273,4 +286,3 @@ export default async function NewsPage() {
     </div>
   )
 }
-

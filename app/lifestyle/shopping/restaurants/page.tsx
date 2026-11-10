@@ -96,7 +96,6 @@ export default function RestaurantsPage() {
         alt="Dining near Cadence Henderson NV 89011"
       />
 
-
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl">

@@ -11,17 +11,29 @@ import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
-import { Calendar, Clock, MapPin, Music, Users, Phone, Mail, Film } from 'lucide-react'
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  Music,
+  Users,
+  Phone,
+  Mail,
+  Film,
+} from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 export const metadata: Metadata = {
   title: 'Community Events in Cadence Henderson NV | 89011',
   description:
     'Summer concerts, farmers market, movie nights, food trucks & yoga at Cadence Henderson Central Park, Henderson NV 89011. Free events for residents.',
-  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/events' },
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/events',
+  },
   openGraph: {
     title: 'Community Events in Cadence Henderson NV | 89011',
-    description: 'Summer concerts, farmers market, movie nights & food trucks at Cadence Henderson Central Park, Henderson NV 89011.',
+    description:
+      'Summer concerts, farmers market, movie nights & food trucks at Cadence Henderson Central Park, Henderson NV 89011.',
     url: 'https://www.cadencehenderson.com/lifestyle/events',
   },
 }
@@ -153,7 +165,10 @@ export default function EventsPage() {
                     </h3>
                     <div className="space-y-2 mb-4">
                       <div className="flex items-start text-sm text-gray-700">
-                        <Clock size={16} className="mr-2 mt-0.5 flex-shrink-0" />
+                        <Clock
+                          size={16}
+                          className="mr-2 mt-0.5 flex-shrink-0"
+                        />
                         <span>{event.date}</span>
                       </div>
                       <div className="flex items-start text-sm text-gray-700">
@@ -187,26 +202,33 @@ export default function EventsPage() {
               Event categories in Cadence Henderson NV 89011
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {['Music', 'Food', 'Movies', 'Wellness', 'Holiday', 'Community', 'Sports', 'Education'].map(
-                (category) => (
-                  <div
-                    key={category}
-                    className="bg-white rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
-                  >
-                    <div className="text-4xl mb-2">
-                      {category === 'Music' && '🎵'}
-                      {category === 'Food' && '🍔'}
-                      {category === 'Movies' && '🎬'}
-                      {category === 'Wellness' && '🧘'}
-                      {category === 'Holiday' && '🎉'}
-                      {category === 'Community' && '🤝'}
-                      {category === 'Sports' && '⚽'}
-                      {category === 'Education' && '📚'}
-                    </div>
-                    <h3 className="font-bold text-gray-900">{category}</h3>
+              {[
+                'Music',
+                'Food',
+                'Movies',
+                'Wellness',
+                'Holiday',
+                'Community',
+                'Sports',
+                'Education',
+              ].map((category) => (
+                <div
+                  key={category}
+                  className="bg-white rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+                >
+                  <div className="text-4xl mb-2">
+                    {category === 'Music' && '🎵'}
+                    {category === 'Food' && '🍔'}
+                    {category === 'Movies' && '🎬'}
+                    {category === 'Wellness' && '🧘'}
+                    {category === 'Holiday' && '🎉'}
+                    {category === 'Community' && '🤝'}
+                    {category === 'Sports' && '⚽'}
+                    {category === 'Education' && '📚'}
                   </div>
-                ),
-              )}
+                  <h3 className="font-bold text-gray-900">{category}</h3>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -218,12 +240,10 @@ export default function EventsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
               <Calendar size={48} className="mx-auto mb-4" />
-              <h2 className="text-3xl font-bold mb-4">
-                Never Miss an Event
-              </h2>
+              <h2 className="text-3xl font-bold mb-4">Never Miss an Event</h2>
               <p className="text-xl text-white mb-6">
-                Schedule a call with Dr. Jan Duffy to get personalized updates on
-                upcoming activities and community happenings in Cadence.
+                Schedule a call with Dr. Jan Duffy to get personalized updates
+                on upcoming activities and community happenings in Cadence.
               </p>
               <div className="flex flex-wrap gap-4 justify-center mb-8">
                 <a
@@ -269,4 +289,3 @@ export default function EventsPage() {
     </div>
   )
 }
-

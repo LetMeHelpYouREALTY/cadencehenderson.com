@@ -46,7 +46,7 @@ const builders = [
     name: 'Lennar',
     slug: 'lennar',
     description:
-      'Everything\'s Included® homes with the latest technology and features.',
+      "Everything's Included® homes with the latest technology and features.",
     homes: 28,
     priceRange: '$380,000 - $600,000',
   },
@@ -96,42 +96,42 @@ export default function NewHomesPage() {
         imageSrc={cfImage(SITE_IMAGES.hero.newHomes, 'hero')}
         imageAlt="New homes for sale in Cadence Henderson NV 89011"
       >
-            <div className="flex justify-center mb-8">
-              <RealScoutSimpleSearch />
-            </div>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                href={CONTACT_INFO.realScoutSearchUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  size="lg"
-                  className="bg-white text-blue-900 hover:bg-gray-100"
-                >
-                  <Home className="mr-2" size={20} />
-                  Start Your Search
-                </Button>
-              </a>
-              <Link href="/find-your-home">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-blue-900"
-                >
-                  Find your home
-                </Button>
-              </Link>
-              <Link href="/incentives">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-blue-900"
-                >
-                  Incentives
-                </Button>
-              </Link>
-            </div>
+        <div className="flex justify-center mb-8">
+          <RealScoutSimpleSearch />
+        </div>
+        <div className="flex flex-wrap gap-4 justify-center">
+          <a
+            href={CONTACT_INFO.realScoutSearchUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              size="lg"
+              className="bg-white text-blue-900 hover:bg-gray-100"
+            >
+              <Home className="mr-2" size={20} />
+              Start Your Search
+            </Button>
+          </a>
+          <Link href="/find-your-home">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-900"
+            >
+              Find your home
+            </Button>
+          </Link>
+          <Link href="/incentives">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-900"
+            >
+              Incentives
+            </Button>
+          </Link>
+        </div>
       </PageHero>
 
       <NapStrip />
@@ -149,8 +149,9 @@ export default function NewHomesPage() {
               className="aeo-lead mx-auto mb-6 max-w-2xl text-center font-light text-gray-600"
               data-speakable
             >
-              Nine builders sell new construction in Cadence Henderson NV 89011. Dr. Jan Duffy
-              represents buyers at no extra cost — the builder pays the buyer-agent fee.
+              Nine builders sell new construction in Cadence Henderson NV 89011.
+              Dr. Jan Duffy represents buyers at no extra cost — the builder
+              pays the buyer-agent fee.
             </p>
             <div className="flex justify-center mb-6">
               <a
@@ -208,7 +209,10 @@ export default function NewHomesPage() {
             <p className="text-xl text-gray-700">
               Choose from {builders.length} premier home builders offering over
               150 homes.{' '}
-              <Link href="/communities" className="font-semibold text-blue-900 hover:underline">
+              <Link
+                href="/communities"
+                className="font-semibold text-blue-900 hover:underline"
+              >
                 Browse every Cadence village
               </Link>
               .
@@ -230,7 +234,9 @@ export default function NewHomesPage() {
                   <div className="relative h-44 overflow-hidden bg-neutral-200">
                     <SiteImage
                       src={cfImage(
-                        SITE_IMAGES.builders[BUILDER_PHOTO_KEYS[builder.slug] ?? 'beazer'],
+                        SITE_IMAGES.builders[
+                          BUILDER_PHOTO_KEYS[builder.slug] ?? 'beazer'
+                        ],
                         'card',
                       )}
                       alt={`${builder.name} new homes in Cadence Henderson NV 89011`}
@@ -280,8 +286,8 @@ export default function NewHomesPage() {
             </h2>
             <p className="text-xl text-gray-700 mb-8">
               Contact Dr. Jan Duffy to schedule a personalized tour of Cadence.
-              I'll guide you through Cadence builders and help you compare
-              floor plans, lot orientation, and net monthly cost.
+              I'll guide you through Cadence builders and help you compare floor
+              plans, lot orientation, and net monthly cost.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <CalendlyLink>
@@ -298,7 +304,9 @@ export default function NewHomesPage() {
                   Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
-              <a href={`mailto:${CONTACT_INFO.email}?subject=Schedule Cadence Tour`}>
+              <a
+                href={`mailto:${CONTACT_INFO.email}?subject=Schedule Cadence Tour`}
+              >
                 <Button
                   size="lg"
                   variant="outline"
@@ -390,9 +398,13 @@ export default function NewHomesPage() {
                 >
                   <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
                     {q}
-                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
+                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">
+                      ▾
+                    </span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">
+                    {a}
+                  </p>
                 </details>
               ))}
             </div>
@@ -410,4 +422,3 @@ export default function NewHomesPage() {
     </div>
   )
 }
-

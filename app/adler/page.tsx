@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { VillagePageView, villageMetadata } from '@/components/cadence/village-page'
+import {
+  VillagePageView,
+  villageMetadata,
+} from '@/components/cadence/village-page'
 import { getCommunityByPath } from '@/lib/cadence-nv-catalog'
 
 const village = getCommunityByPath('/adler')

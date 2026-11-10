@@ -11,7 +11,12 @@ import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Building2, DollarSign, Bed, Bath, Phone, Mail } from 'lucide-react'
 import { notFound } from 'next/navigation'
-import { cfImage, SITE_IMAGES, getHomeImage, getRentalHeroImage } from '@/lib/cloudflare-images'
+import {
+  cfImage,
+  SITE_IMAGES,
+  getHomeImage,
+  getRentalHeroImage,
+} from '@/lib/cloudflare-images'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -146,7 +151,7 @@ const rentalData: Record<
       },
     ],
   },
-  'adler': {
+  adler: {
     name: 'Adler',
     description:
       'Contemporary apartments with high-end finishes and community spaces.',
@@ -309,7 +314,9 @@ export default async function RentalCommunityPage({
               <div className="text-center">
                 <Building2 className="mx-auto mb-3 text-purple-900" size={32} />
                 <h3 className="font-bold text-gray-900 mb-2">Floor Plans</h3>
-                <p className="text-gray-700">{community.floorPlans.length} Options</p>
+                <p className="text-gray-700">
+                  {community.floorPlans.length} Options
+                </p>
               </div>
             </div>
           </div>
@@ -405,8 +412,8 @@ export default async function RentalCommunityPage({
             </h2>
             <p className="text-xl text-gray-700 mb-8">
               Contact Dr. Jan Duffy today to tour {community.name} and check
-              availability. I can connect you directly with their leasing team and
-              help you find the perfect rental.
+              availability. I can connect you directly with their leasing team
+              and help you find the perfect rental.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <CalendlyLink>
@@ -423,7 +430,9 @@ export default async function RentalCommunityPage({
                   Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
-              <a href={`mailto:${CONTACT_INFO.email}?subject=${community.name} Rental Inquiry`}>
+              <a
+                href={`mailto:${CONTACT_INFO.email}?subject=${community.name} Rental Inquiry`}
+              >
                 <Button
                   size="lg"
                   variant="outline"
@@ -458,4 +467,3 @@ export async function generateStaticParams() {
     community,
   }))
 }
-

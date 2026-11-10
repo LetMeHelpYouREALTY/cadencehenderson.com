@@ -22,9 +22,18 @@ const PAGE_TITLE = 'Sell to Buy in Cadence Henderson | Dr. Jan Duffy'
 const PAGE_DESCRIPTION =
   'Sell your current home and buy new construction in Cadence Henderson NV 89011. Listing consult and equity planning with Dr. Jan Duffy.'
 
-const LISTING_HERO = calendlyEventUrl('listing-consultation', 'sell-in-cadence-hero')
-const LISTING_MID = calendlyEventUrl('listing-consultation', 'sell-in-cadence-mid')
-const LISTING_VALUATION = calendlyEventUrl('listing-consultation', 'sell-in-cadence-valuation')
+const LISTING_HERO = calendlyEventUrl(
+  'listing-consultation',
+  'sell-in-cadence-hero',
+)
+const LISTING_MID = calendlyEventUrl(
+  'listing-consultation',
+  'sell-in-cadence-mid',
+)
+const LISTING_VALUATION = calendlyEventUrl(
+  'listing-consultation',
+  'sell-in-cadence-valuation',
+)
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -71,34 +80,55 @@ export default function SellInCadencePage() {
           <h2 className="text-3xl font-extralight tracking-[0.06em] text-neutral-900 mb-6 text-center">
             Why sell-to-buy in Cadence?
           </h2>
-          <p className="aeo-lead text-center font-light text-neutral-600 mb-8" data-speakable>
-            Cadence is a master-planned community in Henderson NV 89011 with multiple homebuilders and
-            on-site amenities. If you already own elsewhere in the valley, selling first (or coordinating
-            a close) lets you bring equity straight into a new build here — with one advisor tracking both
-            sides. Dr. Jan Duffy focuses on Cadence new construction for the purchase; she can also
-            discuss listing your current home.
+          <p
+            className="aeo-lead text-center font-light text-neutral-600 mb-8"
+            data-speakable
+          >
+            Cadence is a master-planned community in Henderson NV 89011 with
+            multiple homebuilders and on-site amenities. If you already own
+            elsewhere in the valley, selling first (or coordinating a close)
+            lets you bring equity straight into a new build here — with one
+            advisor tracking both sides. Dr. Jan Duffy focuses on Cadence new
+            construction for the purchase; she can also discuss listing your
+            current home.
           </p>
           <ul className="space-y-4 text-neutral-700 font-light">
             <li className="flex gap-3">
               <Home className="shrink-0 text-primary" size={22} aria-hidden />
               <span>
-                <strong className="font-medium text-neutral-900">One plan for two moves.</strong> Align
-                listing date, showings, and builder deposit deadlines before you write offers.
+                <strong className="font-medium text-neutral-900">
+                  One plan for two moves.
+                </strong>{' '}
+                Align listing date, showings, and builder deposit deadlines
+                before you write offers.
               </span>
             </li>
             <li className="flex gap-3">
-              <RefreshCw className="shrink-0 text-primary" size={22} aria-hidden />
+              <RefreshCw
+                className="shrink-0 text-primary"
+                size={22}
+                aria-hidden
+              />
               <span>
-                <strong className="font-medium text-neutral-900">Equity toward new construction.</strong>{' '}
-                Know your estimated net from the sale before you pick a floor plan and lot in Cadence.
+                <strong className="font-medium text-neutral-900">
+                  Equity toward new construction.
+                </strong>{' '}
+                Know your estimated net from the sale before you pick a floor
+                plan and lot in Cadence.
               </span>
             </li>
             <li className="flex gap-3">
-              <Calendar className="shrink-0 text-primary" size={22} aria-hidden />
+              <Calendar
+                className="shrink-0 text-primary"
+                size={22}
+                aria-hidden
+              />
               <span>
-                <strong className="font-medium text-neutral-900">Builder coordination.</strong> Dr. Jan
-                Duffy represents you on the Cadence purchase; the builder typically pays her buyer-side fee
-                on new homes.
+                <strong className="font-medium text-neutral-900">
+                  Builder coordination.
+                </strong>{' '}
+                Dr. Jan Duffy represents you on the Cadence purchase; the
+                builder typically pays her buyer-side fee on new homes.
               </span>
             </li>
           </ul>
@@ -116,21 +146,32 @@ export default function SellInCadencePage() {
         </div>
       </section>
 
-      <section className="py-16 bg-neutral-50" aria-labelledby="valuation-heading">
+      <section
+        className="py-16 bg-neutral-50"
+        aria-labelledby="valuation-heading"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 id="valuation-heading" className="text-3xl font-extralight tracking-[0.06em] text-neutral-900 mb-4">
+            <h2
+              id="valuation-heading"
+              className="text-3xl font-extralight tracking-[0.06em] text-neutral-900 mb-4"
+            >
               Start with your current home value
             </h2>
             <p className="text-neutral-600 font-light mb-8">
-              Use the tool below for a quick estimate on the home you plan to sell. Then book a listing
-              consultation so Dr. Jan Duffy can sanity-check net proceeds against Cadence builder pricing.
+              Use the tool below for a quick estimate on the home you plan to
+              sell. Then book a listing consultation so Dr. Jan Duffy can
+              sanity-check net proceeds against Cadence builder pricing.
             </p>
             <div className="flex justify-center mb-8">
               <RealScoutHomeValue />
             </div>
             <Button size="lg" asChild>
-              <a href={LISTING_VALUATION} target="_blank" rel="noopener noreferrer">
+              <a
+                href={LISTING_VALUATION}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Discuss my numbers with Dr. Jan Duffy
               </a>
             </Button>

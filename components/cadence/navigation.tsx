@@ -64,11 +64,18 @@ const navigationItems: NavItem[] = [
         href: CONTACT_INFO.realScoutRentalsUrl,
         external: true,
       },
-      { label: 'Beazer Homes', href: CONTACT_INFO.realScoutBeazerHomesUrl, external: true },
+      {
+        label: 'Beazer Homes',
+        href: CONTACT_INFO.realScoutBeazerHomesUrl,
+        external: true,
+      },
       { label: 'Century Communities', href: '/new-homes/century-communities' },
       { label: 'D.R. Horton', href: '/new-homes/dr-horton' },
       { label: 'Lennar', href: '/new-homes/lennar' },
-      { label: 'Richmond American Homes', href: '/new-homes/richmond-american' },
+      {
+        label: 'Richmond American Homes',
+        href: '/new-homes/richmond-american',
+      },
       { label: 'StoryBook Homes', href: '/new-homes/storybook-homes' },
       { label: 'Taylor Morrison', href: '/new-homes/taylor-morrison' },
       { label: 'Woodside Homes', href: '/new-homes/woodside-homes' },
@@ -78,7 +85,8 @@ const navigationItems: NavItem[] = [
     title: 'Lifestyle',
     href: '/lifestyle',
     ariaLabel: 'Cadence Henderson lifestyle and community',
-    titleAttr: 'Events, amenities, schools and community life in Cadence Henderson',
+    titleAttr:
+      'Events, amenities, schools and community life in Cadence Henderson',
     items: [
       { label: 'Cadence Henderson Amenities', href: '/lifestyle/amenities' },
       { label: 'Community Events', href: '/lifestyle/events' },
@@ -86,9 +94,18 @@ const navigationItems: NavItem[] = [
       { label: 'Pocket Parks', href: '/lifestyle/parks-trails/pocket-parks' },
       { label: 'Schools Near Cadence Henderson', href: '/lifestyle/schools' },
       { label: 'Shopping & Dining', href: '/lifestyle/shopping' },
-      { label: 'Restaurants Near Cadence', href: '/lifestyle/shopping/restaurants' },
-      { label: 'Entertainment Near Cadence', href: '/lifestyle/shopping/entertainment' },
-      { label: 'Outdoor Activities Near Cadence', href: '/lifestyle/shopping/activities' },
+      {
+        label: 'Restaurants Near Cadence',
+        href: '/lifestyle/shopping/restaurants',
+      },
+      {
+        label: 'Entertainment Near Cadence',
+        href: '/lifestyle/shopping/entertainment',
+      },
+      {
+        label: 'Outdoor Activities Near Cadence',
+        href: '/lifestyle/shopping/activities',
+      },
       { label: 'Community Life', href: '/lifestyle/community' },
       { label: 'Cadence Animal Hospital', href: '/lifestyle/animal-hospital' },
     ],
@@ -114,7 +131,10 @@ const navigationItems: NavItem[] = [
       { label: 'Life at Cadence', href: '/realtors/life-at-cadence' },
       { label: 'Realtor Toolkit', href: '/realtors/realtor-toolkit' },
       { label: 'Media & Press', href: '/media' },
-      { label: 'Past Home Sales in Cadence Henderson', href: '/past-homesales' },
+      {
+        label: 'Past Home Sales in Cadence Henderson',
+        href: '/past-homesales',
+      },
       { label: 'Sell to Buy in Cadence Henderson', href: '/sell-in-cadence' },
       { label: 'Residents', href: '/residents' },
     ],
@@ -155,7 +175,9 @@ export function Navigation() {
             aria-label={`${CONTACT_INFO.siteName} - Home`}
             title={CONTACT_INFO.siteName}
           >
-            <span className="text-sm font-light tracking-[0.4em] text-cadence-ink">CADENCE</span>
+            <span className="text-sm font-light tracking-[0.4em] text-cadence-ink">
+              CADENCE
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -220,11 +242,7 @@ export function Navigation() {
             ))}
           </div>
 
-          <Button
-            size="sm"
-            className="hidden lg:inline-flex shrink-0"
-            asChild
-          >
+          <Button size="sm" className="hidden lg:inline-flex shrink-0" asChild>
             <CalendlyLink>Find a Realtor</CalendlyLink>
           </Button>
 
@@ -243,18 +261,22 @@ export function Navigation() {
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen ? 'true' : 'false'}
           >
-            {isOpen ? <X size={28} aria-hidden /> : <Menu size={28} aria-hidden />}
+            {isOpen ? (
+              <X size={28} aria-hidden />
+            ) : (
+              <Menu size={28} aria-hidden />
+            )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden border-t border-neutral-200 py-6" aria-label="Mobile navigation">
+          <div
+            className="lg:hidden border-t border-neutral-200 py-6"
+            aria-label="Mobile navigation"
+          >
             <div className="px-4 pb-4 space-y-2">
-              <Button
-                className="w-full"
-                asChild
-              >
+              <Button className="w-full" asChild>
                 <CalendlyLink>Find a Realtor</CalendlyLink>
               </Button>
               <Link
@@ -286,7 +308,9 @@ export function Navigation() {
                     onClick={(e) => {
                       if (item.items) {
                         e.preventDefault()
-                        setActiveDropdown(activeDropdown === item.title ? null : item.title)
+                        setActiveDropdown(
+                          activeDropdown === item.title ? null : item.title,
+                        )
                       } else {
                         setIsOpen(false)
                       }
@@ -296,7 +320,11 @@ export function Navigation() {
                   </Link>
                 )}
                 {item.items && activeDropdown === item.title && (
-                  <div className="pl-4" role="group" aria-label={`${item.title} submenu`}>
+                  <div
+                    className="pl-4"
+                    role="group"
+                    aria-label={`${item.title} submenu`}
+                  >
                     {item.items.map((subItem) =>
                       subItem.external ? (
                         <a

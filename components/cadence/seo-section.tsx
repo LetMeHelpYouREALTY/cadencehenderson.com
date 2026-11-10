@@ -32,7 +32,10 @@ export function SeoSection({
             {heading}
           </h2>
           {lead ? (
-            <p className="aeo-lead mb-8 font-light leading-relaxed text-neutral-700" data-speakable>
+            <p
+              className="aeo-lead mb-8 font-light leading-relaxed text-neutral-700"
+              data-speakable
+            >
               {lead}
             </p>
           ) : null}

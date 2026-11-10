@@ -24,10 +24,7 @@ export function Hero() {
         sizes="100vw"
         className="object-center opacity-80"
       />
-      <div
-        className="absolute inset-0 bg-black/35"
-        aria-hidden
-      />
+      <div className="absolute inset-0 bg-black/35" aria-hidden />
 
       <div className="relative container mx-auto px-4 sm:px-6 flex-1 flex items-center py-24 sm:py-32">
         <div className="max-w-2xl text-white">
@@ -35,7 +32,8 @@ export function Hero() {
             New Home Buyer&apos;s Agent in Cadence Henderson NV 89011
           </h1>
           <p className="text-base md:text-lg font-light text-white/90 mb-10 max-w-xl">
-            New homes Cadence Henderson NV 89011 — your buyer&apos;s agent. Free representation; builder pays the fee.
+            New homes Cadence Henderson NV 89011 — your buyer&apos;s agent. Free
+            representation; builder pays the fee.
           </p>
           <div className="mb-10 w-full max-w-full text-neutral-900 [&_input]:text-neutral-900 [&_input::placeholder]:text-neutral-500 [&_realscout-simple-search]:max-w-full">
             <RealScoutSimpleSearch />

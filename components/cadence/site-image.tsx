@@ -17,7 +17,11 @@ type SiteImageProps = {
 
 type LoadStage = 'cloudflare' | 'git' | 'git-raster' | 'placeholder'
 
-function initialStage(src: string, priority: boolean | undefined, gitSrc: string): LoadStage {
+function initialStage(
+  src: string,
+  priority: boolean | undefined,
+  gitSrc: string,
+): LoadStage {
   if (!src || src.startsWith('data:')) return 'placeholder'
   if (src.startsWith('/') && !src.startsWith('//')) return 'git'
   // Priority/LCP: start on git WebP so a Cloudflare Images 404 cannot delay paint.
@@ -95,7 +99,7 @@ export function SiteImage({
       sizes={resolvedSizes}
       className={[fillClass, className].filter(Boolean).join(' ')}
       fetchPriority={priority ? 'high' : undefined}
-      loading={priority ? 'eager' : loading ?? 'lazy'}
+      loading={priority ? 'eager' : (loading ?? 'lazy')}
       decoding={priority ? 'sync' : 'async'}
       onError={() => {
         setStage((current) => {

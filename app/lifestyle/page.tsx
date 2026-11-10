@@ -39,7 +39,7 @@ const lifestyleFeatures = [
     icon: Trees,
     title: 'Parks & Trails',
     description:
-      "Nearly 50-acre Central Park, walking trails, and nature areas for outdoor recreation.",
+      'Nearly 50-acre Central Park, walking trails, and nature areas for outdoor recreation.',
     image: getAmenityImage('trails', 'card'),
     link: '/lifestyle/parks-trails',
   },
@@ -88,10 +88,7 @@ export default function LifestylePage() {
         imageSrc={cfImage(SITE_IMAGES.hero.lifestyle, 'hero')}
         imageAlt="Cadence Henderson lifestyle and community in Henderson NV 89011"
       >
-        <Button
-          size="lg"
-          className="bg-white text-green-900 hover:bg-gray-100"
-        >
+        <Button size="lg" className="bg-white text-green-900 hover:bg-gray-100">
           <Calendar className="mr-2" size={20} />
           View Community Calendar
         </Button>
@@ -108,7 +105,10 @@ export default function LifestylePage() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Cadence Henderson lifestyle in Henderson NV 89011
             </h2>
-            <p className="aeo-lead text-xl text-gray-600 max-w-3xl mx-auto" data-speakable>
+            <p
+              className="aeo-lead text-xl text-gray-600 max-w-3xl mx-auto"
+              data-speakable
+            >
               From Central Park amenities to community events, discover how
               Cadence Henderson NV 89011 is laid out for daily living.
             </p>
@@ -116,11 +116,7 @@ export default function LifestylePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {lifestyleFeatures.map((feature) => (
-              <Link
-                key={feature.link}
-                href={feature.link}
-                className="group"
-              >
+              <Link key={feature.link} href={feature.link} className="group">
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                   <div className="relative h-56 overflow-hidden">
                     <SiteImage
@@ -249,9 +245,7 @@ export default function LifestylePage() {
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <div className="text-4xl mb-3">🎾</div>
-              <h3 className="font-bold text-gray-900 mb-2">
-                Sports Courts
-              </h3>
+              <h3 className="font-bold text-gray-900 mb-2">Sports Courts</h3>
               <p className="text-sm text-gray-600">
                 Basketball, tennis, and pickleball
               </p>
@@ -270,8 +264,8 @@ export default function LifestylePage() {
                 Experience the Lifestyle Firsthand
               </h2>
               <p className="text-xl text-white mb-6">
-                Schedule a tour and see why Cadence is more than just a community
-                - it's a lifestyle.
+                Schedule a tour and see why Cadence is more than just a
+                community - it's a lifestyle.
               </p>
               <div className="flex flex-wrap gap-4 justify-center mb-8">
                 <a
@@ -303,10 +297,16 @@ export default function LifestylePage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-white" aria-labelledby="lifestyle-faq-heading">
+      <section
+        className="py-16 bg-white"
+        aria-labelledby="lifestyle-faq-heading"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 id="lifestyle-faq-heading" className="text-3xl font-bold text-gray-900 mb-2 text-center">
+            <h2
+              id="lifestyle-faq-heading"
+              className="text-3xl font-bold text-gray-900 mb-2 text-center"
+            >
               Cadence Henderson lifestyle FAQs
             </h2>
             <p className="text-center text-gray-600 mb-8">
@@ -357,17 +357,36 @@ export default function LifestylePage() {
             />
             <div className="space-y-4">
               {[
-                { q: 'What amenities does Cadence Henderson have?', a: '50-acre Central Park, resort pools, fitness centers, pickleball courts, dog parks, 30+ miles of trails, and clubhouses. Most amenities are free for residents.' },
-                { q: 'What events happen in Cadence Henderson?', a: 'Summer concerts, farmers market, movie nights, food trucks, and yoga in the park at Central Park. Free for residents.' },
-                { q: 'What schools serve Cadence Henderson NV 89011?', a: 'Cadence Elementary (on-site), Legacy Traditional, and Clark County schools. Green Valley High School nearby.' },
-                { q: 'Is there shopping near Cadence Henderson?', a: 'Yes. Galleria at Sunset, Cadence Marketplace, and Sunset Station are 5–10 minutes from Cadence Henderson NV 89011.' },
+                {
+                  q: 'What amenities does Cadence Henderson have?',
+                  a: '50-acre Central Park, resort pools, fitness centers, pickleball courts, dog parks, 30+ miles of trails, and clubhouses. Most amenities are free for residents.',
+                },
+                {
+                  q: 'What events happen in Cadence Henderson?',
+                  a: 'Summer concerts, farmers market, movie nights, food trucks, and yoga in the park at Central Park. Free for residents.',
+                },
+                {
+                  q: 'What schools serve Cadence Henderson NV 89011?',
+                  a: 'Cadence Elementary (on-site), Legacy Traditional, and Clark County schools. Green Valley High School nearby.',
+                },
+                {
+                  q: 'Is there shopping near Cadence Henderson?',
+                  a: 'Yes. Galleria at Sunset, Cadence Marketplace, and Sunset Station are 5–10 minutes from Cadence Henderson NV 89011.',
+                },
               ].map(({ q, a }) => (
-                <details key={q} className="group border border-gray-200 rounded-lg p-5 cursor-pointer bg-gray-50">
+                <details
+                  key={q}
+                  className="group border border-gray-200 rounded-lg p-5 cursor-pointer bg-gray-50"
+                >
                   <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
                     {q}
-                    <span className="text-green-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
+                    <span className="text-green-900 shrink-0 group-open:rotate-180 transition-transform">
+                      ▾
+                    </span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">
+                    {a}
+                  </p>
                 </details>
               ))}
             </div>
@@ -386,4 +405,3 @@ export default function LifestylePage() {
     </div>
   )
 }
-

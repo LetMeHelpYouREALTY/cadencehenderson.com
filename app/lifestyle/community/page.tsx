@@ -7,7 +7,14 @@ import { Footer } from '@/components/cadence/footer'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
-import { Users, Heart, Calendar, MessageSquare, Award, Smile } from 'lucide-react'
+import {
+  Users,
+  Heart,
+  Calendar,
+  MessageSquare,
+  Award,
+  Smile,
+} from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
 
@@ -20,7 +27,8 @@ export const metadata: Metadata = {
   alternates: { canonical: `${BASE}/lifestyle/community` },
   openGraph: {
     title: 'Cadence Henderson Community Life – Henderson NV 89011',
-    description: 'Resident clubs, volunteering & neighborhood events in Cadence Henderson NV 89011. Active community life for residents.',
+    description:
+      'Resident clubs, volunteering & neighborhood events in Cadence Henderson NV 89011. Active community life for residents.',
     url: `${BASE}/lifestyle/community`,
   },
 }
@@ -91,7 +99,8 @@ const volunteerOpportunities = [
   },
   {
     title: 'Resident groups',
-    description: 'Join posted clubs and volunteer days on the resident calendar',
+    description:
+      'Join posted clubs and volunteer days on the resident calendar',
   },
 ]
 
@@ -124,7 +133,6 @@ export default function CommunityPage() {
         alt="Community clubs in Cadence Henderson NV 89011"
       />
 
-
       {/* Why Cadence Community */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -141,8 +149,8 @@ export default function CommunityPage() {
                   Neighborly Spirit
                 </h3>
                 <p className="text-gray-700">
-                  Experience genuine connections with friendly neighbors who care
-                  about building a strong, supportive community.
+                  Experience genuine connections with friendly neighbors who
+                  care about building a strong, supportive community.
                 </p>
               </div>
 
@@ -262,19 +270,27 @@ export default function CommunityPage() {
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-900 rounded-full mr-2 mt-2" />
-                    <span className="text-gray-700">Private residents-only access</span>
+                    <span className="text-gray-700">
+                      Private residents-only access
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-900 rounded-full mr-2 mt-2" />
-                    <span className="text-gray-700">Discussion forums and groups</span>
+                    <span className="text-gray-700">
+                      Discussion forums and groups
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-900 rounded-full mr-2 mt-2" />
-                    <span className="text-gray-700">Event calendar and RSVPs</span>
+                    <span className="text-gray-700">
+                      Event calendar and RSVPs
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-900 rounded-full mr-2 mt-2" />
-                    <span className="text-gray-700">Classified ads and marketplace</span>
+                    <span className="text-gray-700">
+                      Classified ads and marketplace
+                    </span>
                   </li>
                 </ul>
                 <Button className="w-full bg-blue-900 hover:bg-blue-800">
@@ -298,14 +314,18 @@ export default function CommunityPage() {
                 <div className="flex items-center mb-4">
                   <div className="text-4xl mr-3">👤</div>
                   <div>
-                    <div className="font-bold text-gray-900">Sarah & Mike T.</div>
-                    <div className="text-sm text-gray-600">Residents since 2022</div>
+                    <div className="font-bold text-gray-900">
+                      Sarah & Mike T.
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Residents since 2022
+                    </div>
                   </div>
                 </div>
                 <p className="text-gray-700 italic">
-                  "We've lived in many neighborhoods, but Cadence truly feels like
-                  home. The sense of community here is incredible—our neighbors
-                  have become our best friends!"
+                  "We've lived in many neighborhoods, but Cadence truly feels
+                  like home. The sense of community here is incredible—our
+                  neighbors have become our best friends!"
                 </p>
               </div>
 
@@ -314,7 +334,9 @@ export default function CommunityPage() {
                   <div className="text-4xl mr-3">👤</div>
                   <div>
                     <div className="font-bold text-gray-900">Jennifer M.</div>
-                    <div className="text-sm text-gray-600">Resident since 2021</div>
+                    <div className="text-sm text-gray-600">
+                      Resident since 2021
+                    </div>
                   </div>
                 </div>
                 <p className="text-gray-700 italic">
@@ -376,4 +398,3 @@ export default function CommunityPage() {
     </div>
   )
 }
-

@@ -59,8 +59,9 @@ export default function MediaPage() {
               </h2>
               <p>
                 For interviews with Dr. Jan Duffy about Cadence Henderson real
-                estate, new-home buying, or 89011 market questions: {CONTACT_INFO.email}{' '}
-                or {CONTACT_INFO.phone}. Office: {CONTACT_INFO.welcomeCenter}.
+                estate, new-home buying, or 89011 market questions:{' '}
+                {CONTACT_INFO.email} or {CONTACT_INFO.phone}. Office:{' '}
+                {CONTACT_INFO.welcomeCenter}.
               </p>
             </article>
             <article>
@@ -96,11 +97,17 @@ export default function MediaPage() {
                   Cadence Henderson news
                 </Link>
                 {', '}
-                <Link href="/lifestyle/events" className="text-primary hover:underline">
+                <Link
+                  href="/lifestyle/events"
+                  className="text-primary hover:underline"
+                >
                   community events
                 </Link>
                 {', '}
-                <Link href="/communities" className="text-primary hover:underline">
+                <Link
+                  href="/communities"
+                  className="text-primary hover:underline"
+                >
                   village directory
                 </Link>
                 .
@@ -113,7 +120,9 @@ export default function MediaPage() {
         path="/media"
         name="Media & Press | Cadence Henderson Homes"
         description="Press contact for Cadence Henderson Homes by Dr. Jan Duffy, plus developer-side Cadence community news. Henderson NV 89011."
-        faqs={defaultPageFaqs('media and press inquiries about Cadence Henderson')}
+        faqs={defaultPageFaqs(
+          'media and press inquiries about Cadence Henderson',
+        )}
         breadcrumbs={[{ name: 'Media and press' }]}
       />
       <AgentContactCta

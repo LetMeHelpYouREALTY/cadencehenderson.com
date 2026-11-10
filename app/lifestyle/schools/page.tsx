@@ -78,7 +78,9 @@ export const metadata: Metadata = {
   title: 'Schools Near Cadence Henderson | Henderson NV 89011',
   description:
     'Schools near Cadence Henderson 89011: Cadence Elementary, Henderson middle schools, Green Valley HS. Confirm CCSD zones by address.',
-  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/schools' },
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/schools',
+  },
   openGraph: {
     title: 'Schools Near Cadence Henderson | Henderson NV 89011',
     description:
@@ -115,8 +117,13 @@ export default function SchoolsPage() {
             <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
               Campuses serving Cadence Henderson NV 89011
             </h2>
-            <p className="aeo-lead mx-auto mb-12 max-w-3xl text-center text-gray-700" data-speakable>
-              Cadence Elementary School is on-site. Henderson-area middle schools and Green Valley High School serve many Cadence streets. Always verify the CCSD zone for a specific address.
+            <p
+              className="aeo-lead mx-auto mb-12 max-w-3xl text-center text-gray-700"
+              data-speakable
+            >
+              Cadence Elementary School is on-site. Henderson-area middle
+              schools and Green Valley High School serve many Cadence streets.
+              Always verify the CCSD zone for a specific address.
             </p>
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <div className="text-center p-6 bg-indigo-50 rounded-lg">
@@ -129,13 +136,17 @@ export default function SchoolsPage() {
                 <div className="text-2xl font-bold text-indigo-900 mb-2">
                   By address
                 </div>
-                <div className="text-gray-700">Middle and high school zones</div>
+                <div className="text-gray-700">
+                  Middle and high school zones
+                </div>
               </div>
               <div className="text-center p-6 bg-indigo-50 rounded-lg">
                 <div className="text-2xl font-bold text-indigo-900 mb-2">
                   Nearby
                 </div>
-                <div className="text-gray-700">Private K–12 campuses in Henderson</div>
+                <div className="text-gray-700">
+                  Private K–12 campuses in Henderson
+                </div>
               </div>
             </div>
           </div>
@@ -203,20 +214,26 @@ export default function SchoolsPage() {
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="flex items-start">
-                <Award size={32} className="text-indigo-900 mr-4 flex-shrink-0" />
+                <Award
+                  size={32}
+                  className="text-indigo-900 mr-4 flex-shrink-0"
+                />
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     Name the campus
                   </h3>
                   <p className="text-gray-700">
-                    Cadence Elementary is inside the master plan. Middle and high
-                    school campuses serving Henderson include Green Valley High
-                    School. Ask Dr. Jan for the current CCSD map for a lot.
+                    Cadence Elementary is inside the master plan. Middle and
+                    high school campuses serving Henderson include Green Valley
+                    High School. Ask Dr. Jan for the current CCSD map for a lot.
                   </p>
                 </div>
               </div>
               <div className="flex items-start">
-                <Users size={32} className="text-indigo-900 mr-4 flex-shrink-0" />
+                <Users
+                  size={32}
+                  className="text-indigo-900 mr-4 flex-shrink-0"
+                />
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     Programs on campus
@@ -270,8 +287,8 @@ export default function SchoolsPage() {
               Private campuses near Cadence Henderson NV 89011
             </h2>
             <p className="text-center text-gray-700 mb-8">
-              In addition to CCSD campuses, several Henderson-area
-              private schools serve the Henderson area.
+              In addition to CCSD campuses, several Henderson-area private
+              schools serve the Henderson area.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               {privateSchools.map((school) => (
@@ -299,8 +316,8 @@ export default function SchoolsPage() {
               Colleges near Cadence Henderson NV 89011
             </h2>
             <p className="aeo-lead text-lg text-gray-700 mb-8" data-speakable>
-              Nevada State University, CSN Henderson, UNLV, and Roseman University
-              are a short drive from Cadence Henderson NV 89011.
+              Nevada State University, CSN Henderson, UNLV, and Roseman
+              University are a short drive from Cadence Henderson NV 89011.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg shadow-lg p-6 text-left">
@@ -344,7 +361,9 @@ export default function SchoolsPage() {
         path="/lifestyle/schools"
         name="Schools Near Cadence Henderson | Henderson NV 89011"
         description="Campuses serving Cadence Henderson 89011: Cadence Elementary on-site, Henderson-area middle schools, Green Valley High School. Confirm CCSD zones by address."
-        faqs={defaultPageFaqs('Clark County campuses serving Cadence Henderson')}
+        faqs={defaultPageFaqs(
+          'Clark County campuses serving Cadence Henderson',
+        )}
         breadcrumbs={[
           { name: 'Lifestyle', path: '/lifestyle' },
           { name: 'Schools near Cadence Henderson NV 89011' },
@@ -355,4 +374,3 @@ export default function SchoolsPage() {
     </div>
   )
 }
-

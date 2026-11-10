@@ -74,7 +74,6 @@ export default function PastHomesalesPage() {
         alt="Closed new homes in Cadence Henderson NV 89011"
       />
 
-
       {/* Advanced Search + Your Listings Widget */}
       <section className="w-full py-12 bg-white">
         <div className="container mx-auto px-4">
@@ -99,7 +98,8 @@ export default function PastHomesalesPage() {
             <p className="text-xl text-gray-700 mb-8">
               Let Dr. Jan Duffy guide you through your next real estate
               transaction. From listing to closing, experience personalized
-              service from a REALTOR® licensed since 2008 · 35 years in Las Vegas.
+              service from a REALTOR® licensed since 2008 · 35 years in Las
+              Vegas.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <CalendlyLink>
@@ -140,7 +140,9 @@ export default function PastHomesalesPage() {
         name="Past Home Sales | Cadence Henderson 89011"
         description="Cadence Henderson market report. Dr. Jan Duffy past home sales, sold listings, market trends. Henderson NV 89011."
         faqs={defaultPageFaqs('past home sales in Cadence Henderson')}
-        breadcrumbs={[{ name: 'Past home sales in Cadence Henderson NV 89011' }]}
+        breadcrumbs={[
+          { name: 'Past home sales in Cadence Henderson NV 89011' },
+        ]}
         faqHeading="Cadence Henderson sold homes — questions"
       />
       <Footer />

@@ -11,7 +11,10 @@ type HomeSearchSectionProps = {
   compact?: boolean
 }
 
-export function HomeSearchSection({ variant = 'default', compact = false }: HomeSearchSectionProps) {
+export function HomeSearchSection({
+  variant = 'default',
+  compact = false,
+}: HomeSearchSectionProps) {
   const isRentals = variant === 'rentals'
   const heading = isRentals
     ? 'Looking to Buy? Search Henderson Homes for Sale'
@@ -29,7 +32,10 @@ export function HomeSearchSection({ variant = 'default', compact = false }: Home
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <h2 id="home-search-heading" className="text-3xl md:text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-6">
+            <h2
+              id="home-search-heading"
+              className="text-3xl md:text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-6"
+            >
               {heading}
             </h2>
             <p className="text-lg font-light text-neutral-600 leading-relaxed max-w-2xl mx-auto mb-6">

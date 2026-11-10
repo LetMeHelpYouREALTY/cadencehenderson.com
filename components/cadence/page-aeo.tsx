@@ -32,7 +32,9 @@ export function PageAeo({
         faqs={faqs}
         breadcrumbs={breadcrumbs}
       />
-      {faqs && faqs.length > 0 ? <PageFaq items={faqs} heading={faqHeading} /> : null}
+      {faqs && faqs.length > 0 ? (
+        <PageFaq items={faqs} heading={faqHeading} />
+      ) : null}
     </>
   )
 }

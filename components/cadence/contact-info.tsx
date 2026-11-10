@@ -13,7 +13,10 @@ export const CLOUDFLARE_IMAGES = {
  * @param variant - The variant name (e.g., 'public', 'thumbnail', 'hero', 'card')
  * @returns Full Cloudflare Image delivery URL
  */
-export function getCloudflareImageUrl(imageId: string, variant: string = 'public'): string {
+export function getCloudflareImageUrl(
+  imageId: string,
+  variant: string = 'public',
+): string {
   return `${CLOUDFLARE_IMAGES.baseUrl}/${imageId}/${variant}`
 }
 
@@ -58,7 +61,10 @@ export type CalendlyEventSlug =
 /**
  * Build a Calendly URL with standard UTM tags for cadencehenderson.com placements.
  */
-export function calendlyEventUrl(event: CalendlyEventSlug, utmContent: string): string {
+export function calendlyEventUrl(
+  event: CalendlyEventSlug,
+  utmContent: string,
+): string {
   const params = new URLSearchParams({
     utm_source: CALENDLY_UTM_SOURCE,
     utm_medium: CALENDLY_UTM_MEDIUM,
@@ -87,4 +93,3 @@ export const HOA_CONTACT = {
   hours: 'Mon-Fri, 9AM-5PM',
   emergency: '(702) 555-3001',
 }
-

@@ -23,22 +23,31 @@ export function LocationSection() {
                 className="h-24 w-24 object-contain"
               />
             </div>
-            <h2 id="location-heading" className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-8">
+            <h2
+              id="location-heading"
+              className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-8"
+            >
               Cadence Henderson location — Henderson NV 89011
             </h2>
-            <p className="aeo-lead text-xl text-gray-700 mb-4 leading-relaxed" data-speakable>
-              Cadence is a master-planned community in <strong>Henderson, NV 89011</strong>. We serve Cadence from {CONTACT_INFO.welcomeCenter}. Hours: {CONTACT_INFO.hours}.
+            <p
+              className="aeo-lead text-xl text-gray-700 mb-4 leading-relaxed"
+              data-speakable
+            >
+              Cadence is a master-planned community in{' '}
+              <strong>Henderson, NV 89011</strong>. We serve Cadence from{' '}
+              {CONTACT_INFO.welcomeCenter}. Hours: {CONTACT_INFO.hours}.
             </p>
             <p className="text-gray-700 mb-6">
-              Easy access to Harry Reid International Airport, the Las Vegas Strip, downtown Las Vegas, and minutes from Lake Mead Recreational Area.
+              Easy access to Harry Reid International Airport, the Las Vegas
+              Strip, downtown Las Vegas, and minutes from Lake Mead Recreational
+              Area.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button
-                size="lg"
-                className="text-lg px-8"
-                asChild
-              >
-                <Link href="/maps" aria-label="Maps and directions in Cadence Henderson">
+              <Button size="lg" className="text-lg px-8" asChild>
+                <Link
+                  href="/maps"
+                  aria-label="Maps and directions in Cadence Henderson"
+                >
                   View Maps
                 </Link>
               </Button>
@@ -71,4 +80,3 @@ export function LocationSection() {
     </section>
   )
 }
-

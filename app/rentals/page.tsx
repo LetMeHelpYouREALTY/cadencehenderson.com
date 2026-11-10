@@ -11,7 +11,14 @@ import { Footer } from '@/components/cadence/footer'
 import { NapStrip } from '@/components/cadence/nap-strip'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
-import { Building2, MapPin, DollarSign, Calendar, Phone, Mail } from 'lucide-react'
+import {
+  Building2,
+  MapPin,
+  DollarSign,
+  Calendar,
+  Phone,
+  Mail,
+} from 'lucide-react'
 import Link from 'next/link'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
@@ -38,12 +45,7 @@ const rentalCommunities = [
       'Luxury apartment living with resort-style amenities and modern design.',
     properties: 280,
     priceRange: '$1,500 - $2,400/mo',
-    features: [
-      'Pool & spa',
-      'Fitness center',
-      'Pet park',
-      'Business center',
-    ],
+    features: ['Pool & spa', 'Fitness center', 'Pet park', 'Business center'],
     image: cfImage(SITE_IMAGES.rentals.element12, 'card'),
   },
   {
@@ -104,8 +106,9 @@ export default function RentalsPage() {
               Why rent in Cadence Henderson NV 89011
             </h2>
             <p className="aeo-lead text-xl text-gray-700" data-speakable>
-              Rent single-family homes and apartments in Cadence Henderson NV 89011
-              with access to Central Park, pools, and trails — without buying.
+              Rent single-family homes and apartments in Cadence Henderson NV
+              89011 with access to Central Park, pools, and trails — without
+              buying.
             </p>
           </div>
 
@@ -118,8 +121,8 @@ export default function RentalsPage() {
                 Prime Location
               </h3>
               <p className="text-gray-700">
-                Minutes from the Strip, airport, and Lake Mead with easy
-                freeway access.
+                Minutes from the Strip, airport, and Lake Mead with easy freeway
+                access.
               </p>
             </div>
             <div className="text-center p-6">
@@ -228,8 +231,9 @@ export default function RentalsPage() {
                 Interested in Renting in Cadence?
               </h2>
               <p className="text-xl text-white mb-6">
-                Schedule a call with Dr. Jan Duffy for information about available
-                rentals, community tours, and rental partner connections.
+                Schedule a call with Dr. Jan Duffy for information about
+                available rentals, community tours, and rental partner
+                connections.
               </p>
               <div className="flex flex-wrap gap-4 justify-center mb-8">
                 <a
@@ -338,9 +342,13 @@ export default function RentalsPage() {
                 >
                   <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
                     {q}
-                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
+                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">
+                      ▾
+                    </span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">
+                    {a}
+                  </p>
                 </details>
               ))}
             </div>
@@ -359,4 +367,3 @@ export default function RentalsPage() {
     </div>
   )
 }
-

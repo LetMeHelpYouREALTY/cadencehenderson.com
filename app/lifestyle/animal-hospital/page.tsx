@@ -48,10 +48,13 @@ export const metadata: Metadata = {
   title: 'Cadence Animal Hospital – Henderson NV 89011 | Pet Care',
   description:
     'Veterinary care in Cadence Henderson NV 89011: wellness, vaccines, dental, and surgery. On-site animal hospital serving Cadence residents.',
-  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/animal-hospital' },
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/animal-hospital',
+  },
   openGraph: {
     title: 'Cadence Animal Hospital – Henderson NV 89011 | Pet Care',
-    description: 'Full-service veterinary care in Cadence Henderson NV 89011. Wellness, vaccines, dental, surgery & emergency services.',
+    description:
+      'Full-service veterinary care in Cadence Henderson NV 89011. Wellness, vaccines, dental, surgery & emergency services.',
     url: 'https://www.cadencehenderson.com/lifestyle/animal-hospital',
   },
 }
@@ -68,10 +71,7 @@ export default function AnimalHospitalPage() {
         imageAlt="Cadence Animal Hospital in Henderson NV 89011"
         icon={Heart}
       >
-        <Button
-          size="lg"
-          className="bg-white text-teal-900 hover:bg-gray-100"
-        >
+        <Button size="lg" className="bg-white text-teal-900 hover:bg-gray-100">
           Schedule Appointment
         </Button>
       </PageHero>
@@ -82,7 +82,6 @@ export default function AnimalHospitalPage() {
         src={cfImage(SITE_IMAGES.sections.animalHospital, 'hero')}
         alt="Veterinary clinic near Cadence Henderson NV 89011"
       />
-
 
       {/* About Section */}
       <section className="py-16">
@@ -152,7 +151,10 @@ export default function AnimalHospitalPage() {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <MapPin className="text-teal-900 mr-3 mt-1 flex-shrink-0" size={24} />
+                    <MapPin
+                      className="text-teal-900 mr-3 mt-1 flex-shrink-0"
+                      size={24}
+                    />
                     <div>
                       <p className="font-bold text-gray-900">Location</p>
                       <p className="text-gray-700">
@@ -163,7 +165,10 @@ export default function AnimalHospitalPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <Phone className="text-teal-900 mr-3 mt-1 flex-shrink-0" size={24} />
+                    <Phone
+                      className="text-teal-900 mr-3 mt-1 flex-shrink-0"
+                      size={24}
+                    />
                     <div>
                       <p className="font-bold text-gray-900">Realtor line</p>
                       <a
@@ -179,7 +184,10 @@ export default function AnimalHospitalPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <Clock className="text-teal-900 mr-3 mt-1 flex-shrink-0" size={24} />
+                    <Clock
+                      className="text-teal-900 mr-3 mt-1 flex-shrink-0"
+                      size={24}
+                    />
                     <div>
                       <p className="font-bold text-gray-900">Hours</p>
                       <p className="text-gray-700">

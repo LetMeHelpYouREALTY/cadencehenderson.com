@@ -42,9 +42,9 @@ export default function RealtorsPage() {
               Las Vegas REALTOR® · Licensed since 2008 · 35 years in Las Vegas
             </p>
             <p>
-              Specializing in Cadence Henderson - one of the nation&apos;s top 10
-              best-selling master-planned communities. Let&apos;s find your dream home
-              together.
+              Specializing in Cadence Henderson - one of the nation&apos;s top
+              10 best-selling master-planned communities. Let&apos;s find your
+              dream home together.
             </p>
           </>
         }
@@ -92,16 +92,21 @@ export default function RealtorsPage() {
         alt="Buyer representation for new homes in Cadence Henderson NV 89011"
       />
 
-
       <HomeSearchSection compact />
 
       <section className="bg-neutral-50 py-10">
         <div className="container mx-auto px-4">
           <div className="mx-auto flex max-w-3xl flex-wrap justify-center gap-6 text-sm">
-            <Link href="/realtors/life-at-cadence" className="font-medium text-primary hover:underline">
+            <Link
+              href="/realtors/life-at-cadence"
+              className="font-medium text-primary hover:underline"
+            >
               Life at Cadence briefing
             </Link>
-            <Link href="/realtors/realtor-toolkit" className="font-medium text-primary hover:underline">
+            <Link
+              href="/realtors/realtor-toolkit"
+              className="font-medium text-primary hover:underline"
+            >
               Realtor toolkit
             </Link>
           </div>
@@ -117,9 +122,10 @@ export default function RealtorsPage() {
             </h2>
             <div className="bg-purple-50 rounded-lg p-8 mb-8">
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Dr. Jan Duffy is a distinguished REALTOR®, licensed since 2008 · 35 years in Las Vegas,
-                specializing in the Cadence Henderson community. With deep knowledge of the Las Vegas Valley
-                real estate market and expertise in luxury homes, investment
+                Dr. Jan Duffy is a distinguished REALTOR®, licensed since 2008 ·
+                35 years in Las Vegas, specializing in the Cadence Henderson
+                community. With deep knowledge of the Las Vegas Valley real
+                estate market and expertise in luxury homes, investment
                 properties, and master-planned communities, Dr. Duffy provides
                 exceptional service to buyers and sellers alike.
               </p>
@@ -156,7 +162,9 @@ export default function RealtorsPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-3">Contact Info:</h3>
+                  <h3 className="font-bold text-gray-900 mb-3">
+                    Contact Info:
+                  </h3>
                   <div className="space-y-3">
                     <div>
                       <p className="text-sm text-gray-600">Phone:</p>
@@ -181,8 +189,8 @@ export default function RealtorsPage() {
                       <p className="text-gray-700">
                         {CONTACT_INFO.address.street}
                         <br />
-                        {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state}{' '}
-                        {CONTACT_INFO.address.zip}
+                        {CONTACT_INFO.address.city},{' '}
+                        {CONTACT_INFO.address.state} {CONTACT_INFO.address.zip}
                       </p>
                     </div>
                   </div>
@@ -201,9 +209,8 @@ export default function RealtorsPage() {
               Why Work with Dr. Jan Duffy?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Combining decades of experience with in-depth
-              local expertise to deliver personalized guidance and exceptional
-              results.
+              Combining decades of experience with in-depth local expertise to
+              deliver personalized guidance and exceptional results.
             </p>
           </div>
 
@@ -216,8 +223,8 @@ export default function RealtorsPage() {
                 Since 2008
               </h3>
               <p className="text-gray-700">
-                Licensed since 2008 · 35 years in Las Vegas, with deep experience across the
-                Las Vegas Valley
+                Licensed since 2008 · 35 years in Las Vegas, with deep
+                experience across the Las Vegas Valley
               </p>
             </div>
 
@@ -276,9 +283,9 @@ export default function RealtorsPage() {
                 <p className="text-gray-700 italic mb-6">
                   "Dr. Jan Duffy provided me with critical insights during my
                   separation that helped me make informed, strategic decisions
-                  about selling and purchasing property. Her deep knowledge of the
-                  divorce process gave me much-needed confidence and clarity. I
-                  couldn't recommend her highly enough."
+                  about selling and purchasing property. Her deep knowledge of
+                  the divorce process gave me much-needed confidence and
+                  clarity. I couldn't recommend her highly enough."
                 </p>
                 <p className="font-bold text-gray-900">Robin P.</p>
                 <p className="text-sm text-gray-600">Boulder City</p>
@@ -288,11 +295,11 @@ export default function RealtorsPage() {
                 <div className="text-5xl mb-4">⭐⭐⭐⭐⭐</div>
                 <p className="text-gray-700 italic mb-6">
                   "Dr. Jan Duffy is hands down the best realtor in Nevada!
-                  Searching for a home can be overwhelming, but her dedication and
-                  genuine care made all the difference. She truly puts her clients'
-                  needs first and is incredibly knowledgeable and reliable. I
-                  couldn't recommend her enough to anyone looking for their dream
-                  home!"
+                  Searching for a home can be overwhelming, but her dedication
+                  and genuine care made all the difference. She truly puts her
+                  clients' needs first and is incredibly knowledgeable and
+                  reliable. I couldn't recommend her enough to anyone looking
+                  for their dream home!"
                 </p>
                 <p className="font-bold text-gray-900">Kelsey C.</p>
                 <p className="text-sm text-gray-600">Las Vegas</p>
@@ -368,9 +375,7 @@ export default function RealtorsPage() {
                 <div className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50">
                   <div>
                     <div className="font-bold text-gray-900">Estate Homes</div>
-                    <div className="text-sm text-gray-600">
-                      3,500+ sq ft
-                    </div>
+                    <div className="text-sm text-gray-600">3,500+ sq ft</div>
                   </div>
                   <div className="text-right">
                     <div className="font-bold text-purple-900">
@@ -410,7 +415,9 @@ export default function RealtorsPage() {
                   Free comprehensive guides on buying in Cadence, including
                   floor plans, pricing, and step-by-step purchase process.
                 </p>
-                <a href={`mailto:${CONTACT_INFO.email}?subject=Request Buyer Guide`}>
+                <a
+                  href={`mailto:${CONTACT_INFO.email}?subject=Request Buyer Guide`}
+                >
                   <Button
                     variant="outline"
                     className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
@@ -460,7 +467,9 @@ export default function RealtorsPage() {
                   Stay informed with monthly market updates, pricing trends, and
                   investment insights for Cadence and Henderson.
                 </p>
-                <a href={`mailto:${CONTACT_INFO.email}?subject=Subscribe to Market Reports`}>
+                <a
+                  href={`mailto:${CONTACT_INFO.email}?subject=Subscribe to Market Reports`}
+                >
                   <Button
                     variant="outline"
                     className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
@@ -479,7 +488,9 @@ export default function RealtorsPage() {
                   Looking for investment opportunities? Get expert guidance on
                   rental properties and ROI analysis.
                 </p>
-                <a href={`mailto:${CONTACT_INFO.email}?subject=Investment Properties`}>
+                <a
+                  href={`mailto:${CONTACT_INFO.email}?subject=Investment Properties`}
+                >
                   <Button
                     variant="outline"
                     className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
@@ -496,10 +507,12 @@ export default function RealtorsPage() {
                 </h3>
                 <p className="text-gray-700 mb-4">
                   Moving to Las Vegas? I will map Cadence villages to your beds,
-                  budget, and commute — then register you with the builder before
-                  the first model visit.
+                  budget, and commute — then register you with the builder
+                  before the first model visit.
                 </p>
-                <a href={`mailto:${CONTACT_INFO.email}?subject=Relocation Assistance`}>
+                <a
+                  href={`mailto:${CONTACT_INFO.email}?subject=Relocation Assistance`}
+                >
                   <Button
                     variant="outline"
                     className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
@@ -522,12 +535,15 @@ export default function RealtorsPage() {
             </h2>
             <p className="text-xl mb-8">
               Let Dr. Jan Duffy guide you through every step of buying or
-              selling your home. With her local
-              expertise, you're in the best hands.
+              selling your home. With her local expertise, you're in the best
+              hands.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <CalendlyLink>
-                <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
+                <Button
+                  size="lg"
+                  className="bg-white text-purple-900 hover:bg-gray-100"
+                >
                   Schedule with Cadence Expert
                 </Button>
               </CalendlyLink>
@@ -562,7 +578,9 @@ export default function RealtorsPage() {
         path="/realtors"
         name="Realtors | Cadence Henderson NV Real Estate"
         description="Cadence Henderson NV real estate team. Dr. Jan Duffy, REALTOR®. Expert agents for homes for sale and new construction in Henderson 89011."
-        faqs={defaultPageFaqs('working with Dr. Jan Duffy at Cadence Henderson')}
+        faqs={defaultPageFaqs(
+          'working with Dr. Jan Duffy at Cadence Henderson',
+        )}
         breadcrumbs={[{ name: 'Realtors at Cadence Henderson NV 89011' }]}
         faqHeading="Cadence Henderson realtor — questions"
       />
@@ -570,4 +588,3 @@ export default function RealtorsPage() {
     </div>
   )
 }
-

@@ -50,9 +50,9 @@ export default function CommunitiesIndexPage() {
           className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-light text-neutral-600"
           data-speakable
         >
-          Cadence Henderson NV 89011 includes dozens of villages from national and local builders.
-          Use this directory to compare neighborhoods, then tour with Dr. Jan Duffy as your buyer&apos;s
-          agent.
+          Cadence Henderson NV 89011 includes dozens of villages from national
+          and local builders. Use this directory to compare neighborhoods, then
+          tour with Dr. Jan Duffy as your buyer&apos;s agent.
         </p>
       </section>
 
@@ -74,7 +74,10 @@ export default function CommunitiesIndexPage() {
               return (
                 <article key={hub.slug}>
                   <h2 className="mb-3 text-xl font-medium text-neutral-900">
-                    <Link href={`/communities/${hub.slug}`} className="hover:text-primary">
+                    <Link
+                      href={`/communities/${hub.slug}`}
+                      className="hover:text-primary"
+                    >
                       {hub.name}
                     </Link>
                   </h2>
@@ -110,22 +113,34 @@ export default function CommunitiesIndexPage() {
                 </li>
               ))}
               <li>
-                <Link href="/american-homes-4-rent" className="text-sm text-primary hover:underline">
+                <Link
+                  href="/american-homes-4-rent"
+                  className="text-sm text-primary hover:underline"
+                >
                   American Homes 4 Rent
                 </Link>
               </li>
               <li>
-                <Link href="/ascend" className="text-sm text-primary hover:underline">
+                <Link
+                  href="/ascend"
+                  className="text-sm text-primary hover:underline"
+                >
                   Ascend Symmetry
                 </Link>
               </li>
               <li>
-                <Link href="/avela-luxury-apartments" className="text-sm text-primary hover:underline">
+                <Link
+                  href="/avela-luxury-apartments"
+                  className="text-sm text-primary hover:underline"
+                >
                   Avela Luxury Apartments
                 </Link>
               </li>
               <li>
-                <Link href="/elysian" className="text-sm text-primary hover:underline">
+                <Link
+                  href="/elysian"
+                  className="text-sm text-primary hover:underline"
+                >
                   Elysian Homes
                 </Link>
               </li>
@@ -137,7 +152,9 @@ export default function CommunitiesIndexPage() {
         path="/communities"
         name="Cadence Henderson Neighborhoods | All Villages 89011"
         description="Every Cadence Henderson village from the CadenceNV directory: Beazer, Century, D.R. Horton, Lennar, Richmond American, StoryBook, Taylor Morrison, Woodside, AMH, and more."
-        faqs={defaultPageFaqs('Cadence Henderson neighborhoods and builder villages')}
+        faqs={defaultPageFaqs(
+          'Cadence Henderson neighborhoods and builder villages',
+        )}
         breadcrumbs={[{ name: 'Cadence Henderson neighborhoods' }]}
         faqHeading="Cadence Henderson neighborhoods — questions"
       />

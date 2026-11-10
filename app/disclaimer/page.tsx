@@ -52,10 +52,11 @@ export default function DisclaimerPage() {
               <p>
                 This website is operated by Dr. Jan Duffy, REALTOR®, license{' '}
                 {CONTACT_INFO.licenseNumber}, with {CONTACT_INFO.brokerage}.
-                Office: {CONTACT_INFO.welcomeCenter}. Phone: {CONTACT_INFO.phone}.
-                Cadence is a master-planned community in Henderson, Nevada. This
-                site is not affiliated with the community developer except as a
-                licensed real estate professional serving buyers and sellers.
+                Office: {CONTACT_INFO.welcomeCenter}. Phone:{' '}
+                {CONTACT_INFO.phone}. Cadence is a master-planned community in
+                Henderson, Nevada. This site is not affiliated with the
+                community developer except as a licensed real estate
+                professional serving buyers and sellers.
               </p>
             </article>
             <article>
@@ -113,7 +114,9 @@ export default function DisclaimerPage() {
         path="/disclaimer"
         name="Website Disclaimer | Cadence Henderson Homes"
         description="Legal, Fair Housing, MLS, and accuracy disclaimer for CadenceHenderson.com. Homes by Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties."
-        faqs={defaultPageFaqs('Cadence Henderson website disclaimer and Fair Housing')}
+        faqs={defaultPageFaqs(
+          'Cadence Henderson website disclaimer and Fair Housing',
+        )}
         breadcrumbs={[{ name: 'Website disclaimer' }]}
         faqHeading="Cadence Henderson disclaimer — questions"
       />

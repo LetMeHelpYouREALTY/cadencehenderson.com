@@ -28,7 +28,10 @@ export async function NewsSection() {
               className="h-24 w-24 object-contain"
             />
           </div>
-          <h2 id="news-heading" className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-6">
+          <h2
+            id="news-heading"
+            className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-6"
+          >
             Cadence Henderson News
           </h2>
           <p className="text-xl text-gray-700 mb-8 leading-relaxed">
@@ -54,7 +57,9 @@ export async function NewsSection() {
                         className="object-cover"
                       />
                     ) : (
-                      <NewsPlaceholderImage src={cfImage(SITE_IMAGES.hero.news, 'card')} />
+                      <NewsPlaceholderImage
+                        src={cfImage(SITE_IMAGES.hero.news, 'card')}
+                      />
                     )}
                   </div>
                   <div className="p-4">
@@ -74,11 +79,7 @@ export async function NewsSection() {
             </div>
           )}
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button
-              size="lg"
-              className="text-lg px-8"
-              asChild
-            >
+            <Button size="lg" className="text-lg px-8" asChild>
               <Link href="/news">Read Latest News</Link>
             </Button>
             <Button
@@ -95,4 +96,3 @@ export async function NewsSection() {
     </section>
   )
 }
-

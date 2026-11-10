@@ -57,8 +57,8 @@ export default function NotFound() {
                 Need Help Finding Something?
               </h2>
               <p className="text-white mb-6">
-                Schedule a call with Dr. Jan Duffy for assistance with Cadence Henderson
-                homes and information.
+                Schedule a call with Dr. Jan Duffy for assistance with Cadence
+                Henderson homes and information.
               </p>
               <div className="flex flex-wrap gap-4 justify-center mb-6">
                 <a
@@ -96,18 +96,14 @@ export default function NotFound() {
                   className="p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow"
                 >
                   <h4 className="font-bold text-blue-900 mb-2">New Homes</h4>
-                  <p className="text-sm text-gray-600">
-                    Browse all 8 builders
-                  </p>
+                  <p className="text-sm text-gray-600">Browse all 8 builders</p>
                 </Link>
                 <Link
                   href="/lifestyle"
                   className="p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow"
                 >
                   <h4 className="font-bold text-blue-900 mb-2">Lifestyle</h4>
-                  <p className="text-sm text-gray-600">
-                    Community amenities
-                  </p>
+                  <p className="text-sm text-gray-600">Community amenities</p>
                 </Link>
                 <Link
                   href="/contact"
@@ -121,9 +117,7 @@ export default function NotFound() {
                   className="p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow"
                 >
                   <h4 className="font-bold text-blue-900 mb-2">FAQs</h4>
-                  <p className="text-sm text-gray-600">
-                    Common questions
-                  </p>
+                  <p className="text-sm text-gray-600">Common questions</p>
                 </Link>
               </div>
             </div>
@@ -135,4 +129,3 @@ export default function NotFound() {
     </div>
   )
 }
-

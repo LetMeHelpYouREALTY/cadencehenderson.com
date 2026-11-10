@@ -61,7 +61,6 @@ export default function AscendPage() {
         alt="Ascend residences in Cadence Henderson NV 89011"
       />
 
-
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl">
@@ -71,7 +70,8 @@ export default function AscendPage() {
             <p className="mb-8 font-light text-neutral-600">
               Square footage and bedroom counts below come from the Cadence
               community listing for Ascend Symmetry. Availability and rent are
-              not listed here because they change. Call 702-444-7754 for leasing.
+              not listed here because they change. Call 702-444-7754 for
+              leasing.
             </p>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse text-left text-sm">
@@ -98,7 +98,10 @@ export default function AscendPage() {
             <p className="mt-8 font-light text-neutral-600">
               Looking to buy instead of lease? Dr. Jan Duffy represents Cadence
               buyers at {CONTACT_INFO.phone}.{' '}
-              <Link href="/find-your-home" className="text-primary hover:underline">
+              <Link
+                href="/find-your-home"
+                className="text-primary hover:underline"
+              >
                 Search homes for sale
               </Link>
               .
@@ -111,7 +114,9 @@ export default function AscendPage() {
         path="/ascend"
         name="Ascend Symmetry Apartments | Cadence Henderson NV"
         description="Ascend Symmetry apartments in Cadence Henderson NV 89011. Plans from 647 to 1,387 sq ft (1–3 bedrooms). Leasing 702-444-7754. Buyer help from Dr. Jan Duffy."
-        faqs={defaultPageFaqs('Ascend Symmetry apartments in Cadence Henderson')}
+        faqs={defaultPageFaqs(
+          'Ascend Symmetry apartments in Cadence Henderson',
+        )}
         breadcrumbs={[
           { name: 'Apartments in Cadence Henderson', path: '/apartments' },
           { name: 'Ascend Symmetry' },

@@ -130,7 +130,7 @@ function FaqsPageSchema() {
         name: 'Is there shopping and dining near Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes! Cadence Marketplace is within the Cadence Henderson community, and the Galleria at Sunset mall is just 5 minutes away on Stephanie St in Henderson NV 89014. You\'ll find grocery stores, restaurants, retail shops, and entertainment all nearby.',
+          text: "Yes! Cadence Marketplace is within the Cadence Henderson community, and the Galleria at Sunset mall is just 5 minutes away on Stephanie St in Henderson NV 89014. You'll find grocery stores, restaurants, retail shops, and entertainment all nearby.",
         },
       },
       {
@@ -152,7 +152,11 @@ function FaqsPageSchema() {
   )
 }
 
-export default function FAQsLayout({ children }: { children: React.ReactNode }) {
+export default function FAQsLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <>
       <PageGraphSchema

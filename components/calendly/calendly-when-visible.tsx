@@ -13,7 +13,10 @@ type CalendlyWhenVisibleProps = {
  * Loads Calendly script when the wrapped content enters the viewport (or on mount if loadOnMount).
  * Use around the inline widget so the script loads before initInlineWidget runs.
  */
-export function CalendlyWhenVisible({ children, loadOnMount }: CalendlyWhenVisibleProps) {
+export function CalendlyWhenVisible({
+  children,
+  loadOnMount,
+}: CalendlyWhenVisibleProps) {
   const ref = useRef<HTMLDivElement>(null)
   const { loadCalendly, isLoaded } = useCalendly()
 
@@ -29,7 +32,7 @@ export function CalendlyWhenVisible({ children, loadOnMount }: CalendlyWhenVisib
       (entries) => {
         if (entries[0]?.isIntersecting) loadCalendly()
       },
-      { rootMargin: '100px', threshold: 0 }
+      { rootMargin: '100px', threshold: 0 },
     )
     obs.observe(el)
     return () => obs.disconnect()

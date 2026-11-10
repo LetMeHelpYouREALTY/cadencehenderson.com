@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle' },
   openGraph: {
     title: 'Cadence Henderson Community & Amenities | Henderson NV 89011',
-    description: '50-acre Central Park, resort pools, fitness centers, Cadence Elementary on-site & trails in Cadence Henderson NV 89011.',
+    description:
+      '50-acre Central Park, resort pools, fitness centers, Cadence Elementary on-site & trails in Cadence Henderson NV 89011.',
     url: 'https://www.cadencehenderson.com/lifestyle',
   },
 }

@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.cadencehenderson.com/new-homes' },
   openGraph: {
     title: 'New Homes for Sale – Cadence Henderson NV 89011',
-    description: '8 builders, 150+ homes from $300K–$650K in Cadence Henderson 89011. Browse floor plans and schedule a tour.',
+    description:
+      '8 builders, 150+ homes from $300K–$650K in Cadence Henderson 89011. Browse floor plans and schedule a tour.',
     url: 'https://www.cadencehenderson.com/new-homes',
   },
 }

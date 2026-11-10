@@ -32,8 +32,7 @@ const geistMono = Geist_Mono({
 })
 
 const DEFAULT_TITLE = 'Cadence Henderson New Homes | Dr. Jan Duffy'
-const DEFAULT_DESCRIPTION =
-  `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`
+const DEFAULT_DESCRIPTION = `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`
 
 export const metadata: Metadata = {
   title: DEFAULT_TITLE,
@@ -81,7 +80,13 @@ export default function RootLayout({
         <link rel="preconnect" href="https://assets.calendly.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         {/* LCP image preload — git WebP matches what SiteImage paints for priority heroes */}
-        <link rel="preload" as="image" href={HERO_LCP_IMAGE} type="image/webp" fetchPriority="high" />
+        <link
+          rel="preload"
+          as="image"
+          href={HERO_LCP_IMAGE}
+          type="image/webp"
+          fetchPriority="high"
+        />
       </head>
       <body
         className={`${sora.variable} ${geistMono.variable} antialiased font-sans`}
@@ -133,17 +138,17 @@ export default function RootLayout({
         )}
         <CalendlyStyles />
         <CalendlyProvider>
-        <SkipToContent />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-          storageKey="theme"
-        >
-          {children}
-          <ScrollToTop />
-        </ThemeProvider>
+          <SkipToContent />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            disableTransitionOnChange
+            storageKey="theme"
+          >
+            {children}
+            <ScrollToTop />
+          </ThemeProvider>
         </CalendlyProvider>
       </body>
     </html>

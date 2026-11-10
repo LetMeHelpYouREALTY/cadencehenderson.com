@@ -67,7 +67,8 @@ const communities = [
     name: 'American Homes 4 Rent',
     href: '/american-homes-4-rent',
     status: 'Single-family rentals',
-    summary: 'Detached rental homes with professional management in Cadence villages.',
+    summary:
+      'Detached rental homes with professional management in Cadence villages.',
   },
 ]
 
@@ -103,8 +104,9 @@ export default function ApartmentsPage() {
           className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-light text-neutral-600"
           data-speakable
         >
-          Lease apartments or built-to-rent homes inside Cadence Henderson NV 89011. Dr. Jan Duffy can
-          help you compare communities and plan a move from renting to owning when you are ready.
+          Lease apartments or built-to-rent homes inside Cadence Henderson NV
+          89011. Dr. Jan Duffy can help you compare communities and plan a move
+          from renting to owning when you are ready.
         </p>
       </section>
 
@@ -112,7 +114,6 @@ export default function ApartmentsPage() {
         src={cfImage(SITE_IMAGES.rentals.element12, 'hero')}
         alt="Apartments in Cadence Henderson NV 89011"
       />
-
 
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -130,7 +131,9 @@ export default function ApartmentsPage() {
                     {community.name}
                   </Link>
                 </h2>
-                <p className="font-light text-neutral-600">{community.summary}</p>
+                <p className="font-light text-neutral-600">
+                  {community.summary}
+                </p>
               </article>
             ))}
           </div>
@@ -142,9 +145,7 @@ export default function ApartmentsPage() {
         name="Apartments in Cadence Henderson NV | Rentals 89011"
         description="Apartment and built-to-rent communities in Cadence Henderson NV 89011: Ascend Symmetry, Avela, Elysian Homes, Element 12, Adler, and AMH. Call Dr. Jan Duffy."
         faqs={defaultPageFaqs('apartments and rentals in Cadence Henderson')}
-        breadcrumbs={[
-          { name: 'Apartments in Cadence Henderson' },
-        ]}
+        breadcrumbs={[{ name: 'Apartments in Cadence Henderson' }]}
       />
       <AgentContactCta
         heading="Buying later, leasing now?"

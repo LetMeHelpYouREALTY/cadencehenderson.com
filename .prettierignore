@@ -1,0 +1,7 @@
+.agent/**
+.agents/**
+.claude/**
+.windsurf/**
+.cursor/skills/**
+node_modules/**
+.next/**

@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { VillagePageView, villageMetadata } from '@/components/cadence/village-page'
+import {
+  VillagePageView,
+  villageMetadata,
+} from '@/components/cadence/village-page'
 import { CADENCE_VILLAGES, getVillage } from '@/lib/cadence-nv-catalog'
 
 type PageProps = {
@@ -14,7 +17,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { builder, community } = await params
   const village = getVillage(builder, community)
   if (!village) return { title: 'Community not found' }

@@ -54,7 +54,6 @@ export default function ElysianPage() {
         alt="Elysian homes in Cadence Henderson NV 89011"
       />
 
-
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl space-y-6 font-light leading-relaxed text-neutral-600">
@@ -75,7 +74,10 @@ export default function ElysianPage() {
             </p>
             <p>
               If you want to purchase in the same zip,{' '}
-              <Link href="/find-your-home" className="text-primary hover:underline">
+              <Link
+                href="/find-your-home"
+                className="text-primary hover:underline"
+              >
                 search Cadence homes for sale
               </Link>{' '}
               or compare{' '}

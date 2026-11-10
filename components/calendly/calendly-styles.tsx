@@ -2,8 +2,7 @@
 
 import { useEffect } from 'react'
 
-const CALENDLY_CSS =
-  'https://assets.calendly.com/assets/external/widget.css'
+const CALENDLY_CSS = 'https://assets.calendly.com/assets/external/widget.css'
 
 /**
  * Loads Calendly widget CSS without blocking initial render.

@@ -1,4 +1,8 @@
-import { CONTACT_INFO, SOCIAL_MEDIA, GEO_LINKS } from '@/components/cadence/contact-info'
+import {
+  CONTACT_INFO,
+  SOCIAL_MEDIA,
+  GEO_LINKS,
+} from '@/components/cadence/contact-info'
 
 export function LocalBusinessSchema() {
   const { address } = CONTACT_INFO
@@ -8,7 +12,7 @@ export function LocalBusinessSchema() {
     '@id': 'https://www.cadencehenderson.com/#realestateagent',
     name: CONTACT_INFO.siteName,
     description:
-      "Free new home buyer representation at Cadence Henderson NV 89011. Dr. Jan Duffy represents buyers across Cadence builders. Builder pays the fee — free to buyers. Berkshire Hathaway HomeServices Nevada Properties.",
+      'Free new home buyer representation at Cadence Henderson NV 89011. Dr. Jan Duffy represents buyers across Cadence builders. Builder pays the fee — free to buyers. Berkshire Hathaway HomeServices Nevada Properties.',
     image: 'https://www.cadencehenderson.com/og-image.jpg',
     url: 'https://www.cadencehenderson.com',
     telephone: `+1-${CONTACT_INFO.phone}`,
@@ -75,7 +79,11 @@ export function LocalBusinessSchema() {
     employee: {
       '@id': 'https://www.cadencehenderson.com/#dr-jan-duffy',
     },
-    sameAs: [SOCIAL_MEDIA.facebook, SOCIAL_MEDIA.instagram, SOCIAL_MEDIA.twitter],
+    sameAs: [
+      SOCIAL_MEDIA.facebook,
+      SOCIAL_MEDIA.instagram,
+      SOCIAL_MEDIA.twitter,
+    ],
     knowsAbout: [
       'new home buyer representation',
       'new construction negotiation Henderson NV',

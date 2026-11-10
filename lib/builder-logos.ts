@@ -13,7 +13,10 @@ export const BUILDER_LOGO_SRCS: Record<string, string> = {
   'woodside-homes': cfImage(SITE_IMAGES.logos.woodside, 'public'),
 }
 
-export const BUILDER_PHOTO_KEYS: Record<string, keyof typeof SITE_IMAGES.builders> = {
+export const BUILDER_PHOTO_KEYS: Record<
+  string,
+  keyof typeof SITE_IMAGES.builders
+> = {
   'beazer-homes': 'beazer',
   'century-communities': 'century',
   'dr-horton': 'drHorton',

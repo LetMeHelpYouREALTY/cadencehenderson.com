@@ -76,18 +76,78 @@ export function getSitemapEntries(): SitemapEntry[] {
 
   const mainPages: SitemapEntry[] = [
     { url: base, lastModified: now, changeFrequency: 'daily', priority: 1 },
-    { url: `${base}/new-homes`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/rentals`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/lifestyle`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${base}/news`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${base}/realtors`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/maps`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/residents`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${base}/gallery`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${base}/faqs`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/past-homesales`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${base}/sell-in-cadence`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
+    {
+      url: `${base}/new-homes`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${base}/rentals`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${base}/lifestyle`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${base}/news`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${base}/realtors`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${base}/contact`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${base}/maps`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${base}/residents`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${base}/gallery`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${base}/faqs`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${base}/past-homesales`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${base}/sell-in-cadence`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
   ]
 
   const rentalPages: SitemapEntry[] = RENTAL_COMMUNITIES.map((slug) => ({

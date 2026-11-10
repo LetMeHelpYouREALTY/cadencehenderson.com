@@ -73,7 +73,6 @@ export default function LifeAtCadencePage() {
         alt="Daily life in Cadence Henderson NV 89011"
       />
 
-
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl space-y-10">
@@ -88,8 +87,9 @@ export default function LifeAtCadencePage() {
               </article>
             ))}
             <p className="font-light leading-relaxed text-neutral-600">
-              Dr. Jan Duffy, REALTOR®, licensed since 2008 · 35 years in Las Vegas, tours Cadence with buyers at{' '}
-              {CONTACT_INFO.welcomeCenter}. Call {CONTACT_INFO.phone}.
+              Dr. Jan Duffy, REALTOR®, licensed since 2008 · 35 years in Las
+              Vegas, tours Cadence with buyers at {CONTACT_INFO.welcomeCenter}.
+              Call {CONTACT_INFO.phone}.
             </p>
           </div>
         </div>

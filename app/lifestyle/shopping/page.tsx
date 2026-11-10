@@ -17,7 +17,7 @@ const shoppingCenters = [
     distance: '5 minutes',
     description:
       'Major shopping mall featuring department stores, specialty retailers, dining, and entertainment options.',
-    stores: ['Macy\'s', 'JCPenney', 'Dillard\'s', '140+ stores'],
+    stores: ["Macy's", 'JCPenney', "Dillard's", '140+ stores'],
     image: cfImage(SITE_IMAGES.shopping.galleria, 'card'),
   },
   {
@@ -33,7 +33,7 @@ const shoppingCenters = [
     distance: 'Within community',
     description:
       'Neighborhood shopping with grocery stores, restaurants, and essential services.',
-    stores: ['Smith\'s', 'CVS', 'Starbucks', '25+ stores'],
+    stores: ["Smith's", 'CVS', 'Starbucks', '25+ stores'],
     image: cfImage(SITE_IMAGES.shopping.marketplace, 'card'),
   },
 ]
@@ -42,10 +42,13 @@ export const metadata: Metadata = {
   title: 'Shopping & Dining Near Cadence Henderson NV | 89011',
   description:
     'Shopping and dining near Cadence Henderson NV 89011: Galleria at Sunset, Cadence Marketplace, and local restaurants. Dr. Jan Duffy.',
-  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/shopping' },
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/shopping',
+  },
   openGraph: {
     title: 'Shopping & Dining Near Cadence Henderson NV | 89011',
-    description: 'Galleria at Sunset, Cadence Marketplace & more near Cadence Henderson NV 89011. Dining, retail and entertainment nearby.',
+    description:
+      'Galleria at Sunset, Cadence Marketplace & more near Cadence Henderson NV 89011. Dining, retail and entertainment nearby.',
     url: 'https://www.cadencehenderson.com/lifestyle/shopping',
   },
 }
@@ -56,36 +59,26 @@ const restaurants = [
     places: [
       'Echo & Rig',
       'Bottiglia',
-      'Hank\'s Fine Steaks',
-      'Lucille\'s Smokehouse',
+      "Hank's Fine Steaks",
+      "Lucille's Smokehouse",
     ],
   },
   {
     category: 'Casual Dining',
     places: [
       'The Cheesecake Factory',
-      'BJ\'s Restaurant',
+      "BJ's Restaurant",
       'Yard House',
       'Brio Italian Grille',
     ],
   },
   {
     category: 'Quick Service',
-    places: [
-      'Chipotle',
-      'Panera Bread',
-      'Chick-fil-A',
-      'In-N-Out Burger',
-    ],
+    places: ['Chipotle', 'Panera Bread', 'Chick-fil-A', 'In-N-Out Burger'],
   },
   {
     category: 'Coffee & Cafes',
-    places: [
-      'Starbucks',
-      'Dutch Bros',
-      'The Coffee Bean',
-      'Local Roasters',
-    ],
+    places: ['Starbucks', 'Dutch Bros', 'The Coffee Bean', 'Local Roasters'],
   },
 ]
 
@@ -131,13 +124,22 @@ export default function ShoppingPage() {
             aria-label="Shopping and nearby destinations"
             className="mx-auto flex max-w-4xl flex-wrap justify-center gap-4 text-sm"
           >
-            <Link href="/lifestyle/shopping/restaurants" className="font-medium text-primary hover:underline">
+            <Link
+              href="/lifestyle/shopping/restaurants"
+              className="font-medium text-primary hover:underline"
+            >
               Restaurants
             </Link>
-            <Link href="/lifestyle/shopping/entertainment" className="font-medium text-primary hover:underline">
+            <Link
+              href="/lifestyle/shopping/entertainment"
+              className="font-medium text-primary hover:underline"
+            >
               Entertainment
             </Link>
-            <Link href="/lifestyle/shopping/activities" className="font-medium text-primary hover:underline">
+            <Link
+              href="/lifestyle/shopping/activities"
+              className="font-medium text-primary hover:underline"
+            >
               Outdoor activities
             </Link>
           </nav>
@@ -316,8 +318,9 @@ export default function ShoppingPage() {
             </h2>
             <p className="text-xl mb-8">
               World-class shopping, dining, and entertainment at your doorstep.
-              From luxury boutiques to celebrity chef restaurants and spectacular
-              shows, the best of Las Vegas is just a short drive away.
+              From luxury boutiques to celebrity chef restaurants and
+              spectacular shows, the best of Las Vegas is just a short drive
+              away.
             </p>
             <Button
               size="lg"
@@ -344,4 +347,3 @@ export default function ShoppingPage() {
     </div>
   )
 }
-
