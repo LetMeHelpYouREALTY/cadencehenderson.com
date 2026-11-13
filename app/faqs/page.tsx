@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
-import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { CONTACT_INFO, HOA_CONTACT } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -20,6 +20,10 @@ import {
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { PageBodyPhoto } from '@/components/cadence/section-photo'
 import { NapStrip } from '@/components/cadence/nap-strip'
+import {
+  amenitiesFaqAnswer,
+  amenityReservationFaqAnswer,
+} from '@/lib/cadence-amenities'
 
 const faqCategories = [
   {
@@ -27,7 +31,7 @@ const faqCategories = [
     questions: [
       {
         q: 'What is Cadence?',
-        a: 'Cadence is a master-planned community in Henderson, Nevada, offering new homes from multiple builders, world-class amenities, and a vibrant lifestyle. Located just minutes from the Las Vegas Strip and Lake Mead, Cadence is one of the top 10 best-selling communities in the nation.',
+        a: 'Cadence is a master-planned community in Henderson, Nevada 89011, with new homes from multiple builders, Central Park amenities, and neighborhoods near the Las Vegas Strip and Lake Mead. Tour with Dr. Jan Duffy.',
       },
       {
         q: 'Where is Cadence located?',
@@ -65,15 +69,15 @@ const faqCategories = [
     questions: [
       {
         q: 'What amenities are included?',
-        a: 'Cadence features a 50-acre Central Park, multiple pools and spas, fitness centers, sports courts, dog parks, playgrounds, walking trails, and clubhouses. Many amenities are free for residents.',
+        a: amenitiesFaqAnswer(),
       },
       {
         q: 'Are there HOA fees?',
-        a: 'Yes, Cadence has HOA fees that cover maintenance of common areas, amenities, landscaping, and community services. Fees vary by neighborhood. Contact us for specific HOA information.',
+        a: `Yes. Master Association assessments and any sub-association dues vary by neighborhood. Call the Cadence Master Association at ${HOA_CONTACT.phone} for current amounts — not the realtor office.`,
       },
       {
         q: 'Can I reserve amenities for private events?',
-        a: 'Yes, residents can reserve clubhouses and other amenity spaces for private events through the online resident portal. Some fees may apply.',
+        a: amenityReservationFaqAnswer(),
       },
     ],
   },
@@ -95,7 +99,7 @@ const faqCategories = [
     questions: [
       {
         q: 'Are pets allowed?',
-        a: 'Yes, pets are welcome in Cadence! We have dedicated dog parks and pet-friendly trails throughout the community. Individual HOAs may have breed or size restrictions.',
+        a: 'Yes, pets are welcome in Cadence. Official amenities include a dog park and park trails — confirm leash rules with the Master Association. Individual village HOAs may have breed or size restrictions.',
       },
       {
         q: 'What internet providers serve Cadence?',
@@ -107,7 +111,7 @@ const faqCategories = [
       },
       {
         q: 'How far is Cadence from the Las Vegas Strip?',
-        a: 'Cadence is approximately 20 minutes from the Las Vegas Strip, giving you easy access to world-class entertainment, dining, and shows while enjoying the peace of a residential community.',
+        a: 'Cadence is approximately 20 minutes from the Las Vegas Strip, with access to entertainment and dining while living in a residential master-planned community in Henderson 89011.',
       },
     ],
   },
@@ -137,7 +141,7 @@ export default function FAQsPage() {
 
       <section className="border-b border-neutral-100 py-8">
         <p
-          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-light text-neutral-600"
+          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-normal text-neutral-800"
           data-speakable
         >
           Answers about Cadence Henderson builders, schools, amenities, and
@@ -200,7 +204,7 @@ export default function FAQsPage() {
                         </button>
                         {isOpen && (
                           <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                            <p className="faq-answer text-gray-700 leading-relaxed">
+                            <p className="faq-answer text-gray-900 leading-relaxed">
                               {faq.a}
                             </p>
                           </div>

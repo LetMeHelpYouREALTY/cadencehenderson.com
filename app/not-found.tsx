@@ -21,7 +21,7 @@ export default function NotFound() {
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
               Page Not Found
             </h1>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-gray-900 mb-8">
               Sorry, we couldn't find the page you're looking for. The page may
               have been moved or doesn't exist.
             </p>
@@ -96,28 +96,28 @@ export default function NotFound() {
                   className="p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow"
                 >
                   <h4 className="font-bold text-blue-900 mb-2">New Homes</h4>
-                  <p className="text-sm text-gray-600">Browse all 8 builders</p>
+                  <p className="text-sm text-gray-800">Browse all 8 builders</p>
                 </Link>
                 <Link
                   href="/lifestyle"
                   className="p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow"
                 >
                   <h4 className="font-bold text-blue-900 mb-2">Lifestyle</h4>
-                  <p className="text-sm text-gray-600">Community amenities</p>
+                  <p className="text-sm text-gray-800">Community amenities</p>
                 </Link>
                 <Link
                   href="/contact"
                   className="p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow"
                 >
                   <h4 className="font-bold text-blue-900 mb-2">Contact</h4>
-                  <p className="text-sm text-gray-600">Get in touch</p>
+                  <p className="text-sm text-gray-800">Get in touch</p>
                 </Link>
                 <Link
                   href="/faqs"
                   className="p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow"
                 >
                   <h4 className="font-bold text-blue-900 mb-2">FAQs</h4>
-                  <p className="text-sm text-gray-600">Common questions</p>
+                  <p className="text-sm text-gray-800">Common questions</p>
                 </Link>
               </div>
             </div>

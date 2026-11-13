@@ -99,7 +99,7 @@ export default function RestaurantsPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl">
-            <p className="mb-10 font-light leading-relaxed text-neutral-600">
+            <p className="mb-10 font-normal leading-relaxed text-neutral-800">
               Cadence Henderson sits between Downtown Henderson, the Galleria at
               Sunset, and The District at Green Valley Ranch. Hours and menus
               change — confirm before you go. This list is a starting point, not
@@ -115,7 +115,7 @@ export default function RestaurantsPage() {
                     {place.name}
                   </h2>
                   <p className="mb-2 text-sm text-primary">{place.area}</p>
-                  <p className="font-light text-neutral-600">{place.note}</p>
+                  <p className="font-normal text-neutral-800">{place.note}</p>
                 </li>
               ))}
             </ul>

@@ -8,10 +8,10 @@ export function CTABanner() {
     <section className="py-28 bg-cadence-ink text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-extralight tracking-[0.08em] mb-6">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-[0.08em] mb-6">
             Ready to Buy or Sell at Cadence?
           </h2>
-          <p className="text-lg font-light text-white/85 mb-12">
+          <p className="text-lg font-normal text-white mb-12">
             Whether you&apos;re looking for your next home or ready to sell, Dr.
             Jan Duffy is here for you.
           </p>
@@ -73,7 +73,7 @@ export function CTABanner() {
               </a>
             </Button>
           </div>
-          <p className="mt-12 text-xs font-light tracking-[0.16em] uppercase text-white/70">
+          <p className="mt-12 text-xs font-normal tracking-[0.16em] uppercase text-white">
             Licensed real estate professional — Cadence Henderson
           </p>
         </div>

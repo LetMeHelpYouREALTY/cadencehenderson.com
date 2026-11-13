@@ -71,7 +71,7 @@ export default function AmericanHomesPage() {
                     {village.name}
                   </Link>
                 </h2>
-                <p className="mt-2 font-light text-neutral-600">
+                <p className="mt-2 font-normal text-neutral-800">
                   {village.summary}
                 </p>
               </li>

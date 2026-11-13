@@ -86,10 +86,15 @@ export const GEO_LINKS = {
   reviews: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${CONTACT_INFO.siteName} ${CONTACT_INFO.welcomeCenter}`)}`,
 } as const
 
+/** Official Cadence Master Association — not the realtor office. */
 export const HOA_CONTACT = {
   name: 'Cadence Master Association',
-  phone: '(702) 555-3000',
-  email: 'DrJanSells@CadenceHenderson.com',
-  hours: 'Mon-Fri, 9AM-5PM',
-  emergency: '(702) 555-3001',
+  phone: '702-605-3111',
+  email: 'Info@CadenceHOA.com',
+  lifestyleEmail: 'Lifestyle@CadenceHOA.com',
+  hours: 'Monday–Friday: 9:00 AM – 5:00 PM',
+  address: '1170 E. Sunset Rd., Suite 101, Henderson, NV 89011',
+  website: 'https://www.cadencecommunityassociation.com',
+  calendarUrl:
+    'https://www.cadencecommunityassociation.com/community-calendar/',
 }

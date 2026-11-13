@@ -3,11 +3,6 @@ import type { NextConfig } from 'next'
 const CLOUDFLARE_IMAGES_HASH =
   process.env.CLOUDFLARE_IMAGES_ACCOUNT_HASH || 'byE6BTe9lNqo21V57n4aPQ'
 
-const REALSCOUT_RENTALS_URL =
-  'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM5Nw=='
-const REALSCOUT_BEAZER_HOMES_URL =
-  'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM5OA=='
-
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -28,38 +23,28 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
+    // Keep visitors on-site. Do not redirect /rentals or builder hubs to RealScout —
+    // those pages live in this app (Search Console "Page with redirect" + traffic retention).
     return [
-      {
-        source: '/rentals',
-        destination: REALSCOUT_RENTALS_URL,
-        permanent: false,
-      },
-      {
-        source: '/rentals/:path*',
-        destination: REALSCOUT_RENTALS_URL,
-        permanent: false,
-      },
-      {
-        source: '/new-homes/beazer-homes',
-        destination: REALSCOUT_BEAZER_HOMES_URL,
-        permanent: false,
-      },
-      { source: '/black-friday', destination: '/incentives', permanent: false },
+      { source: '/black-friday', destination: '/incentives', permanent: true },
       {
         source: '/lifestyle/shopping-entertainment',
         destination: '/lifestyle/shopping',
-        permanent: false,
+        permanent: true,
       },
       {
         source: '/lifestyle/shopping-entertainment/:slug',
         destination: '/lifestyle/shopping/:slug',
-        permanent: false,
+        permanent: true,
       },
       {
         source: '/cadence-animal-hospital',
         destination: '/lifestyle/animal-hospital',
-        permanent: false,
+        permanent: true,
       },
+      // Soft 404 cleanup for tooling paths Google may discover
+      { source: '/admin', destination: '/', permanent: false },
+      { source: '/admin/:path*', destination: '/', permanent: false },
     ]
   },
   async rewrites() {

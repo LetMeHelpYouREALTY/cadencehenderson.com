@@ -46,7 +46,7 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Selling a Cadence Henderson NV 89011 home?
             </h2>
-            <p className="aeo-lead text-gray-700 mb-8" data-speakable>
+            <p className="aeo-lead text-gray-900 mb-8" data-speakable>
               Get a free, instant estimate of your home&apos;s value in
               today&apos;s Henderson market.
             </p>
@@ -76,7 +76,7 @@ export default function ContactPage() {
                       Visit Our Office
                     </h3>
                     <address
-                      className="text-gray-700 not-italic"
+                      className="text-gray-900 not-italic"
                       itemScope
                       itemType="https://schema.org/PostalAddress"
                     >
@@ -106,7 +106,7 @@ export default function ContactPage() {
                     <h3 className="font-bold text-gray-900 mb-1">
                       Call Dr. Jan
                     </h3>
-                    <p className="text-gray-700">
+                    <p className="text-gray-900">
                       <a
                         href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
                         className="hover:text-blue-900 transition-colors"
@@ -123,7 +123,7 @@ export default function ContactPage() {
                   </div>
                   <div className="ml-4">
                     <h3 className="font-bold text-gray-900 mb-1">Email Us</h3>
-                    <p className="text-gray-700">
+                    <p className="text-gray-900">
                       <a
                         href={`mailto:${CONTACT_INFO.email}`}
                         className="hover:text-blue-900 transition-colors"
@@ -142,7 +142,7 @@ export default function ContactPage() {
                     <h3 className="font-bold text-gray-900 mb-1">
                       Welcome Center Hours
                     </h3>
-                    <p className="text-gray-700">
+                    <p className="text-gray-900">
                       {CONTACT_INFO.hours}
                       <br />
                       Closed major holidays
@@ -186,7 +186,7 @@ export default function ContactPage() {
                 <h2 className="text-3xl font-bold text-gray-900 mb-8">
                   Schedule a Consultation
                 </h2>
-                <p className="text-gray-700 mb-6">
+                <p className="text-gray-900 mb-6">
                   Book a 15-minute call with Dr. Jan Duffy to discuss Cadence
                   Henderson homes, schedule a tour, or get personalized
                   guidance.
@@ -211,7 +211,7 @@ export default function ContactPage() {
             >
               Contact Cadence Henderson FAQs
             </h2>
-            <p className="text-center text-gray-700 mb-8">
+            <p className="text-center text-gray-900 mb-8">
               {CONTACT_INFO.siteName} – Henderson NV 89011
             </p>
             <div className="space-y-4">
@@ -226,7 +226,7 @@ export default function ContactPage() {
                       ▾
                     </span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">
+                  <p className="faq-answer mt-3 text-gray-900 leading-relaxed">
                     {answer}
                   </p>
                 </details>

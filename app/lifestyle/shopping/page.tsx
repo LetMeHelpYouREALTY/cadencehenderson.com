@@ -173,7 +173,7 @@ export default function ShoppingPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {center.name}
                   </h3>
-                  <p className="text-gray-700 mb-4">{center.description}</p>
+                  <p className="text-gray-900 mb-4">{center.description}</p>
                   <div className="border-t pt-4">
                     <h4 className="font-bold text-gray-900 mb-2 text-sm">
                       Featured Stores:
@@ -205,7 +205,7 @@ export default function ShoppingPage() {
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
                 Dining & Restaurants
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-800">
                 Hundreds of dining options from quick bites to fine dining
               </p>
             </div>
@@ -223,7 +223,7 @@ export default function ShoppingPage() {
                     {category.places.map((place) => (
                       <li
                         key={place}
-                        className="flex items-start text-sm text-gray-700"
+                        className="flex items-start text-sm text-gray-900"
                       >
                         <span className="w-1.5 h-1.5 bg-pink-900 rounded-full mr-2 mt-1.5" />
                         {place}
@@ -262,7 +262,7 @@ export default function ShoppingPage() {
                     <p className="text-sm text-pink-900 font-medium mb-2">
                       {item.type}
                     </p>
-                    <p className="text-sm text-gray-600">{item.description}</p>
+                    <p className="text-sm text-gray-800">{item.description}</p>
                   </div>
                 )
               })}
@@ -279,7 +279,7 @@ export default function ShoppingPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Everyday Convenience
             </h2>
-            <p className="text-lg text-gray-700 mb-8">
+            <p className="text-lg text-gray-900 mb-8">
               Essential services and everyday shopping right in your
               neighborhood
             </p>
@@ -287,22 +287,22 @@ export default function ShoppingPage() {
               <div className="bg-white rounded-lg p-4 shadow-md">
                 <div className="text-3xl mb-2">🏪</div>
                 <h3 className="font-bold text-gray-900">Grocery</h3>
-                <p className="text-xs text-gray-600">Smith\'s, Whole Foods</p>
+                <p className="text-xs text-gray-800">Smith\'s, Whole Foods</p>
               </div>
               <div className="bg-white rounded-lg p-4 shadow-md">
                 <div className="text-3xl mb-2">💊</div>
                 <h3 className="font-bold text-gray-900">Pharmacy</h3>
-                <p className="text-xs text-gray-600">CVS, Walgreens</p>
+                <p className="text-xs text-gray-800">CVS, Walgreens</p>
               </div>
               <div className="bg-white rounded-lg p-4 shadow-md">
                 <div className="text-3xl mb-2">⛽</div>
                 <h3 className="font-bold text-gray-900">Gas Stations</h3>
-                <p className="text-xs text-gray-600">Multiple locations</p>
+                <p className="text-xs text-gray-800">Multiple locations</p>
               </div>
               <div className="bg-white rounded-lg p-4 shadow-md">
                 <div className="text-3xl mb-2">🏦</div>
                 <h3 className="font-bold text-gray-900">Banks</h3>
-                <p className="text-xs text-gray-600">Chase, Wells Fargo</p>
+                <p className="text-xs text-gray-800">Chase, Wells Fargo</p>
               </div>
             </div>
           </div>

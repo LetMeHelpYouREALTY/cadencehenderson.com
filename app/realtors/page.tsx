@@ -42,9 +42,8 @@ export default function RealtorsPage() {
               Las Vegas REALTOR® · Licensed since 2008 · 35 years in Las Vegas
             </p>
             <p>
-              Specializing in Cadence Henderson - one of the nation&apos;s top
-              10 best-selling master-planned communities. Let&apos;s find your
-              dream home together.
+              Specializing in Cadence Henderson, a master-planned community in
+              Henderson NV 89011. Let&apos;s find your dream home together.
             </p>
           </>
         }
@@ -121,7 +120,7 @@ export default function RealtorsPage() {
               About Dr. Jan Duffy
             </h2>
             <div className="bg-purple-50 rounded-lg p-8 mb-8">
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              <p className="text-lg text-gray-900 mb-6 leading-relaxed">
                 Dr. Jan Duffy is a distinguished REALTOR®, licensed since 2008 ·
                 35 years in Las Vegas, specializing in the Cadence Henderson
                 community. With deep knowledge of the Las Vegas Valley real
@@ -137,25 +136,25 @@ export default function RealtorsPage() {
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-purple-900 rounded-full mr-3 mt-2" />
-                      <span className="text-gray-700">
+                      <span className="text-gray-900">
                         Luxury Homes in Las Vegas, Henderson & Summerlin
                       </span>
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-purple-900 rounded-full mr-3 mt-2" />
-                      <span className="text-gray-700">
+                      <span className="text-gray-900">
                         Investment Properties with Strong ROI
                       </span>
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-purple-900 rounded-full mr-3 mt-2" />
-                      <span className="text-gray-700">
+                      <span className="text-gray-900">
                         First-Time Homebuyers
                       </span>
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-purple-900 rounded-full mr-3 mt-2" />
-                      <span className="text-gray-700">
+                      <span className="text-gray-900">
                         Relocations to/from Las Vegas
                       </span>
                     </li>
@@ -167,7 +166,7 @@ export default function RealtorsPage() {
                   </h3>
                   <div className="space-y-3">
                     <div>
-                      <p className="text-sm text-gray-600">Phone:</p>
+                      <p className="text-sm text-gray-800">Phone:</p>
                       <a
                         href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
                         className="text-purple-900 font-bold hover:underline"
@@ -176,7 +175,7 @@ export default function RealtorsPage() {
                       </a>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600">Email:</p>
+                      <p className="text-sm text-gray-800">Email:</p>
                       <a
                         href={`mailto:${CONTACT_INFO.email}`}
                         className="text-purple-900 font-bold hover:underline"
@@ -185,8 +184,8 @@ export default function RealtorsPage() {
                       </a>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600">Office:</p>
-                      <p className="text-gray-700">
+                      <p className="text-sm text-gray-800">Office:</p>
+                      <p className="text-gray-900">
                         {CONTACT_INFO.address.street}
                         <br />
                         {CONTACT_INFO.address.city},{' '}
@@ -208,7 +207,7 @@ export default function RealtorsPage() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Why Work with Dr. Jan Duffy?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-800 max-w-3xl mx-auto">
               Combining decades of experience with in-depth local expertise to
               deliver personalized guidance and exceptional results.
             </p>
@@ -222,7 +221,7 @@ export default function RealtorsPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Since 2008
               </h3>
-              <p className="text-gray-700">
+              <p className="text-gray-900">
                 Licensed since 2008 · 35 years in Las Vegas, with deep
                 experience across the Las Vegas Valley
               </p>
@@ -235,7 +234,7 @@ export default function RealtorsPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Client-Focused
               </h3>
-              <p className="text-gray-700">
+              <p className="text-gray-900">
                 Dedicated to putting clients' needs first with personalized
                 attention and care
               </p>
@@ -248,7 +247,7 @@ export default function RealtorsPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Local Expertise
               </h3>
-              <p className="text-gray-700">
+              <p className="text-gray-900">
                 Deep knowledge of Cadence, Henderson, Las Vegas, and Summerlin
                 markets
               </p>
@@ -261,7 +260,7 @@ export default function RealtorsPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Proven Results
               </h3>
-              <p className="text-gray-700">
+              <p className="text-gray-900">
                 Track record of successful transactions and satisfied clients
                 throughout the valley
               </p>
@@ -280,7 +279,7 @@ export default function RealtorsPage() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <div className="text-5xl mb-4">⭐⭐⭐⭐⭐</div>
-                <p className="text-gray-700 italic mb-6">
+                <p className="text-gray-900 italic mb-6">
                   "Dr. Jan Duffy provided me with critical insights during my
                   separation that helped me make informed, strategic decisions
                   about selling and purchasing property. Her deep knowledge of
@@ -288,12 +287,12 @@ export default function RealtorsPage() {
                   clarity. I couldn't recommend her highly enough."
                 </p>
                 <p className="font-bold text-gray-900">Robin P.</p>
-                <p className="text-sm text-gray-600">Boulder City</p>
+                <p className="text-sm text-gray-800">Boulder City</p>
               </div>
 
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <div className="text-5xl mb-4">⭐⭐⭐⭐⭐</div>
-                <p className="text-gray-700 italic mb-6">
+                <p className="text-gray-900 italic mb-6">
                   "Dr. Jan Duffy is hands down the best realtor in Nevada!
                   Searching for a home can be overwhelming, but her dedication
                   and genuine care made all the difference. She truly puts her
@@ -302,7 +301,7 @@ export default function RealtorsPage() {
                   for their dream home!"
                 </p>
                 <p className="font-bold text-gray-900">Kelsey C.</p>
-                <p className="text-sm text-gray-600">Las Vegas</p>
+                <p className="text-sm text-gray-800">Las Vegas</p>
               </div>
             </div>
           </div>
@@ -323,19 +322,19 @@ export default function RealtorsPage() {
                   <div className="text-3xl font-bold text-purple-900 mb-2">
                     150+
                   </div>
-                  <div className="text-gray-700">Available Homes</div>
+                  <div className="text-gray-900">Available Homes</div>
                 </div>
                 <div className="text-center p-6 bg-purple-50 rounded-lg">
                   <div className="text-3xl font-bold text-purple-900 mb-2">
                     $300K-$650K
                   </div>
-                  <div className="text-gray-700">Price Range</div>
+                  <div className="text-gray-900">Price Range</div>
                 </div>
                 <div className="text-center p-6 bg-purple-50 rounded-lg">
                   <div className="text-3xl font-bold text-purple-900 mb-2">
                     8
                   </div>
-                  <div className="text-gray-700">Builders</div>
+                  <div className="text-gray-900">Builders</div>
                 </div>
               </div>
 
@@ -345,7 +344,7 @@ export default function RealtorsPage() {
                     <div className="font-bold text-gray-900">
                       Single-Family Homes
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-800">
                       1,500 - 3,500 sq ft
                     </div>
                   </div>
@@ -353,14 +352,14 @@ export default function RealtorsPage() {
                     <div className="font-bold text-purple-900">
                       $350K - $650K
                     </div>
-                    <div className="text-sm text-gray-600">85+ available</div>
+                    <div className="text-sm text-gray-800">85+ available</div>
                   </div>
                 </div>
 
                 <div className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50">
                   <div>
                     <div className="font-bold text-gray-900">Townhomes</div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-800">
                       1,200 - 2,000 sq ft
                     </div>
                   </div>
@@ -368,20 +367,20 @@ export default function RealtorsPage() {
                     <div className="font-bold text-purple-900">
                       $300K - $420K
                     </div>
-                    <div className="text-sm text-gray-600">45+ available</div>
+                    <div className="text-sm text-gray-800">45+ available</div>
                   </div>
                 </div>
 
                 <div className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50">
                   <div>
                     <div className="font-bold text-gray-900">Estate Homes</div>
-                    <div className="text-sm text-gray-600">3,500+ sq ft</div>
+                    <div className="text-sm text-gray-800">3,500+ sq ft</div>
                   </div>
                   <div className="text-right">
                     <div className="font-bold text-purple-900">
                       $550K - $650K
                     </div>
-                    <div className="text-sm text-gray-600">20+ available</div>
+                    <div className="text-sm text-gray-800">20+ available</div>
                   </div>
                 </div>
               </div>
@@ -411,7 +410,7 @@ export default function RealtorsPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Buyer Guides
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-900 mb-4">
                   Free comprehensive guides on buying in Cadence, including
                   floor plans, pricing, and step-by-step purchase process.
                 </p>
@@ -432,7 +431,7 @@ export default function RealtorsPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Free Home Valuation
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-900 mb-4">
                   Thinking of selling? Get an instant estimate of your home's
                   current value in today's market.
                 </p>
@@ -444,7 +443,7 @@ export default function RealtorsPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Personalized Home Tour
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-900 mb-4">
                   Schedule a private tour of Cadence with Dr. Jan. Visit
                   multiple builders and find your perfect home.
                 </p>
@@ -463,7 +462,7 @@ export default function RealtorsPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Market Reports
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-900 mb-4">
                   Stay informed with monthly market updates, pricing trends, and
                   investment insights for Cadence and Henderson.
                 </p>
@@ -484,7 +483,7 @@ export default function RealtorsPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Investment Properties
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-900 mb-4">
                   Looking for investment opportunities? Get expert guidance on
                   rental properties and ROI analysis.
                 </p>
@@ -505,7 +504,7 @@ export default function RealtorsPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Relocation Assistance
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-900 mb-4">
                   Moving to Las Vegas? I will map Cadence villages to your beds,
                   budget, and commute — then register you with the builder
                   before the first model visit.

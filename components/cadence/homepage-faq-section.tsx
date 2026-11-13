@@ -18,7 +18,7 @@ export function HomepageFAQSection() {
           />
           <h2
             id="homepage-faq-heading"
-            className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-16 text-center"
+            className="text-4xl font-semibold tracking-[0.06em] text-neutral-900 mb-16 text-center"
           >
             Frequently Asked Questions — New Homes in Cadence Henderson NV
           </h2>
@@ -28,7 +28,7 @@ export function HomepageFAQSection() {
                 key={item.question}
                 className="border-b border-neutral-200 pb-8 last:border-0 last:pb-0"
               >
-                <dt className="text-lg font-light tracking-[0.04em] text-neutral-900 mb-4">
+                <dt className="text-lg font-normal tracking-[0.04em] text-neutral-900 mb-4">
                   {item.question}
                 </dt>
                 <dd className="faq-answer text-gray-800 leading-relaxed">

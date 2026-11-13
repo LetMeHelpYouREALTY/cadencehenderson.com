@@ -60,7 +60,7 @@ export function VillagePageView({ village }: VillagePageViewProps) {
         title={village.name}
         subtitle={
           <>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.12em] text-white/80">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.12em] text-white">
               {village.builderName} · {statusLabel} · Cadence Henderson NV 89011
             </p>
             <p>{village.summary}</p>
@@ -88,11 +88,11 @@ export function VillagePageView({ village }: VillagePageViewProps) {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl">
-              <h2 className="mb-2 text-3xl font-extralight tracking-[0.06em] text-neutral-900">
+              <h2 className="mb-2 text-3xl font-semibold tracking-[0.06em] text-neutral-900">
                 {village.name} floor plans in Cadence Henderson NV 89011
               </h2>
               <p
-                className="aeo-lead mb-8 font-light text-neutral-600"
+                className="aeo-lead mb-8 font-normal text-neutral-800"
                 data-speakable
               >
                 Names and sizes from the Cadence developer listing (checked
@@ -133,7 +133,7 @@ export function VillagePageView({ village }: VillagePageViewProps) {
       {namedOnly.length > 0 ? (
         <section className="py-8">
           <div className="container mx-auto px-4">
-            <p className="mx-auto max-w-4xl font-light text-neutral-600">
+            <p className="mx-auto max-w-4xl font-normal text-neutral-800">
               Named plans on the developer site:{' '}
               {namedOnly.map((plan) => plan.name).join(', ')}. Square footage
               was not published — confirm at the sales office.

@@ -65,10 +65,10 @@ export function Footer() {
       <div className="container mx-auto px-4">
         {/* Schedule Consultation CTA */}
         <div className="text-center mb-16 pb-12 border-b border-white/15">
-          <h3 className="text-lg font-light tracking-[0.16em] uppercase mb-4 text-white">
+          <h3 className="text-lg font-normal tracking-[0.16em] uppercase mb-4 text-white">
             Tour Cadence with Dr. Jan
           </h3>
-          <p className="text-white/75 text-sm font-light mb-6 max-w-md mx-auto">
+          <p className="text-white text-sm font-normal mb-6 max-w-md mx-auto">
             Schedule a free 15-minute consultation with Dr. Jan Duffy — Cadence
             Henderson NV 89011.
           </p>
@@ -80,19 +80,17 @@ export function Footer() {
           </CalendlyLink>
         </div>
         <div className="text-center mb-12">
-          <div className="text-sm font-light tracking-[0.4em] mb-6">
+          <div className="text-sm font-normal tracking-[0.4em] mb-6">
             CADENCE HENDERSON
           </div>
-          <div className="text-base text-gray-200 mb-1">
+          <div className="text-base text-white mb-1">
             {CONTACT_INFO.shortBrandName}
           </div>
-          <div className="text-sm text-gray-200 mb-1">
-            Dr. Jan Duffy, REALTOR®
-          </div>
-          <div className="text-xs text-gray-200 mb-6">
+          <div className="text-sm text-white mb-1">Dr. Jan Duffy, REALTOR®</div>
+          <div className="text-xs text-white mb-6">
             {CONTACT_INFO.welcomeCenter} | {CONTACT_INFO.phone}
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-6 text-white/80 text-sm font-light">
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-6 text-white text-sm font-normal">
             <a
               href={CONTACT_INFO.calendlyUrl}
               target="_blank"
@@ -122,7 +120,7 @@ export function Footer() {
               href={SOCIAL_MEDIA.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-white/70 hover:text-white transition-colors"
+              className="p-2 text-white hover:text-white transition-colors"
               aria-label="Facebook"
             >
               <Facebook size={20} />
@@ -131,7 +129,7 @@ export function Footer() {
               href={SOCIAL_MEDIA.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-white/70 hover:text-white transition-colors"
+              className="p-2 text-white hover:text-white transition-colors"
               aria-label="Instagram"
             >
               <Instagram size={20} />
@@ -140,7 +138,7 @@ export function Footer() {
               href={SOCIAL_MEDIA.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-white/70 hover:text-white transition-colors"
+              className="p-2 text-white hover:text-white transition-colors"
               aria-label="X (Twitter)"
             >
               <svg
@@ -160,7 +158,7 @@ export function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-light text-white/70 hover:text-white transition-colors"
+                  className="text-sm font-normal text-white hover:text-white transition-colors"
                 >
                   {link.title}
                 </a>
@@ -168,7 +166,7 @@ export function Footer() {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="text-sm font-light text-white/70 hover:text-white transition-colors"
+                  className="text-sm font-normal text-white hover:text-white transition-colors"
                 >
                   {link.title}
                 </Link>
@@ -176,7 +174,7 @@ export function Footer() {
             )}
           </div>
         </div>
-        <div className="border-t border-white/15 pt-10 text-center text-white/60">
+        <div className="border-t border-white/15 pt-10 text-center text-white">
           <p className="text-sm">Copyright 2025 {CONTACT_INFO.siteName}</p>
           <p className="text-sm mt-2">
             {CONTACT_INFO.brokerage} since September 2008 · License{' '}

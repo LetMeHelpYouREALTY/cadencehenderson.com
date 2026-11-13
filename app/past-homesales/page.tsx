@@ -81,7 +81,7 @@ export default function PastHomesalesPage() {
             <RealScoutAdvancedSearch />
           </div>
           <RealScoutYourListings />
-          <p className="mt-4 text-xs text-gray-600">
+          <p className="mt-4 text-xs text-gray-800">
             Listings displayed via MLS. All information deemed reliable but not
             guaranteed. © {new Date().getFullYear()} MLS.
           </p>
@@ -95,7 +95,7 @@ export default function PastHomesalesPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Ready to Buy or Sell?
             </h2>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-gray-900 mb-8">
               Let Dr. Jan Duffy guide you through your next real estate
               transaction. From listing to closing, experience personalized
               service from a REALTOR® licensed since 2008 · 35 years in Las

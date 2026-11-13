@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
-import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { CONTACT_INFO, HOA_CONTACT } from '@/components/cadence/contact-info'
 import { PageGraphSchema } from '@/components/schema/page-graph'
+import {
+  amenitiesFaqAnswer,
+  amenityReservationFaqAnswer,
+} from '@/lib/cadence-amenities'
 
 export const metadata: Metadata = {
   title: 'Cadence Henderson FAQ – Homes, Prices & Community | 89011',
@@ -26,7 +30,7 @@ function FaqsPageSchema() {
         name: 'What is Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence is a master-planned community in Henderson, Nevada 89011, offering new homes from multiple builders, world-class amenities, and a vibrant lifestyle. Located just minutes from the Las Vegas Strip and Lake Mead, Cadence Henderson is one of the top 10 best-selling communities in the nation.',
+          text: 'Cadence is a master-planned community in Henderson, Nevada 89011, with new homes from multiple builders, Central Park amenities, and neighborhoods near the Las Vegas Strip and Lake Mead. Tour with Dr. Jan Duffy.',
         },
       },
       {
@@ -82,7 +86,7 @@ function FaqsPageSchema() {
         name: 'What amenities does Cadence Henderson have?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence Henderson features a 50-acre Central Park, multiple pools and spas, fitness centers, pickleball and sports courts, dog parks, playgrounds, 30+ miles of walking trails, and clubhouses. Most amenities in Cadence Henderson 89011 are free for residents.',
+          text: amenitiesFaqAnswer(),
         },
       },
       {
@@ -90,7 +94,7 @@ function FaqsPageSchema() {
         name: 'What are the HOA fees in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `Cadence Henderson HOA fees vary by neighborhood and builder but typically range from $50–$150/month for the master association, with some sub-associations charging additional fees. Call ${CONTACT_INFO.phone} for current Cadence Henderson HOA fee schedules.`,
+          text: `Cadence Henderson Master Association assessments and any sub-association dues vary by neighborhood and change over time. This site does not publish fee ranges. Call the Cadence Master Association at ${HOA_CONTACT.phone} or email ${HOA_CONTACT.email} for current amounts. Call ${CONTACT_INFO.phone} for Cadence home-buying questions with Dr. Jan Duffy.`,
         },
       },
       {
@@ -98,7 +102,7 @@ function FaqsPageSchema() {
         name: 'Can I reserve amenities for private events in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, Cadence Henderson residents can reserve clubhouses and other amenity spaces for private events through the online resident portal. Some fees may apply.',
+          text: amenityReservationFaqAnswer(),
         },
       },
       {
@@ -122,7 +126,7 @@ function FaqsPageSchema() {
         name: 'Are pets allowed in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, pets are welcome in Cadence Henderson! The community has dedicated dog parks and pet-friendly trails throughout Cadence Henderson 89011. Individual HOAs may have breed or size restrictions.',
+          text: 'Yes, pets are welcome in Cadence Henderson. Official amenities include a dog park and park trails — confirm leash rules with the Master Association at 702-605-3111. Individual village HOAs may have breed or size restrictions.',
         },
       },
       {
@@ -138,7 +142,7 @@ function FaqsPageSchema() {
         name: 'How far is Cadence Henderson from the Las Vegas Strip?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence Henderson NV 89011 is approximately 20 minutes from the Las Vegas Strip via I-515, giving you easy access to world-class entertainment and dining while enjoying the peace of a master-planned residential community.',
+          text: 'Cadence Henderson NV 89011 is approximately 20 minutes from the Las Vegas Strip via I-515, with access to entertainment and dining while living in a residential master-planned community.',
         },
       },
     ],

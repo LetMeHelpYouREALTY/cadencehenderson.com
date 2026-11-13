@@ -26,12 +26,12 @@ export function MarketSnapshotSection() {
         <div className="max-w-6xl mx-auto">
           <h2
             id="market-snapshot-heading"
-            className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-12 text-center"
+            className="text-4xl font-semibold tracking-[0.06em] text-neutral-900 mb-12 text-center"
           >
             Cadence Henderson Market Snapshot
           </h2>
           <div className="grid lg:grid-cols-2 gap-10 items-center mb-8">
-            <ul className="space-y-3 text-lg text-gray-700">
+            <ul className="space-y-3 text-lg text-gray-900">
               <li>
                 <strong>Active builders:</strong>{' '}
                 {MARKET_SNAPSHOT.activeBuilders}
@@ -68,7 +68,7 @@ export function MarketSnapshotSection() {
               />
             </div>
           </div>
-          <p className="text-center text-gray-700">
+          <p className="text-center text-gray-900">
             <a
               href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
               className="text-blue-900 font-medium hover:underline"

@@ -105,10 +105,10 @@ export default function RentalsPage() {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Why rent in Cadence Henderson NV 89011
             </h2>
-            <p className="aeo-lead text-xl text-gray-700" data-speakable>
+            <p className="aeo-lead text-xl text-gray-900" data-speakable>
               Rent single-family homes and apartments in Cadence Henderson NV
-              89011 with access to Central Park, pools, and trails — without
-              buying.
+              89011 with access to Central Park, the resident pool, and trails —
+              without buying.
             </p>
           </div>
 
@@ -120,7 +120,7 @@ export default function RentalsPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Prime Location
               </h3>
-              <p className="text-gray-700">
+              <p className="text-gray-900">
                 Minutes from the Strip, airport, and Lake Mead with easy freeway
                 access.
               </p>
@@ -132,9 +132,10 @@ export default function RentalsPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Premium Amenities
               </h3>
-              <p className="text-gray-700">
-                Access to parks, pools, trails, and community events included
-                with your rental.
+              <p className="text-gray-900">
+                Access to parks, the resident pool, trails, and Association
+                programs may be included — confirm with your lease and the
+                Master Association.
               </p>
             </div>
             <div className="text-center p-6">
@@ -144,7 +145,7 @@ export default function RentalsPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Flexible Options
               </h3>
-              <p className="text-gray-700">
+              <p className="text-gray-900">
                 Various lease terms and property types to fit your lifestyle and
                 budget.
               </p>
@@ -160,7 +161,7 @@ export default function RentalsPage() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Rental Communities
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-800">
               Choose from our trusted rental partners offering quality homes and
               apartments
             </p>
@@ -186,8 +187,8 @@ export default function RentalsPage() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-700 mb-4">{community.description}</p>
-                  <div className="flex items-center justify-between text-sm text-gray-600 mb-4">
+                  <p className="text-gray-900 mb-4">{community.description}</p>
+                  <div className="flex items-center justify-between text-sm text-gray-800 mb-4">
                     <span className="flex items-center">
                       <Building2 size={16} className="mr-1" />
                       {community.properties} Properties
@@ -201,7 +202,7 @@ export default function RentalsPage() {
                       {community.features.map((feature) => (
                         <li
                           key={feature}
-                          className="flex items-center text-sm text-gray-700"
+                          className="flex items-center text-sm text-gray-900"
                         >
                           <span className="w-2 h-2 bg-purple-900 rounded-full mr-2" />
                           {feature}
@@ -271,7 +272,7 @@ export default function RentalsPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
               Cadence Henderson rental FAQs
             </h2>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-center text-gray-800 mb-8">
               Rentals in Cadence Henderson, Henderson NV 89011
             </p>
             <script
@@ -302,7 +303,7 @@ export default function RentalsPage() {
                       name: 'Are there pet-friendly rentals in Cadence Henderson?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: `Yes, several Cadence Henderson NV 89011 rental communities are pet-friendly. American Homes 4 Rent (AMH) offers pet-friendly options, and the community features dedicated dog parks throughout Cadence Henderson. Contact ${CONTACT_INFO.phone} for specific pet policy details.`,
+                        text: `Yes, several Cadence Henderson NV 89011 rental communities are pet-friendly. American Homes 4 Rent (AMH) offers pet-friendly options, and Cadence living amenities include a dog park. Contact ${CONTACT_INFO.phone} for specific pet policy details.`,
                       },
                     },
                     {
@@ -310,7 +311,7 @@ export default function RentalsPage() {
                       name: 'Do rental homes in Cadence Henderson include community amenities?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Yes! All residents in Cadence Henderson 89011, including renters, have access to community amenities including the 50-acre Central Park, pools, fitness centers, trails, and dog parks, depending on your rental agreement and HOA access terms.',
+                        text: 'Cadence Henderson 89011 residents — including many renters — may use community amenities such as Central Park, the resident pool (Master Association Card), splash pads, Fitness Court, pickleball, trails, and the dog park, subject to the rental agreement and Association access terms. Confirm access with the property manager and Cadence Master Association at 702-605-3111.',
                       },
                     },
                   ],
@@ -329,11 +330,11 @@ export default function RentalsPage() {
                 },
                 {
                   q: 'Are there pet-friendly rentals in Cadence Henderson?',
-                  a: `Yes, several Cadence Henderson NV 89011 rental communities are pet-friendly, including AMH options. The community has dedicated dog parks throughout. Contact ${CONTACT_INFO.phone} for specific pet policy details.`,
+                  a: `Yes, several Cadence Henderson NV 89011 rental communities are pet-friendly, including AMH options. Cadence living amenities include a dog park. Contact ${CONTACT_INFO.phone} for specific pet policy details.`,
                 },
                 {
                   q: 'Do rental homes in Cadence Henderson include community amenities?',
-                  a: 'Yes! All Cadence Henderson 89011 residents — including renters — have access to community amenities including the 50-acre Central Park, pools, fitness centers, trails, and dog parks, subject to rental agreement and HOA access terms.',
+                  a: 'Cadence Henderson 89011 residents — including many renters — may use amenities such as Central Park, the resident pool (Master Association Card), splash pads, Fitness Court, pickleball, trails, and the dog park, subject to the rental agreement and Association access terms. Confirm with the property manager and Cadence Master Association at 702-605-3111.',
                 },
               ].map(({ q, a }) => (
                 <details
@@ -346,7 +347,7 @@ export default function RentalsPage() {
                       ▾
                     </span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">
+                  <p className="faq-answer mt-3 text-gray-900 leading-relaxed">
                     {a}
                   </p>
                 </details>

@@ -624,7 +624,7 @@ export default async function BuilderPage({
               <h2 className="mb-4 text-center text-3xl font-bold text-gray-900">
                 {builder.name} villages in Cadence
               </h2>
-              <p className="mb-8 text-center text-gray-700">
+              <p className="mb-8 text-center text-gray-900">
                 Neighborhood names and published plans from the Cadence
                 developer directory. Asking prices change — confirm current
                 inventory with Dr. Jan.
@@ -638,7 +638,7 @@ export default async function BuilderPage({
                     >
                       {village.name}
                     </Link>
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-gray-800">
                       {village.kind === 'sold-out'
                         ? ' — sold out'
                         : village.plans.length > 0
@@ -668,7 +668,7 @@ export default async function BuilderPage({
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               {builder.name} in Cadence Henderson NV 89011
             </h2>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-900 mb-8 leading-relaxed">
               {builder.longDescription}
             </p>
             <div className="bg-blue-50 rounded-lg shadow-lg p-8 border-2 border-blue-900">
@@ -676,7 +676,7 @@ export default async function BuilderPage({
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   Interested in {builder.name}?
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-900">
                   Contact Dr. Jan Duffy to schedule a tour and get expert
                   guidance
                 </p>
@@ -695,7 +695,7 @@ export default async function BuilderPage({
                 <div className="text-center">
                   <MapPin className="mx-auto mb-3 text-blue-900" size={32} />
                   <h3 className="font-bold text-gray-900 mb-2">Office</h3>
-                  <p className="text-gray-700 text-sm">
+                  <p className="text-gray-900 text-sm">
                     {CONTACT_INFO.address.street}
                     <br />
                     {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state}{' '}
@@ -705,7 +705,7 @@ export default async function BuilderPage({
                 <div className="text-center">
                   <Home className="mx-auto mb-3 text-blue-900" size={32} />
                   <h3 className="font-bold text-gray-900 mb-2">Available</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-900">
                     {builder.models.length} Floor Plans
                   </p>
                 </div>
@@ -747,32 +747,32 @@ export default async function BuilderPage({
                   </div>
                   <div className="grid grid-cols-3 gap-4 mb-4 pb-4 border-b">
                     <div className="text-center">
-                      <Bed size={20} className="mx-auto mb-1 text-gray-600" />
+                      <Bed size={20} className="mx-auto mb-1 text-gray-800" />
                       <div className="font-bold text-gray-900">
                         {model.beds}
                       </div>
-                      <div className="text-xs text-gray-600">Beds</div>
+                      <div className="text-xs text-gray-800">Beds</div>
                     </div>
                     <div className="text-center">
-                      <Bath size={20} className="mx-auto mb-1 text-gray-600" />
+                      <Bath size={20} className="mx-auto mb-1 text-gray-800" />
                       <div className="font-bold text-gray-900">
                         {model.baths}
                       </div>
-                      <div className="text-xs text-gray-600">Baths</div>
+                      <div className="text-xs text-gray-800">Baths</div>
                     </div>
                     <div className="text-center">
-                      <Ruler size={20} className="mx-auto mb-1 text-gray-600" />
+                      <Ruler size={20} className="mx-auto mb-1 text-gray-800" />
                       <div className="font-bold text-gray-900">
                         {model.sqft}
                       </div>
-                      <div className="text-xs text-gray-600">Sq Ft</div>
+                      <div className="text-xs text-gray-800">Sq Ft</div>
                     </div>
                   </div>
                   <ul className="space-y-2 mb-6">
                     {model.features.slice(0, 3).map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-center text-sm text-gray-700"
+                        className="flex items-center text-sm text-gray-900"
                       >
                         <span className="w-2 h-2 bg-blue-900 rounded-full mr-2" />
                         {feature}
@@ -796,7 +796,7 @@ export default async function BuilderPage({
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Ready to Make {builder.name} Your Home?
             </h2>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-gray-900 mb-8">
               Contact Dr. Jan Duffy to tour {builder.name} model homes and
               explore available floor plans. I'll arrange builder meetings and
               guide you through the entire process.

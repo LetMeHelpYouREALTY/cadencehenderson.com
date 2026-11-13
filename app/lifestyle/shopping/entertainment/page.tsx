@@ -85,7 +85,7 @@ export default function EntertainmentPage() {
                 <h2 className="mb-3 text-2xl font-medium text-neutral-900">
                   {venue.name}
                 </h2>
-                <p className="font-light leading-relaxed text-neutral-600">
+                <p className="font-normal leading-relaxed text-neutral-800">
                   {venue.note}
                 </p>
               </article>

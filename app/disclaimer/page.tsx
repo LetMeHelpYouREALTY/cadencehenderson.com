@@ -44,7 +44,7 @@ export default function DisclaimerPage() {
 
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl space-y-8 font-light leading-relaxed text-neutral-700">
+          <div className="mx-auto max-w-3xl space-y-8 font-normal leading-relaxed text-neutral-900">
             <article>
               <h2 className="mb-3 text-2xl font-medium text-neutral-900">
                 Independent brokerage site

@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { SiteImage } from '@/components/cadence/site-image'
 import { getAmenityImage } from '@/lib/cloudflare-images'
+import { CADENCE_AMENITIES_SUMMARY } from '@/lib/cadence-amenities'
+import { HOA_CONTACT } from '@/components/cadence/contact-info'
 
 export function AmenitiesSection() {
   return (
@@ -13,18 +15,16 @@ export function AmenitiesSection() {
           <div>
             <h2
               id="amenities-heading"
-              className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-8"
+              className="text-4xl font-semibold tracking-[0.06em] text-neutral-900 mb-8"
             >
               Amenities in Cadence Henderson NV 89011
             </h2>
             <p
-              className="aeo-lead text-xl text-gray-700 mb-8 leading-relaxed"
+              className="aeo-lead text-xl text-gray-900 mb-8 leading-relaxed"
               data-speakable
             >
-              Cadence Henderson NV 89011 includes a ~50-acre Central Park,
-              pools, a ~2,000 sq ft splash pad, pickleball, trails, and resident
-              wifi at amenity areas. Confirm hours with the HOA; tour homes with
-              Dr. Jan Duffy.
+              {CADENCE_AMENITIES_SUMMARY} Confirm hours with the Cadence Master
+              Association at {HOA_CONTACT.phone}; tour homes with Dr. Jan Duffy.
             </p>
             <Button size="lg" className="text-lg px-8" asChild>
               <Link href="/lifestyle/amenities">

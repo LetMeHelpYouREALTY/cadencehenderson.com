@@ -26,12 +26,12 @@ export function KeyFactsSection() {
         </div>
         <h2
           id="key-facts-heading"
-          className="mb-6 text-center text-2xl font-extralight tracking-[0.06em] text-neutral-900"
+          className="mb-6 text-center text-2xl font-semibold tracking-[0.06em] text-neutral-900"
         >
           Key facts — Cadence Henderson NV 89011
         </h2>
         <p
-          className="aeo-lead mx-auto mb-6 max-w-2xl text-center font-light text-neutral-600"
+          className="aeo-lead mx-auto mb-6 max-w-2xl text-center font-normal text-neutral-800"
           data-speakable
         >
           Cadence Henderson is a master-planned community in Henderson NV 89011.
@@ -47,7 +47,7 @@ export function KeyFactsSection() {
         <p className="text-center mt-4">
           <a
             href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
-            className="inline-flex items-center gap-2 text-sm font-light tracking-[0.08em] text-neutral-900 hover:underline"
+            className="inline-flex items-center gap-2 text-sm font-normal tracking-[0.08em] text-neutral-900 hover:underline"
             aria-label={`Call Dr. Jan Duffy: ${CONTACT_INFO.phone}`}
           >
             <Phone size={18} aria-hidden />
@@ -56,14 +56,14 @@ export function KeyFactsSection() {
           {' · '}
           <Link
             href="/sell-in-cadence"
-            className="text-sm font-light tracking-[0.08em] text-neutral-900 hover:underline"
+            className="text-sm font-normal tracking-[0.08em] text-neutral-900 hover:underline"
           >
             Sell to buy in Cadence
           </Link>
           {' · '}
           <Link
             href="/contact"
-            className="text-sm font-light tracking-[0.08em] text-neutral-900 hover:underline"
+            className="text-sm font-normal tracking-[0.08em] text-neutral-900 hover:underline"
           >
             Contact Dr. Jan
           </Link>

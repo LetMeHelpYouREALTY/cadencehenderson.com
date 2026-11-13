@@ -95,11 +95,11 @@ export default function FindYourHomePage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
-            <h2 className="mb-4 text-center text-3xl font-extralight tracking-[0.06em] text-neutral-900">
+            <h2 className="mb-4 text-center text-3xl font-semibold tracking-[0.06em] text-neutral-900">
               Search Cadence Henderson NV 89011 by builder
             </h2>
             <p
-              className="aeo-lead mx-auto mb-10 max-w-2xl text-center font-light text-neutral-600"
+              className="aeo-lead mx-auto mb-10 max-w-2xl text-center font-normal text-neutral-800"
               data-speakable
             >
               Cadence Henderson includes single-family and townhome collections
@@ -123,7 +123,7 @@ export default function FindYourHomePage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-center text-sm font-light text-neutral-500">
+            <p className="mt-6 text-center text-sm font-normal text-neutral-500">
               Toll Brothers Concord and Everleigh at Cadence are sold out. Ask
               Dr. Jan about resale homes on those streets.{' '}
               <Link
@@ -141,10 +141,10 @@ export default function FindYourHomePage() {
       <section className="bg-neutral-50 py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
-            <h2 className="mb-4 text-center text-3xl font-extralight tracking-[0.06em] text-neutral-900">
+            <h2 className="mb-4 text-center text-3xl font-semibold tracking-[0.06em] text-neutral-900">
               Apartments and rental homes in Cadence Henderson NV 89011
             </h2>
-            <p className="mx-auto mb-10 max-w-2xl text-center font-light text-neutral-600">
+            <p className="mx-auto mb-10 max-w-2xl text-center font-normal text-neutral-800">
               Prefer to lease? Cadence also has apartment communities and
               built-to-rent homes. Rates change — confirm current availability
               before you tour.
@@ -182,11 +182,11 @@ export default function FindYourHomePage() {
         <div className="container mx-auto px-4">
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
             <Landmark size={36} className="mb-4 text-primary" aria-hidden />
-            <h2 className="mb-4 text-3xl font-extralight tracking-[0.06em] text-neutral-900">
+            <h2 className="mb-4 text-3xl font-semibold tracking-[0.06em] text-neutral-900">
               Compare Cadence Henderson builder incentives before you write an
               offer
             </h2>
-            <p className="mb-8 font-light text-neutral-600">
+            <p className="mb-8 font-normal text-neutral-800">
               Rate buydowns, closing-cost credits, and included upgrades vary by
               builder and lender. Review current options, then tour with a
               buyer’s agent who can compare net monthly cost.

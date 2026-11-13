@@ -39,7 +39,7 @@ const galleryImages = [
   },
   {
     url: getGalleryImage('resortPool'),
-    title: 'Resort-Style Pool',
+    title: 'Resident Pool',
     category: 'Amenities',
   },
   {
@@ -59,7 +59,7 @@ const galleryImages = [
   },
   {
     url: getGalleryImage('fitnessCenter'),
-    title: 'Fitness Center',
+    title: 'Fitness Court',
     category: 'Amenities',
   },
   {
@@ -117,12 +117,12 @@ export default function GalleryPage() {
 
       <section className="border-b border-neutral-100 py-8">
         <p
-          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-light text-neutral-600"
+          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-normal text-neutral-800"
           data-speakable
         >
-          Photos of Central Park, pools, events, and new homes in Cadence
-          Henderson NV 89011 — the master-planned community at Bicentennial
-          Parkway and Paseo Verde.
+          Photos of Central Park, the resident pool, splash pads, trails,
+          gatherings, and new homes in Cadence Henderson NV 89011 — the
+          master-planned community at Bicentennial Parkway and Paseo Verde.
         </p>
       </section>
 
@@ -141,7 +141,7 @@ export default function GalleryPage() {
                 className={`px-6 py-2 rounded-full font-medium transition-all ${
                   selectedCategory === category
                     ? 'bg-pink-900 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-pink-100 hover:text-pink-900'
+                    : 'bg-white text-gray-900 hover:bg-pink-100 hover:text-pink-900'
                 }`}
               >
                 {category}
@@ -181,7 +181,7 @@ export default function GalleryPage() {
 
           {filteredImages.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-800">
                 No images found in this category.
               </p>
             </div>
@@ -260,7 +260,7 @@ export default function GalleryPage() {
           <div className="mx-auto max-w-3xl">
             <h2
               id="page-faq-heading"
-              className="mb-10 text-center text-3xl font-extralight tracking-[0.06em] text-neutral-900"
+              className="mb-10 text-center text-3xl font-semibold tracking-[0.06em] text-neutral-900"
             >
               Cadence Henderson gallery — questions
             </h2>

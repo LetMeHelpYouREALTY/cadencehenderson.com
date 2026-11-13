@@ -47,7 +47,7 @@ export default function CommunitiesIndexPage() {
 
       <section className="border-b border-neutral-100 py-10">
         <p
-          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-light text-neutral-600"
+          className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-normal text-neutral-800"
           data-speakable
         >
           Cadence Henderson NV 89011 includes dozens of villages from national

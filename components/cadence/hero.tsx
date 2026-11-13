@@ -28,10 +28,10 @@ export function Hero() {
 
       <div className="relative container mx-auto px-4 sm:px-6 flex-1 flex items-center py-24 sm:py-32">
         <div className="max-w-2xl text-white">
-          <h1 className="text-3xl md:text-5xl font-extralight tracking-[0.06em] mb-6 leading-[1.2]">
+          <h1 className="text-3xl md:text-5xl font-semibold tracking-[0.06em] mb-6 leading-[1.2]">
             New Home Buyer&apos;s Agent in Cadence Henderson NV 89011
           </h1>
-          <p className="text-base md:text-lg font-light text-white/90 mb-10 max-w-xl">
+          <p className="text-base md:text-lg font-normal text-white mb-10 max-w-xl">
             New homes Cadence Henderson NV 89011 — your buyer&apos;s agent. Free
             representation; builder pays the fee.
           </p>

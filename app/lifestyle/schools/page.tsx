@@ -118,7 +118,7 @@ export default function SchoolsPage() {
               Campuses serving Cadence Henderson NV 89011
             </h2>
             <p
-              className="aeo-lead mx-auto mb-12 max-w-3xl text-center text-gray-700"
+              className="aeo-lead mx-auto mb-12 max-w-3xl text-center text-gray-900"
               data-speakable
             >
               Cadence Elementary School is on-site. Henderson-area middle
@@ -130,13 +130,13 @@ export default function SchoolsPage() {
                 <div className="text-2xl font-bold text-indigo-900 mb-2">
                   On-site
                 </div>
-                <div className="text-gray-700">Cadence Elementary (K–5)</div>
+                <div className="text-gray-900">Cadence Elementary (K–5)</div>
               </div>
               <div className="text-center p-6 bg-indigo-50 rounded-lg">
                 <div className="text-2xl font-bold text-indigo-900 mb-2">
                   By address
                 </div>
-                <div className="text-gray-700">
+                <div className="text-gray-900">
                   Middle and high school zones
                 </div>
               </div>
@@ -144,7 +144,7 @@ export default function SchoolsPage() {
                 <div className="text-2xl font-bold text-indigo-900 mb-2">
                   Nearby
                 </div>
-                <div className="text-gray-700">
+                <div className="text-gray-900">
                   Private K–12 campuses in Henderson
                 </div>
               </div>
@@ -182,7 +182,7 @@ export default function SchoolsPage() {
                   <p className="text-indigo-900 font-medium mb-3">
                     {school.level}
                   </p>
-                  <p className="text-gray-700 mb-4">{school.description}</p>
+                  <p className="text-gray-900 mb-4">{school.description}</p>
                   <div className="border-t pt-4">
                     <h4 className="font-bold text-gray-900 mb-2 text-sm">
                       Highlights:
@@ -191,7 +191,7 @@ export default function SchoolsPage() {
                       {school.features.map((feature) => (
                         <li
                           key={feature}
-                          className="flex items-start text-sm text-gray-700"
+                          className="flex items-start text-sm text-gray-900"
                         >
                           <span className="w-1.5 h-1.5 bg-indigo-900 rounded-full mr-2 mt-1.5" />
                           {feature}
@@ -222,7 +222,7 @@ export default function SchoolsPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     Name the campus
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-900">
                     Cadence Elementary is inside the master plan. Middle and
                     high school campuses serving Henderson include Green Valley
                     High School. Ask Dr. Jan for the current CCSD map for a lot.
@@ -238,7 +238,7 @@ export default function SchoolsPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     Programs on campus
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-900">
                     Area campuses list STEM, arts, athletics, and after-school
                     programs. Confirm offerings with the school, not a listing
                     flyer.
@@ -254,7 +254,7 @@ export default function SchoolsPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     AP and honors courses
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-900">
                     Green Valley High School publishes AP, honors, and career
                     and technical education options. Check the current course
                     catalog.
@@ -267,7 +267,7 @@ export default function SchoolsPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     Commute from Cadence
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-900">
                     Cadence Elementary is on-site. Other campuses are a short
                     Henderson drive or CCSD bus ride depending on the assigned
                     zone.
@@ -286,7 +286,7 @@ export default function SchoolsPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Private campuses near Cadence Henderson NV 89011
             </h2>
-            <p className="text-center text-gray-700 mb-8">
+            <p className="text-center text-gray-900 mb-8">
               In addition to CCSD campuses, several Henderson-area private
               schools serve the Henderson area.
             </p>
@@ -300,7 +300,7 @@ export default function SchoolsPage() {
                     {school.name}
                   </h3>
                   <p className="text-sm text-indigo-900 mb-2">{school.type}</p>
-                  <p className="text-sm text-gray-600">{school.specialty}</p>
+                  <p className="text-sm text-gray-800">{school.specialty}</p>
                 </div>
               ))}
             </div>
@@ -315,7 +315,7 @@ export default function SchoolsPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Colleges near Cadence Henderson NV 89011
             </h2>
-            <p className="aeo-lead text-lg text-gray-700 mb-8" data-speakable>
+            <p className="aeo-lead text-lg text-gray-900 mb-8" data-speakable>
               Nevada State University, CSN Henderson, UNLV, and Roseman
               University are a short drive from Cadence Henderson NV 89011.
             </p>
@@ -324,7 +324,7 @@ export default function SchoolsPage() {
                 <h3 className="font-bold text-lg text-gray-900 mb-2">
                   University of Nevada, Las Vegas (UNLV)
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-800 text-sm">
                   Major research university - 20 minutes
                 </p>
               </div>
@@ -332,7 +332,7 @@ export default function SchoolsPage() {
                 <h3 className="font-bold text-lg text-gray-900 mb-2">
                   College of Southern Nevada
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-800 text-sm">
                   Community college - 15 minutes
                 </p>
               </div>
@@ -340,7 +340,7 @@ export default function SchoolsPage() {
                 <h3 className="font-bold text-lg text-gray-900 mb-2">
                   Nevada State College
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-800 text-sm">
                   Four-year institution - 10 minutes
                 </p>
               </div>
@@ -348,7 +348,7 @@ export default function SchoolsPage() {
                 <h3 className="font-bold text-lg text-gray-900 mb-2">
                   Roseman University
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-800 text-sm">
                   Health sciences - 12 minutes
                 </p>
               </div>

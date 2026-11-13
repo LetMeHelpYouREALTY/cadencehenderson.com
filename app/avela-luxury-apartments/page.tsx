@@ -70,10 +70,10 @@ export default function AvelaPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl">
-            <h2 className="mb-4 text-3xl font-extralight tracking-[0.06em] text-neutral-900">
+            <h2 className="mb-4 text-3xl font-semibold tracking-[0.06em] text-neutral-900">
               Planned finishes and amenities
             </h2>
-            <p className="mb-8 font-light leading-relaxed text-neutral-600">
+            <p className="mb-8 font-normal leading-relaxed text-neutral-800">
               Avela is listed as coming soon on the Cadence community site.
               Planned interiors include quartz counters, stainless appliances,
               and in-unit laundry. Outdoor and recreation spaces listed by the
@@ -81,12 +81,12 @@ export default function AvelaPage() {
             </p>
             <ul className="mb-8 grid gap-3 sm:grid-cols-2">
               {amenities.map((item) => (
-                <li key={item} className="font-light text-neutral-700">
+                <li key={item} className="font-normal text-neutral-900">
                   {item}
                 </li>
               ))}
             </ul>
-            <p className="font-light text-neutral-600">
+            <p className="font-normal text-neutral-800">
               Leasing contact published by Avela: 888-340-3450 or{' '}
               <a
                 href="mailto:leasing@avelaapts.com"

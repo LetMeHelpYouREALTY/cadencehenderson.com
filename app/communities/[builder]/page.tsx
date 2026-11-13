@@ -80,7 +80,7 @@ export default async function BuilderCommunitiesPage({ params }: PageProps) {
                 >
                   {village.name}
                 </Link>
-                <p className="mt-1 text-sm font-light text-neutral-600">
+                <p className="mt-1 text-sm font-normal text-neutral-800">
                   {village.kind === 'sold-out'
                     ? 'Sold out'
                     : village.kind === 'rental'

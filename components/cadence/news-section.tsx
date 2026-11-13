@@ -30,11 +30,11 @@ export async function NewsSection() {
           </div>
           <h2
             id="news-heading"
-            className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-6"
+            className="text-4xl font-semibold tracking-[0.06em] text-neutral-900 mb-6"
           >
             Cadence Henderson News
           </h2>
-          <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+          <p className="text-xl text-gray-900 mb-8 leading-relaxed">
             For announcements, updates, offers and tips, check out our newsroom.
           </p>
           {articles.length > 0 && (
@@ -63,14 +63,14 @@ export async function NewsSection() {
                     )}
                   </div>
                   <div className="p-4">
-                    <span className="text-xs text-gray-500 flex items-center gap-1">
+                    <span className="text-xs text-gray-900 flex items-center gap-1">
                       <Calendar size={12} />
                       {article.date}
                     </span>
                     <h3 className="font-semibold text-gray-900 line-clamp-2 mt-1">
                       {article.title}
                     </h3>
-                    <p className="text-sm text-gray-600 line-clamp-2 mt-1">
+                    <p className="text-sm text-gray-800 line-clamp-2 mt-1">
                       {article.excerpt}
                     </p>
                   </div>

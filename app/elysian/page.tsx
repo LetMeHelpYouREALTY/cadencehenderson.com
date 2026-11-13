@@ -56,16 +56,16 @@ export default function ElysianPage() {
 
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl space-y-6 font-light leading-relaxed text-neutral-600">
-            <h2 className="text-3xl font-extralight tracking-[0.06em] text-neutral-900">
+          <div className="mx-auto max-w-3xl space-y-6 font-normal leading-relaxed text-neutral-800">
+            <h2 className="text-3xl font-semibold tracking-[0.06em] text-neutral-900">
               Rent a house inside the master plan
             </h2>
             <p>
               Elysian Homes at Cadence is a built-to-rent collection: houses
               designed for leasing rather than for-sale inventory. Expect more
               interior square footage than a typical apartment, with Cadence
-              amenities — Central Park, trails, and pools — still part of daily
-              life.
+              amenities — Central Park, trails, and the resident pool — still
+              part of daily life.
             </p>
             <p>
               Finishes and lot availability change. The community leasing line

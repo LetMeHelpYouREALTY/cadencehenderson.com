@@ -11,14 +11,13 @@ import { NapStrip } from '@/components/cadence/nap-strip'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { amenitiesFaqAnswer, eventsFaqAnswer } from '@/lib/cadence-amenities'
 import {
   Calendar,
   Trees,
   ShoppingBag,
   GraduationCap,
-  Heart,
   Users,
-  Music,
   Sparkles,
   Phone,
   Mail,
@@ -31,7 +30,7 @@ const lifestyleFeatures = [
     icon: Calendar,
     title: 'Events',
     description:
-      'Year-round community events including concerts, movie nights, and seasonal celebrations.',
+      'Central Park gatherings, concerts, and Association lifestyle programs when scheduled — confirm dates with the Master Association.',
     image: cfImage(SITE_IMAGES.lifestyle.events, 'card'),
     link: '/lifestyle/events',
   },
@@ -39,7 +38,7 @@ const lifestyleFeatures = [
     icon: Trees,
     title: 'Parks & Trails',
     description:
-      'Nearly 50-acre Central Park, walking trails, and nature areas for outdoor recreation.',
+      'Nearly 50-acre Central Park, walking trails, and outdoor recreation throughout Cadence Henderson.',
     image: getAmenityImage('trails', 'card'),
     link: '/lifestyle/parks-trails',
   },
@@ -63,7 +62,7 @@ const lifestyleFeatures = [
     icon: Sparkles,
     title: 'Amenities',
     description:
-      'Multiple pools, splash pads, fitness centers, and recreation facilities.',
+      'Resident pool, splash pads, Fitness Court, pickleball, dog park, and Sunset Road Linear Park around Central Park.',
     image: getAmenityImage('pool', 'card'),
     link: '/lifestyle/amenities',
   },
@@ -71,7 +70,7 @@ const lifestyleFeatures = [
     icon: Users,
     title: 'Community',
     description:
-      'Active resident community with clubs, activities, and neighborhood connections.',
+      'Neighborhood connections and Association-run programs — tour villages with Dr. Jan Duffy.',
     image: cfImage(SITE_IMAGES.lifestyle.community, 'card'),
     link: '/lifestyle/community',
   },
@@ -88,10 +87,15 @@ export default function LifestylePage() {
         imageSrc={cfImage(SITE_IMAGES.hero.lifestyle, 'hero')}
         imageAlt="Cadence Henderson lifestyle and community in Henderson NV 89011"
       >
-        <Button size="lg" className="bg-white text-green-900 hover:bg-gray-100">
-          <Calendar className="mr-2" size={20} />
-          View Community Calendar
-        </Button>
+        <CalendlyLink>
+          <Button
+            size="lg"
+            className="bg-white text-green-900 hover:bg-gray-100"
+          >
+            <Calendar className="mr-2" size={20} />
+            Tour Cadence with Dr. Jan
+          </Button>
+        </CalendlyLink>
       </PageHero>
 
       <RealScoutOfficeListings />
@@ -106,7 +110,7 @@ export default function LifestylePage() {
               Cadence Henderson lifestyle in Henderson NV 89011
             </h2>
             <p
-              className="aeo-lead text-xl text-gray-600 max-w-3xl mx-auto"
+              className="aeo-lead text-xl text-gray-800 max-w-3xl mx-auto"
               data-speakable
             >
               From Central Park amenities to community events, discover how
@@ -134,7 +138,7 @@ export default function LifestylePage() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <p className="text-gray-700 mb-4">{feature.description}</p>
+                    <p className="text-gray-900 mb-4">{feature.description}</p>
                     <Button
                       className="w-full bg-green-900 hover:bg-green-800"
                       variant="default"
@@ -157,7 +161,7 @@ export default function LifestylePage() {
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 Central Park: The Heart of Cadence
               </h2>
-              <p className="text-lg text-gray-700 mb-6">
+              <p className="text-lg text-gray-900 mb-6">
                 Our nearly 50-acre Central Park is the crown jewel of the
                 community, offering residents a spectacular outdoor space for
                 recreation, relaxation, and community gatherings.
@@ -165,37 +169,43 @@ export default function LifestylePage() {
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                  <span className="text-gray-700">
-                    Multiple playgrounds for all ages
+                  <span className="text-gray-900">
+                    Turf areas, amphitheater seating, and play areas
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                  <span className="text-gray-700">
-                    Walking and biking trails throughout
+                  <span className="text-gray-900">
+                    Walking and biking with free wifi and charging outlets
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                  <span className="text-gray-700">
-                    Large event lawn for community gatherings
+                  <span className="text-gray-900">
+                    Six-lane resident pool and ~2,000 sq ft splash pad
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                  <span className="text-gray-700">
-                    Splash pads and water features
+                  <span className="text-gray-900">
+                    Fitness Court and pickleball courts
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
-                  <span className="text-gray-700">
-                    Stunning mountain and desert views
+                  <span className="text-gray-900">
+                    Adventure playground and mountain views
                   </span>
                 </li>
               </ul>
-              <Button size="lg" className="bg-green-900 hover:bg-green-800">
-                Explore Central Park
+              <Button
+                size="lg"
+                className="bg-green-900 hover:bg-green-800"
+                asChild
+              >
+                <Link href="/lifestyle/amenities">
+                  Explore Cadence amenities
+                </Link>
               </Button>
             </div>
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
@@ -214,40 +224,38 @@ export default function LifestylePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Resort-Style Amenities
+              Cadence living amenities
             </h2>
-            <p className="text-xl text-gray-600">
-              Live like you're on vacation every day
+            <p className="text-xl text-gray-800">
+              What the community actually publishes around Central Park
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
             <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <div className="text-4xl mb-3">🏊</div>
-              <h3 className="font-bold text-gray-900 mb-2">Pools & Spas</h3>
-              <p className="text-sm text-gray-600">
-                Multiple community pools and hot tubs
+              <h3 className="font-bold text-gray-900 mb-2">Resident pool</h3>
+              <p className="text-sm text-gray-800">
+                Strip views · Master Association Card required
               </p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <div className="text-4xl mb-3">💪</div>
-              <h3 className="font-bold text-gray-900 mb-2">Fitness Centers</h3>
-              <p className="text-sm text-gray-600">
-                State-of-the-art gym equipment
+              <h3 className="font-bold text-gray-900 mb-2">Splash pads</h3>
+              <p className="text-sm text-gray-800">
+                Two pads, including ~2,000 sq ft at the Pool Complex
               </p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <div className="text-4xl mb-3">🐕</div>
-              <h3 className="font-bold text-gray-900 mb-2">Dog Parks</h3>
-              <p className="text-sm text-gray-600">
-                Dedicated spaces for your furry friends
+              <h3 className="font-bold text-gray-900 mb-2">Fitness Court</h3>
+              <p className="text-sm text-gray-800">
+                Outdoor training court in Central Park
               </p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <div className="text-4xl mb-3">🎾</div>
-              <h3 className="font-bold text-gray-900 mb-2">Sports Courts</h3>
-              <p className="text-sm text-gray-600">
-                Basketball, tennis, and pickleball
+              <h3 className="font-bold text-gray-900 mb-2">
+                Pickleball & parks
+              </h3>
+              <p className="text-sm text-gray-800">
+                Pickleball courts, dog park, trails, Linear Park
               </p>
             </div>
           </div>
@@ -309,7 +317,7 @@ export default function LifestylePage() {
             >
               Cadence Henderson lifestyle FAQs
             </h2>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-center text-gray-800 mb-8">
               Cadence Henderson community and lifestyle – Henderson NV 89011
             </p>
             <script
@@ -324,7 +332,7 @@ export default function LifestylePage() {
                       name: 'What amenities does Cadence Henderson have?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Cadence Henderson NV 89011 has a 50-acre Central Park, resort pools, fitness centers, pickleball courts, dog parks, 30+ miles of trails, and clubhouses. Most amenities are free for residents.',
+                        text: amenitiesFaqAnswer(),
                       },
                     },
                     {
@@ -332,7 +340,7 @@ export default function LifestylePage() {
                       name: 'What events happen in Cadence Henderson?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Cadence Henderson hosts summer concerts, farmers market, movie nights, food trucks, and yoga in the park. Events are held at Central Park and are free for residents.',
+                        text: eventsFaqAnswer(),
                       },
                     },
                     {
@@ -359,11 +367,11 @@ export default function LifestylePage() {
               {[
                 {
                   q: 'What amenities does Cadence Henderson have?',
-                  a: '50-acre Central Park, resort pools, fitness centers, pickleball courts, dog parks, 30+ miles of trails, and clubhouses. Most amenities are free for residents.',
+                  a: amenitiesFaqAnswer(),
                 },
                 {
                   q: 'What events happen in Cadence Henderson?',
-                  a: 'Summer concerts, farmers market, movie nights, food trucks, and yoga in the park at Central Park. Free for residents.',
+                  a: eventsFaqAnswer(),
                 },
                 {
                   q: 'What schools serve Cadence Henderson NV 89011?',
@@ -384,7 +392,7 @@ export default function LifestylePage() {
                       ▾
                     </span>
                   </summary>
-                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">
+                  <p className="faq-answer mt-3 text-gray-900 leading-relaxed">
                     {a}
                   </p>
                 </details>
@@ -397,7 +405,7 @@ export default function LifestylePage() {
       <PageAeo
         path="/lifestyle"
         name="Cadence Henderson Community & Amenities | Henderson NV 89011"
-        description="Central Park, pools, fitness centers, trails, and community events in Cadence Henderson NV 89011. Explore the Cadence lifestyle with Dr. Jan Duffy."
+        description="Central Park, resident pool, splash pads, Fitness Court, pickleball, trails, and community gatherings in Cadence Henderson NV 89011. Explore with Dr. Jan Duffy."
         breadcrumbs={[{ name: 'Cadence Henderson lifestyle NV 89011' }]}
       />
       <NapStrip />

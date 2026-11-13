@@ -24,84 +24,36 @@ const BASE = 'https://www.cadencehenderson.com'
 export const metadata: Metadata = {
   title: 'Cadence Henderson Community Life – Henderson NV 89011',
   description:
-    'Clubs, volunteering, and events in Cadence Henderson NV 89011. See how residents connect in Cadence with Dr. Jan Duffy.',
+    'Community life in Cadence Henderson NV 89011: Central Park amenities, Association lifestyle programs, and how residents connect. Tour with Dr. Jan Duffy.',
   alternates: { canonical: `${BASE}/lifestyle/community` },
   openGraph: {
     title: 'Cadence Henderson Community Life – Henderson NV 89011',
     description:
-      'Resident clubs, volunteering & neighborhood events in Cadence Henderson NV 89011. Active community life for residents.',
+      'Central Park amenities and Association lifestyle programs in Cadence Henderson NV 89011 — confirm schedules with the Master Association.',
     url: `${BASE}/lifestyle/community`,
   },
 }
 
-const clubs = [
+const communityHighlights = [
   {
-    name: 'Book Club',
-    description: 'Monthly book discussions and author meet-and-greets',
-    icon: '📚',
-    meetingTime: 'First Thursday, 7 PM',
-  },
-  {
-    name: 'Running Club',
-    description: 'Weekend group runs for all fitness levels',
-    icon: '🏃',
-    meetingTime: 'Saturday, 7 AM',
-  },
-  {
-    name: 'Garden Club',
-    description: 'Community gardening and sustainability initiatives',
-    icon: '🌱',
-    meetingTime: 'Second Saturday, 9 AM',
-  },
-  {
-    name: 'Wine & Dine',
-    description: 'Social gatherings featuring local wines and cuisine',
-    icon: '🍷',
-    meetingTime: 'Third Friday, 6 PM',
-  },
-  {
-    name: 'Kids Activities',
-    description: 'Organized activities and playdates for children',
-    icon: '🎨',
-    meetingTime: 'Various times',
-  },
-  {
-    name: 'Fitness Group',
-    description: 'Group workouts, yoga, and wellness activities',
-    icon: '💪',
-    meetingTime: 'Weekdays, 6 AM & 6 PM',
-  },
-  {
-    name: 'Pet Owners Group',
-    description: 'Dog park meetups and pet-friendly events',
-    icon: '🐕',
-    meetingTime: 'Sunday, 10 AM',
-  },
-  {
-    name: 'Crafts & Hobbies',
-    description: 'Knitting, painting, and various craft projects',
-    icon: '✂️',
-    meetingTime: 'Wednesday, 2 PM',
-  },
-]
-
-const volunteerOpportunities = [
-  {
-    title: 'Welcome Committee',
-    description: 'Greet new residents and help them settle into the community',
-  },
-  {
-    title: 'Event Planning',
-    description: 'Organize and coordinate community events and celebrations',
-  },
-  {
-    title: 'Park Maintenance',
-    description: 'Help maintain and beautify community parks and gardens',
-  },
-  {
-    title: 'Resident groups',
+    name: 'Central Park gatherings',
     description:
-      'Join posted clubs and volunteer days on the resident calendar',
+      'Concerts, car shows, and lifestyle programs when the Master Association schedules them.',
+  },
+  {
+    name: 'Trails & outdoor recreation',
+    description:
+      'Walking, biking, Fitness Court, pickleball, and parks around Central Park.',
+  },
+  {
+    name: 'Resident pool & splash pads',
+    description:
+      'Pool Complex amenities for residents with a Master Association Card (seasonal).',
+  },
+  {
+    name: 'Neighborhood connections',
+    description:
+      'Villages, pocket parks, and dog park spaces where neighbors meet day to day.',
   },
 ]
 
@@ -112,7 +64,7 @@ export default function CommunityPage() {
 
       <PageHero
         title="Community Life"
-        subtitle="At Cadence, community is more than just a place to live—it's a lifestyle. Connect with neighbors, join clubs, participate in events, and create lasting friendships in our vibrant community."
+        subtitle="Central Park amenities and Association lifestyle programs shape how neighbors connect in Cadence Henderson — tour villages with Dr. Jan Duffy."
         imageSrc={cfImage(SITE_IMAGES.hero.community, 'hero')}
         imageAlt="Community life at Cadence Henderson NV 89011"
         icon={Users}
@@ -131,7 +83,7 @@ export default function CommunityPage() {
 
       <PageBodyPhoto
         src={cfImage(SITE_IMAGES.sections.community, 'hero')}
-        alt="Community clubs in Cadence Henderson NV 89011"
+        alt="Community living in Cadence Henderson NV 89011"
       />
 
       {/* Why Cadence Community */}
@@ -149,7 +101,7 @@ export default function CommunityPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Neighborly Spirit
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-900">
                   Experience genuine connections with friendly neighbors who
                   care about building a strong, supportive community.
                 </p>
@@ -160,11 +112,12 @@ export default function CommunityPage() {
                   <Calendar size={40} className="text-amber-900" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Year-Round Events
+                  Community gatherings
                 </h3>
-                <p className="text-gray-700">
-                  From concerts to movie nights, farmers markets to holiday
-                  celebrations, there's always something happening.
+                <p className="text-gray-900">
+                  Concerts, car shows, and Association lifestyle programs happen
+                  when scheduled — confirm current dates with the Master
+                  Association at 702-605-3111.
                 </p>
               </div>
 
@@ -173,11 +126,12 @@ export default function CommunityPage() {
                   <Smile size={40} className="text-amber-900" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Clubs and events
+                  Association programs
                 </h3>
-                <p className="text-gray-700">
-                  Book club, running club, garden club, and Central Park events
-                  run on a posted resident calendar.
+                <p className="text-gray-900">
+                  Resident programs and Central Park gatherings are scheduled by
+                  the Cadence Master Association — call 702-605-3111 or email
+                  Lifestyle@CadenceHOA.com.
                 </p>
               </div>
             </div>
@@ -185,165 +139,113 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* Clubs & Groups */}
+      {/* Community highlights — no invented club schedules */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <Users size={48} className="mx-auto mb-4 text-amber-900" />
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Clubs & Interest Groups
+                How residents connect
               </h2>
-              <p className="text-xl text-gray-600">
-                Join like-minded neighbors and pursue your passions
+              <p className="text-xl text-gray-800 max-w-3xl mx-auto">
+                Cadence living centers on Central Park amenities and Association
+                lifestyle programs. Confirm current clubs, classes, and
+                volunteer postings with the Cadence Master Association at{' '}
+                <a
+                  href="tel:7026053111"
+                  className="text-amber-900 font-medium hover:underline"
+                >
+                  702-605-3111
+                </a>
+                — this site does not invent weekly meeting times.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {clubs.map((club) => (
+              {communityHighlights.map((item) => (
                 <div
-                  key={club.name}
-                  className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow text-center"
+                  key={item.name}
+                  className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
                 >
-                  <div className="text-5xl mb-3">{club.icon}</div>
                   <h3 className="font-bold text-lg text-gray-900 mb-2">
-                    {club.name}
+                    {item.name}
                   </h3>
-                  <p className="text-sm text-gray-700 mb-3">
-                    {club.description}
-                  </p>
-                  <p className="text-xs text-amber-900 font-medium">
-                    {club.meetingTime}
-                  </p>
+                  <p className="text-sm text-gray-900">{item.description}</p>
                 </div>
               ))}
             </div>
 
             <div className="text-center mt-12">
-              <Button className="bg-amber-900 hover:bg-amber-800">
-                Start a New Club
+              <Button className="bg-amber-900 hover:bg-amber-800" asChild>
+                <a href="/lifestyle/events">See community events</a>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Community Engagement */}
+      {/* Association + buyer paths */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-              Get Involved
+              Get involved
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-amber-50 rounded-lg p-8">
                 <Award size={40} className="text-amber-900 mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  Volunteer Opportunities
+                  Cadence Master Association
                 </h3>
-                <ul className="space-y-3">
-                  {volunteerOpportunities.map((opportunity) => (
-                    <li key={opportunity.title} className="border-b pb-3">
-                      <h4 className="font-bold text-gray-900 mb-1">
-                        {opportunity.title}
-                      </h4>
-                      <p className="text-sm text-gray-700">
-                        {opportunity.description}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-                <Button className="w-full mt-6 bg-amber-900 hover:bg-amber-800">
-                  Sign Up to Volunteer
+                <p className="text-gray-900 mb-4">
+                  For resident programs, amenity cards, pool hours, and posted
+                  volunteer or club opportunities, contact the Association
+                  directly — not this Realtor site.
+                </p>
+                <p className="text-sm text-gray-900 mb-6">
+                  Phone:{' '}
+                  <a
+                    href="tel:7026053111"
+                    className="text-amber-900 font-medium hover:underline"
+                  >
+                    702-605-3111
+                  </a>
+                  <br />
+                  Email:{' '}
+                  <a
+                    href="mailto:Lifestyle@CadenceHOA.com"
+                    className="text-amber-900 font-medium hover:underline"
+                  >
+                    Lifestyle@CadenceHOA.com
+                  </a>
+                </p>
+                <Button
+                  className="w-full bg-amber-900 hover:bg-amber-800"
+                  asChild
+                >
+                  <a href="/lifestyle/amenities">Cadence amenities overview</a>
                 </Button>
               </div>
 
               <div className="bg-blue-50 rounded-lg p-8">
                 <MessageSquare size={40} className="text-blue-900 mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  Online Community
+                  Tour Cadence with Dr. Jan
                 </h3>
-                <p className="text-gray-700 mb-6">
-                  Stay connected with neighbors through our private online
-                  community forum. Share recommendations, organize activities,
-                  and stay informed about community news.
+                <p className="text-gray-900 mb-6">
+                  Looking to buy or relocate to Cadence Henderson? Dr. Jan Duffy
+                  can walk villages, amenities, and new-home options with you —
+                  without treating this site as the HOA calendar.
                 </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-900 rounded-full mr-2 mt-2" />
-                    <span className="text-gray-700">
-                      Private residents-only access
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-900 rounded-full mr-2 mt-2" />
-                    <span className="text-gray-700">
-                      Discussion forums and groups
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-900 rounded-full mr-2 mt-2" />
-                    <span className="text-gray-700">
-                      Event calendar and RSVPs
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-900 rounded-full mr-2 mt-2" />
-                    <span className="text-gray-700">
-                      Classified ads and marketplace
-                    </span>
-                  </li>
-                </ul>
-                <Button className="w-full bg-blue-900 hover:bg-blue-800">
-                  Join the Forum
+                <Button
+                  className="w-full bg-blue-900 hover:bg-blue-800"
+                  asChild
+                >
+                  <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+                    Call {CONTACT_INFO.phone}
+                  </a>
                 </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-16 bg-amber-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-              What Residents Say
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <div className="flex items-center mb-4">
-                  <div className="text-4xl mr-3">👤</div>
-                  <div>
-                    <div className="font-bold text-gray-900">
-                      Sarah & Mike T.
-                    </div>
-                    <div className="text-sm text-gray-600">
-                      Residents since 2022
-                    </div>
-                  </div>
-                </div>
-                <p className="text-gray-700 italic">
-                  "We've lived in many neighborhoods, but Cadence truly feels
-                  like home. The sense of community here is incredible—our
-                  neighbors have become our best friends!"
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <div className="flex items-center mb-4">
-                  <div className="text-4xl mr-3">👤</div>
-                  <div>
-                    <div className="font-bold text-gray-900">Jennifer M.</div>
-                    <div className="text-sm text-gray-600">
-                      Resident since 2021
-                    </div>
-                  </div>
-                </div>
-                <p className="text-gray-700 italic">
-                  "The community events and clubs make it so easy to meet people
-                  and stay active. My kids love living here, and so do we!"
-                </p>
               </div>
             </div>
           </div>
@@ -387,7 +289,7 @@ export default function CommunityPage() {
       <PageAeo
         path="/lifestyle/community"
         name="Cadence Henderson Community Life – Henderson NV 89011"
-        description="Resident clubs, volunteering & neighborhood events in Cadence Henderson NV 89011. Book Club, Running Club, Garden Club, Wine & Dine and more. Active community life."
+        description="Community life in Cadence Henderson NV 89011: Central Park amenities, Association lifestyle programs when scheduled, and tours with Dr. Jan Duffy."
         faqs={defaultPageFaqs('community life in Cadence Henderson')}
         breadcrumbs={[
           { name: 'Lifestyle', path: '/lifestyle' },
