@@ -8,7 +8,12 @@ import { PageAeo } from '@/components/cadence/page-aeo'
 import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Trees, MapPin, Bike, Dog } from 'lucide-react'
-import { cfImage, SITE_IMAGES, getAmenityImage, getGalleryImage } from '@/lib/cloudflare-images'
+import {
+  cfImage,
+  SITE_IMAGES,
+  getAmenityImage,
+  getGalleryImage,
+} from '@/lib/cloudflare-images'
 import Link from 'next/link'
 
 const parks = [
@@ -59,7 +64,9 @@ export const metadata: Metadata = {
   title: 'Parks & Trails in Cadence Henderson 89011 | Henderson NV',
   description:
     'Central Park (~50 acres), walking and biking trails, Fitness Court, pickleball, dog park, and Sunset Road Linear Park in Cadence Henderson NV 89011.',
-  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/parks-trails' },
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/parks-trails',
+  },
   openGraph: {
     title: 'Parks & Trails in Cadence Henderson 89011 | Henderson NV',
     description:
@@ -125,8 +132,9 @@ export default function ParksTrailsPage() {
                 Central Park in Cadence Henderson NV 89011
               </h2>
               <p className="aeo-lead text-xl text-gray-800" data-speakable>
-                About 50 acres in Cadence Henderson NV 89011 — turf areas, amphitheater
-                seating, play areas, splash pads, trails, Fitness Court, and pickleball.
+                About 50 acres in Cadence Henderson NV 89011 — turf areas,
+                amphitheater seating, play areas, splash pads, trails, Fitness
+                Court, and pickleball.
               </p>
             </div>
 
@@ -142,10 +150,13 @@ export default function ParksTrailsPage() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   Official Cadence park amenities
                 </h3>
-                <p className="aeo-lead text-lg text-gray-900 mb-6" data-speakable>
-                  Central Park is open to the public (typically dawn–10 p.m.). The
-                  resident pool requires a Master Association Card. Confirm hours with
-                  the Association at 702-605-3111.
+                <p
+                  className="aeo-lead text-lg text-gray-900 mb-6"
+                  data-speakable
+                >
+                  Central Park is open to the public (typically dawn–10 p.m.).
+                  The resident pool requires a Master Association Card. Confirm
+                  hours with the Association at 702-605-3111.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
@@ -157,13 +168,15 @@ export default function ParksTrailsPage() {
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
                     <span className="text-gray-900">
-                      Two splash pads (including ~2,000 sq ft at the Pool Complex)
+                      Two splash pads (including ~2,000 sq ft at the Pool
+                      Complex)
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-green-900 rounded-full mr-3 mt-2" />
                     <span className="text-gray-900">
-                      Fitness Court, pickleball courts, free wifi and charging outlets
+                      Fitness Court, pickleball courts, free wifi and charging
+                      outlets
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -267,11 +280,14 @@ export default function ParksTrailsPage() {
                 Dog park & pet-friendly paths
               </h3>
               <p className="text-lg text-gray-900 mb-6">
-                Cadence living amenities include a dog park. Confirm leash rules,
-                hours, and access with the Cadence Master Association before you visit.
+                Cadence living amenities include a dog park. Confirm leash
+                rules, hours, and access with the Cadence Master Association
+                before you visit.
               </p>
               <Button className="bg-green-900 hover:bg-green-800" asChild>
-                <Link href="/lifestyle/amenities">Cadence amenities overview</Link>
+                <Link href="/lifestyle/amenities">
+                  Cadence amenities overview
+                </Link>
               </Button>
             </div>
           </div>
@@ -286,11 +302,14 @@ export default function ParksTrailsPage() {
               Activities & programs
             </h2>
             <p className="text-lg text-gray-900 mb-6 leading-relaxed">
-              Central Park and Cadence trails support walking, biking, and outdoor
-              recreation year-round. Date-specific Association programs (classes,
-              clubs, or gatherings) change — confirm current schedules with the
-              Cadence Master Association at{' '}
-              <a href="tel:7026053111" className="text-green-900 font-medium hover:underline">
+              Central Park and Cadence trails support walking, biking, and
+              outdoor recreation year-round. Date-specific Association programs
+              (classes, clubs, or gatherings) change — confirm current schedules
+              with the Cadence Master Association at{' '}
+              <a
+                href="tel:7026053111"
+                className="text-green-900 font-medium hover:underline"
+              >
                 702-605-3111
               </a>
               . This page does not invent weekly class times.

@@ -115,8 +115,9 @@ export default function CommunityPage() {
                   Community gatherings
                 </h3>
                 <p className="text-gray-900">
-                  Concerts, car shows, and Association lifestyle programs happen when
-                  scheduled — confirm current dates with the Master Association at 702-605-3111.
+                  Concerts, car shows, and Association lifestyle programs happen
+                  when scheduled — confirm current dates with the Master
+                  Association at 702-605-3111.
                 </p>
               </div>
 
@@ -128,8 +129,9 @@ export default function CommunityPage() {
                   Association programs
                 </h3>
                 <p className="text-gray-900">
-                  Resident programs and Central Park gatherings are scheduled by the
-                  Cadence Master Association — call 702-605-3111 or email Lifestyle@CadenceHOA.com.
+                  Resident programs and Central Park gatherings are scheduled by
+                  the Cadence Master Association — call 702-605-3111 or email
+                  Lifestyle@CadenceHOA.com.
                 </p>
               </div>
             </div>
@@ -148,9 +150,12 @@ export default function CommunityPage() {
               </h2>
               <p className="text-xl text-gray-800 max-w-3xl mx-auto">
                 Cadence living centers on Central Park amenities and Association
-                lifestyle programs. Confirm current clubs, classes, and volunteer
-                postings with the Cadence Master Association at{' '}
-                <a href="tel:7026053111" className="text-amber-900 font-medium hover:underline">
+                lifestyle programs. Confirm current clubs, classes, and
+                volunteer postings with the Cadence Master Association at{' '}
+                <a
+                  href="tel:7026053111"
+                  className="text-amber-900 font-medium hover:underline"
+                >
                   702-605-3111
                 </a>
                 — this site does not invent weekly meeting times.
@@ -200,16 +205,25 @@ export default function CommunityPage() {
                 </p>
                 <p className="text-sm text-gray-900 mb-6">
                   Phone:{' '}
-                  <a href="tel:7026053111" className="text-amber-900 font-medium hover:underline">
+                  <a
+                    href="tel:7026053111"
+                    className="text-amber-900 font-medium hover:underline"
+                  >
                     702-605-3111
                   </a>
                   <br />
                   Email:{' '}
-                  <a href="mailto:Lifestyle@CadenceHOA.com" className="text-amber-900 font-medium hover:underline">
+                  <a
+                    href="mailto:Lifestyle@CadenceHOA.com"
+                    className="text-amber-900 font-medium hover:underline"
+                  >
                     Lifestyle@CadenceHOA.com
                   </a>
                 </p>
-                <Button className="w-full bg-amber-900 hover:bg-amber-800" asChild>
+                <Button
+                  className="w-full bg-amber-900 hover:bg-amber-800"
+                  asChild
+                >
                   <a href="/lifestyle/amenities">Cadence amenities overview</a>
                 </Button>
               </div>
@@ -224,7 +238,10 @@ export default function CommunityPage() {
                   can walk villages, amenities, and new-home options with you —
                   without treating this site as the HOA calendar.
                 </p>
-                <Button className="w-full bg-blue-900 hover:bg-blue-800" asChild>
+                <Button
+                  className="w-full bg-blue-900 hover:bg-blue-800"
+                  asChild
+                >
                   <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
                     Call {CONTACT_INFO.phone}
                   </a>
@@ -234,7 +251,6 @@ export default function CommunityPage() {
           </div>
         </div>
       </section>
-
 
       {/* CTA Section */}
       <section className="py-16 bg-cadence-ink text-white">

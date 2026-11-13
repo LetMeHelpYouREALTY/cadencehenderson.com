@@ -28,7 +28,10 @@ import {
 import type { LucideIcon } from 'lucide-react'
 
 /** Icons stay in the page; facts come from lib/cadence-amenities.ts */
-const AMENITY_ICONS: Record<(typeof CADENCE_AMENITIES)[number]['id'], LucideIcon> = {
+const AMENITY_ICONS: Record<
+  (typeof CADENCE_AMENITIES)[number]['id'],
+  LucideIcon
+> = {
   'community-pool': Waves,
   'splash-pads': Droplets,
   'central-park': Trees,
@@ -66,7 +69,9 @@ export const metadata: Metadata = {
   title: 'Cadence Henderson Amenities – Central Park, Pool & Trails',
   description:
     '50-acre Central Park, resident pool, splash pads, Fitness Court, pickleball & Sunset Road Linear Park in Cadence Henderson NV 89011. Tour with Dr. Jan Duffy.',
-  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/amenities' },
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/amenities',
+  },
   openGraph: {
     title: 'Cadence Henderson Amenities – Central Park, Pool & Trails',
     description:
@@ -105,12 +110,12 @@ export default function AmenitiesPage() {
             Wake up to amenities
           </h2>
           <p className="text-lg text-gray-800 text-center max-w-3xl mx-auto mb-12">
-            Cadence amenities speak for themselves: the 50-acre Central Park is perfect
-            for walking and biking and offers free wifi so you can stay connected. For
-            more outdoor fun, check out the splash pads, resident pool, adventure park,
-            Fitness Court, and trails — plus a dog park for Fido. Hours, cards, and
-            table reservations are handled by the Cadence Master Association — not this
-            real estate office.
+            Cadence amenities speak for themselves: the 50-acre Central Park is
+            perfect for walking and biking and offers free wifi so you can stay
+            connected. For more outdoor fun, check out the splash pads, resident
+            pool, adventure park, Fitness Court, and trails — plus a dog park
+            for Fido. Hours, cards, and table reservations are handled by the
+            Cadence Master Association — not this real estate office.
           </p>
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {amenities.map((amenity) => {
@@ -170,7 +175,9 @@ export default function AmenitiesPage() {
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="bg-white rounded-lg shadow-md p-6 text-center">
                 <Waves size={40} className="mx-auto mb-3 text-cyan-900" />
-                <h3 className="font-bold text-gray-900 mb-2">Central Park Pool</h3>
+                <h3 className="font-bold text-gray-900 mb-2">
+                  Central Park Pool
+                </h3>
                 <p className="text-sm text-gray-800">
                   Residents only · Master Association Card required
                   <br />
@@ -188,7 +195,9 @@ export default function AmenitiesPage() {
               </div>
               <div className="bg-white rounded-lg shadow-md p-6 text-center">
                 <Phone size={40} className="mx-auto mb-3 text-cyan-900" />
-                <h3 className="font-bold text-gray-900 mb-2">Table reservations</h3>
+                <h3 className="font-bold text-gray-900 mb-2">
+                  Table reservations
+                </h3>
                 <p className="text-sm text-gray-800">
                   Picnic / poolside tables via Association only
                   <br />
@@ -209,11 +218,18 @@ export default function AmenitiesPage() {
                   </Button>
                 </a>
                 <a href={`mailto:${HOA_CONTACT.email}`}>
-                  <Button variant="outline" className="border-cyan-900 text-cyan-900">
+                  <Button
+                    variant="outline"
+                    className="border-cyan-900 text-cyan-900"
+                  >
                     Email {HOA_CONTACT.email}
                   </Button>
                 </a>
-                <Button variant="outline" className="border-cyan-900 text-cyan-900" asChild>
+                <Button
+                  variant="outline"
+                  className="border-cyan-900 text-cyan-900"
+                  asChild
+                >
                   <Link href="/lifestyle/events">Cadence community events</Link>
                 </Button>
               </div>
@@ -222,7 +238,6 @@ export default function AmenitiesPage() {
         </div>
       </section>
 
-
       <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
@@ -230,8 +245,8 @@ export default function AmenitiesPage() {
               Tour Cadence homes with Dr. Jan Duffy
             </h2>
             <p className="text-xl mb-8">
-              See villages near Central Park and the pool — Association staff handle
-              amenity cards and reservations.
+              See villages near Central Park and the pool — Association staff
+              handle amenity cards and reservations.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>

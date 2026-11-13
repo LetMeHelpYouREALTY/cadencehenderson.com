@@ -117,7 +117,8 @@ export const CADENCE_EVENTS_GUIDANCE = {
   noInventedCalendar:
     'We do not invent Cadence Association weekly calendars. Confirm Association lifestyle dates with the Master Association.',
   howToConfirm: `Call ${HOA_CONTACT.phone} or email ${HOA_CONTACT.lifestyleEmail} for Association programs.`,
-  buyerCta: 'Tour Cadence homes with Dr. Jan Duffy — Association ops stay on the Association line.',
+  buyerCta:
+    'Tour Cadence homes with Dr. Jan Duffy — Association ops stay on the Association line.',
 } as const
 
 /** Claims that must never appear as Cadence Master Association amenities. */

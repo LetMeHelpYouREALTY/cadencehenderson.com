@@ -86,9 +86,7 @@ export function Footer() {
           <div className="text-base text-white mb-1">
             {CONTACT_INFO.shortBrandName}
           </div>
-          <div className="text-sm text-white mb-1">
-            Dr. Jan Duffy, REALTOR®
-          </div>
+          <div className="text-sm text-white mb-1">Dr. Jan Duffy, REALTOR®</div>
           <div className="text-xs text-white mb-6">
             {CONTACT_INFO.welcomeCenter} | {CONTACT_INFO.phone}
           </div>

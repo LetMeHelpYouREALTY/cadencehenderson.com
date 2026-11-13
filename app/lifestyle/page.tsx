@@ -198,8 +198,14 @@ export default function LifestylePage() {
                   </span>
                 </li>
               </ul>
-              <Button size="lg" className="bg-green-900 hover:bg-green-800" asChild>
-                <Link href="/lifestyle/amenities">Explore Cadence amenities</Link>
+              <Button
+                size="lg"
+                className="bg-green-900 hover:bg-green-800"
+                asChild
+              >
+                <Link href="/lifestyle/amenities">
+                  Explore Cadence amenities
+                </Link>
               </Button>
             </div>
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
@@ -245,7 +251,9 @@ export default function LifestylePage() {
               </p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <h3 className="font-bold text-gray-900 mb-2">Pickleball & parks</h3>
+              <h3 className="font-bold text-gray-900 mb-2">
+                Pickleball & parks
+              </h3>
               <p className="text-sm text-gray-800">
                 Pickleball courts, dog park, trails, Linear Park
               </p>
@@ -357,10 +365,22 @@ export default function LifestylePage() {
             />
             <div className="space-y-4">
               {[
-                { q: 'What amenities does Cadence Henderson have?', a: amenitiesFaqAnswer() },
-                { q: 'What events happen in Cadence Henderson?', a: eventsFaqAnswer() },
-                { q: 'What schools serve Cadence Henderson NV 89011?', a: 'Cadence Elementary (on-site), Legacy Traditional, and Clark County schools. Green Valley High School nearby.' },
-                { q: 'Is there shopping near Cadence Henderson?', a: 'Yes. Galleria at Sunset, Cadence Marketplace, and Sunset Station are 5–10 minutes from Cadence Henderson NV 89011.' },
+                {
+                  q: 'What amenities does Cadence Henderson have?',
+                  a: amenitiesFaqAnswer(),
+                },
+                {
+                  q: 'What events happen in Cadence Henderson?',
+                  a: eventsFaqAnswer(),
+                },
+                {
+                  q: 'What schools serve Cadence Henderson NV 89011?',
+                  a: 'Cadence Elementary (on-site), Legacy Traditional, and Clark County schools. Green Valley High School nearby.',
+                },
+                {
+                  q: 'Is there shopping near Cadence Henderson?',
+                  a: 'Yes. Galleria at Sunset, Cadence Marketplace, and Sunset Station are 5–10 minutes from Cadence Henderson NV 89011.',
+                },
               ].map(({ q, a }) => (
                 <details
                   key={q}

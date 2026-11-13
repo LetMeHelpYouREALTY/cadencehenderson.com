@@ -399,7 +399,8 @@ export default function ResidentsPage() {
                           Community Events
                         </h3>
                         <p className="text-sm text-gray-800">
-                          Cadence lifestyle gatherings — confirm dates with the Association
+                          Cadence lifestyle gatherings — confirm dates with the
+                          Association
                         </p>
                       </div>
                     </div>
@@ -423,7 +424,8 @@ export default function ResidentsPage() {
                           Amenities Guide
                         </h3>
                         <p className="text-sm text-gray-800">
-                          Official Cadence amenities overview — Association for hours and access
+                          Official Cadence amenities overview — Association for
+                          hours and access
                         </p>
                       </div>
                     </div>

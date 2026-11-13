@@ -360,7 +360,7 @@ function todayIsoInLosAngeles(now = new Date()): string {
 
 /** Upcoming City of Henderson events only (drops anything whose end date is before today PT). */
 export function getUpcomingHendersonCityEvents(
-  now = new Date()
+  now = new Date(),
 ): HendersonCityEvent[] {
   const today = todayIsoInLosAngeles(now)
   return HENDERSON_CITY_EVENTS.filter((event) => {

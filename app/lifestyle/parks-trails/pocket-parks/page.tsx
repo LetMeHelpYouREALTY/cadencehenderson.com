@@ -42,7 +42,7 @@ const features = [
   },
   {
     title: 'Pet stations',
-    body: 'Waste stations and the Cadence dog park keep outdoor spaces usable. Confirm village HOA pet rules before you move in.'
+    body: 'Waste stations and the Cadence dog park keep outdoor spaces usable. Confirm village HOA pet rules before you move in.',
   },
 ]
 

@@ -19,7 +19,10 @@ export function AmenitiesSection() {
             >
               Amenities in Cadence Henderson NV 89011
             </h2>
-            <p className="aeo-lead text-xl text-gray-900 mb-8 leading-relaxed" data-speakable>
+            <p
+              className="aeo-lead text-xl text-gray-900 mb-8 leading-relaxed"
+              data-speakable
+            >
               {CADENCE_AMENITIES_SUMMARY} Confirm hours with the Cadence Master
               Association at {HOA_CONTACT.phone}; tour homes with Dr. Jan Duffy.
             </p>

@@ -59,7 +59,11 @@ export default async function NewsArticlePage({ params }: PageProps) {
 
       <article className="py-12">
         <div className="container mx-auto px-4 max-w-3xl">
-          <Button variant="ghost" className="mb-6 -ml-2 text-indigo-900" asChild>
+          <Button
+            variant="ghost"
+            className="mb-6 -ml-2 text-indigo-900"
+            asChild
+          >
             <Link href="/news">
               <ArrowLeft size={16} className="mr-2" />
               All Cadence news
@@ -104,8 +108,8 @@ export default async function NewsArticlePage({ params }: PageProps) {
 
           <div className="mt-12 pt-8 border-t border-gray-200">
             <p className="text-gray-900 mb-4">
-              Tour Cadence Henderson with Dr. Jan Duffy, REALTOR® — new homes and
-              resale in NV 89011.
+              Tour Cadence Henderson with Dr. Jan Duffy, REALTOR® — new homes
+              and resale in NV 89011.
             </p>
             <div className="flex flex-wrap gap-3">
               <Button className="bg-indigo-900 hover:bg-indigo-800" asChild>
@@ -140,10 +144,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
               'Browse all Cadence community news on the News page at cadencehenderson.com/news.',
           },
         ]}
-        breadcrumbs={[
-          { name: 'News', path: '/news' },
-          { name: article.title },
-        ]}
+        breadcrumbs={[{ name: 'News', path: '/news' }, { name: article.title }]}
         faqHeading="About this Cadence news article"
       />
       <Footer />

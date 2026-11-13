@@ -44,7 +44,7 @@ function decodeEntities(html: string): string {
   return html
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
     .replace(/&#x([0-9a-f]+);/gi, (_, h) =>
-      String.fromCharCode(parseInt(h, 16))
+      String.fromCharCode(parseInt(h, 16)),
     )
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
@@ -66,7 +66,7 @@ export function stripHtml(html: string): string {
     html
       .replace(/<script[\s\S]*?<\/script>/gi, '')
       .replace(/<style[\s\S]*?<\/style>/gi, '')
-      .replace(/<[^>]*>/g, '')
+      .replace(/<[^>]*>/g, ''),
   )
     .replace(/\s+/g, ' ')
     .trim()
@@ -148,7 +148,7 @@ export async function fetchNews(perPage = 12): Promise<NewsArticle[]> {
  * Fetch a single article by slug (live API, then fallback).
  */
 export async function fetchNewsBySlug(
-  slug: string
+  slug: string,
 ): Promise<NewsArticle | null> {
   try {
     const url = `${WORDPRESS_API}?slug=${encodeURIComponent(slug)}&_embed`

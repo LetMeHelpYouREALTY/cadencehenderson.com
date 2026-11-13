@@ -9,7 +9,14 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO, HOA_CONTACT } from '@/components/cadence/contact-info'
-import { Calendar, Clock, ExternalLink, Mail, MapPin, Phone } from 'lucide-react'
+import {
+  Calendar,
+  Clock,
+  ExternalLink,
+  Mail,
+  MapPin,
+  Phone,
+} from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import {
   getUpcomingHendersonCityEvents,
@@ -24,7 +31,9 @@ export const metadata: Metadata = {
   title: 'Community Events in Cadence Henderson NV | 89011',
   description:
     'Upcoming City of Henderson special events near Cadence NV 89011. Cadence Association lifestyle dates: call 702-605-3111. Tour with Dr. Jan Duffy.',
-  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/events' },
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/events',
+  },
   openGraph: {
     title: 'Community Events in Cadence Henderson NV | 89011',
     description:
@@ -166,9 +175,10 @@ export default function EventsPage() {
                           Confirm location on the City of Henderson calendar.
                         </p>
                       )}
-                      <p className="text-xs text-gray-500">{event.sourceNote}</p>
+                      <p className="text-xs text-gray-500">
+                        {event.sourceNote}
+                      </p>
                     </div>
-
                   </div>
                 </article>
               ))}
@@ -235,8 +245,8 @@ export default function EventsPage() {
                 Tour Cadence Henderson with Dr. Jan Duffy
               </h2>
               <p className="text-xl text-white mb-6">
-                Walk Central Park and nearby villages — then decide which builder
-                village fits your lifestyle.
+                Walk Central Park and nearby villages — then decide which
+                builder village fits your lifestyle.
               </p>
               <div className="flex flex-wrap gap-4 justify-center mb-8">
                 <a

@@ -194,7 +194,7 @@ export function getSitemapEntries(): SitemapEntry[] {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
-    })
+    }),
   )
 
   return [

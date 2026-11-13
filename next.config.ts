@@ -27,13 +27,21 @@ const nextConfig: NextConfig = {
     // those pages live in this app (Search Console "Page with redirect" + traffic retention).
     return [
       { source: '/black-friday', destination: '/incentives', permanent: true },
-      { source: '/lifestyle/shopping-entertainment', destination: '/lifestyle/shopping', permanent: true },
+      {
+        source: '/lifestyle/shopping-entertainment',
+        destination: '/lifestyle/shopping',
+        permanent: true,
+      },
       {
         source: '/lifestyle/shopping-entertainment/:slug',
         destination: '/lifestyle/shopping/:slug',
         permanent: true,
       },
-      { source: '/cadence-animal-hospital', destination: '/lifestyle/animal-hospital', permanent: true },
+      {
+        source: '/cadence-animal-hospital',
+        destination: '/lifestyle/animal-hospital',
+        permanent: true,
+      },
       // Soft 404 cleanup for tooling paths Google may discover
       { source: '/admin', destination: '/', permanent: false },
       { source: '/admin/:path*', destination: '/', permanent: false },

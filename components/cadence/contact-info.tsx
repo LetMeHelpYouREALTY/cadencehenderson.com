@@ -95,5 +95,6 @@ export const HOA_CONTACT = {
   hours: 'Monday–Friday: 9:00 AM – 5:00 PM',
   address: '1170 E. Sunset Rd., Suite 101, Henderson, NV 89011',
   website: 'https://www.cadencecommunityassociation.com',
-  calendarUrl: 'https://www.cadencecommunityassociation.com/community-calendar/',
+  calendarUrl:
+    'https://www.cadencecommunityassociation.com/community-calendar/',
 }

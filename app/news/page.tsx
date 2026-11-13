@@ -10,7 +10,13 @@ import { Footer } from '@/components/cadence/footer'
 import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO, HOA_CONTACT } from '@/components/cadence/contact-info'
-import { Newspaper, Calendar, Image as ImageIcon, Phone, Mail } from 'lucide-react'
+import {
+  Newspaper,
+  Calendar,
+  Image as ImageIcon,
+  Phone,
+  Mail,
+} from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { fetchNews } from '@/lib/fetch-news'
 
@@ -46,7 +52,6 @@ export default async function NewsPage() {
 
       <RealScoutOfficeListings />
 
-
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
@@ -54,8 +59,8 @@ export default async function NewsPage() {
               Latest from Cadence
             </h2>
             <p className="text-lg text-gray-800">
-              Community news mirrored from the official Cadence feed. Association
-              operations and new lifestyle dates:{' '}
+              Community news mirrored from the official Cadence feed.
+              Association operations and new lifestyle dates:{' '}
               <a
                 href={`tel:${HOA_CONTACT.phone.replace(/-/g, '')}`}
                 className="text-indigo-900 underline"
@@ -162,7 +167,11 @@ export default async function NewsPage() {
           </div>
 
           <div className="text-center mt-8">
-            <Button size="lg" className="bg-indigo-900 hover:bg-indigo-800" asChild>
+            <Button
+              size="lg"
+              className="bg-indigo-900 hover:bg-indigo-800"
+              asChild
+            >
               <Link href="/gallery">
                 <ImageIcon className="mr-2" size={20} />
                 View Full Gallery
@@ -177,7 +186,9 @@ export default async function NewsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
               <Newspaper size={48} className="mx-auto mb-4" />
-              <h2 className="text-3xl font-bold mb-4">Tour Cadence with a local guide</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                Tour Cadence with a local guide
+              </h2>
               <p className="text-xl text-white mb-6">
                 Schedule a call with Dr. Jan Duffy for new homes, resale, and
                 village tours in Cadence Henderson NV 89011.

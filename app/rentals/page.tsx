@@ -106,8 +106,9 @@ export default function RentalsPage() {
               Why rent in Cadence Henderson NV 89011
             </h2>
             <p className="aeo-lead text-xl text-gray-900" data-speakable>
-              Rent single-family homes and apartments in Cadence Henderson NV 89011
-              with access to Central Park, the resident pool, and trails — without buying.
+              Rent single-family homes and apartments in Cadence Henderson NV
+              89011 with access to Central Park, the resident pool, and trails —
+              without buying.
             </p>
           </div>
 
@@ -133,7 +134,8 @@ export default function RentalsPage() {
               </h3>
               <p className="text-gray-900">
                 Access to parks, the resident pool, trails, and Association
-                programs may be included — confirm with your lease and the Master Association.
+                programs may be included — confirm with your lease and the
+                Master Association.
               </p>
             </div>
             <div className="text-center p-6">
