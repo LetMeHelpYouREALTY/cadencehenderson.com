@@ -39,7 +39,7 @@ const galleryImages = [
   },
   {
     url: getGalleryImage('resortPool'),
-    title: 'Resort-Style Pool',
+    title: 'Resident Pool',
     category: 'Amenities',
   },
   {
@@ -59,7 +59,7 @@ const galleryImages = [
   },
   {
     url: getGalleryImage('fitnessCenter'),
-    title: 'Fitness Center',
+    title: 'Fitness Court',
     category: 'Amenities',
   },
   {
@@ -120,9 +120,8 @@ export default function GalleryPage() {
           className="aeo-lead container mx-auto max-w-3xl px-4 text-center font-normal text-neutral-800"
           data-speakable
         >
-          Photos of Central Park, pools, events, and new homes in Cadence
-          Henderson NV 89011 — the master-planned community at Bicentennial
-          Parkway and Paseo Verde.
+          Photos of Central Park, the resident pool, splash pads, trails, gatherings, and new homes
+          in Cadence Henderson NV 89011 — the master-planned community at Bicentennial Parkway and Paseo Verde.
         </p>
       </section>
 

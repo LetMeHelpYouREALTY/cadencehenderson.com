@@ -18,7 +18,7 @@ const BASE = 'https://www.cadencehenderson.com'
 export const metadata: Metadata = {
   title: 'Life at Cadence Henderson | Community Guide 89011',
   description:
-    'Daily life in Cadence Henderson NV 89011: 50-acre Central Park, pools, trails, builders, and commute times to Lake Mead, the airport, and the Strip.',
+    'Daily life in Cadence Henderson NV 89011: 50-acre Central Park, resident pool, trails, builders, and commute times to Lake Mead, the airport, and the Strip.',
   alternates: { canonical: `${BASE}/realtors/life-at-cadence` },
   openGraph: {
     title: 'Life at Cadence Henderson | Community Guide 89011',
@@ -43,7 +43,7 @@ const facts = [
   },
   {
     title: 'On-site recreation',
-    body: 'Residents use pools, splash pads, fitness rooms, pickleball and sports courts, dog parks, clubhouses, and miles of walking paths. Amenity access and HOA dues vary by village.',
+    body: 'Official Cadence amenities around Central Park include a resident pool (Master Association Card), splash pads, Fitness Court, pickleball, dog park, trails, and Sunset Road Linear Park. Village access and HOA dues vary — confirm ops with the Cadence Master Association at 702-605-3111.',
   },
 ]
 
@@ -54,7 +54,7 @@ export default function LifeAtCadencePage() {
 
       <PageHero
         title="Life at Cadence"
-        subtitle="A working brief for buyers and cooperating agents: parks, pools, commute, and how Cadence Henderson actually lives day to day."
+        subtitle="A working brief for buyers and cooperating agents: parks, resident pool, commute, and how Cadence Henderson actually lives day to day."
         imageSrc={cfImage(SITE_IMAGES.hero.lifeAtCadence, 'hero')}
         imageAlt="Daily life in Cadence Henderson NV 89011"
         icon={Sparkles}

@@ -42,9 +42,8 @@ export default function RealtorsPage() {
               Las Vegas REALTOR® · Licensed since 2008 · 35 years in Las Vegas
             </p>
             <p>
-              Specializing in Cadence Henderson - one of the nation&apos;s top
-              10 best-selling master-planned communities. Let&apos;s find your
-              dream home together.
+              Specializing in Cadence Henderson, a master-planned community in
+              Henderson NV 89011. Let&apos;s find your dream home together.
             </p>
           </>
         }

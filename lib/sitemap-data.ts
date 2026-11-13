@@ -7,6 +7,7 @@ import {
   ALL_CADENCE_COMMUNITIES,
   CADENCE_BUILDER_HUBS,
 } from './cadence-nv-catalog'
+import { CADENCE_NEWS_FALLBACK_SLUGS } from './cadence-news-fallback'
 
 export const SITEMAP_BASE_URL = 'https://www.cadencehenderson.com'
 
@@ -63,10 +64,11 @@ export type SitemapEntry = {
 }
 
 /**
- * Paths that next.config.ts redirects off-site (RealScout). Redirecting URLs must not
- * be listed in the sitemap (Search Console "Page with redirect").
+ * Legacy paths that next.config.ts still redirects on-site. Keep out of the sitemap
+ * so Search Console does not report "Page with redirect".
  */
-const REDIRECTED_PATH = /^\/(rentals(\/.*)?|new-homes\/beazer-homes)$/
+const REDIRECTED_PATH =
+  /^\/(black-friday|lifestyle\/shopping-entertainment(\/.*)?|cadence-animal-hospital|admin(\/.*)?)$/
 
 export function getSitemapEntries(): SitemapEntry[] {
   const base = SITEMAP_BASE_URL
@@ -186,6 +188,15 @@ export function getSitemapEntries(): SitemapEntry[] {
     priority: 0.8,
   }))
 
+  const newsArticlePages: SitemapEntry[] = CADENCE_NEWS_FALLBACK_SLUGS.map(
+    (slug) => ({
+      url: `${base}/news/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })
+  )
+
   return [
     ...mainPages,
     ...rentalPages,
@@ -193,5 +204,6 @@ export function getSitemapEntries(): SitemapEntry[] {
     ...builderPages,
     ...resourcePages,
     ...communityPages,
+    ...newsArticlePages,
   ].filter((e) => !REDIRECTED_PATH.test(e.url.slice(base.length)))
 }

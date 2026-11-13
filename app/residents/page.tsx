@@ -52,7 +52,7 @@ export default function ResidentsPage() {
 
       <PageBodyPhoto
         src={cfImage(SITE_IMAGES.sections.residents, 'hero')}
-        alt="Resident clubhouse in Cadence Henderson NV 89011"
+        alt="Cadence Henderson NV 89011 resident community living"
       />
 
       {/* Services for Current Residents */}
@@ -155,14 +155,14 @@ export default function ResidentsPage() {
                 Community Events
               </h3>
               <p className="text-sm text-gray-800 mb-4">
-                See what's happening in your neighborhood
+                Lifestyle highlights — confirm dates with the Association
               </p>
               <Button
                 size="sm"
                 variant="outline"
                 className="border-emerald-900 text-emerald-900 hover:bg-emerald-900 hover:text-white"
               >
-                View Calendar
+                See Events
               </Button>
             </Link>
 
@@ -205,12 +205,27 @@ export default function ResidentsPage() {
                 </p>
                 <div className="space-y-2 text-sm">
                   <p className="text-gray-900">
-                    Current HOA phone numbers are posted in the resident portal
-                    and in closing documents — they change with the management
-                    company.
+                    <strong>Association:</strong>{' '}
+                    <a
+                      href="tel:7026053111"
+                      className="text-emerald-900 hover:underline"
+                    >
+                      702-605-3111
+                    </a>
+                    {' · '}
+                    <a
+                      href="mailto:Info@CadenceHOA.com"
+                      className="text-emerald-900 hover:underline"
+                    >
+                      Info@CadenceHOA.com
+                    </a>
                   </p>
                   <p className="text-gray-900">
-                    <strong>Realtor line:</strong>{' '}
+                    1170 E. Sunset Rd., Suite 101, Henderson, NV 89011 · Mon–Fri
+                    9 AM–5 PM
+                  </p>
+                  <p className="text-gray-900">
+                    <strong>Realtor line (homes only):</strong>{' '}
                     <a
                       href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
                       className="text-emerald-900 hover:underline"
@@ -381,10 +396,10 @@ export default function ResidentsPage() {
                       <Calendar className="mr-4 text-emerald-900" size={32} />
                       <div>
                         <h3 className="font-bold text-gray-900">
-                          Events Calendar
+                          Community Events
                         </h3>
                         <p className="text-sm text-gray-800">
-                          View upcoming community events and activities
+                          Cadence lifestyle gatherings — confirm dates with the Association
                         </p>
                       </div>
                     </div>
@@ -408,7 +423,7 @@ export default function ResidentsPage() {
                           Amenities Guide
                         </h3>
                         <p className="text-sm text-gray-800">
-                          Hours, rules, and details for all community amenities
+                          Official Cadence amenities overview — Association for hours and access
                         </p>
                       </div>
                     </div>

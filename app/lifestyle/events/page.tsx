@@ -1,249 +1,239 @@
-import { PageHero } from '@/components/cadence/page-hero'
-import { SiteImage } from '@/components/cadence/site-image'
 import type { Metadata } from 'next'
-import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
+import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageHero } from '@/components/cadence/page-hero'
 import { PageAeo } from '@/components/cadence/page-aeo'
-import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
-import { CONTACT_INFO } from '@/components/cadence/contact-info'
-import {
-  Calendar,
-  Clock,
-  MapPin,
-  Music,
-  Users,
-  Phone,
-  Mail,
-  Film,
-} from 'lucide-react'
+import { CONTACT_INFO, HOA_CONTACT } from '@/components/cadence/contact-info'
+import { Calendar, Clock, ExternalLink, Mail, MapPin, Phone } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import {
+  getUpcomingHendersonCityEvents,
+  HENDERSON_SPECIAL_EVENTS_SOURCE_URL,
+} from '@/lib/henderson-city-events'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Community Events in Cadence Henderson NV | 89011',
   description:
-    'Summer concerts, farmers market, movie nights, food trucks & yoga at Cadence Henderson Central Park, Henderson NV 89011. Free events for residents.',
-  alternates: {
-    canonical: 'https://www.cadencehenderson.com/lifestyle/events',
-  },
+    'Upcoming City of Henderson special events near Cadence NV 89011. Cadence Association lifestyle dates: call 702-605-3111. Tour with Dr. Jan Duffy.',
+  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/events' },
   openGraph: {
     title: 'Community Events in Cadence Henderson NV | 89011',
     description:
-      'Summer concerts, farmers market, movie nights & food trucks at Cadence Henderson Central Park, Henderson NV 89011.',
+      'Upcoming City of Henderson Parks & Recreation special events. Confirm Cadence Association dates with the Master Association; tour homes with Dr. Jan Duffy.',
     url: 'https://www.cadencehenderson.com/lifestyle/events',
   },
 }
 
-const upcomingEvents = [
+const EVENTS_FAQS = [
   {
-    title: 'Summer Concert Series - Friday Nights',
-    date: 'Every Friday, 7:00 PM - 9:00 PM',
-    location: 'Central Park Event Lawn',
-    category: 'Music',
-    description:
-      'Join us for live music under the stars every Friday evening throughout the summer. Bring blankets and lawn chairs to the Central Park event lawn.',
-    image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
+    q: 'What events are listed on this page?',
+    a: 'Upcoming City of Henderson Parks & Recreation special events from the official city calendar (Next 30 Days). Past events are not listed. This is not a Cadence HOA calendar.',
   },
   {
-    title: 'Cadence Farmers Market',
-    date: 'Every Saturday, 8:00 AM - 12:00 PM',
-    location: 'Welcome Center Plaza',
-    category: 'Community',
-    description:
-      'Shop local produce, artisan goods, and handmade crafts from local vendors. Fresh, organic products delivered straight to your neighborhood.',
-    image: cfImage(SITE_IMAGES.lifestyle.farmersMarket, 'card'),
+    q: 'Where do these Henderson event dates come from?',
+    a: 'Titles, dates, and times are taken from the City of Henderson special events calendar. Confirm details and locations on the city site before you go — schedules can change.',
   },
   {
-    title: 'Halloween Spooktacular',
-    date: 'October 31, 5:00 PM - 8:00 PM',
-    location: 'Central Park',
-    category: 'Holiday',
-    description:
-      'Trick-or-treating, costume contests, and haunted houses at Central Park. Event hours and route maps are posted on the resident calendar.',
-    image: cfImage(SITE_IMAGES.lifestyle.events, 'card'),
+    q: 'Are there Cadence Association lifestyle events?',
+    a: `For Cadence Master Association lifestyle programs and new dates, call ${HOA_CONTACT.name} at ${HOA_CONTACT.phone} or email ${HOA_CONTACT.lifestyleEmail}. We do not invent weekly HOA calendars on this site.`,
   },
   {
-    title: 'Food Truck Friday',
-    date: 'Last Friday of Month, 5:00 PM - 9:00 PM',
-    location: 'Community Pool Area',
-    category: 'Food',
-    description:
-      'Enjoy diverse culinary offerings from local food trucks. Different vendors each month featuring everything from BBQ to international cuisine.',
-    image: cfImage(SITE_IMAGES.lifestyle.foodTruck, 'card'),
-  },
-  {
-    title: 'Movie Night in the Park',
-    date: 'Second Saturday, 7:30 PM',
-    location: 'Central Park',
-    category: 'Movies',
-    description:
-      'Outdoor movies on a giant screen at Central Park. Bring blankets and enjoy popcorn and refreshments under the stars.',
-    image: cfImage(SITE_IMAGES.lifestyle.movieNight, 'card'),
-  },
-  {
-    title: 'Yoga in the Park',
-    date: 'Tuesdays & Thursdays, 7:00 AM',
-    location: 'Central Park Lawn',
-    category: 'Wellness',
-    description:
-      'Free community yoga sessions for all skill levels. Bring your mat and start your day with mindfulness and movement.',
-    image: cfImage(SITE_IMAGES.lifestyle.yoga, 'card'),
+    q: 'Who helps with Cadence home tours?',
+    a: `Dr. Jan Duffy, REALTOR®, at ${CONTACT_INFO.phone} — new homes and resale in Cadence Henderson NV 89011.`,
   },
 ]
 
-const categoryIcons: Record<string, any> = {
-  Music: Music,
-  Community: Users,
-  Holiday: Calendar,
-  Food: Clock,
-  Movies: Film,
-  Wellness: Users,
-}
-
 export default function EventsPage() {
+  const upcoming = getUpcomingHendersonCityEvents()
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
 
       <PageHero
         title="Community events in Cadence Henderson NV 89011"
-        subtitle="Experience the vibrant community spirit at Cadence with year-round events, activities, and celebrations that bring neighbors together."
+        subtitle="Upcoming City of Henderson special events — past dates removed. Cadence Association schedules: call the Master Association."
         imageSrc={cfImage(SITE_IMAGES.hero.events, 'hero')}
         imageAlt="Community events at Cadence Henderson NV 89011"
         icon={Calendar}
       >
-        <Button
-          size="lg"
-          className="bg-white text-orange-900 hover:bg-gray-100"
-        >
-          Download Calendar
-        </Button>
+        <CalendlyLink>
+          <Button
+            size="lg"
+            className="bg-white text-orange-900 hover:bg-gray-100"
+          >
+            Tour Cadence with Dr. Jan
+          </Button>
+        </CalendlyLink>
       </PageHero>
 
       <RealScoutOfficeListings />
 
-      {/* Events Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Upcoming Events
+              Upcoming Henderson special events
             </h2>
-            <p className="text-xl text-gray-800">
-              Join us for exciting community activities and celebrations
+            <p className="text-lg text-gray-900 leading-relaxed">
+              From the City of Henderson Parks &amp; Recreation special events
+              calendar (Next 30 Days). Only upcoming dates are shown — past
+              events are filtered out. Confirm times and locations on the city
+              calendar before attending.
+            </p>
+            <p className="mt-4">
+              <a
+                href={HENDERSON_SPECIAL_EVENTS_SOURCE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-orange-900 font-medium hover:underline"
+              >
+                Official City of Henderson calendar
+                <ExternalLink size={16} />
+              </a>
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {upcomingEvents.map((event) => {
-              const IconComponent = categoryIcons[event.category] || Calendar
-              return (
-                <div
-                  key={event.title}
-                  className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+          {upcoming.length === 0 ? (
+            <div className="max-w-3xl mx-auto border border-gray-200 rounded-lg p-8 text-center mb-12">
+              <p className="text-gray-900 leading-relaxed">
+                No upcoming City of Henderson special events are listed here
+                right now. Check the{' '}
+                <a
+                  href={HENDERSON_SPECIAL_EVENTS_SOURCE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-orange-900 underline"
                 >
-                  <div className="relative h-56 overflow-hidden">
-                    <SiteImage
-                      src={event.image}
-                      alt={`${event.title} at Cadence Henderson NV 89011`}
-                      fill
-                      className="hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="inline-flex items-center px-3 py-1 bg-orange-900 text-white rounded-full text-sm font-medium">
-                        {event.category}
+                  official city calendar
+                </a>{' '}
+                for the latest dates.
+              </p>
+            </div>
+          ) : (
+            <div className="max-w-4xl mx-auto space-y-6 mb-12">
+              {upcoming.map((event) => (
+                <article
+                  key={event.id}
+                  className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100"
+                >
+                  <div className="md:flex">
+                    <div className="relative h-40 md:h-auto md:w-40 shrink-0 bg-orange-900 text-white flex flex-col items-center justify-center p-6">
+                      <span className="text-sm uppercase tracking-widest opacity-90">
+                        {event.monthShort}
                       </span>
+                      <span className="text-5xl font-bold leading-none my-1">
+                        {event.day}
+                      </span>
+                      <span className="text-sm opacity-90">{event.year}</span>
                     </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
-                      {event.title}
-                    </h3>
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-start text-sm text-gray-900">
+                    <div className="p-6 flex-1">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-orange-900 mb-2">
+                        City of Henderson · Upcoming
+                      </p>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                        {event.title}
+                      </h3>
+                      <p className="flex items-start text-sm text-gray-900 mb-2">
                         <Clock
                           size={16}
-                          className="mr-2 mt-0.5 flex-shrink-0"
+                          className="mr-2 mt-0.5 shrink-0 text-orange-900"
                         />
-                        <span>{event.date}</span>
-                      </div>
-                      <div className="flex items-start text-sm text-gray-900">
-                        <MapPin
-                          size={16}
-                          className="mr-2 mt-0.5 flex-shrink-0"
-                        />
-                        <span>{event.location}</span>
-                      </div>
+                        <span>
+                          {event.dateLabel}
+                          {event.timeLabel ? ` · ${event.timeLabel}` : ''}
+                        </span>
+                      </p>
+                      {event.location ? (
+                        <p className="flex items-start text-sm text-gray-900 mb-3">
+                          <MapPin
+                            size={16}
+                            className="mr-2 mt-0.5 shrink-0 text-orange-900"
+                          />
+                          {event.location}
+                        </p>
+                      ) : (
+                        <p className="text-sm text-gray-800 mb-3">
+                          Confirm location on the City of Henderson calendar.
+                        </p>
+                      )}
+                      <p className="text-xs text-gray-500">{event.sourceNote}</p>
                     </div>
-                    <p className="text-gray-900 mb-4">{event.description}</p>
-                    <Button
-                      variant="outline"
-                      className="w-full border-orange-900 text-orange-900 hover:bg-orange-900 hover:text-white"
-                    >
-                      Add to Calendar
-                    </Button>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
 
-      {/* Event Categories */}
-      <section className="py-16 bg-orange-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12">
-              Event categories in Cadence Henderson NV 89011
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                'Music',
-                'Food',
-                'Movies',
-                'Wellness',
-                'Holiday',
-                'Community',
-                'Sports',
-                'Education',
-              ].map((category) => (
-                <div
-                  key={category}
-                  className="bg-white rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
-                >
-                  <div className="text-4xl mb-2">
-                    {category === 'Music' && '🎵'}
-                    {category === 'Food' && '🍔'}
-                    {category === 'Movies' && '🎬'}
-                    {category === 'Wellness' && '🧘'}
-                    {category === 'Holiday' && '🎉'}
-                    {category === 'Community' && '🤝'}
-                    {category === 'Sports' && '⚽'}
-                    {category === 'Education' && '📚'}
                   </div>
-                  <h3 className="font-bold text-gray-900">{category}</h3>
-                </div>
+                </article>
               ))}
+            </div>
+          )}
+
+          <div className="max-w-3xl mx-auto border border-orange-200 bg-orange-50 rounded-lg p-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">
+              Cadence Association schedules
+            </h3>
+            <p className="text-gray-900 mb-4 leading-relaxed">
+              City events above are not Cadence HOA programs. For Master
+              Association lifestyle dates, contact the {HOA_CONTACT.name}. Tour
+              Cadence homes with Dr. Jan Duffy.
+            </p>
+            <ul className="space-y-2 text-gray-900 mb-6 text-sm">
+              <li>
+                <strong>Association phone:</strong>{' '}
+                <a
+                  href={`tel:${HOA_CONTACT.phone.replace(/-/g, '')}`}
+                  className="text-orange-900 hover:underline"
+                >
+                  {HOA_CONTACT.phone}
+                </a>
+              </li>
+              <li>
+                <strong>Events email:</strong>{' '}
+                <a
+                  href={`mailto:${HOA_CONTACT.lifestyleEmail}`}
+                  className="text-orange-900 hover:underline"
+                >
+                  {HOA_CONTACT.lifestyleEmail}
+                </a>
+              </li>
+              <li>
+                <strong>Office:</strong> {HOA_CONTACT.address} ·{' '}
+                {HOA_CONTACT.hours}
+              </li>
+            </ul>
+            <div className="flex flex-wrap gap-3">
+              <CalendlyLink>
+                <Button className="bg-orange-900 text-white hover:bg-orange-800">
+                  Schedule a Cadence home tour
+                </Button>
+              </CalendlyLink>
+              <Button
+                variant="outline"
+                className="border-orange-900 text-orange-900"
+                asChild
+              >
+                <Link href="/lifestyle/amenities">See Cadence amenities</Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Schedule Consultation Section */}
       <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
               <Calendar size={48} className="mx-auto mb-4" />
-              <h2 className="text-3xl font-bold mb-4">Never Miss an Event</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                Tour Cadence Henderson with Dr. Jan Duffy
+              </h2>
               <p className="text-xl text-white mb-6">
-                Schedule a call with Dr. Jan Duffy to get personalized updates
-                on upcoming activities and community happenings in Cadence.
+                Walk Central Park and nearby villages — then decide which builder
+                village fits your lifestyle.
               </p>
               <div className="flex flex-wrap gap-4 justify-center mb-8">
                 <a
@@ -277,8 +267,8 @@ export default function EventsPage() {
       <PageAeo
         path="/lifestyle/events"
         name="Community Events in Cadence Henderson NV | 89011"
-        description="Summer concerts, farmers market, movie nights & food trucks at Cadence Henderson Central Park, Henderson NV 89011."
-        faqs={defaultPageFaqs('community events in Cadence Henderson')}
+        description="Upcoming City of Henderson special events near Cadence NV 89011. Association dates via Master Association; tours with Dr. Jan Duffy."
+        faqs={EVENTS_FAQS.map(({ q, a }) => ({ question: q, answer: a }))}
         breadcrumbs={[
           { name: 'Lifestyle', path: '/lifestyle' },
           { name: 'Events in Cadence Henderson NV 89011' },
