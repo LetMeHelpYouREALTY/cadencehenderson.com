@@ -17,6 +17,9 @@ import {
 } from '@/lib/henderson-city-events'
 import Link from 'next/link'
 
+// Re-render hourly so past City of Henderson events drop off without a redeploy.
+export const revalidate = 3600
+
 export const metadata: Metadata = {
   title: 'Community Events in Cadence Henderson NV | 89011',
   description:
